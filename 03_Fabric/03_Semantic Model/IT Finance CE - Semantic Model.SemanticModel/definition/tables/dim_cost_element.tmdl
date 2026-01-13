@@ -1,0 +1,170 @@
+table dim_cost_element
+	lineageTag: f829a825-63bd-44b3-b5d8-f21b0e2f29ea
+	sourceLineageTag: [dbo].[dim_cost_element]
+
+	column 'Cost Element'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2201d775-451c-46c5-b2a1-20287dba9240
+		sourceLineageTag: Cost Element
+		summarizeBy: none
+		sourceColumn: Cost Element
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Name'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e3b0a35a-64fc-43ab-bda1-949a1b6759db
+		sourceLineageTag: Cost Element Name
+		summarizeBy: none
+		sourceColumn: Cost Element Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Group'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 62579b17-6f90-4a18-ae67-acfb4642c3c8
+		sourceLineageTag: Cost Element Group
+		summarizeBy: none
+		sourceColumn: Cost Element Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Code'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cbfd25d7-845b-4a88-800f-4bb3fa64f570
+		sourceLineageTag: L3 Code
+		summarizeBy: none
+		sourceColumn: L3 Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Name'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3295897b-8124-44f9-951b-6da65b80a986
+		sourceLineageTag: L3 Name
+		summarizeBy: none
+		sourceColumn: L3 Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L2 Code'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 26a3a62c-df34-45ac-bdad-75c907815517
+		sourceLineageTag: L2 Code
+		summarizeBy: none
+		sourceColumn: L2 Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L2 Name'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 553e265a-65f2-49ae-8452-93599bedc4e4
+		sourceLineageTag: L2 Name
+		summarizeBy: none
+		sourceColumn: L2 Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L1 Code'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9472d4f2-1f42-46d7-af48-20688ed3f499
+		sourceLineageTag: L1 Code
+		summarizeBy: none
+		sourceColumn: L1 Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L1 Name'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 03185fe4-5f0c-4522-8cd2-fb5e076d38d0
+		sourceLineageTag: L1 Name
+		summarizeBy: none
+		sourceColumn: L1 Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 6a62065f-c1a0-4a4a-ab8e-f21cbc7f4b5b
+		sourceLineageTag: Type
+		summarizeBy: none
+		sourceColumn: Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element and Name'
+		dataType: string
+		lineageTag: 565fcf98-13e3-4172-955b-89076af83d4e
+		sourceLineageTag: Cost Element and Name
+		summarizeBy: none
+		sourceColumn: Cost Element and Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Cost Element Hierarchy'
+		dataType: string
+		lineageTag: 4cff430a-7e0a-4ebe-aa12-10da86c9d14c
+		sourceLineageTag: Forecast Cost Element Hierarchy
+		summarizeBy: none
+		sourceColumn: Forecast Cost Element Hierarchy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Cluster'
+		dataType: string
+		lineageTag: bc7aa7d9-93ae-43f9-a557-4c87e200007e
+		sourceLineageTag: Forecast Cluster
+		summarizeBy: none
+		sourceColumn: Forecast Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Code and Name'
+		dataType: string
+		lineageTag: f6b93c3b-1acc-47bc-b025-41fb2248ab95
+		sourceLineageTag: L3 Code and Name
+		summarizeBy: none
+		sourceColumn: L3 Code and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_cost_element = entity
+		mode: directLake
+		source
+			entityName: dim_cost_element
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	changedProperty = IsHidden
+

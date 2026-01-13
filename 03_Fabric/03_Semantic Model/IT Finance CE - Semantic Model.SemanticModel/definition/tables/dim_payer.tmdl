@@ -1,0 +1,111 @@
+table dim_payer
+	lineageTag: 6150f1ba-e4c9-4836-b6f1-36ab4c192e6d
+	sourceLineageTag: [dbo].[dim_payer]
+
+	column Payer
+		dataType: string
+		lineageTag: fa296e74-d3b9-45d5-a52b-3b9a5f20670a
+		sourceLineageTag: Payer
+		summarizeBy: none
+		sourceColumn: Payer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Name'
+		dataType: string
+		lineageTag: 715110d4-b9c8-4dfe-b2c9-477990c20997
+		sourceLineageTag: Payer Name
+		summarizeBy: none
+		sourceColumn: Payer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 74e72439-5348-4299-a918-a0e4b419a08d
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: fee34468-c945-41ea-942f-86b3ac33e156
+		sourceLineageTag: Region
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account
+		dataType: string
+		lineageTag: 9c37cb0c-aa17-429c-9be4-4be6c8f10d66
+		sourceLineageTag: Account
+		summarizeBy: none
+		sourceColumn: Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Group'
+		dataType: string
+		lineageTag: 2e7c5b4a-bf9c-416c-818a-e2145f781a09
+		sourceLineageTag: Account Group
+		summarizeBy: none
+		sourceColumn: Account Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Groups And Regions'
+		dataType: string
+		lineageTag: 97fdf059-a0a9-4374-b467-7f8d9f368409
+		sourceLineageTag: Groups And Regions
+		summarizeBy: none
+		sourceColumn: Groups And Regions
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Region
+		dataType: string
+		lineageTag: 98e0e3ed-3d5e-46c1-814d-873dd0a385b9
+		sourceLineageTag: GL_Region
+		summarizeBy: none
+		sourceColumn: GL_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Name'
+		dataType: string
+		lineageTag: 7313716c-e668-47ae-a677-18044df684d7
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b741c737-58a7-4220-81af-b895d40ad539
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: 90ebeefe-e0f0-457f-841e-e127dd0e2c77
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_payer = entity
+		mode: directLake
+		source
+			entityName: dim_payer
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

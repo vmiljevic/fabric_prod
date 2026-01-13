@@ -1,0 +1,54 @@
+table 'PPM Deactiveated Users 2025'
+	lineageTag: ebc0cbfb-685a-457c-82c0-52f8b211754b
+
+	column User
+		dataType: string
+		lineageTag: e2fdfa8c-8c00-461f-bdc3-54c749ceb294
+		summarizeBy: none
+		sourceColumn: User
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID'
+		dataType: string
+		lineageTag: 477d84e2-9c8e-4f4f-9f46-6bb19fba99ed
+		summarizeBy: none
+		sourceColumn: User ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_sys_id
+		dataType: string
+		lineageTag: add4bac2-ce43-4843-ab96-79e86b7acd21
+		summarizeBy: none
+		sourceColumn: user_sys_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID Final'
+		dataType: string
+		lineageTag: fca3251a-bce2-4054-8430-6ac0ae244588
+		summarizeBy: none
+		sourceColumn: User ID Final
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PPM Deactiveated Users 2025' = m
+		mode: import
+		queryGroup: 04_PPM
+		source =
+				let
+				    Source = Table.Combine({#"PPM Time Cards AT 2025", #"PPM Time Cards SK44 2025", #"PPM Time Cards SK45 2025", #"PPM Time Cards CZ45 2025", #"PPM Time Cards HU44 2025"}),
+				    #"Filtered Rows" = Table.SelectRows(Source, each Text.Contains([User ID], "DEACT_") or Text.Contains([User ID], "_DIS")),
+				    #"Removed Duplicates1" = Table.Distinct(#"Filtered Rows", {"user_sys_id"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Removed Duplicates1",{"User", "user_sys_id", "User ID"}),
+				    #"Merged Queries2" = Table.NestedJoin(#"Removed Other Columns", {"user_sys_id"}, sys_users_all, {"sys_id"}, "sys_users_all", JoinKind.LeftOuter),
+				    #"Expanded sys_users_all1" = Table.ExpandTableColumn(#"Merged Queries2", "sys_users_all", {"final_user_name"}, {"final_user_name"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded sys_users_all1",{{"final_user_name", "User ID Final"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

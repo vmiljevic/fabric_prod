@@ -1,0 +1,177 @@
+table 'Date Table Main'
+	lineageTag: c88758da-ccfd-4926-9236-873eb8b6b094
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9ab26b14-82b6-471b-9432-6bd50785ca93
+		summarizeBy: none
+		sourceColumn: Month Date
+		sortByColumn: 'Month Number'
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Month Service'
+		dataType: string
+		lineageTag: dbe777fc-dd63-40ed-85b5-c543e6322de6
+		summarizeBy: none
+		sourceColumn: Month Service
+		sortByColumn: 'Month Number'
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 449b4331-e01a-48c6-a384-c93fbeba4fbc
+		summarizeBy: sum
+		sourceColumn: Month Number
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name Short'
+		dataType: string
+		lineageTag: 70428a1c-d8ca-4afa-ab89-ada891c5c1da
+		summarizeBy: none
+		sourceColumn: Month Name Short
+		sortByColumn: 'Month Number Short'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: 5a924bc1-23cb-4ff6-90b0-fe761076de5d
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Current Month'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5f7a9bf1-225f-4802-9f15-e16381e90cce
+		summarizeBy: none
+		sourceColumn: Is Current Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Current Year'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9149780a-d0a7-4283-8d62-dddc349fff25
+		summarizeBy: none
+		sourceColumn: Is Current Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter = "Q" & FORMAT(QUARTER('Date Table Main'[Month Date]), "0")
+		lineageTag: c2c694f8-3290-4f14-9a5a-b523b7e416a4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number Short'
+		dataType: int64
+		formatString: 0
+		lineageTag: 63866f1a-e030-43a8-8041-751b2b871c10
+		summarizeBy: sum
+		sourceColumn: Month Number Short
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Previous Month'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a077d147-8c52-4f91-b857-b034ed2145e8
+		summarizeBy: none
+		sourceColumn: Is Previous Month
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Y-Q-M Hierarchy'
+		lineageTag: cff936c8-27cd-445e-ba7c-150d3a0c13f6
+
+		level Y
+			lineageTag: 2fda218c-a436-45cc-83f1-2b4d6f8df9c6
+			column: Year
+
+		level Q
+			lineageTag: 8cd2963e-b3b8-4be5-b86f-e29138b6713e
+			column: Quarter
+
+		level M
+			lineageTag: 02ce0787-63f0-4620-bc88-8c0f64827478
+			column: 'Month Name Short'
+
+	hierarchy 'Y-M Hierarchy'
+		lineageTag: 93b75577-778b-499b-bbea-532d0dcc9e70
+
+		level Y
+			lineageTag: caa3d261-5377-446e-9329-f5ce9c876274
+			column: Year
+
+		level M
+			lineageTag: 87c9d5fd-2c39-4564-8385-35bd404f3c74
+			column: 'Month Name Short'
+
+	partition 'Date Table Main' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    StartDate = Date.FromText("2016-06-01"),
+				    EndDate = Date.FromText("2028-12-31"),
+				    InsertDates = List.Generate(
+				() => StartDate,
+				each _ <= EndDate,
+				each Date.AddMonths (_,1)
+				),
+				    #"Converted to Table" = Table.FromList(InsertDates, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "MonthDate"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"MonthDate", type date}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Month Service", each Date.ToText([MonthDate],"MMM","en-US") & " " &Date.ToText([MonthDate],"yyyy","en-US")),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Custom",{{"MonthDate", "Month Date"}}),
+				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns1", "Month Number", each Number.FromText((Date.ToText([Month Date],"yy")&Date.ToText([Month Date],"MM")))),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Month Name Short", each Date.ToText([Month Date],"MMM","en-US")),
+				    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "Year", each Date.ToText ([Month Date],"yyyy")),
+				    #"Added Custom4" = Table.AddColumn(#"Added Custom3", "Is Current Month", each Number.FromText((Date.ToText(DateTime.Date(DateTime.LocalNow()),"yy")&Date.ToText(DateTime.Date(DateTime.LocalNow()),"MM"))) = [Month Number]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom4",{{"Is Current Month", type logical}, {"Month Service", type text}}),
+				    #"Added Custom5" = Table.AddColumn(#"Changed Type1", "Is Current Year", each (Date.ToText(DateTime.Date(DateTime.LocalNow()),"yyyy"))= [Year]),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom5",{{"Is Current Year", type logical}}),
+				    #"Added Custom6" = Table.AddColumn(#"Changed Type2", "Month Number Short", each Number.FromText(Date.ToText([Month Date],"MM"))),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom6",{{"Month Number", Int64.Type}, {"Month Number Short", Int64.Type}}),
+				    #"Added Custom7" = Table.AddColumn(#"Changed Type3", "Is Previous Month", each Number.FromText((Date.ToText(DateTime.Date(DateTime.LocalNow()),"yy")&Date.ToText(DateTime.Date(DateTime.LocalNow()),"MM")))-1 = [Month Number]),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Added Custom7",{{"Is Previous Month", type logical}})
+				in
+				    #"Changed Type4"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,246 @@
+table 'Cost Centers'
+	lineageTag: b50016fa-fe88-4b3d-8d3a-4c03fc64dd4d
+
+	column 'Controlling Area'
+		dataType: string
+		lineageTag: 7ab2afc8-5f61-4102-9464-ab406b05276a
+		summarizeBy: none
+		sourceColumn: Controlling Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: da851d2b-029f-4f91-b112-a3e9ee09cf92
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 225a5854-9185-480b-87af-3a1589ea7bf5
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Valid To'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5af447e2-4a33-4e98-8bb4-fffaf3a9c818
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Name
+		dataType: string
+		lineageTag: 1a5564e6-de89-4d2e-8c39-f0d45241193f
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: dcb0c1bf-4e1f-4c23-a8aa-4d057cfeeec1
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Responsible'
+		dataType: string
+		lineageTag: f01d52f3-6fc5-4e4e-aafe-48d6ae43afc2
+		summarizeBy: none
+		sourceColumn: User Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsible 1 Level'
+		dataType: string
+		lineageTag: feb7636c-b870-4271-9019-b61408a4a15e
+		summarizeBy: none
+		sourceColumn: Responsible 1 Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsible 3 Level'
+		dataType: string
+		lineageTag: fe736a25-c48c-4401-95f4-d98804304eec
+		summarizeBy: none
+		sourceColumn: Responsible 3 Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Category'
+		dataType: string
+		lineageTag: c815f588-8c76-41dd-b663-0d047c346584
+		summarizeBy: none
+		sourceColumn: Cost Center Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hierarchy Area'
+		dataType: string
+		lineageTag: 9355173c-4fcf-4004-9f66-15602766d56f
+		summarizeBy: none
+		sourceColumn: Hierarchy Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: b9cdaf9e-0bdb-4850-9e12-992b78290de4
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card'
+		dataType: string
+		lineageTag: fac38086-7640-4e8a-9fc5-d516a45df088
+		summarizeBy: none
+		sourceColumn: Rate Card
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoicing Method'
+		dataType: string
+		lineageTag: 70025cb4-ef8b-465c-ad2f-ce7215f2e7be
+		summarizeBy: none
+		sourceColumn: Invoicing Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Area'
+		dataType: string
+		lineageTag: d891d404-902a-462a-a8d3-98947ba10671
+		summarizeBy: none
+		sourceColumn: Business Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column1
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d403429-1e30-459f-8156-767212125fbc
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: 3982af5f-e75e-48c0-be4c-ed3049ea2fb2
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name 1'
+		dataType: string
+		lineageTag: 50d1bede-fd66-4c23-a4c0-a81a3595b434
+		summarizeBy: none
+		sourceColumn: Name 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name 2'
+		dataType: string
+		lineageTag: 247419e3-4136-4b87-a7f0-bb88ce324997
+		summarizeBy: none
+		sourceColumn: Name 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name 3'
+		dataType: string
+		lineageTag: 102d142c-a0a9-48e5-942f-08ad8153bec4
+		summarizeBy: none
+		sourceColumn: Name 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name 4'
+		dataType: string
+		lineageTag: 293b9e69-3407-4d74-be46-43f9ce596677
+		summarizeBy: none
+		sourceColumn: Name 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allianz TOM Core Cost Center'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d6e314c-893e-43d0-844a-c4ca816b8cea
+		summarizeBy: sum
+		sourceColumn: Allianz TOM Core Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allianz TOM Actual Location'
+		dataType: int64
+		formatString: 0
+		lineageTag: ce89affd-89b4-4bc8-9949-017d258cabbe
+		summarizeBy: sum
+		sourceColumn: Allianz TOM Actual Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 01ae8f54-cbb1-4b4a-8510-e032ccb23cb7
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 390e2c43-9b66-4565-966d-9618ea2151a8
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Number and Name'
+		dataType: string
+		lineageTag: ff26d836-b95b-4e55-9204-2de56ad40c8c
+		summarizeBy: none
+		sourceColumn: Cost Center Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsible 2 Level'
+		dataType: string
+		lineageTag: 940ecd25-4916-444b-bbf5-780107968235
+		summarizeBy: none
+		sourceColumn: Responsible 2 Level
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cost Centers' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="CostCenters",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Controlling Area", type text}, {"Cost Center", Int64.Type}, {"Valid From", type date}, {"Valid To", type date}, {"Name", type text}, {"Description", type text}, {"User Responsible", type text}, {"Responsible 1 Level", type text}, {"Responsible 2 Level", type text}, {"Responsible 3 Level", type text}, {"Cost Center Category", type text}, {"Hierarchy Area", type text}, {"Company Code", type text}, {"Rate Card", type text}, {"Invoicing Method", type text}, {"Business Area", type any}, {"Column1", Int64.Type}, {"Profit Center", type text}, {"Name 1", type any}, {"Name 2", type any}, {"Name 3", type text}, {"Name 4", type text}, {"Allianz TOM Core Cost Center", Int64.Type}, {"Allianz TOM Actual Location", Int64.Type}, {"City", type any}, {"Department", type text}, {"Actual: Primary Costs (Lock Indicator)", type text}, {"Actual: Secondary Costs (Lock Indicator)", type text}, {"Plan: Primary Costs (Lock Indicator)", type text}, {"Plan: Secondary Costs (Lock Indicator)", type text}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Controlling Area", "Cost Center", "Valid From", "Valid To", "Name", "Description", "User Responsible", "Responsible 1 Level", "Responsible 2 Level", "Responsible 3 Level", "Cost Center Category", "Hierarchy Area", "Company Code", "Rate Card", "Invoicing Method", "Business Area", "Column1", "Profit Center", "Name 1", "Name 2", "Name 3", "Name 4", "Allianz TOM Core Cost Center", "Allianz TOM Actual Location", "City", "Department"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Cost Center", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type1", "Cost Center Number and Name", each [Cost Center] & " - "&[Name])
+				in
+				    #"Added Custom"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

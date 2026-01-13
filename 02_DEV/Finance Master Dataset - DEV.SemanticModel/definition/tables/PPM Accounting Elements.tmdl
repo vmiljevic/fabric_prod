@@ -1,0 +1,104 @@
+table 'PPM Accounting Elements'
+	lineageTag: d131fb1d-259c-4f1a-8384-e229c131bb00
+
+	column 'Project Number'
+		dataType: string
+		lineageTag: b97aa2b0-59e4-476c-810c-6898ef8b9358
+		summarizeBy: none
+		sourceColumn: Project Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Exported For'
+		dataType: string
+		lineageTag: 81dc2ed1-e484-4059-aef9-3137c10ae44f
+		summarizeBy: none
+		sourceColumn: Exported For
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AM Key'
+		dataType: string
+		lineageTag: 6e51a0d4-fe64-4776-98b0-64b85de9181b
+		summarizeBy: none
+		sourceColumn: AM Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Accounting Master'
+		dataType: string
+		lineageTag: 5ea76198-7e17-48e3-810d-25d57c28578f
+		summarizeBy: none
+		sourceColumn: Accounting Master
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element ID'
+		dataType: string
+		lineageTag: 8c19489f-c480-4596-bbe6-082085dcfc59
+		summarizeBy: none
+		sourceColumn: WBS Element ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Approved'
+		dataType: string
+		lineageTag: 575388be-bcf8-4803-939f-0dd0abf5f07b
+		summarizeBy: none
+		sourceColumn: SAP Approved
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Expense Type'
+		dataType: string
+		lineageTag: d0987095-f6b1-4767-9dc7-0bc64f2f8c0a
+		summarizeBy: none
+		sourceColumn: Expense Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Accounting Element'
+		dataType: string
+		lineageTag: cd53bb78-f03c-4c72-aaa7-71932d329625
+		summarizeBy: none
+		sourceColumn: Accounting Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExportFor
+		dataType: string
+		lineageTag: 828b9381-d3e0-4194-b70d-b72447bde21b
+		summarizeBy: none
+		sourceColumn: ExportFor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PPM Accounting Elements' = m
+		mode: import
+		queryGroup: 04_PPM
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"bd777a6f-f8b4-4d15-bcad-2edf46657ec3" = Workspaces{[workspaceId="bd777a6f-f8b4-4d15-bcad-2edf46657ec3"]}[Data],
+				    #"64bf773d-aa10-44ca-88c5-f01597de345a" = #"bd777a6f-f8b4-4d15-bcad-2edf46657ec3"{[dataflowId="64bf773d-aa10-44ca-88c5-f01597de345a"]}[Data],
+				    u_ppm_accounting_element_ = #"64bf773d-aa10-44ca-88c5-f01597de345a"{[entity="u_ppm_accounting_element",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(u_ppm_accounting_element_,{{"u_wbs_element_id", "WBS Element ID"}, {"u_name", "Accounting Element"}, {"accounting_master", "Accounting Master"}, {"u_element_approved", "SAP Approved"}, {"u_expense_type", "Expense Type"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"WBS Element ID", type text}, {"Accounting Element", type text}, {"Accounting Master", type text}, {"SAP Approved", type text}, {"Expense Type", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Project Number", each Text.End([Accounting Master],10)),
+				    #"Filtered Rows" = Table.SelectRows(#"Added Custom", each ([Expense Type] = "Capex")),
+				    #"Removed Duplicates" = Table.Distinct(#"Filtered Rows", {"Expense Type", "Project Number"}),
+				    #"Appended Query" = Table.Combine({#"Removed Duplicates", #"PPM Accounting Elements HU44"}),
+				    #"Appended Query1" = Table.Combine({#"Appended Query", #"PPM Accounting Elements SK45"}),
+				    #"Appended Query2" = Table.Combine({#"Appended Query1", #"PPM Accounting Elements SK44"}),
+				    #"Appended Query3" = Table.Combine({#"Appended Query2", #"PPM Accounting Elements CZ45"}),
+				    #"Appended Query4" = Table.Combine({#"Appended Query3", #"PPM Accounting Elements DE44"}),
+				    #"Added Custom1" = Table.AddColumn(#"Appended Query4", "Exported For", each Text.Middle([WBS Element ID],0,4)),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "AM Key", each [Project Number] & [Exported For])
+				in
+				    #"Added Custom2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

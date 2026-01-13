@@ -1,0 +1,107 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "a98765a7-95fc-ad7e-4341-672e7481145a",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "AT45",
+              "type": "string"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "string"
+            },
+            "DateFrom": {
+              "value": "2023-12-31",
+              "type": "string"
+            },
+            "DateTo": {
+              "value": "2025-12-28",
+              "type": "string"
+            },
+            "OrganizationalEntity": {
+              "value": "2000009339 Allianz Technology GmbH",
+              "type": "string"
+            },
+            "time_cards_table": {
+              "value": "2023_at45_time_cards",
+              "type": "string"
+            },
+            "extrernal_rate_cards_table": {
+              "value": "2023_at45_extrernal_rate_cards",
+              "type": "string"
+            },
+            "pm_projects_table": {
+              "value": "2023_at45_pm_projects",
+              "type": "string"
+            },
+            "u_ppm_accounting_element_table": {
+              "value": "2023_at45_u_ppm_accounting_element",
+              "type": "string"
+            },
+            "time_card_interface_table": {
+              "value": "2023_at45_time_card_interface",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "PPM-AT45",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "9ef07389-6fe4-9c63-4858-ba5911b015a2",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "type": "string"
+            },
+            "NumberOfRecords": {
+              "type": "string"
+            },
+            "DateOn": {
+              "type": "string"
+            },
+            "OrganizationalEntity": {
+              "type": "string"
+            },
+            "time_cards_table": {
+              "type": "string"
+            },
+            "pm_projects_table": {
+              "type": "string"
+            },
+            "u_ppm_accounting_element_table": {
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "PPM-AT45_copy1",
+        "dependsOn": []
+      }
+    ]
+  }
+}

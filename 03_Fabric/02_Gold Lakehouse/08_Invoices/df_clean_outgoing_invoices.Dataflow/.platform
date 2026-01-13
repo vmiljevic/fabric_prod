@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_clean_outgoing_invoices"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8d25ee03-c101-9a50-4bdc-2a4ff2813e80"
+  }
+}

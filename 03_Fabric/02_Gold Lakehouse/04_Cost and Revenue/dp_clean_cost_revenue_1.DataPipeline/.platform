@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "dp_clean_cost_revenue_1",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b82ed0f1-f9aa-85a8-473b-ee3b82fbf60c"
+  }
+}

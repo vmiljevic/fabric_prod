@@ -1,0 +1,36 @@
+table 'Special User Right'
+	lineageTag: fd920b00-62cf-41a3-85b1-bab5479dd327
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: a4e3de9b-fdb4-48c5-8f42-93be04e71bb1
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column Emails
+		dataType: string
+		lineageTag: e7cf2a8c-64f2-4578-8562-396e00b82849
+		summarizeBy: none
+		sourceColumn: Emails
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Special User Right' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="SpecialUserRights",Kind="Table"]}[Data],
+				    #"Grouped Rows" = Table.Group(GradeandProficiencyLevels_Table, {"Cost Center"}, {{"Emails", each Text.Combine([User Email],";"), type text}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Grouped Rows",{{"Cost Center", type text}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed Type1",{{"Emails", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,60 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_combine_ppm_1",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "dim_ppm_sys_users": {
+      "queryId": "9188cd52-ffeb-42a2-a136-56c0fcdede99",
+      "queryName": "dim_ppm_sys_users",
+      "loadEnabled": false
+    },
+    "dim_ppm_project": {
+      "queryId": "151f99a4-68d9-4001-b013-6fa61e687318",
+      "queryName": "dim_ppm_project",
+      "loadEnabled": false
+    },
+    "dim_ppm_project_DataDestination": {
+      "queryId": "65e451bf-2015-4cc8-8b5b-62778e1f70d7",
+      "queryName": "dim_ppm_project_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_ppm_accounting_element": {
+      "queryId": "032cb70e-2b60-497c-abe3-f7a76b8b08b1",
+      "queryName": "dim_ppm_accounting_element",
+      "loadEnabled": false
+    },
+    "dim_ppm_external_rate_cards": {
+      "queryId": "2979d22b-60ee-4891-a8e7-933b935ac41f",
+      "queryName": "dim_ppm_external_rate_cards",
+      "loadEnabled": false
+    },
+    "dim_ppm_accounting_element_DataDestination": {
+      "queryId": "279bd0e1-1eee-43a3-b94a-2503b3e461b8",
+      "queryName": "dim_ppm_accounting_element_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_ppm_sys_users_DataDestination": {
+      "queryId": "5eee48fd-c05b-4be4-b8bf-5ef8debbd770",
+      "queryName": "dim_ppm_sys_users_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_ppm_external_rate_cards_DataDestination": {
+      "queryId": "f667d34f-2b1e-4e43-9f80-760654f3cd9a",
+      "queryName": "dim_ppm_external_rate_cards_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

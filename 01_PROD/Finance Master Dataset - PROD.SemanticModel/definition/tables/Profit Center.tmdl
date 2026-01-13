@@ -1,0 +1,210 @@
+table 'Profit Center'
+	lineageTag: c4a4c058-f18c-4cb2-a321-b24ac76d1fa1
+
+	column 'Profit center'
+		dataType: string
+		lineageTag: ca7bc5b5-79c9-404f-bbb0-fc4ada52cba0
+		summarizeBy: none
+		sourceColumn: Profit center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: string
+		lineageTag: 09a26914-9ad4-4f77-9d33-8dc3b3451672
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: string
+		lineageTag: c557d190-44d2-4a4a-bf93-64ae1a24b970
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Person Responsible'
+		dataType: string
+		lineageTag: d3ba4db5-089d-4512-ac95-58c32e319c43
+		summarizeBy: none
+		sourceColumn: Person Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lock Indicator'
+		dataType: string
+		lineageTag: 6eff1fb9-d18a-4dbc-aee0-7c6efb3a1e59
+		summarizeBy: none
+		sourceColumn: Lock Indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pillar
+		dataType: string
+		lineageTag: 48450684-de5a-497d-989d-8ef3704747f5
+		summarizeBy: none
+		sourceColumn: Pillar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Category'
+		dataType: string
+		lineageTag: 7de96919-aff5-4082-8b77-d7832eaf4b11
+		summarizeBy: none
+		sourceColumn: Profit Center Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		lineageTag: 2cdc67fd-0200-4e6b-842a-7a5af5d454c3
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 5174e90a-7d22-4507-8567-683d2a7e6a3d
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status (Profit Cente'
+		dataType: string
+		lineageTag: 47209448-bc01-4154-8298-86ed25a2c3ed
+		summarizeBy: none
+		sourceColumn: Status (Profit Cente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Investment type'
+		dataType: string
+		lineageTag: f33105e5-b4a6-4fe1-a04c-ff3f1b498a9e
+		summarizeBy: none
+		sourceColumn: Investment type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Portfolio
+		dataType: string
+		lineageTag: edec6b4b-451b-4519-b3dc-1c0984ac81d3
+		summarizeBy: none
+		sourceColumn: Portfolio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Program cluster'
+		dataType: string
+		lineageTag: c3ffa149-bbed-4f1b-9949-20af76af6912
+		summarizeBy: none
+		sourceColumn: Program cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Program
+		dataType: string
+		lineageTag: e41a338c-210b-4335-a669-b5bcfd2c2459
+		summarizeBy: none
+		sourceColumn: Program
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Landscape'
+		dataType: string
+		lineageTag: 663a72e2-547a-4790-9d98-75b31785ba69
+		summarizeBy: none
+		sourceColumn: Service Landscape
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Class'
+		dataType: string
+		lineageTag: cd19e3aa-c0c2-4194-8e95-32c91d48bce3
+		summarizeBy: none
+		sourceColumn: Service Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Package'
+		dataType: string
+		lineageTag: 55443ca4-797a-49c8-a860-5469bae3f003
+		summarizeBy: none
+		sourceColumn: Service Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Refresh Time'
+		dataType: string
+		lineageTag: 9bea4ebc-5e18-40cf-9f80-a475ff6a379a
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: c908dc08-6870-4bc5-8ce4-b4ea3a3fcf19
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column16
+		dataType: string
+		lineageTag: cf648041-9f8c-44f6-b33f-b77507521bb8
+		summarizeBy: none
+		sourceColumn: Column16
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column18
+		dataType: string
+		lineageTag: 9d554114-f320-43d3-bb1d-0b689731748a
+		summarizeBy: none
+		sourceColumn: Column18
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column20
+		dataType: string
+		lineageTag: 007b73c9-e2a6-4a18-9af9-f4f900d0634d
+		summarizeBy: none
+		sourceColumn: Column20
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column22
+		dataType: string
+		lineageTag: e3a47f8f-4d0b-4554-b199-905f12d79c41
+		summarizeBy: none
+		sourceColumn: Column22
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column24
+		dataType: string
+		lineageTag: a7c25ad4-31a5-4c12-8bb6-6cbe30d63540
+		summarizeBy: none
+		sourceColumn: Column24
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Profit Center' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/SAP/Master%20Data%20Reporting%20SAP_PC.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers2" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

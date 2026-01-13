@@ -1,0 +1,174 @@
+table dim_date
+	lineageTag: 5b31c8e1-8249-4bf6-8f75-a283c3bb7ba4
+	sourceLineageTag: [dbo].[dim_date]
+	dataCategory: Time
+
+	measure Measure
+		lineageTag: 3ff56b01-226a-452b-8216-ed05af237fd3
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: e71cfb6c-498a-4ee4-ac51-e559c31c7345
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: e3eb90be-8794-4383-97cd-28ab3f728b8b
+		sourceLineageTag: Quarter Number
+		summarizeBy: sum
+		sourceColumn: Quarter Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Name'
+		dataType: string
+		lineageTag: 4571098d-8188-4a64-ac63-ab5d38041a3d
+		sourceLineageTag: Quarter Name
+		summarizeBy: none
+		sourceColumn: Quarter Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number Short'
+		dataType: int64
+		formatString: 0
+		lineageTag: 26165583-6c33-4452-a3ab-9693d197aa42
+		sourceLineageTag: Month Number Short
+		summarizeBy: sum
+		sourceColumn: Month Number Short
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name Short'
+		dataType: string
+		lineageTag: b07ba2ca-c85b-4a79-a603-1fdf3e3e51d1
+		sourceLineageTag: Month Name Short
+		summarizeBy: none
+		sourceColumn: Month Name Short
+		sortByColumn: 'Month Number'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Service'
+		dataType: string
+		lineageTag: cbddcf50-349a-4532-8abb-59a5d3cd837c
+		sourceLineageTag: Month Service
+		summarizeBy: none
+		sourceColumn: Month Service
+		sortByColumn: Date
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bc1a41d-5d2b-4caa-bb59-0e6d8ed1fa0f
+		sourceLineageTag: Month Number
+		summarizeBy: sum
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bda5a584-3452-497e-a41e-26a545ca05ca
+		sourceLineageTag: Month Date
+		summarizeBy: none
+		sourceColumn: Month Date
+		sortByColumn: 'Month Number Short'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Current Month'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b894154b-7bc3-4ae4-b7a8-7aae9024fcc6
+		sourceLineageTag: Is Current Month
+		summarizeBy: none
+		sourceColumn: Is Current Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Previous Month'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5c612648-eea2-4b25-b5c0-d1ddcd0400c5
+		sourceLineageTag: Is Previous Month
+		summarizeBy: none
+		sourceColumn: Is Previous Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Current Year'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 24b781d7-5de3-4d0c-96ae-a975405c4fee
+		sourceLineageTag: Is Current Year
+		summarizeBy: none
+		sourceColumn: Is Current Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: General Date
+		lineageTag: 6ebcff61-1a56-440b-a091-27249463b579
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Y-M Hierarchy'
+		lineageTag: f5d48e7f-d29b-4d18-a84d-5630cc098b01
+
+		level Y
+			lineageTag: 06449e69-aa7e-4c1f-afc5-d67eb3271481
+			column: Year
+
+		level M
+			lineageTag: b4bb10a4-0510-4d19-9548-a2244b0501d1
+			column: 'Month Name Short'
+
+		changedProperty = Name
+
+	hierarchy 'Y-Q-M Hierarchy'
+		lineageTag: 39857bfd-9956-4c9c-97f6-bff03a43fa91
+
+		level Y
+			lineageTag: 8d3311d2-a9e5-4067-8ea8-cc17beab332c
+			column: Year
+
+		level Q
+			lineageTag: bf55c4a6-d755-4bd0-84ba-ed324334263c
+			column: 'Quarter Name'
+
+		level M
+			lineageTag: 7f626de7-fd21-4c50-b968-ddd161f2fbea
+			column: 'Month Name Short'
+
+		changedProperty = Name
+
+	partition dim_date = entity
+		mode: directLake
+		source
+			entityName: dim_date
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

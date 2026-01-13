@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "dp_clean_o2i_pre_run_1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e10e1c21-0716-82f5-47cb-cae755b9e3d5"
+  }
+}

@@ -1,0 +1,409 @@
+table fact_budget_demand
+	lineageTag: f5acc0df-4a63-4400-9fa7-5714c0135e61
+	sourceLineageTag: [dbo].[fact_budget_demand]
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 51ea8949-2bbe-4784-b590-e83c64a794e0
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pillar
+		dataType: string
+		lineageTag: 91081371-2b93-4f92-9368-30de600cbb5c
+		sourceLineageTag: Pillar
+		summarizeBy: none
+		sourceColumn: Pillar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: cafb8ad2-c213-4478-993b-cb1259efeaeb
+		sourceLineageTag: Profit Center
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		lineageTag: 17cd3044-70ac-4f0e-b194-99dfeb1b1ef7
+		sourceLineageTag: Profit Center Name
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: 8819499b-376d-417d-8e3f-4e775962e42a
+		sourceLineageTag: Order Type
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type Name'
+		dataType: string
+		lineageTag: 4f9638a3-342a-4681-8666-8aab349528cd
+		sourceLineageTag: Order Type Name
+		summarizeBy: none
+		sourceColumn: Order Type Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: string
+		lineageTag: 98ef1651-2c4e-4de0-9fde-68556c592ac5
+		sourceLineageTag: Order
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Demand ID'
+		dataType: string
+		lineageTag: f7d661a6-d96d-43d3-ba12-2fcbfa556bd2
+		sourceLineageTag: Demand ID
+		summarizeBy: none
+		sourceColumn: Demand ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchasing order number PO'
+		dataType: string
+		lineageTag: 046785c8-6e8a-41e8-8329-48d34aae4214
+		sourceLineageTag: Purchasing order number PO
+		summarizeBy: none
+		sourceColumn: Purchasing order number PO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan ID MM PO'
+		dataType: string
+		lineageTag: 2d65674b-2b16-49f7-b8a3-e165209863de
+		sourceLineageTag: Plan ID MM PO
+		summarizeBy: none
+		sourceColumn: Plan ID MM PO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CO Doc Line Item Txt'
+		dataType: string
+		lineageTag: 637bcdb1-7a4b-4027-beeb-162600fb6e15
+		sourceLineageTag: CO Doc Line Item Txt
+		summarizeBy: none
+		sourceColumn: CO Doc Line Item Txt
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor
+		dataType: string
+		lineageTag: 038eda77-61d1-4270-8790-443a1f36d2ff
+		sourceLineageTag: Vendor
+		summarizeBy: none
+		sourceColumn: Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: 4c6f9279-ed37-427e-8b6c-60e9ab140e5d
+		sourceLineageTag: Vendor Name
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Acc_'
+		dataType: string
+		lineageTag: beb3df4f-0fc4-4e5a-9ad5-c3379a3589ee
+		sourceLineageTag: WBS Acc_
+		summarizeBy: none
+		sourceColumn: WBS Acc_
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Name'
+		dataType: string
+		lineageTag: fac143b5-4b45-4021-ab3c-2dd053efc27f
+		sourceLineageTag: WBS Name
+		summarizeBy: none
+		sourceColumn: WBS Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal year'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fa8005ba-a708-4115-843d-ed817d244385
+		sourceLineageTag: Fiscal year
+		summarizeBy: none
+		sourceColumn: Fiscal year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Approved'
+		dataType: double
+		lineageTag: fb6bec9c-59b3-476e-ac2b-9561254ee399
+		sourceLineageTag: Budget Approved
+		summarizeBy: sum
+		sourceColumn: Budget Approved
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual CO Order'
+		dataType: double
+		lineageTag: 8ca30669-25d5-4773-a65d-dc0a333039a7
+		sourceLineageTag: Actual CO Order
+		summarizeBy: sum
+		sourceColumn: Actual CO Order
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Commitment Total'
+		dataType: double
+		lineageTag: e5256922-6cde-47c7-9140-8395bcd6a518
+		sourceLineageTag: Commitment Total
+		summarizeBy: sum
+		sourceColumn: Commitment Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Commitment P.Requisition'
+		dataType: double
+		lineageTag: 28deaf30-7f1f-48d7-8c88-168bd3c5f042
+		sourceLineageTag: Commitment P.Requisition
+		summarizeBy: sum
+		sourceColumn: Commitment P.Requisition
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Commitment P.Order'
+		dataType: double
+		lineageTag: 411893e0-b0e1-483a-bf31-9caf182f7954
+		sourceLineageTag: Commitment P.Order
+		summarizeBy: sum
+		sourceColumn: Commitment P.Order
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual Alloted'
+		dataType: double
+		lineageTag: a4289764-b282-47ca-b9c6-f1161cc49432
+		sourceLineageTag: Actual Alloted
+		summarizeBy: sum
+		sourceColumn: Actual Alloted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Available'
+		dataType: double
+		lineageTag: 6b1ce31f-fb74-445c-a0f7-1b507ed4fcc9
+		sourceLineageTag: Budget Available
+		summarizeBy: sum
+		sourceColumn: Budget Available
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Demandbook Cash Out Total inc. VAT'
+		dataType: double
+		lineageTag: 2c16d7e8-3729-4ee1-ad72-72223f1e0cfb
+		sourceLineageTag: Demandbook Cash Out Total inc. VAT
+		summarizeBy: sum
+		sourceColumn: Demandbook Cash Out Total inc. VAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Demandbook Cash Out BudgetYear inc. VAT'
+		dataType: double
+		lineageTag: d0be3577-3b9e-4405-94e3-8201cd0fbf94
+		sourceLineageTag: Demandbook Cash Out BudgetYear inc. VAT
+		summarizeBy: sum
+		sourceColumn: Demandbook Cash Out BudgetYear inc. VAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Demandbook Cost effective BudgetYear inc. VAT'
+		dataType: double
+		lineageTag: 6470649e-2c19-43d2-9ee9-8879b39ae20c
+		sourceLineageTag: Demandbook Cost effective BudgetYear inc. VAT
+		summarizeBy: sum
+		sourceColumn: Demandbook Cost effective BudgetYear inc. VAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cash Out Planning Year Net'
+		dataType: double
+		lineageTag: 185c351b-4b99-43e7-ab8b-eef0ff9b010b
+		sourceLineageTag: Cash Out Planning Year Net
+		summarizeBy: sum
+		sourceColumn: Cash Out Planning Year Net
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cash Out Plan Year Gross'
+		dataType: double
+		lineageTag: ab726f69-c3c2-4e07-a9e9-a8a9d3b4ad11
+		sourceLineageTag: Cash Out Plan Year Gross
+		summarizeBy: sum
+		sourceColumn: Cash Out Plan Year Gross
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net purchase order value PR - All'
+		dataType: double
+		lineageTag: 79095763-8142-40c3-898b-e59caef60258
+		sourceLineageTag: Net purchase order value PR - All
+		summarizeBy: sum
+		sourceColumn: Net purchase order value PR - All
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net purchase order value PR - New without PO'
+		dataType: double
+		lineageTag: bdd7fef7-5cdf-4efb-a142-39b7c3aec848
+		sourceLineageTag: Net purchase order value PR - New without PO
+		summarizeBy: sum
+		sourceColumn: Net purchase order value PR - New without PO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net purchase order value PO'
+		dataType: double
+		lineageTag: c2c0cd74-3695-40b1-9416-2427b40e88c8
+		sourceLineageTag: Net purchase order value PO
+		summarizeBy: sum
+		sourceColumn: Net purchase order value PO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net purchase order value PO+PR new'
+		dataType: double
+		lineageTag: 8bffbccd-87ca-4b5b-94c6-589dd221bea0
+		sourceLineageTag: Net purchase order value PO+PR new
+		summarizeBy: sum
+		sourceColumn: Net purchase order value PO+PR new
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget remaining Cash out Total'
+		dataType: double
+		lineageTag: 563ebadd-57fe-4305-b92a-4942e034ffda
+		sourceLineageTag: Budget remaining Cash out Total
+		summarizeBy: sum
+		sourceColumn: Budget remaining Cash out Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'File Name'
+		dataType: string
+		lineageTag: f03d11b9-4329-41c8-a30d-9605e3ada2fd
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5c590d56-1ddc-46a5-b76c-31a31b7dfbe9
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column KeyDemandPO
+		dataType: string
+		lineageTag: b643eba7-42d4-4489-a2e9-d23efe9f8541
+		sourceLineageTag: KeyDemandPO
+		summarizeBy: none
+		sourceColumn: KeyDemandPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Spent'
+		dataType: double
+		lineageTag: ee61f979-537d-4301-8426-425a18e5e228
+		sourceLineageTag: Budget Spent
+		summarizeBy: sum
+		sourceColumn: Budget Spent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Profit Center and Name'
+		dataType: string
+		lineageTag: 28745e2f-df08-48ca-9ad6-e7314328e80e
+		sourceLineageTag: Profit Center and Name
+		summarizeBy: none
+		sourceColumn: Profit Center and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Number and Name'
+		dataType: string
+		lineageTag: c7907329-d0af-4fa3-8509-c7bbbe134dc4
+		sourceLineageTag: Vendor Number and Name
+		summarizeBy: none
+		sourceColumn: Vendor Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Number and Name'
+		dataType: string
+		lineageTag: 3d9bfaf5-d3a6-406f-9f12-8a1afdddb668
+		sourceLineageTag: WBS Number and Name
+		summarizeBy: none
+		sourceColumn: WBS Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_budget_demand = entity
+		mode: directLake
+		source
+			entityName: fact_budget_demand
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

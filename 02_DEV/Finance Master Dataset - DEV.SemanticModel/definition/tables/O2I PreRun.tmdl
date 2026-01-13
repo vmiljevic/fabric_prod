@@ -1,0 +1,512 @@
+table 'O2I PreRun'
+	lineageTag: a7f0c490-6ac0-44ca-8803-f34e4957f74b
+
+	column 'SAP Refresh Time'
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: f2ea6c20-c6a2-4a70-80ad-c14dbaade2b3
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Account Assigned To'
+		dataType: string
+		lineageTag: 35a95c30-1903-4ae4-b556-43a8ea02dfd8
+		summarizeBy: none
+		sourceColumn: Account Assigned To
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booking text SNow'
+		dataType: string
+		lineageTag: 79f88930-c77d-49f2-9720-a5e2b749e5e4
+		summarizeBy: none
+		sourceColumn: Booking text SNow
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cal. Year/Month of Load'
+		dataType: string
+		lineageTag: 661551cd-7fe8-4031-b631-f7fac9f44188
+		summarizeBy: none
+		sourceColumn: Cal. Year/Month of Load
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Charging Type'
+		dataType: string
+		lineageTag: 91deb765-b622-4606-ad3a-ed6f0207dcf8
+		summarizeBy: none
+		sourceColumn: Charging Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consumption Key'
+		dataType: string
+		lineageTag: 34c484e7-e1b3-41e2-a143-e51b36d6fce8
+		summarizeBy: none
+		sourceColumn: Consumption Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 48e6ca1a-5cdb-4e61-a2b2-1d53c68ab665
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Orig. (Service Now)'
+		dataType: string
+		lineageTag: 9fa5c1f0-b7f8-4f30-9c94-7df3a9d9b8a3
+		summarizeBy: none
+		sourceColumn: Cost Center Orig. (Service Now)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Tag'
+		dataType: string
+		lineageTag: 5b167bfa-ac04-41ff-91ea-afd9ef6880f5
+		summarizeBy: none
+		sourceColumn: Customer Tag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debitor Original (Service Now)'
+		dataType: string
+		lineageTag: a9e7993e-cac5-486f-b208-12db1ad11eda
+		summarizeBy: none
+		sourceColumn: Debitor Original (Service Now)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feeder Item ID'
+		dataType: string
+		lineageTag: 529c567e-28c6-415f-93b8-38ed64f625ac
+		summarizeBy: none
+		sourceColumn: Feeder Item ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feeder System'
+		dataType: string
+		lineageTag: a7e6ea2d-c8c5-4c01-b160-ce1c3664e23e
+		summarizeBy: none
+		sourceColumn: Feeder System
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feeder User Name'
+		dataType: string
+		lineageTag: 39166ce3-e21e-44c7-8629-066acec3b6fd
+		summarizeBy: none
+		sourceColumn: Feeder User Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GIAM ID Assigned To'
+		dataType: string
+		lineageTag: 671e2928-ca1d-47b4-bf61-5d4c3bba3724
+		summarizeBy: none
+		sourceColumn: GIAM ID Assigned To
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GIAM ID Owner'
+		dataType: string
+		lineageTag: f6cfabd1-a403-4ab0-9e92-ef0f4fdaa0a8
+		summarizeBy: none
+		sourceColumn: GIAM ID Owner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load Date'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: 3f602a5b-2144-4a28-918e-98418b9133a1
+		summarizeBy: none
+		sourceColumn: Load Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Material
+		dataType: string
+		lineageTag: a4d621c7-fd76-4ba2-b955-777a475eede3
+		summarizeBy: none
+		sourceColumn: Material
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payer
+		dataType: string
+		lineageTag: 24b39639-7cda-4d50-9c62-99abefe4de58
+		summarizeBy: none
+		sourceColumn: Payer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote ID'
+		dataType: string
+		lineageTag: df8b01c1-ac60-4791-9572-dfbc6bab4471
+		summarizeBy: none
+		sourceColumn: Quote ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organization'
+		dataType: string
+		lineageTag: a5e2db7e-1d6b-423b-840e-54b75cba1945
+		summarizeBy: none
+		sourceColumn: Sales Organization
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aab17d45-fafc-40f4-a16c-893649ae0c6d
+		summarizeBy: none
+		sourceColumn: Service Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Service Instance ID'
+		dataType: string
+		lineageTag: 4cfe7a25-537e-4c0e-b020-425c4fdade42
+		summarizeBy: none
+		sourceColumn: Service Instance ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI Name'
+		dataType: string
+		lineageTag: 5b2f0bd1-62c5-42ba-b628-ec1feccb5b07
+		summarizeBy: none
+		sourceColumn: SI Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI Status'
+		dataType: string
+		lineageTag: ba19618d-9f34-4dd8-95cf-6348902aad3d
+		summarizeBy: none
+		sourceColumn: SI Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Timestamp Load'
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: 96729d51-ef89-470f-9d07-544b1f775602
+		summarizeBy: none
+		sourceColumn: Timestamp Load
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'WBS Elem. Original (Service Now)'
+		dataType: string
+		lineageTag: 2284a3ae-4776-47be-b116-5b6536dcacb0
+		summarizeBy: none
+		sourceColumn: WBS Elem. Original (Service Now)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: 227e612d-3260-48e8-845f-29aa441bece6
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: double
+		lineageTag: 557480d8-e595-415f-a594-5c0e56c07bfc
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Material and Sales Organization'
+		dataType: string
+		lineageTag: 7444f5e4-2096-4596-a9c4-77b2a6fe7026
+		summarizeBy: none
+		sourceColumn: Material and Sales Organization
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price = IF('O2I PreRun'[Include VAT] = "1",RELATED('Group Price List Materials'[Price Inside VAT Group]), RELATED('Group Price List Materials'[Price Outside VAT Group]))
+		formatString: "€"\ #,0.###############;-"€"\ #,0.###############;"€"\ #,0.###############
+		lineageTag: 2d87f25e-8abb-4a20-989a-8328d77509f5
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	column 'Total Amount' = 'O2I PreRun'[Price] * 'O2I PreRun'[Quantity]
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 1434b237-5cc3-40a0-9829-859728e4044a
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Quote ID Link' = IF('O2I PreRun'[Quote ID]<>"#","https://aztech.service-now.com/nav_to.do?uri=%2Fu_csm_quote.do%3Fsysparm_query=number=" & 'O2I PreRun'[Quote ID],"#")
+		lineageTag: a8634263-04f4-41f3-81c4-25ed47161257
+		dataCategory: WebUrl
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Instance ID Link' = IF('O2I PreRun'[Service Instance ID]<>"#","https://aztech.service-now.com/nav_to.do?uri=%2Fu_cmdb_ci_si_billing_plan.do?sysparm_query=u_number%3D" & 'O2I PreRun'[Service Instance ID],"#")
+		lineageTag: bd7b95f0-1d69-46d8-8719-665dfab1a753
+		dataCategory: WebUrl
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debtor Number and Name' = 'O2I PreRun'[Payer]&" - "&'O2I PreRun'[Payer Name]
+		lineageTag: afded766-0672-4887-898d-06f7721bad7a
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: b2f960c0-a479-4308-b244-638bd7f91b74
+		summarizeBy: none
+		sourceColumn: Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExportFor =
+			SWITCH(
+			    TRUE(),
+			    'O2I PreRun'[Type] = "Revenue",'O2I PreRun'[Sales Organization],
+			    AND('O2I PreRun'[Type]="Costs",'O2I PreRun'[Payer]="2000009339"),"AT45",
+			    AND('O2I PreRun'[Type]="Costs",'O2I PreRun'[Payer]="2000010214"),"DE44",
+			    AND('O2I PreRun'[Type]="Costs",'O2I PreRun'[Payer]="2000014578"),"CZ45",
+			    AND('O2I PreRun'[Type]="Costs",'O2I PreRun'[Payer]="2000014674"),"SK45",
+			    AND('O2I PreRun'[Type]="Costs",'O2I PreRun'[Payer]="2000012110"),"SK44",
+			    AND('O2I PreRun'[Type]="Costs",'O2I PreRun'[Payer]="2000012274"),"HU44",
+			    "N/A"
+			)
+		lineageTag: 1afdce11-fd4d-40b4-b0f7-850fdae774b0
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status = if (NOT(ISBLANK(RELATED('O2I PreRun Errors'[CAP Error Message]))),"Not Processed - Error found","Processed")
+		lineageTag: d7204671-8447-4ccb-9701-571d092920ed
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote Line ID'
+		dataType: string
+		lineageTag: 3134c0ed-cd7d-4aed-a907-06148369c72b
+		summarizeBy: none
+		sourceColumn: Quote Line ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote Line ID Link' = IF('O2I PreRun'[Quote Line ID]<>"","https://aztech.service-now.com/nav_to.do?uri=%2Fu_csm_quote_line_item.do?sysparm_query=order_line_id%3D" & 'O2I PreRun'[Quote Line ID],"")
+		lineageTag: 3395deb5-22d9-4ccf-8a50-b2805eae50e3
+		dataCategory: WebUrl
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI Status Name' =
+			SWITCH(
+			    TRUE,
+			    'O2I PreRun'[SI Status] = "10","10 - Service Active",
+			    'O2I PreRun'[SI Status] = "9","9 - Service in preparation, Not yet active",
+			    'O2I PreRun'[SI Status] = "7","7 - Service Decommissioned",
+			    'O2I PreRun'[SI Status] = "#","# - Not available",
+			    "# - Not available"
+			)
+		lineageTag: 2fe7e981-4d61-47e3-8038-c85743963451
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Name'
+		dataType: string
+		lineageTag: a658ba8d-4114-4d89-90a3-84dab8c79176
+		summarizeBy: none
+		sourceColumn: Payer Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Country'
+		dataType: string
+		lineageTag: 65dfb347-54de-4079-8d87-cf8e5cc1c7ad
+		summarizeBy: none
+		sourceColumn: Payer Country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Include VAT'
+		dataType: string
+		lineageTag: 454d312d-e20e-477d-b6ea-0ed6fda35154
+		summarizeBy: none
+		sourceColumn: Include VAT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price incl. VAT' = RELATED('Group Price List Materials'[Price Inside VAT Group])
+		formatString: "€"\ #,0.###############;-"€"\ #,0.###############;"€"\ #,0.###############
+		lineageTag: 3fcb36c7-5b7c-41b6-bb8c-a39b0dd99156
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	column 'Total Amount incl. VAT' = 'O2I PreRun'[Price incl. VAT] * 'O2I PreRun'[Quantity]
+		formatString: "€"\ #,0.###############;-"€"\ #,0.###############;"€"\ #,0.###############
+		lineageTag: dbcaa29d-56dd-4478-8983-2362c045ca39
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	partition 'O2I PreRun' = m
+		mode: import
+		queryGroup: '09_PreRun Analysis'
+		source =
+				let
+				    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/", [ApiVersion = 15]),
+				    #"Filtered Rows1" = Table.SelectRows(Source, each ([Folder Path] = "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared Documents/01_Power BI/Data Sources/06_O2C PreRun Analysis/")),
+				    #"Removed Other Columns4" = Table.SelectColumns(#"Filtered Rows1",{"Content", "Name", "Date modified"}),
+				    #"Added Custom1" = Table.AddColumn(#"Removed Other Columns4", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Sheet1")),
+				    #"Expanded Extracted Data2" = Table.ExpandTableColumn(#"Added Custom1", "Extracted Data", {"Data"}, {"Data"}),
+				    #"Removed Other Columns2" = Table.SelectColumns(#"Expanded Extracted Data2",{"Data"}),
+				    #"Expanded Data" = Table.ExpandTableColumn(#"Removed Other Columns2", "Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33", "Column34", "Column35", "Column36", "Column37", "Column38", "Column39", "Column40", "Column41", "Column42", "Column43", "Column44", "Column45", "Column46", "Column47", "Column48"}, {"Data.Column1", "Data.Column2", "Data.Column3", "Data.Column4", "Data.Column5", "Data.Column6", "Data.Column7", "Data.Column8", "Data.Column9", "Data.Column10", "Data.Column11", "Data.Column12", "Data.Column13", "Data.Column14", "Data.Column15", "Data.Column16", "Data.Column17", "Data.Column18", "Data.Column19", "Data.Column20", "Data.Column21", "Data.Column22", "Data.Column23", "Data.Column24", "Data.Column25", "Data.Column26", "Data.Column27", "Data.Column28", "Data.Column29", "Data.Column30", "Data.Column31", "Data.Column32", "Data.Column33", "Data.Column34", "Data.Column35", "Data.Column36", "Data.Column37", "Data.Column38", "Data.Column39", "Data.Column40", "Data.Column41", "Data.Column42", "Data.Column43", "Data.Column44", "Data.Column45", "Data.Column46", "Data.Column47", "Data.Column48"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Expanded Data", [PromoteAllScalars=true]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"Column37", "Column38", "Column39", "Column40", "Column41", "Column42", "Column43", "Column44", "Column45", "Column46", "Column47", "Column48"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([Charging Type] <> "Charging Type")),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Filtered Rows",{"SI Provider", "SI SLA", "SI Location", "Secondary Name", "Product Order ID", "Product Name", "Primary Name", "Owner Account"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns1",{{"Load Date", type date}, {"Service Date", type date}, {"Timestamp Load", type datetime}, {"Quantity", type number}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Material and Sales Organization", each [Sales Organization] &"-"&[Material]),
+				    #"Merged Queries" = Table.NestedJoin(#"Added Custom", {"Payer"}, #"Group Debtors from SAP", {"Payer"}, "Group Debtors", JoinKind.LeftOuter),
+				    #"Expanded Group Debtors" = Table.ExpandTableColumn(#"Merged Queries", "Group Debtors", {"Payer Name", "Country"}, {"Group Debtors.Payer Name", "Group Debtors.Country"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded Group Debtors",{{"Group Debtors.Payer Name", "Payer Name"}, {"Group Debtors.Country", "Payer Country"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns1",{{"SAP Refresh Time", type datetime}}),
+				    #"Added Custom2" = Table.AddColumn(#"Changed Type1", "Type", each "Revenue"),
+				    #"Appended Query" = Table.Combine({#"Added Custom2", #"O2I PreRun Costs"}),
+				    #"Added Custom3" = Table.AddColumn(#"Appended Query", "Quote Line ID", each if Text.StartsWith(Text.End([SI Name],10),"QLN") then Text.End([SI Name],10) else ""),
+				    #"Added Custom4" = Table.AddColumn(#"Added Custom3", "Include VAT", each if Text.Middle([Sales Organization], 0,2) = [Payer Country] then 1 else 0)
+				in
+				    #"Added Custom4"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

@@ -1,0 +1,518 @@
+table dim_organizational_unit_functional
+	lineageTag: 0e62b9eb-3324-45bf-a916-0f404594e37f
+	sourceLineageTag: [dbo].[dim_organizational_unit_functional]
+
+	column 'Org Unit ID Composite'
+		dataType: string
+		lineageTag: 986f9e05-8807-440e-8a49-34c02c2f4657
+		sourceLineageTag: Org Unit ID Composite
+		summarizeBy: none
+		sourceColumn: Org Unit ID Composite
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Org Unit ID Composite'
+		dataType: string
+		lineageTag: 36960810-9600-4c10-8519-1edcd1f3c3f6
+		sourceLineageTag: Parent Org Unit ID Composite
+		summarizeBy: none
+		sourceColumn: Parent Org Unit ID Composite
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit L1'
+		dataType: string
+		lineageTag: b0a2b149-76b4-49f6-97b1-36bde555103b
+		sourceLineageTag: Org Unit L1
+		summarizeBy: none
+		sourceColumn: Org Unit L1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit L2'
+		dataType: string
+		lineageTag: 6cc0cfb8-66ef-465f-8d96-1bc5a51c8182
+		sourceLineageTag: Org Unit L2
+		summarizeBy: none
+		sourceColumn: Org Unit L2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit L3'
+		dataType: string
+		lineageTag: 574e6c56-ee9b-4d52-b3d0-88c17b9d768f
+		sourceLineageTag: Org Unit L3
+		summarizeBy: none
+		sourceColumn: Org Unit L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit L4'
+		dataType: string
+		lineageTag: 73ab8e12-76ec-4a93-9d3e-7cc94a683e90
+		sourceLineageTag: Org Unit L4
+		summarizeBy: none
+		sourceColumn: Org Unit L4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unique_ID
+		dataType: string
+		lineageTag: feafc93c-063c-47f2-b756-fe0132757749
+		sourceLineageTag: Unique_ID
+		summarizeBy: none
+		sourceColumn: Unique_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Month'
+		dataType: string
+		lineageTag: 3c879588-a684-48bf-ab92-c9b28371bd25
+		sourceLineageTag: Service Month
+		summarizeBy: none
+		sourceColumn: Service Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrgPath
+		dataType: string
+		lineageTag: 1fce5f3b-2d3f-4019-a21f-3e4b9995ed3f
+		sourceLineageTag: OrgPath
+		summarizeBy: none
+		sourceColumn: OrgPath
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailPath
+		dataType: string
+		lineageTag: 75fbb3ae-ff87-4fff-bac8-973a6bd75483
+		sourceLineageTag: EmailPath
+		summarizeBy: none
+		sourceColumn: EmailPath
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagerPath
+		dataType: string
+		lineageTag: 73379a10-f5a3-4352-9fa7-045b0f59bef0
+		sourceLineageTag: ManagerPath
+		summarizeBy: none
+		sourceColumn: ManagerPath
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Name Of Manager'
+		dataType: string
+		lineageTag: 06648e65-33be-41d1-b2ed-fbf3dca6bc32
+		sourceLineageTag: First Name Of Manager
+		summarizeBy: none
+		sourceColumn: First Name Of Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Employee ID'
+		dataType: string
+		lineageTag: a6f3a5bf-b346-4e90-aa1d-1ec781728587
+		sourceLineageTag: Manager Employee ID
+		summarizeBy: none
+		sourceColumn: Manager Employee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager email'
+		dataType: string
+		lineageTag: 0c0fb515-05f1-474f-8573-c93fb7ef438c
+		sourceLineageTag: Manager email
+		summarizeBy: none
+		sourceColumn: Manager email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Org Unit ID'
+		dataType: string
+		lineageTag: 2b49b020-05ce-4f03-ad31-9c0ed1f27cdd
+		sourceLineageTag: Parent Org Unit ID
+		summarizeBy: none
+		sourceColumn: Parent Org Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 1f58ce58-eb28-41ac-9371-22da74fa1bcb
+		sourceLineageTag: Cost Center
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OrgUnit type'
+		dataType: string
+		lineageTag: 20ab2936-ac04-412d-8e5d-447474275161
+		sourceLineageTag: OrgUnit type
+		summarizeBy: none
+		sourceColumn: OrgUnit type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Email L8'
+		dataType: string
+		lineageTag: 9f652147-908f-413e-9474-4738a76622ef
+		sourceLineageTag: Manager Email L8
+		summarizeBy: none
+		sourceColumn: Manager Email L8
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager L8'
+		dataType: string
+		lineageTag: 0c22a325-7b1a-4743-b91c-ada5b279a3c5
+		sourceLineageTag: Manager L8
+		summarizeBy: none
+		sourceColumn: Manager L8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Entity
+		dataType: string
+		lineageTag: 69e36538-c76a-4ec6-aacd-3312026e66b3
+		sourceLineageTag: Entity
+		summarizeBy: none
+		sourceColumn: Entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name Of Organizational Unit'
+		dataType: string
+		lineageTag: c11c4b2a-b1e0-429b-988c-fa92361ad870
+		sourceLineageTag: Name Of Organizational Unit
+		summarizeBy: none
+		sourceColumn: Name Of Organizational Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit ID'
+		dataType: string
+		lineageTag: f1ac3ec2-a122-4605-9da9-7d062e233fca
+		sourceLineageTag: Org Unit ID
+		summarizeBy: none
+		sourceColumn: Org Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name Of Manager'
+		dataType: string
+		lineageTag: f0eade4c-82ee-4ab6-a4fc-2eda4bc71f8f
+		sourceLineageTag: Last Name Of Manager
+		summarizeBy: none
+		sourceColumn: Last Name Of Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Email L5'
+		dataType: string
+		lineageTag: 7765bad2-9944-4a48-8658-ebae5f0779b0
+		sourceLineageTag: Manager Email L5
+		summarizeBy: none
+		sourceColumn: Manager Email L5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager L5'
+		dataType: string
+		lineageTag: edefcace-3fee-4f5c-9878-01d20fbc19e1
+		sourceLineageTag: Manager L5
+		summarizeBy: none
+		sourceColumn: Manager L5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Email L6'
+		dataType: string
+		lineageTag: 10563bbf-1062-478d-9329-fbccb1ee41f7
+		sourceLineageTag: Manager Email L6
+		summarizeBy: none
+		sourceColumn: Manager Email L6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager L6'
+		dataType: string
+		lineageTag: 31713adb-c57d-4491-9826-a61f6a22447d
+		sourceLineageTag: Manager L6
+		summarizeBy: none
+		sourceColumn: Manager L6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Email L7'
+		dataType: string
+		lineageTag: 4f698a97-386d-43ed-993b-4ad1a60d7768
+		sourceLineageTag: Manager Email L7
+		summarizeBy: none
+		sourceColumn: Manager Email L7
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager L7'
+		dataType: string
+		lineageTag: 15720ad3-67b9-499e-845a-bee249535eae
+		sourceLineageTag: Manager L7
+		summarizeBy: none
+		sourceColumn: Manager L7
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Email L2'
+		dataType: string
+		lineageTag: 5cb5cde5-49d9-4271-aa64-bc3d3679cf38
+		sourceLineageTag: Manager Email L2
+		summarizeBy: none
+		sourceColumn: Manager Email L2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager L2'
+		dataType: string
+		lineageTag: 75471a6d-696f-45db-ad22-6a00f29e5133
+		sourceLineageTag: Manager L2
+		summarizeBy: none
+		sourceColumn: Manager L2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Email L3'
+		dataType: string
+		lineageTag: e7fab65b-09c6-4f95-961d-a2fca05ab0eb
+		sourceLineageTag: Manager Email L3
+		summarizeBy: none
+		sourceColumn: Manager Email L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager L3'
+		dataType: string
+		lineageTag: fda5efed-00fe-4340-bcca-2f727fb91604
+		sourceLineageTag: Manager L3
+		summarizeBy: none
+		sourceColumn: Manager L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Email L4'
+		dataType: string
+		lineageTag: 56913921-a880-4220-9934-6f1b385e4603
+		sourceLineageTag: Manager Email L4
+		summarizeBy: none
+		sourceColumn: Manager Email L4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager L4'
+		dataType: string
+		lineageTag: e318aa11-7208-438b-9f6c-cd8a0b6c991a
+		sourceLineageTag: Manager L4
+		summarizeBy: none
+		sourceColumn: Manager L4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit L5'
+		dataType: string
+		lineageTag: fbf0c83b-663c-4d46-8e36-08604de5a0b2
+		sourceLineageTag: Org Unit L5
+		summarizeBy: none
+		sourceColumn: Org Unit L5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit L6'
+		dataType: string
+		lineageTag: 8249ecb2-2024-43ee-82dc-e1d9d82f3e09
+		sourceLineageTag: Org Unit L6
+		summarizeBy: none
+		sourceColumn: Org Unit L6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit L7'
+		dataType: string
+		lineageTag: d74409c0-34f7-44d6-b654-48340d617bb9
+		sourceLineageTag: Org Unit L7
+		summarizeBy: none
+		sourceColumn: Org Unit L7
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit L8'
+		dataType: string
+		lineageTag: 10fb1651-f9bb-436c-9602-844438585a82
+		sourceLineageTag: Org Unit L8
+		summarizeBy: none
+		sourceColumn: Org Unit L8
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Email L1'
+		dataType: string
+		lineageTag: f6e6f0d3-dd36-4844-aa9e-90c2b06172cc
+		sourceLineageTag: Manager Email L1
+		summarizeBy: none
+		sourceColumn: Manager Email L1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager L1'
+		dataType: string
+		lineageTag: 75cb0dc4-60d8-4c28-b70f-860b409a1edd
+		sourceLineageTag: Manager L1
+		summarizeBy: none
+		sourceColumn: Manager L1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Direct Manager Email'
+		dataType: string
+		lineageTag: a349cdbc-a583-4cdc-b4b0-8cff63286f26
+		sourceLineageTag: Direct Manager Email
+		summarizeBy: none
+		sourceColumn: Direct Manager Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Direct Manager Name'
+		dataType: string
+		lineageTag: 5ec3a45e-12e9-4c97-b4b9-488e693a898d
+		sourceLineageTag: Direct Manager Name
+		summarizeBy: none
+		sourceColumn: Direct Manager Name
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Functional Manager Email'
+		displayFolder: _Hierarchy
+		lineageTag: 8df92819-2bdc-467c-86f3-983aea53ff82
+
+		level 'Manager Email L1'
+			lineageTag: 5d6060a4-c2ad-446e-a109-0a2ec4317306
+			column: 'Manager Email L1'
+
+		level 'Manager Email L2'
+			lineageTag: 7c417cd6-36f7-451f-986b-27371012a4e2
+			column: 'Manager Email L2'
+
+		level 'Manager Email L3'
+			lineageTag: 1243bb43-4b1f-47c2-874c-cc88155da533
+			column: 'Manager Email L3'
+
+		level 'Manager Email L4'
+			lineageTag: b613bb8a-fba4-4b35-a3f8-0bd168c41a73
+			column: 'Manager Email L4'
+
+		level 'Manager Email L5'
+			lineageTag: f2d5e51c-4edf-46f4-8b37-9b3e1c402fe1
+			column: 'Manager Email L5'
+
+		level 'Manager Email L6'
+			lineageTag: 380e666b-9cea-4953-b11a-ad8203928452
+			column: 'Manager Email L6'
+
+		level 'Manager Email L7'
+			lineageTag: 7d34d7cb-ec81-4103-886e-331fed70e98b
+			column: 'Manager Email L7'
+
+		level 'Manager Email L8'
+			lineageTag: d6af5c15-806d-4a7d-abe5-ecefdc905809
+			column: 'Manager Email L8'
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+	hierarchy 'Functional Manager'
+		displayFolder: _Hierarchy
+		lineageTag: b9cb7568-4e1f-49b8-868d-e26466eb7b57
+
+		level 'Manager L1'
+			lineageTag: 50eff43e-bee1-4dc3-b139-69c08260e8a6
+			column: 'Manager L1'
+
+		level 'Manager L2'
+			lineageTag: b2a3a5ec-9a69-4466-bee7-1b02a0422026
+			column: 'Manager L2'
+
+		level 'Manager L3'
+			lineageTag: f45f59ab-6e86-4f98-9568-4f4e4baff4c8
+			column: 'Manager L3'
+
+		level 'Manager L4'
+			lineageTag: 6e556860-faf9-43d1-a46f-30f50e955207
+			column: 'Manager L4'
+
+		level 'Manager L5'
+			lineageTag: 2f50c473-1d03-4cec-bc1f-55afb5cb8ac1
+			column: 'Manager L5'
+
+		level 'Manager L6'
+			lineageTag: 8939fa9d-ebd6-4e1d-8ebf-cb9dd8813647
+			column: 'Manager L6'
+
+		level 'Manager L7'
+			lineageTag: 477367f1-98c6-488a-9b49-a655fca88dd5
+			column: 'Manager L7'
+
+		level 'Manager L8'
+			lineageTag: b693a5c8-d2a5-4180-b38d-5a227625a49b
+			column: 'Manager L8'
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	hierarchy 'Functional OrgUnit'
+		displayFolder: _Hierarchy
+		lineageTag: 37205053-a979-4ae7-992c-22375ac26b6a
+
+		level 'Functional OrgUnit L1'
+			lineageTag: 3a101336-383e-4aa2-96c6-1dadbccfe686
+			column: 'Org Unit L1'
+
+		level 'Functional OrgUnit L2'
+			lineageTag: 7b8b8533-efed-47e9-b570-30fd79071c53
+			column: 'Org Unit L2'
+
+		level 'Functional OrgUnit L3'
+			lineageTag: a5ebe29d-6bf1-42e4-b3dd-c284e60884d2
+			column: 'Org Unit L3'
+
+		level 'Functional OrgUnit L4'
+			lineageTag: 9e6662d0-db6f-4a30-b14a-7d7f69ceb177
+			column: 'Org Unit L4'
+
+		level 'Functional OrgUnit L5'
+			lineageTag: 0aae6275-f639-45c2-866e-aab16f695962
+			column: 'Org Unit L5'
+
+		level 'Functional OrgUnit L6'
+			lineageTag: 6e864423-50d5-4494-8d5d-a92026b8f9d9
+			column: 'Org Unit L6'
+
+		level 'Functional OrgUnit L7'
+			lineageTag: f82c7356-15c1-4ada-a360-7a8d9c10ef19
+			column: 'Org Unit L7'
+
+		level 'Functional OrgUnit L8'
+			lineageTag: d7021ba0-9654-4749-9070-b0f83fec3525
+			column: 'Org Unit L8'
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	partition dim_organizational_unit_functional = entity
+		mode: directLake
+		source
+			entityName: dim_organizational_unit_functional
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

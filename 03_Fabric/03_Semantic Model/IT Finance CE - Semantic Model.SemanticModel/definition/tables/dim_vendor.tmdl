@@ -1,0 +1,129 @@
+table dim_vendor
+	lineageTag: d3ba4670-25bc-4ec4-a58f-e952f137a09c
+	sourceLineageTag: [dbo].[dim_vendor]
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 5e926cd4-b7de-434f-91e9-a94e7e61bbf3
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Number'
+		dataType: string
+		lineageTag: ddf80255-4d9f-4526-9b59-c31d8f115991
+		sourceLineageTag: Vendor Number
+		summarizeBy: none
+		sourceColumn: Vendor Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: 180e09ec-309d-40a1-9641-c913e06eceb7
+		sourceLineageTag: Vendor Name
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: ad8898ab-702b-4d8d-95a8-9d66a970f1fb
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 9a75646e-fa65-4ac5-b77a-5629dcab0bb7
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Street
+		dataType: string
+		lineageTag: 2bb4ec1b-a37f-4860-9bc3-75ee51f552fd
+		sourceLineageTag: Street
+		summarizeBy: none
+		sourceColumn: Street
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Name'
+		dataType: string
+		lineageTag: 41fa1267-99c5-4c3e-a829-8e4bf4c60265
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f8bc4a3a-3081-421d-b322-2e3978461c88
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Number and Name'
+		dataType: string
+		lineageTag: 4ba1d632-2b25-4ed9-9fec-c3c52a64cdb6
+		sourceLineageTag: Vendor Number and Name
+		summarizeBy: none
+		sourceColumn: Vendor Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tax Number'
+		dataType: string
+		lineageTag: 1d55ed6b-b6ef-4710-ab08-f39af3222827
+		sourceLineageTag: Tax Number
+		summarizeBy: none
+		sourceColumn: Tax Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: string
+		lineageTag: 8f2fbac8-9c6e-4bc7-8c0a-8ad853a337b9
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Key'
+		dataType: string
+		lineageTag: 464d4944-0bb9-4d2a-983a-19f8d3883587
+		sourceLineageTag: Vendor Key
+		summarizeBy: none
+		sourceColumn: Vendor Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column VAT
+		dataType: string
+		lineageTag: 4108d324-7771-4ca3-8d97-f354457f82f2
+		sourceLineageTag: VAT
+		summarizeBy: none
+		sourceColumn: VAT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_vendor = entity
+		mode: directLake
+		source
+			entityName: dim_vendor
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

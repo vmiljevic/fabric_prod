@@ -1,0 +1,65 @@
+table 'O2I PreRun Errors'
+	lineageTag: 491b0a31-d3d3-4a98-ba69-f5b2067323e0
+
+	column 'SAP Refresh Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: eba05b96-ea04-44c4-90e6-552d848798d8
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 68593ad5-999b-48b5-85c1-09546e027012
+		summarizeBy: none
+		sourceColumn: Service Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Quote ID'
+		dataType: string
+		lineageTag: a21217a7-9ca0-4867-9f04-3aae9b0d4f9b
+		summarizeBy: none
+		sourceColumn: Quote ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CAP Error Message'
+		dataType: string
+		lineageTag: 8ea8ed24-801c-48f7-98a8-82c352a8e560
+		summarizeBy: none
+		sourceColumn: CAP Error Message
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quantity Snow deliverd'
+		dataType: string
+		lineageTag: a81b8e23-0756-4518-abb7-f84a9629513b
+		summarizeBy: none
+		sourceColumn: Quantity Snow deliverd
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'O2I PreRun Errors' = m
+		mode: import
+		queryGroup: '09_PreRun Analysis'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/06_O2C%20Rejected/2025_O2C_REJ_ANALYSIS.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(GradeandProficiencyLevels_Table, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SAP Refresh Time", type datetime}, {"Service Date", type date}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"Quote ID"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates", each ([Quote ID] <> "#"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

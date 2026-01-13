@@ -1,0 +1,40 @@
+table 'SAP HU Internal Resource IDs'
+	lineageTag: 41b26da8-5422-4328-9c96-367d3aae2c24
+
+	column 'Local ID'
+		dataType: string
+		lineageTag: 291e2ddb-6426-42b5-ab16-91c2cfdfe3ee
+		summarizeBy: none
+		sourceColumn: Local ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Personal Number'
+		dataType: string
+		lineageTag: 78a912a8-89f8-4a45-84ed-6c80a0475067
+		summarizeBy: none
+		sourceColumn: Personal Number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SAP HU Internal Resource IDs' = m
+		mode: import
+		queryGroup: '03_HR SAP'
+		source =
+				let
+				    Source = #"SAP Internal Resources HU44",
+				    #"Appended Query" = Table.Combine({Source, #"SAP Internal Resources HU44 NEW"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Appended Query",{"Local ID", "Personal Number"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([Local ID] <> null)),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Filtered Rows",{{"Local ID", type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Changed Type1",{{"Local ID", Text.Clean, type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Cleaned Text",{{"Local ID", Text.Trim, type text}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Trimmed Text", {"Local ID"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates",{{"Local ID", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

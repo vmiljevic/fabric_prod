@@ -1,0 +1,191 @@
+table 'SAP Resource Org'
+	lineageTag: 771207d9-0df4-4fac-9074-264de3e56d28
+
+	column Arbeitgebergesellschaft
+		dataType: string
+		lineageTag: a9d2210f-0f3a-4160-8d94-7b65dc84a2ba
+		summarizeBy: none
+		sourceColumn: Arbeitgebergesellschaft
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Personalnr SAP'
+		dataType: string
+		lineageTag: 023c4e1b-0cff-418e-a3d7-f706ecfa4214
+		summarizeBy: none
+		sourceColumn: Personalnr SAP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Personalnr SF'
+		dataType: string
+		lineageTag: 23d24d54-065f-499a-b115-af10340c4430
+		summarizeBy: none
+		sourceColumn: Personalnr SF
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID'
+		dataType: string
+		lineageTag: fd8e807a-404a-4fe8-bf4d-9c7f49254a78
+		summarizeBy: none
+		sourceColumn: User ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vorname
+		dataType: string
+		lineageTag: 8d409bfe-8d3a-4600-be8d-0afe90956da8
+		summarizeBy: none
+		sourceColumn: Vorname
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nachname
+		dataType: string
+		lineageTag: 64678330-a51c-447c-8787-90df86a50f9a
+		summarizeBy: none
+		sourceColumn: Nachname
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geschlecht
+		dataType: string
+		lineageTag: 856dec73-6cfb-457f-bd5c-2026b16ac779
+		summarizeBy: none
+		sourceColumn: Geschlecht
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mitarbeiterstatus
+		dataType: string
+		lineageTag: 5bd2c410-8f74-45dd-8a29-c93fb5be9e77
+		summarizeBy: none
+		sourceColumn: Mitarbeiterstatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column FTE
+		dataType: string
+		lineageTag: 294e938b-07fe-47a4-a1d6-04c195012a1b
+		summarizeBy: none
+		sourceColumn: FTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Führungskraft (Nachname)'
+		dataType: string
+		lineageTag: 3b554dca-6337-42b2-aa1c-2e5a79c43b17
+		summarizeBy: none
+		sourceColumn: Führungskraft (Nachname)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Führungskraft (Vorname)'
+		dataType: string
+		lineageTag: bcf1e885-3a86-4edf-b4e4-552790f187d0
+		summarizeBy: none
+		sourceColumn: Führungskraft (Vorname)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit Name'
+		dataType: string
+		lineageTag: 144f235c-e554-49f8-ad81-df1402628df7
+		summarizeBy: none
+		sourceColumn: Disciplinary OrgUnit Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Abteilungsnr SF'
+		dataType: string
+		lineageTag: cdbb293c-dc6b-4ffd-b720-2a087923dc6c
+		summarizeBy: none
+		sourceColumn: Abteilungsnr SF
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit ID'
+		dataType: string
+		lineageTag: 5ab24f49-a3c3-45f2-930e-681e27dd5d34
+		summarizeBy: none
+		sourceColumn: Disciplinary OrgUnit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kostenstellenname
+		dataType: string
+		lineageTag: 445d7d4b-f25d-4000-a2ee-91776e98afb9
+		summarizeBy: none
+		sourceColumn: Kostenstellenname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kostenstellennr SAP'
+		dataType: string
+		lineageTag: 9c14e4ac-1df7-4c99-8c03-c46e1afd1665
+		summarizeBy: none
+		sourceColumn: Kostenstellennr SAP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kostenstellennr SF'
+		dataType: string
+		lineageTag: ec37fc0a-293e-4274-bd25-95cb7f4a93d6
+		summarizeBy: none
+		sourceColumn: Kostenstellennr SF
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Funktionaler Manager (Nachname)'
+		dataType: string
+		lineageTag: 333f95c5-67be-415c-aa53-89e0ddcdd3a1
+		summarizeBy: none
+		sourceColumn: Funktionaler Manager (Nachname)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Funktionaler Manager (Vorname)'
+		dataType: string
+		lineageTag: ae8fb3ba-6035-4c22-929e-182dd2abb4be
+		summarizeBy: none
+		sourceColumn: Funktionaler Manager (Vorname)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit ID'
+		dataType: string
+		lineageTag: 3c30e310-2cf0-493d-9d1f-c4d08babadea
+		summarizeBy: none
+		sourceColumn: Functional OrgUnit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column E-Mail-Adresse
+		dataType: string
+		lineageTag: 1c0ec5f4-7a4d-4d50-a289-09da3344cc5f
+		summarizeBy: none
+		sourceColumn: E-Mail-Adresse
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SAP Resource Org' = m
+		mode: import
+		queryGroup: '03_HR SAP'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/03_HR/Other%20Data/Personal%20SF%20202408.xlsx"), null, true),
+				    Tabelle1_Sheet = Source{[Item="Tabelle1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Tabelle1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Funktionale OrgUnit ID", type text}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Changed Type1", "Funktionale OrgUnit ID", Splitter.SplitTextByEachDelimiter({";"}, QuoteStyle.Csv, false), {"Funktionale OrgUnit ID.1", "Funktionale OrgUnit ID.2"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Split Column by Delimiter",{{"Funktionale OrgUnit ID.1", "Functional OrgUnit ID"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Funktionale OrgUnit ID.2"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns",{{"OrgUnit ID", "Disciplinary OrgUnit ID"}, {"Abteilung", "Disciplinary OrgUnit Name"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

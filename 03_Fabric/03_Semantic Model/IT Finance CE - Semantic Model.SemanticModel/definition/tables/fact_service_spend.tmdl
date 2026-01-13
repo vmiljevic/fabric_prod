@@ -1,0 +1,505 @@
+table fact_service_spend
+	lineageTag: 36586609-d86e-45ff-8c71-56516efeeb79
+	sourceLineageTag: [dbo].[fact_service_spend]
+
+	column 'Bill-to Party'
+		dataType: string
+		lineageTag: 525e2a54-c8f0-41b8-8e38-85966ae8c6ee
+		sourceLineageTag: Bill-to Party
+		summarizeBy: none
+		sourceColumn: Bill-to Party
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Assigned To'
+		dataType: string
+		lineageTag: 0346d33a-9508-4aca-89a0-7b76f9739086
+		sourceLineageTag: Account Assigned To
+		summarizeBy: none
+		sourceColumn: Account Assigned To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booking text'
+		dataType: string
+		lineageTag: 560f3000-c587-48a3-8fbd-413fb6556899
+		sourceLineageTag: Booking text
+		summarizeBy: none
+		sourceColumn: Booking text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill. Doc. Numbers'
+		dataType: string
+		lineageTag: e704ccb2-a24c-47a1-b588-3ea284273c72
+		sourceLineageTag: Bill. Doc. Numbers
+		summarizeBy: none
+		sourceColumn: Bill. Doc. Numbers
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Charging Type'
+		dataType: string
+		lineageTag: 1f767e38-fe4c-4802-81ac-7780c0efc650
+		sourceLineageTag: Charging Type
+		summarizeBy: none
+		sourceColumn: Charging Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 102254bc-b094-4689-b74f-dbfefbcd3544
+		sourceLineageTag: Cost Center
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Orig. _Service Now_'
+		dataType: string
+		lineageTag: f256e519-fda2-4d73-9175-f581d03f234c
+		sourceLineageTag: Cost Center Orig. _Service Now_
+		summarizeBy: none
+		sourceColumn: Cost Center Orig. _Service Now_
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 93b0baa3-005f-4a1b-a888-955d9b2a2b79
+		sourceLineageTag: Currency
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Tag'
+		dataType: string
+		lineageTag: 8faa16bc-70cd-4064-8917-049252b4381e
+		sourceLineageTag: Customer Tag
+		summarizeBy: none
+		sourceColumn: Customer Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debitor Original _Service Now_'
+		dataType: string
+		lineageTag: 99f12d45-d188-4b71-8e9e-8dd9a8c3c5d4
+		sourceLineageTag: Debitor Original _Service Now_
+		summarizeBy: none
+		sourceColumn: Debitor Original _Service Now_
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feeder ID'
+		dataType: string
+		lineageTag: 0bdd9360-0031-4c9f-acdb-d1ee10a22058
+		sourceLineageTag: Feeder ID
+		summarizeBy: none
+		sourceColumn: Feeder ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feeder System'
+		dataType: string
+		lineageTag: 594cab47-fda5-4883-b4b1-12b6479de112
+		sourceLineageTag: Feeder System
+		summarizeBy: none
+		sourceColumn: Feeder System
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feeder User Name'
+		dataType: string
+		lineageTag: 161cddc3-6da7-4496-9090-07e2319bdf26
+		sourceLineageTag: Feeder User Name
+		summarizeBy: none
+		sourceColumn: Feeder User Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GIAM ID Assigned To'
+		dataType: string
+		lineageTag: 4222d94c-7623-426f-bdc1-276b6ecf1996
+		sourceLineageTag: GIAM ID Assigned To
+		summarizeBy: none
+		sourceColumn: GIAM ID Assigned To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GIAM ID Owner'
+		dataType: string
+		lineageTag: 37d7dea1-83be-4b30-89ef-3063e159035d
+		sourceLineageTag: GIAM ID Owner
+		summarizeBy: none
+		sourceColumn: GIAM ID Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: a2569813-099a-4a36-a76c-0e9674b8a6ec
+		sourceLineageTag: Material
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Owner Account'
+		dataType: string
+		lineageTag: 7ad3d01e-1cf0-4fcf-b021-709990110793
+		sourceLineageTag: Owner Account
+		summarizeBy: none
+		sourceColumn: Owner Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payer
+		dataType: string
+		lineageTag: c5c3b1fa-057b-4dd9-bbb1-b87065af58a3
+		sourceLineageTag: Payer
+		summarizeBy: none
+		sourceColumn: Payer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Name'
+		dataType: string
+		lineageTag: eec45d45-8eb3-4574-82f5-52557f49e2cc
+		sourceLineageTag: Primary Name
+		summarizeBy: none
+		sourceColumn: Primary Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: bf4276eb-050e-4d0e-81bb-2735e33f5f61
+		sourceLineageTag: Product Name
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Order ID'
+		dataType: string
+		lineageTag: 6f95fd6d-9a7c-4687-9975-0cca01732a62
+		sourceLineageTag: Product Order ID
+		summarizeBy: none
+		sourceColumn: Product Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: 501dbdac-14fd-49ef-bb82-0734e1be0393
+		sourceLineageTag: WBS Element
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote ID'
+		dataType: string
+		lineageTag: 4e5fd26d-c38e-4818-84cf-607853d3a4ca
+		sourceLineageTag: Quote ID
+		summarizeBy: none
+		sourceColumn: Quote ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organization'
+		dataType: string
+		lineageTag: 76f84433-9077-4f4c-bc07-d2c20647fda9
+		sourceLineageTag: Sales Organization
+		summarizeBy: none
+		sourceColumn: Sales Organization
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Secondary Name'
+		dataType: string
+		lineageTag: eb45867f-33c4-4893-920c-c26ab5983c1e
+		sourceLineageTag: Secondary Name
+		summarizeBy: none
+		sourceColumn: Secondary Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Inst. Status'
+		dataType: string
+		lineageTag: 919efeac-b7d6-4c97-8070-ab9d2b29f358
+		sourceLineageTag: Service Inst. Status
+		summarizeBy: none
+		sourceColumn: Service Inst. Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Instance ID'
+		dataType: string
+		lineageTag: 51685abe-ed35-44e8-a50b-9f174644f7d9
+		sourceLineageTag: Service Instance ID
+		summarizeBy: none
+		sourceColumn: Service Instance ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI Location'
+		dataType: string
+		lineageTag: 6a9dd290-7910-47fe-b89e-b8ad86ff86d3
+		sourceLineageTag: SI Location
+		summarizeBy: none
+		sourceColumn: SI Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI Name'
+		dataType: string
+		lineageTag: 0fe03997-b7e6-465d-9725-8c907f3efd9b
+		sourceLineageTag: SI Name
+		summarizeBy: none
+		sourceColumn: SI Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI Provider'
+		dataType: string
+		lineageTag: 727d9609-a870-446e-9f7f-0d094daafa00
+		sourceLineageTag: SI Provider
+		summarizeBy: none
+		sourceColumn: SI Provider
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI SLA'
+		dataType: string
+		lineageTag: 85dade11-3a5c-4d82-ae4a-20bcefe1ecc2
+		sourceLineageTag: SI SLA
+		summarizeBy: none
+		sourceColumn: SI SLA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		lineageTag: 690d8c82-5df5-4409-84d8-8f5fe8f32669
+		sourceLineageTag: Amount
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: double
+		lineageTag: 831d798f-743c-4626-a63f-c1fa569ff8c5
+		sourceLineageTag: Quantity
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'File Name'
+		dataType: string
+		lineageTag: 3b0c5648-1c82-4ea3-ad2d-5cf7dd64c827
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data For'
+		dataType: string
+		lineageTag: 4e264da0-68c5-4bd7-a53d-43cba27e3522
+		sourceLineageTag: Data For
+		summarizeBy: none
+		sourceColumn: Data For
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material and Sales Organisation'
+		dataType: string
+		lineageTag: 6268a391-6459-4b52-82ed-2e7d40110056
+		sourceLineageTag: Material and Sales Organisation
+		summarizeBy: none
+		sourceColumn: Material and Sales Organisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tax Rate'
+		dataType: double
+		lineageTag: 97af457e-9ee5-4643-bd07-b66d4ab8fc1d
+		sourceLineageTag: Tax Rate
+		summarizeBy: sum
+		sourceColumn: Tax Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'User Assigned Legal Entity'
+		dataType: string
+		lineageTag: c2db379f-ef3c-4371-b3f9-1752968d89ca
+		sourceLineageTag: User Assigned Legal Entity
+		summarizeBy: none
+		sourceColumn: User Assigned Legal Entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Assigned Name'
+		dataType: string
+		lineageTag: d2763426-98be-443b-b031-bef4018f193d
+		sourceLineageTag: User Assigned Name
+		summarizeBy: none
+		sourceColumn: User Assigned Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Internal IT Cost'
+		dataType: string
+		lineageTag: 12506105-343e-4d95-8c5f-9c92586a0e56
+		sourceLineageTag: Internal IT Cost
+		summarizeBy: none
+		sourceColumn: Internal IT Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 409159f2-0c8d-49b7-8a34-03cf816e3748
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ovl Last Login'
+		dataType: string
+		lineageTag: d5fa0a22-d8a8-4295-a558-9545fbc7bc84
+		sourceLineageTag: Ovl Last Login
+		summarizeBy: none
+		sourceColumn: Ovl Last Login
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days Without Login'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d3354da-306e-415a-a059-455efbcfd2ea
+		sourceLineageTag: Days Without Login
+		summarizeBy: sum
+		sourceColumn: Days Without Login
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount incl. Tax'
+		dataType: double
+		lineageTag: 7a911f68-7f37-454f-a135-f2d9bd4a6095
+		sourceLineageTag: Amount incl. Tax
+		summarizeBy: sum
+		sourceColumn: Amount incl. Tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Last Login'
+		dataType: string
+		lineageTag: 114cd6ff-9a04-49b6-885e-8175f9360380
+		sourceLineageTag: Last Login
+		summarizeBy: none
+		sourceColumn: Last Login
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote ID Link'
+		dataType: string
+		lineageTag: 358d4678-0e3c-4c42-bc22-ca8b4ad72926
+		sourceLineageTag: Quote ID Link
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: Quote ID Link
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Instance ID Link'
+		dataType: string
+		lineageTag: b55ed2c1-fbb8-4709-9504-ca880053ee0a
+		sourceLineageTag: Service Instance ID Link
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: Service Instance ID Link
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Assigned'
+		dataType: string
+		lineageTag: 43cd135a-357e-4527-89c3-e13a65a0f314
+		sourceLineageTag: User Assigned
+		summarizeBy: none
+		sourceColumn: User Assigned
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Period'
+		dataType: string
+		lineageTag: bc84fe43-0ed3-4fa0-9827-78881e9bcfb6
+		sourceLineageTag: Service Period
+		summarizeBy: none
+		sourceColumn: Service Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 080ef906-713f-4343-878d-03cb9e5b2d2d
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Key'
+		dataType: string
+		lineageTag: 5fb63693-24fd-4200-b910-4fa57f648414
+		sourceLineageTag: Material Key
+		summarizeBy: none
+		sourceColumn: Material Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e9431a53-0c4e-4b4e-b9e4-41219bb5e372
+		sourceLineageTag: Month Date
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Instance ID and Name'
+		dataType: string
+		lineageTag: 792e9006-a327-4aad-8b71-ff9408cbb0d5
+		sourceLineageTag: Service Instance ID and Name
+		summarizeBy: none
+		sourceColumn: Service Instance ID and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_service_spend = entity
+		mode: directLake
+		source
+			entityName: fact_service_spend
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

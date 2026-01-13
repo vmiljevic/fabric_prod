@@ -1,0 +1,82 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "AT45-PPM-1",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "CompanyCode": {
+      "queryId": "82625e2d-2474-4e8b-8505-0592d5553d55",
+      "queryName": "CompanyCode",
+      "loadEnabled": false
+    },
+    "NumberOfRecords": {
+      "queryId": "5566210f-41fc-42cd-bc63-941355fa86e2",
+      "queryName": "NumberOfRecords",
+      "loadEnabled": false
+    },
+    "DateFrom": {
+      "queryId": "1c9cce71-4515-45d6-8cb5-473bc058e836",
+      "queryName": "DateFrom",
+      "loadEnabled": false
+    },
+    "DateTo": {
+      "queryId": "a8c5f544-e86d-4f43-8d3a-e65128c07f74",
+      "queryName": "DateTo",
+      "loadEnabled": false
+    },
+    "Debtor": {
+      "queryId": "8714bf99-e6ef-484b-b101-df4a643c093c",
+      "queryName": "Debtor",
+      "loadEnabled": false
+    },
+    "time_card_interface_set_a": {
+      "queryId": "8b293a59-376e-4112-aaf9-aafb01f1c931",
+      "queryName": "time_card_interface_set_a",
+      "loadEnabled": false
+    },
+    "time_card_interface_set_b": {
+      "queryId": "66465427-b979-4078-bcca-9971f4929f2b",
+      "queryName": "time_card_interface_set_b",
+      "loadEnabled": false
+    },
+    "time_card_interface_externals": {
+      "queryId": "d3280eec-9e05-4cc5-baad-3506e0914a34",
+      "queryName": "time_card_interface_externals",
+      "loadEnabled": false
+    },
+    "fact_ppm_time_card_interface_daily": {
+      "queryId": "ca8361a3-2c6c-4f8a-9097-968be9a06b30",
+      "queryName": "fact_ppm_time_card_interface_daily",
+      "loadEnabled": false
+    },
+    "fact_ppm_time_card_interface_daily_DataDestination": {
+      "queryId": "fce23b0b-645c-4a29-bc0e-d789bdcf149d",
+      "queryName": "fact_ppm_time_card_interface_daily_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://aztech.service-now.com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"7f932ae2-b7eb-4c0d-9bc5-3458682fb116\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"d9abe6b3-b7f5-4134-a409-ae81c836adf9\"}"
+    }
+  ],
+  "fastCombine": true,
+  "allowNativeQueries": false,
+  "parametric": true
+}

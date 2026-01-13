@@ -1,0 +1,19 @@
+role User
+	modelPermission: read
+
+	tablePermission 'SAP Internal Resources' = OR(PATHCONTAINS ([User Rights Per Country HR],'SAP Internal Resources'[Sales Organisation]),[User Rights Per Country HR]="ALL")
+
+	tablePermission 'PPM Time Cards Externals' = OR(PATHCONTAINS ([User Rights Per Country PPM],'PPM Time Cards Externals'[Export For]),[User Rights Per Country PPM]="ALL")
+
+	tablePermission 'PPM Time Cards Internals' = OR(PATHCONTAINS ([User Rights Per Country PPM],'PPM Time Cards Internals'[Export For]),[User Rights Per Country PPM]="ALL")
+
+	tablePermission 'PPM Projects' = OR(PATHCONTAINS ([User Rights Per Country PPM],'PPM Projects'[Exported For]),[User Rights Per Country PPM]="ALL")
+
+	tablePermission 'Opex from BAP with Plan CE' = OR(PATHCONTAINS ([User Rights Per Country Costs&Revenue],'Opex from BAP with Plan CE'[Company Code]),[User Rights Per Country Costs&Revenue]="ALL")
+
+	tablePermission 'Service Spend Details' = OR(PATHCONTAINS ([User Rights Per Country Service Spend],'Service Spend Details'[Data For]),[User Rights Per Country Service Spend]="ALL")
+
+	tablePermission 'Budget Report with DemandID' = OR(PATHCONTAINS ([User Rights Per Country Budget Availability],'Budget Report with DemandID'[Company Code]),[User Rights Per Country Costs&Revenue]="ALL")
+
+	annotation PBI_Id = 085a6ab4cfe34065be195f303a45753a
+

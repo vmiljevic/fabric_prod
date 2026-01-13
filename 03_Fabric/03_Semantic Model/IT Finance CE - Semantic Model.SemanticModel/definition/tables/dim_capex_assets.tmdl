@@ -1,0 +1,260 @@
+table dim_capex_assets
+	lineageTag: 1ed27b7a-ecab-41ec-8b86-6996ab552166
+	sourceLineageTag: [dbo].[dim_capex_assets]
+
+	column 'Asset Number'
+		dataType: string
+		lineageTag: 3d6b2c54-7fbf-4160-a510-b7a464d25e9b
+		sourceLineageTag: Asset Number
+		summarizeBy: none
+		sourceColumn: Asset Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 3782623a-3387-48c1-b357-54e4e0a4b2ce
+		sourceLineageTag: Cost Center
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: 2f665503-80af-48a6-bc30-10e80ae0887b
+		sourceLineageTag: WBS Element
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Class'
+		dataType: string
+		lineageTag: 5a33c4ac-8692-4925-b6ce-369e3f5a6511
+		sourceLineageTag: Asset Class
+		summarizeBy: none
+		sourceColumn: Asset Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Object type description'
+		dataType: string
+		lineageTag: b8aec94e-8946-4721-903e-0279760c165e
+		sourceLineageTag: Object type description
+		summarizeBy: none
+		sourceColumn: Object type description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: d73f1d51-da50-4d2a-878f-0f550820e980
+		sourceLineageTag: Description
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cumulative Value'
+		dataType: double
+		lineageTag: 69840fde-db0e-4cf9-a2f8-ec32d272efc8
+		sourceLineageTag: Cumulative Value
+		summarizeBy: sum
+		sourceColumn: Cumulative Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Accumulated depreciation'
+		dataType: double
+		lineageTag: 3ead376f-c8a1-40fa-9ffa-336e16bbda6a
+		sourceLineageTag: Accumulated depreciation
+		summarizeBy: sum
+		sourceColumn: Accumulated depreciation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Depreciation in 2025'
+		dataType: double
+		lineageTag: a367ffe1-3cd5-42d0-9f2b-46119577a18d
+		sourceLineageTag: Depreciation in 2025
+		summarizeBy: sum
+		sourceColumn: Depreciation in 2025
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 4511d9e1-474d-46a5-bc40-9fcc4d48a92b
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Depreciation key'
+		dataType: string
+		lineageTag: 67cdf9f1-7513-4810-b33a-5900c6291d83
+		sourceLineageTag: Depreciation key
+		summarizeBy: none
+		sourceColumn: Depreciation key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Depreciation Start Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 019c11ae-8deb-40f7-b1b2-7ed231aeb0da
+		sourceLineageTag: Depreciation Start Date
+		summarizeBy: none
+		sourceColumn: Depreciation Start Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Useful life'
+		dataType: string
+		lineageTag: e31fc46c-80f4-4df5-8169-317c43f94868
+		sourceLineageTag: Useful life
+		summarizeBy: none
+		sourceColumn: Useful life
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'APC acquisition 2025'
+		dataType: double
+		lineageTag: b4f6785e-8b17-44d4-9db7-a3f9879b2f4e
+		sourceLineageTag: APC acquisition 2025
+		summarizeBy: sum
+		sourceColumn: APC acquisition 2025
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'File Name'
+		dataType: string
+		lineageTag: 4cf249ae-5bf2-40f8-b6c8-ef5d75cb5435
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f8a5f821-3ec3-43cd-aaf8-dc4a2a1e8878
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Number Country'
+		dataType: string
+		lineageTag: 03c13d8d-12ee-4a9a-9cd2-6bbb0a9a4340
+		sourceLineageTag: Asset Number Country
+		summarizeBy: none
+		sourceColumn: Asset Number Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Number and Name'
+		dataType: string
+		lineageTag: 2cd86bc9-3b68-41a8-8071-af9bfa74a06c
+		sourceLineageTag: Asset Number and Name
+		summarizeBy: none
+		sourceColumn: Asset Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Residual Value'
+		dataType: double
+		lineageTag: 4c7e3e2d-8619-4284-b5be-c7520d3ce49e
+		sourceLineageTag: Residual Value
+		summarizeBy: sum
+		sourceColumn: Residual Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Capitalization Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: ab91af76-4357-4b52-8409-b53105350b92
+		sourceLineageTag: Capitalization Date
+		summarizeBy: none
+		sourceColumn: Capitalization Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Capitalization Year'
+		dataType: string
+		lineageTag: 195b01bc-f39f-4307-ae0b-4188f853c3ae
+		sourceLineageTag: Capitalization Year
+		summarizeBy: none
+		sourceColumn: Capitalization Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Capitalization Month'
+		dataType: string
+		lineageTag: 1b6fff14-04f3-43ad-8e89-6a11fc9f8681
+		sourceLineageTag: Capitalization Month
+		summarizeBy: none
+		sourceColumn: Capitalization Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Capitalization Quarter'
+		dataType: string
+		lineageTag: cba22221-6013-4ddc-854e-4da26117100a
+		sourceLineageTag: Capitalization Quarter
+		summarizeBy: none
+		sourceColumn: Capitalization Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Capitalization Date (Y-Q-M)'
+		lineageTag: 1061dc8f-75db-455a-814a-582f7c12e0a9
+
+		level 'Capitalization Year'
+			lineageTag: a29b4968-0fb1-4abd-9532-140d4eebb75a
+			column: 'Capitalization Year'
+
+		level 'Capitalization Quarter'
+			lineageTag: 1bd23c3e-9d62-4c7a-86a6-a0dcd9e9d947
+			column: 'Capitalization Quarter'
+
+		level 'Capitalization Month'
+			lineageTag: 4ba3403c-a3fb-4bc2-9cbd-9d0ccd69e1a2
+			column: 'Capitalization Month'
+
+		level 'Capitalization Date'
+			lineageTag: 15a15fa9-2254-4e48-a9eb-284a3f5c94cd
+			column: 'Capitalization Date'
+
+		changedProperty = Name
+
+	partition dim_capex_assets = entity
+		mode: directLake
+		source
+			entityName: dim_capex_assets
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

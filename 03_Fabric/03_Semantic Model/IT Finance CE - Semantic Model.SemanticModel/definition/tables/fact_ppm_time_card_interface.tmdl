@@ -1,0 +1,149 @@
+table fact_ppm_time_card_interface
+	lineageTag: 114ce6f0-c0fb-4333-838a-81a882a921e6
+	sourceLineageTag: [dbo].[fact_ppm_time_card_interface]
+
+	column 'SAP Posting Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: a727bf83-c690-4ba8-a9af-e771cc306bc8
+		sourceLineageTag: SAP Posting Date
+		summarizeBy: none
+		sourceColumn: SAP Posting Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'SAP State'
+		dataType: string
+		lineageTag: baa7f90b-3062-49d5-9b71-8925f80e2d98
+		sourceLineageTag: SAP State
+		summarizeBy: none
+		sourceColumn: SAP State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comments
+		dataType: string
+		lineageTag: c6f386e5-f3ed-4f8a-81eb-4506d3e8bd78
+		sourceLineageTag: Comments
+		summarizeBy: none
+		sourceColumn: Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Key'
+		dataType: string
+		lineageTag: 94f66a38-c417-4559-aa6f-a50d7b6a2c61
+		sourceLineageTag: Project Key
+		summarizeBy: none
+		sourceColumn: Project Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Group'
+		dataType: string
+		lineageTag: 42ee3f6a-f32f-4743-9870-34063b367b11
+		sourceLineageTag: Project Group
+		summarizeBy: none
+		sourceColumn: Project Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing Month'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 8f462458-d5e1-4149-8350-e82134ed67a3
+		sourceLineageTag: Billing Month
+		summarizeBy: none
+		sourceColumn: Billing Month
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column tc_sys_id
+		dataType: string
+		lineageTag: 3c202020-c810-4f62-8984-3b6a7ad05612
+		sourceLineageTag: tc_sys_id
+		summarizeBy: none
+		sourceColumn: tc_sys_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExportFor
+		dataType: string
+		lineageTag: 110aa788-8e85-4ab0-a05f-0418a00a37d4
+		sourceLineageTag: ExportFor
+		summarizeBy: none
+		sourceColumn: ExportFor
+
+		annotation SummarizationSetBy = Automatic
+
+	column project_sys_id
+		dataType: string
+		lineageTag: 57ee54ed-1879-41a7-a7eb-cc7d82e5c6c3
+		sourceLineageTag: project_sys_id
+		summarizeBy: none
+		sourceColumn: project_sys_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP State Display'
+		dataType: string
+		lineageTag: 62aee938-6574-4a04-ab73-d45ddbbc1893
+		sourceLineageTag: SAP State Display
+		summarizeBy: none
+		sourceColumn: SAP State Display
+
+		annotation SummarizationSetBy = Automatic
+
+	column rate_per_hour
+		dataType: double
+		lineageTag: 44c40ff8-4831-4210-b8aa-b96cf60edd91
+		sourceLineageTag: rate_per_hour
+		summarizeBy: none
+		sourceColumn: rate_per_hour
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column raterole
+		dataType: string
+		lineageTag: 1f92a88e-e5a9-45f5-8558-3fea841a3512
+		sourceLineageTag: raterole
+		summarizeBy: none
+		sourceColumn: raterole
+
+		annotation SummarizationSetBy = Automatic
+
+	column ponumber
+		dataType: string
+		lineageTag: 7816cce5-aa6d-4e01-a444-c4bbcffe54c8
+		sourceLineageTag: ponumber
+		summarizeBy: none
+		sourceColumn: ponumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: 5e9a695d-f9e7-4d4f-af7d-1e4067da543c
+		sourceLineageTag: currency
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_ppm_time_card_interface = entity
+		mode: directLake
+		source
+			entityName: fact_ppm_time_card_interface
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

@@ -1,0 +1,160 @@
+relationship b4eaf793-0e04-2ef5-8e59-bbb05822db59
+	fromColumn: fact_cost_revenue.'Cost Element'
+	toColumn: dim_cost_element.'Cost Element'
+
+relationship 71c2c292-de94-c0a0-4c1b-77d09c551c2d
+	fromColumn: fact_cost_revenue.'Cost Center'
+	toColumn: dim_cost_center.'Cost Center'
+
+relationship a75171cd-39a5-e569-1ba6-c2aaceea7fec
+	fromColumn: fact_cost_revenue.'Profit Center'
+	toColumn: dim_profit_center.'Profit Center'
+
+relationship 41e967ae-8ffd-5779-bff7-5492b36aa239
+	fromColumn: fact_cost_revenue.Payer
+	toColumn: dim_payer.Payer
+
+relationship 5f6d90b0-4f7b-1573-c82b-0581982f6ea2
+	fromColumn: fact_cost_revenue.'Company Code'
+	toColumn: dim_company.'Company Code'
+
+relationship 35c4a3f7-bb47-ad5e-8800-3f142d9ac0e0
+	fromColumn: fact_cost_revenue.'WBS Element'
+	toColumn: dim_wbs.'WBS Element'
+
+relationship 43bb590f-624e-89e6-c00b-60c320a633bc
+	fromColumn: fact_cost_revenue.'Vendor Key'
+	toColumn: dim_vendor.'Vendor Key'
+
+relationship 52da1fab-90ff-64d3-82cb-4243ff5c784b
+	fromColumn: fact_cost_revenue.'Material Key'
+	toColumn: dim_material.'Material Key'
+
+relationship 6d76489d-c51e-92c8-d74a-fd02f1424d17
+	fromColumn: fact_cost_revenue.'Month Date'
+	toColumn: dim_date.Date
+
+relationship 9138d97b-012c-5d63-8cae-029d78cb8b33
+	fromColumn: fact_employee_internal.'DisciplinaryOrgUnit Key'
+	toColumn: dim_organizational_unit_disciplinary.'Org Unit ID Composite'
+
+relationship 68f18ce3-c734-72ce-48f7-0cd40daca6ea
+	fromColumn: fact_employee_internal.'FunctionalOrgUnit Key'
+	toColumn: dim_organizational_unit_functional.'Org Unit ID Composite'
+
+relationship a28cec91-39ee-219d-9c56-0d363d97a38c
+	fromColumn: fact_employee_internal.'Cost Center Number'
+	toColumn: dim_cost_center.'Cost Center'
+
+relationship f546dc44-9a7d-05a7-8744-8864988ad24b
+	fromColumn: fact_ppm_time_cards.tc_sys_id
+	toColumn: fact_ppm_time_card_interface.tc_sys_id
+
+relationship 0ccf7819-d3c0-11d8-7a07-8c5e87eff50a
+	fromColumn: fact_ppm_time_cards.'Project Key'
+	toColumn: dim_ppm_project.'Project Key'
+
+relationship 70c75fe8-89b7-2f6c-ec09-916bf6a0c4e6
+	fromColumn: fact_time_recording_hr.'Employee Key'
+	toColumn: fact_employee_internal.'Employee Key'
+
+relationship 9216c48f-1c0c-5ec5-f833-5b80c6df2998
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: fact_employee_internal.'Employee Key'
+	toColumn: fact_employee_all.'Employee Key'
+
+relationship b2046dd2-7680-a70c-5dbd-b1759f826e3c
+	fromColumn: fact_employee_all.'Month Date'
+	toColumn: dim_date.Date
+
+relationship 62119c70-ea16-610b-df86-810ea3369ab9
+	fromColumn: fact_employee_all.'Company Code'
+	toColumn: dim_company.'Company Code'
+
+relationship 9a3d2323-307a-3fb5-fcc5-7ce1ceca27ce
+	crossFilteringBehavior: bothDirections
+	fromColumn: fact_ppm_time_cards.'Employee Key'
+	toColumn: fact_employee_all.'Employee Key'
+
+relationship 810e8e44-2e18-0937-5811-c1fc9aebdfda
+	fromColumn: fact_capex_bookings.'Month Date'
+	toColumn: dim_date.Date
+
+relationship a00c90d7-ace4-6c49-c9be-cde4923b4b8e
+	fromColumn: dim_capex_assets.'Asset Class'
+	toColumn: dim_asset_class.'Class Asset'
+
+relationship bc9d3e4f-fe70-fdd9-5018-0272f93cbcd4
+	fromColumn: fact_capex_bookings.'Asset Number Country'
+	toColumn: dim_capex_assets.'Asset Number Country'
+
+relationship ce74a076-063a-6771-d949-21e9e23fe209
+	fromColumn: dim_capex_assets.'Company Code'
+	toColumn: dim_company.'Company Code'
+
+relationship 9336671f-6e7a-937e-51f4-3332c6e493b5
+	fromColumn: fact_service_spend.'Data For'
+	toColumn: dim_company.'Company Code'
+
+relationship 60ee6b2c-ce32-e9b1-c229-cd1f4840ae48
+	fromColumn: fact_service_spend.'Cost Center'
+	toColumn: dim_cost_center.'Cost Center'
+
+relationship 4c5cf10f-8497-dec8-ea83-7393ce9964ae
+	fromColumn: fact_service_spend.'Material Key'
+	toColumn: dim_material.'Material Key'
+
+relationship 9b70548e-7256-47f7-603e-e51090e05154
+	fromColumn: fact_service_spend.'Month Date'
+	toColumn: dim_date.Date
+
+relationship 62b0f895-d1b5-109a-f566-2a9f79c7d227
+	crossFilteringBehavior: bothDirections
+	fromColumn: fact_budget_demand.KeyDemandPO
+	toColumn: fact_budget_demand_per_demand.KeyDemandPO
+
+relationship 9599ab73-7a37-be32-c4a2-641a35e09a29
+	fromColumn: fact_budget_demand.'Fiscal year'
+	toColumn: dim_date.Date
+
+relationship ec8ab265-27e9-7428-ca6c-71475baf64bf
+	fromColumn: fact_budget_demand.'Company Code'
+	toColumn: dim_company.'Company Code'
+
+relationship 2cf6ab44-8e28-a2e6-0ba4-4bcdbfad0c92
+	fromColumn: fact_budget_demand_per_planbook.'Fiscal year'
+	toColumn: dim_date.Date
+
+relationship 3475b1ef-df33-b6f5-20da-2437fc5f41e5
+	fromColumn: fact_budget_demand_per_planbook.'Company Code'
+	toColumn: dim_company.'Company Code'
+
+relationship 96d7f6d8-7332-518a-b788-df6c31c33fe4
+	fromColumn: fact_outgoing_invoices.'Month Date'
+	toColumn: dim_date.Date
+
+relationship dcc96528-1f46-12ba-8e4e-23e3f8c1e16b
+	fromColumn: fact_outgoing_invoices.'Company Code'
+	toColumn: dim_company.'Company Code'
+
+relationship 6963a444-44a7-dd94-fef2-35bd57a1baa3
+	fromColumn: fact_incoming_invoices.'Company Code'
+	toColumn: dim_company.'Company Code'
+
+relationship 9d3706c5-d937-1ccb-a3e6-ae77bb1f2652
+	fromColumn: fact_incoming_invoices.'Month Date'
+	toColumn: dim_date.Date
+
+relationship 8c7fb289-f481-1516-561f-f1019d0428a8
+	fromColumn: fact_o2i_pre_run.'Material Key'
+	toColumn: dim_material.'Material Key'
+
+relationship a8169dc0-b382-d7da-7ef0-26abfa911add
+	fromColumn: fact_o2i_pre_run.'Month Date'
+	toColumn: dim_date.Date
+
+relationship e2bc2d91-a981-ab46-de03-a4c88b1d04a6
+	fromColumn: fact_o2i_pre_run.'Export For'
+	toColumn: dim_company.'Company Code'
+

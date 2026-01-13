@@ -1,0 +1,58 @@
+table 'Rate Cards From SAP Sumarized'
+	lineageTag: 1146338e-24e6-4e87-b703-663c244aa94d
+
+	column 'Sales Organization'
+		dataType: string
+		lineageTag: f917f482-6368-41de-93eb-b5581b994c57
+		summarizeBy: none
+		sourceColumn: Sales Organization
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: fafbadc3-4d93-45d5-b783-3604d4ba1bef
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Name'
+		dataType: string
+		lineageTag: 382316c6-3aa0-4006-930f-c632463644ba
+		summarizeBy: none
+		sourceColumn: Material Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Daily Rate in EUR'
+		dataType: double
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: 740e7915-dbaa-423c-8ed8-7d9602c121a8
+		summarizeBy: sum
+		sourceColumn: Daily Rate in EUR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Rate Cards From SAP Sumarized' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = #"Rate Cards From SAP",
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Daily Rate in EUR", type text}}),
+				    #"Grouped Rows" = Table.Group(#"Changed Type", {"Sales Organization", "Material Name", "Material", "Daily Rate in EUR"}, {{"Count", each Table.RowCount(_), Int64.Type}}),
+				    #"Grouped Rows1" = Table.Group(#"Grouped Rows", {"Sales Organization", "Material", "Material Name", "Daily Rate in EUR"}, {{"Count", each List.Max([Count]), type number}}),
+				    #"Sorted Rows" = Table.Sort(#"Grouped Rows1",{{"Count", Order.Descending}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Sorted Rows", {"Sales Organization", "Material", "Daily Rate in EUR"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Removed Duplicates",{"Sales Organization", "Material", "Material Name", "Daily Rate in EUR"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Daily Rate in EUR", type number}}),
+				    #"Rounded Off" = Table.TransformColumns(#"Changed Type1",{{"Daily Rate in EUR", each Number.Round(_, 0), type number}}),
+				    #"Removed Duplicates1" = Table.Distinct(#"Rounded Off", {"Sales Organization", "Material"})
+				in
+				    #"Removed Duplicates1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

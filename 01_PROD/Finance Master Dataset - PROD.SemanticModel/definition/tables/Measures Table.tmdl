@@ -1,0 +1,300 @@
+table 'Measures Table'
+	lineageTag: 0f312596-9a6e-4d31-a494-00ea56cd2a66
+
+	measure 'SAP Booked PDs YTD' = TOTALYTD(SUM('SAP Time Recording'[Booked in SAP]),'Date Table Main'[Month Date])
+		lineageTag: f6a7ae6d-2fcf-451b-8f5f-7aeb994bf480
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PPM Booked PDs Internals' = SUM('PPM Time Cards Internals'[Total PDs])
+		formatString: "€"\ #,0.###############;-"€"\ #,0.###############;"€"\ #,0.###############
+		lineageTag: 576d4059-1b99-49bb-bc17-8ff52e306aea
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-AT"}
+
+	measure 'Available Capacity Booking Quota Internals' = SUM('PPM Time Cards Internals'[Total PDs])/SUM('SAP Internal Resources Changes'[Monthly Capacity PDs])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 530cf04b-fdd0-4d27-9752-a4a42906e7bf
+
+	measure 'SAP Booking Quota Internals' = IFERROR(SUM('PPM Time Cards Internals'[Total PDs])/SUM('SAP Time Recording'[Booked in SAP]),0)
+		formatString: #,0.00\ %;-#,0.00\ %;#,0.00\ %
+		lineageTag: f4262419-6029-4a89-80ce-6b56844b7a88
+
+	measure 'SAP Booking Quota YTD Internals' = IFERROR([PPM Total PDs YTD Internal]/[SAP Booked PDs YTD],0)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 0ffa360f-6738-4246-a96d-5445c2023161
+
+	measure 'Available Capacity Booking Quota YTD Internals' = [PPM Total PDs YTD Internal]/[Avilable Capacity PDs YTD]
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 0f09ef7b-3d81-4fe3-8024-26e735ba79b4
+
+	measure 'Diff PPM Booked and Available PDs Internals' = SUM('SAP Internal Resources Changes'[Monthly Capacity PDs])-SUM('PPM Time Cards Internals'[Total PDs])
+		formatString: #,0.00
+		lineageTag: a7905a06-ad2f-4209-8563-181e2edc76ff
+
+	measure 'Diff PPM Booked and Available PDs YTD Internals' = [Avilable Capacity PDs YTD]-[PPM Total PDs YTD Internal]
+		formatString: #,0.00
+		lineageTag: a7918585-651e-44c0-84f1-ee7a8a78eaf3
+
+	measure 'Diff PPM and SAP Booked PDs Internals' = SUM('SAP Time Recording'[Booked in SAP])-SUM('PPM Time Cards Internals'[Total PDs])
+		lineageTag: 7fe15180-b9aa-478f-be58-4d5f7d7b184f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avilable Capacity PDs YTD' = TOTALYTD(SUM('SAP Internal Resources Changes'[Monthly Capacity PDs]),'Date Table Main'[Month Date])
+		formatString: #,0.00
+		lineageTag: a0d5e9ee-a36d-4fc5-a27f-1d8aff5eb879
+
+	measure 'PPM Total PDs YTD Internal' = TOTALYTD(SUM('PPM Time Cards Internals'[Total PDs]),'Date Table Main'[Month Date])
+		formatString: #,0.00
+		lineageTag: e014055d-ba3a-4d8f-bf75-152002967faf
+
+	measure 'PPM Total EUR YTD Internals' = TOTALYTD(SUM('PPM Time Cards Internals'[Total EUR]),'Date Table Main'[Month Date])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: ea865586-0a2d-419b-b4c1-ac51843a0f33
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-AT"}
+
+	measure 'Fact Count PPM Internals' = ```
+			COUNTROWS('PPM Time Cards Internals') 
+			```
+		formatString: 0
+		lineageTag: f216fa96-2677-43bb-afde-66f43f8577ff
+
+	measure 'Fact Count Resources' = ```
+			COUNTROWS('SAP Internal Resources Changes') 
+			```
+		formatString: 0
+		lineageTag: 94476460-0608-4a1b-a77d-cc0ab8febbf9
+
+	measure User = UserPrincipalName()
+		lineageTag: 0697ab54-9c52-4ca0-8d52-70bbbd3f075d
+
+	measure 'User Role' = LOOKUPVALUE('User Roles'[Role],'User Roles'[User Email],UserPrincipalName())
+		lineageTag: 9ff82fc7-99f1-479d-9b2a-849aa7a7149a
+
+	measure 'User Name' = ```
+			USERNAME() 
+			```
+		lineageTag: 02e08b63-669b-4756-96c9-be7e8acecb0b
+
+	measure 'Fact Count Opex' = ```
+			COUNTROWS( 
+			'Opex from BAP with Plan CE')
+			```
+		formatString: 0
+		lineageTag: 637fbd89-d857-44f6-a595-5838df35f92f
+
+	measure 'PPM Total Hours YTD Internals' = TOTALYTD(SUM('PPM Time Cards Internals'[Total Hours]),'Date Table Main'[Month Date])
+		formatString: #,0.00
+		lineageTag: 447232df-b967-4f64-bcfd-d8e73e2e3a5d
+
+	measure 'SAP Opex Refresh Time' = CALCULATE(MAX('Opex from BAP with Plan CE'[SAP Refresh Time]), ALL('Opex from BAP with Plan CE'))
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: c1bc55ec-8ad5-408e-b554-819286477df5
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'Fact Count Service Spend' = ```
+			COUNTROWS('Service Spend Details')  
+			```
+		formatString: 0
+		lineageTag: 3f6b346e-afa9-480e-8eb8-82110c7ebaa6
+
+	measure 'SAP Service Spend Refresh Time' = CALCULATE(MAX('Service Spend Details'[SAP Refresh Time]), ALL('Service Spend Details'))
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: 09f88dbb-91c9-4bda-b9db-d42fb745356d
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'Actuals Running Total' = var CumulativeTotal = CALCULATE(sum('Opex from BAP with Plan CE'[Amount Acutals]),ALLSELECTED('Opex from BAP with Plan CE'),'Opex from BAP with Plan CE'[Month Date] <= Max('Opex from BAP with Plan CE'[Month Date])) RETURN IF(ISBLANK(sum('Opex from BAP with Plan CE'[Amount Acutals])),blank(),CumulativeTotal)
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 08b38d8b-1f06-42b5-95e6-968ca8f10926
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	measure 'Actuals Run Rate' = ```
+			VAR DaysWithActuals = CALCULATE(COUNTROWS('Date Table Main'),filter(ALLSELECTED('Date Table Main'),1=1))
+			VAR CumulativeTotal = CALCULATE([Actuals Running Total],ALLSELECTED('Date Table Main'))
+			
+			RETURN 
+			DIVIDE(CumulativeTotal,DaysWithActuals,0)
+			//DaysWithActuals
+			```
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: eef8086d-e88b-4238-a34a-89c19ca40f48
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	measure 'Cumulative Run Rate' =
+			VAR AverageRate = [Actuals Run Rate]
+			RETURN
+			CALCULATE(SUMX(SUMMARIZE('Date Table Main', 'Date Table Main'[Month Date],"Run Rate",AverageRate),[Run Rate]), filter (ALLSELECTED('Date Table Main'),'Date Table Main'[Month Date] <= max('Date Table Main'[Month Date])))
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 51a2d709-98da-4a84-adc8-0331af38f156
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	measure 'YE Forecast' = var ForecastTotal =[Actuals Run Rate] RETURN IF(sum('Opex from BAP with Plan CE'[Amount Acutals]),sum('Opex from BAP with Plan CE'[Amount Acutals]),ForecastTotal)
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 77ae7ef3-2b90-4903-b56e-409f75fd2241
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	measure 'Actuals Run Rate Months' = max('Opex from BAP with Plan CE'[Months of Actuals])
+		lineageTag: d6ae9596-94d0-4446-8998-f89ef4c2983f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'User Rights Per Country HR' = ```
+			LOOKUPVALUE('User Rights Per Country'[Employee lists],'User Rights Per Country'[User],UserPrincipalName()) 
+			```
+		lineageTag: 7e56b3d7-ae35-4799-8396-43b55acd596e
+
+	measure 'Fact Count PPM Externals' = ```
+			COUNTROWS('PPM Time Cards Externals') 
+			```
+		formatString: 0
+		lineageTag: 94fb1354-cc14-4b1d-a787-266e8804b09c
+
+	measure 'PPM Total EUR YTD Externals' = TOTALYTD(SUM('PPM Time Cards Externals'[Total EUR]),'Date Table Main'[Month Date])
+		lineageTag: bf7a6b8c-2754-4841-850d-ba744d23f07e
+
+	measure 'PPM Total PDs YTD External' = TOTALYTD(SUM('PPM Time Cards Externals'[Total PDs]),'Date Table Main'[Month Date])
+		formatString: #,0.00
+		lineageTag: 83a165ce-26b7-478a-a46f-9efd018ce4d4
+
+	measure 'PPM Total Hours YTD Externals' = TOTALYTD(SUM('PPM Time Cards Externals'[Total Hours]),'Date Table Main'[Month Date])
+		formatString: #,0.00
+		lineageTag: 8d1965c9-5115-42ee-9f22-b154eb443274
+
+	measure 'Fact Count Accoount Receivable' = ```
+			COUNTROWS('Account Receivables') 
+			```
+		formatString: 0
+		lineageTag: 6b65996b-3ae4-4961-b119-aa07d4d421f1
+
+	measure 'User Rights Per Country PPM' = ```
+			LOOKUPVALUE('User Rights Per Country'[PPM Time Bookings],'User Rights Per Country'[User],UserPrincipalName()) 
+			```
+		lineageTag: 2a55c5f8-5c65-40a1-8bff-d4eec35beb50
+
+	measure 'User Rights Per Country Costs&Revenue' = ```
+			LOOKUPVALUE('User Rights Per Country'[Cost & Revenue],'User Rights Per Country'[User],UserPrincipalName()) 
+			```
+		lineageTag: 78665bfa-f196-4af2-a471-d774c1cd88dc
+
+	measure 'User Rights Per Country Service Spend' = ```
+			LOOKUPVALUE('User Rights Per Country'[Service Spend],'User Rights Per Country'[User],UserPrincipalName()) 
+			```
+		lineageTag: 9681217c-39a8-478e-85ff-9c139f32bca9
+
+	measure 'User Rights Per Country Account Receivables' = ```
+			LOOKUPVALUE('User Rights Per Country'[Account Receivables],'User Rights Per Country'[User],UserPrincipalName()) 
+			```
+		lineageTag: dc80c37e-f7f7-4a82-9c0b-e04ae237d333
+
+	measure 'Newest Refresh Date PPM' = ```
+			
+			VAR SelectedCompanyCode = SELECTEDVALUE('Company Codes'[Company Code], "ALL")
+			VAR FilteredCompanyCode = 
+			    SWITCH(
+			        TRUE(),
+			        SelectedCompanyCode = "DE44", "AT45", // Use "AT45" for filtering
+			        SelectedCompanyCode // Otherwise, use the selected company code
+			    )
+			RETURN
+			    IF(
+			        SelectedCompanyCode = "ALL",
+			        CALCULATE(
+			            MAX('PPM Time Cards Internals'[Export Date]),
+			            REMOVEFILTERS()
+			        ),
+			        CALCULATE(
+			            MAX('PPM Time Cards Internals'[Export Date]),
+			            REMOVEFILTERS(),
+			            'Company Codes'[Company Code] = FilteredCompanyCode
+			        )
+			    )
+			```
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: 9bb0b9b9-8f43-4cde-bac5-5f5e7504dcbb
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'Fact Count Capex' = ```
+			COUNTROWS('Capex Bookings') 
+			```
+		formatString: 0
+		lineageTag: 3c593781-b52b-40c7-9090-a0533218a872
+
+	measure 'Fact Count Budget Availability' = ```
+			COUNTROWS('Budget Report with DemandID') 
+			```
+		formatString: 0
+		lineageTag: b3b07505-e175-401c-98b4-bde4e8181edb
+
+	measure 'Fact Count Assets' = ```
+			COUNTROWS('Asset List') 
+			```
+		formatString: 0
+		lineageTag: 445bbb82-5443-40af-b16c-7f586719ecf2
+
+	measure 'User Rights Per Country Budget Availability' = ```
+			LOOKUPVALUE('User Rights Per Country'[Budget Availability],'User Rights Per Country'[User],UserPrincipalName()) 
+			```
+		lineageTag: 09aa2562-5776-48d2-b74e-49b958ee7d6c
+
+	measure 'Fact Count O2I PreRun' = ```
+			COUNTROWS('O2I PreRun') 
+			```
+		formatString: 0
+		lineageTag: 720dd8bd-dd55-452e-9b63-96ef7a070dec
+
+	measure 'PreRun Refresh Time' = CALCULATE(MIN('O2I PreRun'[SAP Refresh Time]), ALL('O2I PreRun'))
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: 0ecf87d1-9035-426a-874e-df1635fc0a10
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'Fact Count Open Invoices' = ```
+			COUNTROWS( 
+			'Open Invoices')
+			```
+		formatString: 0
+		lineageTag: f501a101-b212-4b61-b7d4-2df9f974dad2
+
+	measure 'Open Invoice Refresh Time' = ```
+			
+			FORMAT(MAX('Open Invoices'[SAP Refresh Time]),"dd.mm.yyyy hh:mm")
+			
+			```
+		lineageTag: a8d61321-65f1-44a5-a25d-59693600bc51
+
+	measure 'Total Rows Opex from BAP' = COUNTROWS(ALLSELECTED('Opex from BAP with Plan CE'))
+		formatString: #,0
+		lineageTag: 0b69a90e-cf8c-4da7-bfae-bbf7bd6efef2
+
+	measure 'Actuals Run Rate Months Message' = "*Actuals of " & CONVERT(max('Opex from BAP with Plan CE'[Months of Actuals]),TEXT) &" months are taken into consideration for Run Rate calculation."
+		lineageTag: fbb530b8-395f-4499-876c-810603017f1f
+
+	measure Measure
+		lineageTag: 4e1aa9e5-1504-43ab-a6d2-0d666939c769
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	partition 'Measures Table' = m
+		mode: import
+		queryGroup: 00_Other
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

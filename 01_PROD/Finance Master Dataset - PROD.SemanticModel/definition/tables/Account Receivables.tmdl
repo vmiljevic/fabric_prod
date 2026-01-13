@@ -1,0 +1,336 @@
+table 'Account Receivables'
+	lineageTag: 4a42dc12-6c87-4701-99f5-2327b5a10ad2
+
+	column Assignment
+		dataType: string
+		lineageTag: f617e468-4e5b-4c3f-9ac7-a946dcf4b196
+		summarizeBy: none
+		sourceColumn: Assignment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Number'
+		dataType: string
+		lineageTag: a0ab667d-b7c9-4803-97f0-e66408f8e10c
+		summarizeBy: none
+		sourceColumn: Document Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Type'
+		dataType: string
+		lineageTag: a730ca7a-f50f-43ec-ae03-19013a39f8b0
+		summarizeBy: none
+		sourceColumn: Document Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3df97c94-d9fd-47c2-b741-8809a573b943
+		summarizeBy: none
+		sourceColumn: Document Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Amount in local currency'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 9ff245b8-538c-43b8-ad42-632e79eacb8f
+		summarizeBy: sum
+		sourceColumn: Amount in local currency
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Local Currency'
+		dataType: string
+		lineageTag: 3f9cbb3c-8424-4da3-b19f-b13e703ed574
+		summarizeBy: none
+		sourceColumn: Local Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting Key'
+		dataType: string
+		lineageTag: 29d31b5e-9ae5-4ae6-8d87-1519a8c0ca1d
+		summarizeBy: none
+		sourceColumn: Posting Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clearing Document'
+		dataType: string
+		lineageTag: bd75877a-3e5d-47b2-9631-212e11ffd535
+		summarizeBy: none
+		sourceColumn: Clearing Document
+
+		annotation SummarizationSetBy = Automatic
+
+	column Text
+		dataType: string
+		lineageTag: 33edfbe1-3e18-4cd6-9f33-26dd980f33c3
+		summarizeBy: none
+		sourceColumn: Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: eb3196a8-e3a4-400a-b94e-8b356581eb29
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debtor Number'
+		dataType: string
+		lineageTag: 5be4959b-4c83-49fe-8117-3c59ed5cec5e
+		summarizeBy: none
+		sourceColumn: Debtor Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Name'
+		dataType: string
+		lineageTag: 83500863-7165-4e05-ada6-2d1bfedd81d7
+		summarizeBy: none
+		sourceColumn: User Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing Document'
+		dataType: string
+		lineageTag: fe58b7e5-db33-4fab-8af2-a73104759f88
+		summarizeBy: none
+		sourceColumn: Billing Document
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract Number'
+		dataType: string
+		lineageTag: 511a11f5-cb5c-428d-9b56-be8d9fc0018e
+		summarizeBy: none
+		sourceColumn: Contract Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clearing date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 47e960ed-789f-4730-a94d-5b968b309a5d
+		summarizeBy: none
+		sourceColumn: Clearing date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Clearing item'
+		dataType: string
+		lineageTag: 27251e2c-46ac-4e8d-a1b6-a10517011ac4
+		summarizeBy: none
+		sourceColumn: Clearing item
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clearing Fiscal Year'
+		dataType: string
+		lineageTag: 3d68ca18-e568-48f4-b37d-94b614440a78
+		summarizeBy: none
+		sourceColumn: Clearing Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reference Key 1'
+		dataType: string
+		lineageTag: 724fdd5c-a774-4b81-90ad-6a515d995c41
+		summarizeBy: none
+		sourceColumn: Reference Key 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reference Key 2'
+		dataType: string
+		lineageTag: 40d737fc-e40a-4257-9b3b-5e39c4282332
+		summarizeBy: none
+		sourceColumn: Reference Key 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reference Key 3'
+		dataType: string
+		lineageTag: 520743df-6632-4eff-8d84-6901c4f4b4d6
+		summarizeBy: none
+		sourceColumn: Reference Key 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount in EUR'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: ef13e30f-7627-4d4b-80ef-dd16e082b394
+		summarizeBy: sum
+		sourceColumn: Amount in EUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Local Currency 2'
+		dataType: string
+		lineageTag: 9dcc654e-0f18-4acd-9eed-aa5278ee9058
+		summarizeBy: none
+		sourceColumn: Local Currency 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Refresh Time'
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: 5ed73e86-c9d7-4fdb-9800-462c1bacc901
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Posting Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c3021328-35c9-4cd5-8aaa-7e0bb9c8ad14
+		summarizeBy: none
+		sourceColumn: Posting Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Net due date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 99f234d9-8548-44aa-9569-228b5328e557
+		summarizeBy: none
+		sourceColumn: Net due date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Fiscal Year'
+		dataType: string
+		lineageTag: cddd4f67-262b-4e19-a71e-1553796c6feb
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year/month
+		dataType: string
+		lineageTag: d7542a13-4904-47ae-aae6-0462c6ca52df
+		summarizeBy: none
+		sourceColumn: Year/month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting period'
+		dataType: string
+		lineageTag: 5c1748a8-8f57-48b2-beb3-ca5b359b5ba2
+		summarizeBy: none
+		sourceColumn: Posting period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Overdue Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: db98ba09-ebe3-4982-88e0-990b51558006
+		summarizeBy: sum
+		sourceColumn: Overdue Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 484f3815-1868-4059-a77f-9947c170427b
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Debtor Name'
+		dataType: string
+		lineageTag: 534a8b1a-80f8-4df1-ba6b-797b0f33378a
+		summarizeBy: none
+		sourceColumn: Debtor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debtor Number and Name'
+		dataType: string
+		lineageTag: a7e22313-aaa8-4b10-9bae-33add337cdb7
+		summarizeBy: none
+		sourceColumn: Debtor Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status = if (ISBLANK('Account Receivables'[Clearing date]),if('Account Receivables'[Overdue Days] >30,"Open - Overdue","Open"),"Paid")
+		lineageTag: 287f942c-d577-49cd-834f-cf3f2e03a8ca
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Account Receivables' = m
+		mode: import
+		queryGroup: '06_SAP CAP'
+		source =
+				let
+				    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/", [ApiVersion = 15]),
+				    #"Filtered Rows3" = Table.SelectRows(Source, each [Folder Path] = "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared Documents/01_Power BI/Data Sources/05_Account Receivables/"),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows3", let latest = List.Max(#"Filtered Rows3"[Date created]) in each [Date created] = latest),
+				    #"Added Custom1" = Table.AddColumn(#"Filtered Rows1", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Sheet1")),
+				    #"Expanded Extracted Data" = Table.ExpandTableColumn(#"Added Custom1", "Extracted Data", {"Data"}, {"Extracted Data.Data"}),
+				    #"Expanded Extracted Data.Data" = Table.ExpandTableColumn(#"Expanded Extracted Data", "Extracted Data.Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27"}, {"Extracted Data.Data.Column1", "Extracted Data.Data.Column2", "Extracted Data.Data.Column3", "Extracted Data.Data.Column4", "Extracted Data.Data.Column5", "Extracted Data.Data.Column6", "Extracted Data.Data.Column7", "Extracted Data.Data.Column8", "Extracted Data.Data.Column9", "Extracted Data.Data.Column10", "Extracted Data.Data.Column11", "Extracted Data.Data.Column12", "Extracted Data.Data.Column13", "Extracted Data.Data.Column14", "Extracted Data.Data.Column15", "Extracted Data.Data.Column16", "Extracted Data.Data.Column17", "Extracted Data.Data.Column18", "Extracted Data.Data.Column19", "Extracted Data.Data.Column20", "Extracted Data.Data.Column21", "Extracted Data.Data.Column22", "Extracted Data.Data.Column23", "Extracted Data.Data.Column24", "Extracted Data.Data.Column25", "Extracted Data.Data.Column26", "Extracted Data.Data.Column27"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded Extracted Data.Data",{"Content", "Name", "Extension", "Date accessed", "Date created", "Attributes", "Folder Path"}),
+				    #"Added Custom2" = Table.AddColumn(#"Removed Columns", "SAP Refresh Time", each if [Extracted Data.Data.Column20] = "Clearing date" then "SAP Refresh Time" else [Date modified]),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Added Custom2",{"Date modified"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Columns2", [PromoteAllScalars=true]),
+				    #"Added Custom" = Table.AddColumn(#"Promoted Headers", "Posting Date New", each if Text.StartsWith([Assignment],"AzTec 22-") and [Posting Date] = #date(2023, 1, 1) then #date(2022, 12, 1) else [Posting Date]),
+				    #"Added Custom3" = Table.AddColumn(#"Added Custom", "Net due date new", each if Text.StartsWith([Assignment],"AzTec 22-") and [Posting Date] = #date(2023, 1, 1) then #date(2022, 12, 1) else [Net due date]),
+				    #"Added Custom4" = Table.AddColumn(#"Added Custom3", "Fiscal Year New", each if Text.StartsWith([Assignment],"AzTec 22-") and [Posting Date] = #date(2023, 1, 1) then "2022" else [Fiscal Year]),
+				    #"Added Custom5" = Table.AddColumn(#"Added Custom4", "Year/month new", each if Text.StartsWith([Assignment],"AzTec 22-") and [Posting Date] = #date(2023, 1, 1) then "2022/12" else [#"Year/month"]),
+				    #"Added Custom6" = Table.AddColumn(#"Added Custom5", "Posting period new", each if Text.StartsWith([Assignment],"AzTec 22-") and [Posting Date] = #date(2023, 1, 1) then "12" else [Posting Period]),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Added Custom6",{"Posting Date", "Net due date", "Fiscal Year", "Year/month", "Posting Period"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns1",{{"Posting Date New", "Posting Date"}, {"Net due date new", "Net due date"}, {"Fiscal Year New", "Fiscal Year"}, {"Year/month new", "Year/month"}, {"Posting period new", "Posting period"}}),
+				    #"Changed Type22" = Table.TransformColumnTypes(#"Renamed Columns",{{"Clearing date", type date}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type22",{ {"Document Date", type date}, {"Posting Date", type date}, {"Amount in local currency", Currency.Type}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type1",{{"Customer", "Debtor Number"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns1", each ([Posting Key] <> "")),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Filtered Rows",{{"Net due date", type date}}),
+				    #"Added Custom22" = Table.AddColumn(#"Changed Type2", "Overdue Days", each if [Clearing date] is null then DateTime.Date(DateTime.LocalNow())-[Net due date] else 0),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom22",{{"Overdue Days", Int64.Type}}),
+				    #"Added Custom12" = Table.AddColumn(#"Changed Type3", "Month Date", each Date.StartOfMonth([Net due date])),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Added Custom12",{{"Month Date", type date}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type4", {"Debtor Number"}, #"Group Debtors", {"Debtor Number"}, "Group Debtors", JoinKind.LeftOuter),
+				    #"Expanded Group Debtors" = Table.ExpandTableColumn(#"Merged Queries", "Group Debtors", {"Debtor Name"}, {"Group Debtors.Debtor Name"}),
+				    #"Renamed Columns22" = Table.RenameColumns(#"Expanded Group Debtors",{{"Group Debtors.Debtor Name", "Debtor Name"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns22",null,"NA Debtor Name",Replacer.ReplaceValue,{"Debtor Name"}),
+				    #"Added Custom23" = Table.AddColumn(#"Replaced Value", "Debtor Number and Name", each [Debtor Number] & " - " & [Debtor Name]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom23",{{"Amount in loc.curr.2", Currency.Type}}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Changed Type",{{"Amount in loc.curr.2", "Amount in EUR"}}),
+				    #"Changed Type5" = Table.TransformColumnTypes(#"Renamed Columns2",{{"SAP Refresh Time", type datetime}})
+				in
+				    #"Changed Type5"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

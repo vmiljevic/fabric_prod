@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "dp_load_capex_2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6c016b3e-be54-81b8-4e79-659b2937a422"
+  }
+}

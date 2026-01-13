@@ -1,0 +1,559 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "01c128d0-63fa-b3ae-40ef-6e76f55315d3",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "SK44",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": {
+                "value": "@activity('lo_max_date_sk44').output.firstRow.MaxDate",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "DateTo": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(), -1), 'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "9d2a756969c65200e4854a54f2f9271a",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_sk44_ingest_ppm_time_booking_daily",
+        "dependsOn": [
+          {
+            "activity": "lo_max_date_sk44",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "01c128d0-63fa-b3ae-40ef-6e76f55315d3",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "SK45",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": {
+                "value": "@activity('lo_max_date_sk45').output.firstRow.MaxDate",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "DateTo": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(), -1), 'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "996ee8fb1b9f0190e728a6c8bb4bcba3",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_sk45_ingest_ppm_time_booking_daily",
+        "dependsOn": [
+          {
+            "activity": "lo_max_date_sk45",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "01c128d0-63fa-b3ae-40ef-6e76f55315d3",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "HU44",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": {
+                "value": "@activity('lo_max_date_hu44').output.firstRow.MaxDate",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "DateTo": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(), -1), 'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "9f742c4bfd596200e4858c32d11c99db",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_hu44_ingest_ppm_time_booking_daily",
+        "dependsOn": [
+          {
+            "activity": "lo_max_date_hu44",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "01c128d0-63fa-b3ae-40ef-6e76f55315d3",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "CZ45",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": {
+                "value": "@activity('lo_max_date_cz45').output.firstRow.MaxDate",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "DateTo": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(), -1), 'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "1f0d4636db4e01d423590ad9f496195b",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_cz45_ingest_ppm_time_booking_daily",
+        "dependsOn": [
+          {
+            "activity": "lo_max_date_cz45",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "01c128d0-63fa-b3ae-40ef-6e76f55315d3",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "AT45",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": {
+                "value": "@activity('lo_max_date_at45').output.firstRow.MaxDate",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "DateTo": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(), -1), 'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "6b8aa1d234111200e4851dede6f89c82",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_at45_ingest_ppm_time_booking_daily",
+        "dependsOn": [
+          {
+            "activity": "lo_max_date_at45",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "01c128d0-63fa-b3ae-40ef-6e76f55315d3",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "DE44",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": {
+                "value": "@activity('lo_max_date_de44').output.firstRow.MaxDate",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "DateTo": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(), -1), 'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "c3a70ce2db30a810eb27e03cd39619c9",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_de44_ingest_ppm_time_booking_daily",
+        "dependsOn": [
+          {
+            "activity": "lo_max_date_de44",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "sqlReaderQuery": "SELECT COALESCE(\n    FORMAT(DATEADD(day, 1, CAST(MAX([sys_updated_on]) AS datetime)), 'yyyy-MM-dd'), \n    FORMAT(DATEADD(day, -1, GETDATE()), 'yyyy-MM-dd')\n) AS MaxDate\nFROM [lakehouse_finance_silver].[dbo].[fact_ppm_time_cards_daily] \nWHERE [ExportFor] = 'SK44'",
+            "partitionOption": "None"
+          },
+          "datasetSettings": {
+            "type": "LakehouseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "lakehouse_finance_silver",
+              "properties": {
+                "type": "Lakehouse",
+                "typeProperties": {
+                  "artifactId": "5be57354-7448-afa1-48c2-7d221bc1173b",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000",
+                  "rootFolder": "Tables"
+                },
+                "externalReferences": {
+                  "connection": "b119cf12-394d-439c-bedf-be1b70fcb3eb"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "lo_max_date_sk44",
+        "dependsOn": []
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "sqlReaderQuery": "SELECT COALESCE(\n    FORMAT(DATEADD(day, 1, CAST(MAX([sys_updated_on]) AS datetime)), 'yyyy-MM-dd'), \n    FORMAT(DATEADD(day, -1, GETDATE()), 'yyyy-MM-dd')\n) AS MaxDate\nFROM [lakehouse_finance_silver].[dbo].[fact_ppm_time_cards_daily] \nWHERE [ExportFor] = 'SK45'",
+            "partitionOption": "None"
+          },
+          "datasetSettings": {
+            "type": "LakehouseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "lakehouse_finance_silver",
+              "properties": {
+                "type": "Lakehouse",
+                "typeProperties": {
+                  "artifactId": "5be57354-7448-afa1-48c2-7d221bc1173b",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000",
+                  "rootFolder": "Tables"
+                },
+                "externalReferences": {
+                  "connection": "b119cf12-394d-439c-bedf-be1b70fcb3eb"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "lo_max_date_sk45",
+        "dependsOn": []
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "sqlReaderQuery": "SELECT COALESCE(\n    FORMAT(DATEADD(day, 1, CAST(MAX([sys_updated_on]) AS datetime)), 'yyyy-MM-dd'), \n    FORMAT(DATEADD(day, -1, GETDATE()), 'yyyy-MM-dd')\n) AS MaxDate\nFROM [lakehouse_finance_silver].[dbo].[fact_ppm_time_cards_daily] \nWHERE [ExportFor] = 'HU44'",
+            "partitionOption": "None"
+          },
+          "datasetSettings": {
+            "type": "LakehouseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "lakehouse_finance_silver",
+              "properties": {
+                "type": "Lakehouse",
+                "typeProperties": {
+                  "artifactId": "5be57354-7448-afa1-48c2-7d221bc1173b",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000",
+                  "rootFolder": "Tables"
+                },
+                "externalReferences": {
+                  "connection": "b119cf12-394d-439c-bedf-be1b70fcb3eb"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "lo_max_date_hu44",
+        "dependsOn": []
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "sqlReaderQuery": "SELECT COALESCE(\n    FORMAT(DATEADD(day, 1, CAST(MAX([sys_updated_on]) AS datetime)), 'yyyy-MM-dd'), \n    FORMAT(DATEADD(day, -1, GETDATE()), 'yyyy-MM-dd')\n) AS MaxDate\nFROM [lakehouse_finance_silver].[dbo].[fact_ppm_time_cards_daily] \nWHERE [ExportFor] = 'AT45'",
+            "partitionOption": "None"
+          },
+          "datasetSettings": {
+            "type": "LakehouseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "lakehouse_finance_silver",
+              "properties": {
+                "type": "Lakehouse",
+                "typeProperties": {
+                  "artifactId": "5be57354-7448-afa1-48c2-7d221bc1173b",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000",
+                  "rootFolder": "Tables"
+                },
+                "externalReferences": {
+                  "connection": "b119cf12-394d-439c-bedf-be1b70fcb3eb"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "lo_max_date_at45",
+        "dependsOn": []
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "sqlReaderQuery": "SELECT COALESCE(\n    FORMAT(DATEADD(day, 1, CAST(MAX([sys_updated_on]) AS datetime)), 'yyyy-MM-dd'), \n    FORMAT(DATEADD(day, -1, GETDATE()), 'yyyy-MM-dd')\n) AS MaxDate\nFROM [lakehouse_finance_silver].[dbo].[fact_ppm_time_cards_daily] \nWHERE [ExportFor] = 'DE44'",
+            "partitionOption": "None"
+          },
+          "datasetSettings": {
+            "type": "LakehouseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "lakehouse_finance_silver",
+              "properties": {
+                "type": "Lakehouse",
+                "typeProperties": {
+                  "artifactId": "5be57354-7448-afa1-48c2-7d221bc1173b",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000",
+                  "rootFolder": "Tables"
+                },
+                "externalReferences": {
+                  "connection": "b119cf12-394d-439c-bedf-be1b70fcb3eb"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "lo_max_date_de44",
+        "dependsOn": []
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "sqlReaderQuery": "SELECT COALESCE(\n    FORMAT(DATEADD(day, 1, CAST(MAX([sys_updated_on]) AS datetime)), 'yyyy-MM-dd'), \n    FORMAT(DATEADD(day, -1, GETDATE()), 'yyyy-MM-dd')\n) AS MaxDate\nFROM [lakehouse_finance_silver].[dbo].[fact_ppm_time_cards_daily] \nWHERE [ExportFor] = 'CZ45'",
+            "partitionOption": "None"
+          },
+          "datasetSettings": {
+            "type": "LakehouseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "lakehouse_finance_silver",
+              "properties": {
+                "type": "Lakehouse",
+                "typeProperties": {
+                  "artifactId": "5be57354-7448-afa1-48c2-7d221bc1173b",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000",
+                  "rootFolder": "Tables"
+                },
+                "externalReferences": {
+                  "connection": "b119cf12-394d-439c-bedf-be1b70fcb3eb"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "lo_max_date_cz45",
+        "dependsOn": []
+      }
+    ],
+    "concurrency": 1
+  }
+}

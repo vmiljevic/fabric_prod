@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_budget_demand_current",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "87d32660-941f-838d-4c00-3e15ef569434"
+  }
+}

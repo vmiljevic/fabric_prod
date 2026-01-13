@@ -1,0 +1,72 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "AT45-PPM-3",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "time_cards": {
+      "queryId": "2eef90cb-2eae-4fe5-85a3-eb4613035d21",
+      "queryName": "time_cards",
+      "loadEnabled": false
+    },
+    "CompanyCode": {
+      "queryId": "f56785b2-e20a-441e-8ee5-e2d295a17282",
+      "queryName": "CompanyCode",
+      "loadEnabled": false
+    },
+    "NumberOfRecords": {
+      "queryId": "b7683119-04ad-42ec-acee-b20ce824781f",
+      "queryName": "NumberOfRecords",
+      "loadEnabled": false
+    },
+    "DateFrom": {
+      "queryId": "57612f73-3c94-4545-8ba9-0ce3b00370ce",
+      "queryName": "DateFrom",
+      "loadEnabled": false
+    },
+    "DateTo": {
+      "queryId": "512f88bb-23ca-4600-974d-bafb0cbd1f2c",
+      "queryName": "DateTo",
+      "loadEnabled": false
+    },
+    "Debtor": {
+      "queryId": "117c1e1e-20b6-4cd6-a7ac-44222f0fe393",
+      "queryName": "Debtor",
+      "loadEnabled": false
+    },
+    "tn_time_cards": {
+      "queryId": "64b72310-86f0-4272-a146-63d840d8f2a5",
+      "queryName": "tn_time_cards",
+      "loadEnabled": false
+    },
+    "time_cards_DataDestination": {
+      "queryId": "384a55b9-140c-4ba6-ad96-359dc2174097",
+      "queryName": "time_cards_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "bcp_time_cards": {
+      "queryId": "26cb4a13-0c62-4a30-81a4-e9c7f2debb92",
+      "queryName": "bcp_time_cards",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://aztech.service-now.com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"7f932ae2-b7eb-4c0d-9bc5-3458682fb116\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ],
+  "fastCombine": true,
+  "allowNativeQueries": false,
+  "parametric": true
+}

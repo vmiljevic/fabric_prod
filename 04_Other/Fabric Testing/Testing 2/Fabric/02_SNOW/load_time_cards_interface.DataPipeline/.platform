@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "load_time_cards_interface"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "36117722-85c7-a445-413a-293cf4381674"
+  }
+}

@@ -1,0 +1,60 @@
+table 'Rate Cards SAP Translation'
+	lineageTag: e00d5111-8a4a-426a-9be6-5074c2d51143
+
+	column Material
+		dataType: string
+		lineageTag: 48be235e-5cfe-4b18-8a42-9e1e1a422719
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Name'
+		dataType: string
+		lineageTag: 838f9bb9-c657-478c-b571-c07778b31ca7
+		summarizeBy: none
+		sourceColumn: Material Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Name Corrected'
+		dataType: string
+		lineageTag: 6a5a70fa-54e9-4eaa-9a43-d78c54b2cee4
+		summarizeBy: none
+		sourceColumn: Material Name Corrected
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Name PPM'
+		dataType: string
+		lineageTag: 74889060-df85-4880-81e7-f4d94f1e9087
+		summarizeBy: none
+		sourceColumn: Material Name PPM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Role'
+		dataType: string
+		lineageTag: 02b2b8fe-a7cd-4614-92dc-d2d05305e3b1
+		summarizeBy: none
+		sourceColumn: Rate Role
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Rate Cards SAP Translation' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="RateCardsSAPTranslation",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Material", type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{{"Material", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Material", Text.Clean, type text}})
+				in
+				    #"Cleaned Text"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_clean_capex"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c59e3089-fe1f-b9f3-47c9-b5a14220eede"
+  }
+}

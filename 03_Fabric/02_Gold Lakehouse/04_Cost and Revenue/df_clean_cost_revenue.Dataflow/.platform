@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_clean_cost_revenue"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e9e127d0-0f6e-a4b4-41af-bb7a99309e31"
+  }
+}

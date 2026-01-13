@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "dp_ingest_ppm_time_booking_archive"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2ccf8054-dfaa-86a3-467b-7d6758a52142"
+  }
+}

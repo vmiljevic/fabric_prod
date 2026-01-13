@@ -1,0 +1,40 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_jmp_nonproductive",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "at45_nonproductive_itat": {
+      "queryId": "a5c1a990-c694-48a0-b46f-cd28ad7c790c",
+      "queryName": "at45_nonproductive_itat"
+    },
+    "at45_nonproductive_core": {
+      "queryId": "0f322077-dc3c-45ac-b2de-e9d73d6037d4",
+      "queryName": "at45_nonproductive_core"
+    },
+    "fact_at45_jmp_nonproductive": {
+      "queryId": "89dfc459-60f9-4e40-b4ad-462e8e817bb2",
+      "queryName": "fact_at45_jmp_nonproductive",
+      "loadEnabled": false
+    },
+    "at45_noproductive_jira_DataDestination": {
+      "queryId": "004a89e5-8bea-49aa-8cd2-60e926c3911a",
+      "queryName": "at45_noproductive_jira_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"ddd60dd0-8aee-4de0-abf8-bc8307999ec6\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Allianz Technology AT",
+  "dataColors": [
+    "#122B54",
+    "#00908D",
+    "#FAB600",
+    "#006192",
+    "#A6276F",
+    "#F86200",
+    "#007AB3",
+    "#D64550"
+  ],
+  "foreground": "#007AB3",
+  "foregroundNeutralSecondary": "#00908D",
+  "backgroundLight": "#A6276F",
+  "foregroundNeutralTertiary": "#FAB600",
+  "bad": "#F62459",
+  "neutral": "#FAB600",
+  "good": "#00908D",
+  "minimum": "#DFEFF2",
+  "center": "#13A0D3",
+  "maximum": "#122B54",
+  "textClasses": {
+    "label": {
+      "color": "#122B54",
+      "fontFace": "Arial",
+      "fontSize": 11
+    },
+    "title": {
+      "color": "#122B54",
+      "fontFace": "Arial",
+      "fontSize": 12
+    },
+    "header": {
+      "color": "#122B54",
+      "fontFace": "Arial"
+    }
+  }
+}

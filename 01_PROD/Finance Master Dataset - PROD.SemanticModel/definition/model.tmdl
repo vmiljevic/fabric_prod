@@ -1,0 +1,169 @@
+model Model
+	culture: de-DE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: de-DE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 04_PPM
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup '02_Sales Lists'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup '03_HR SAP'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup '01_Master Domain Data'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup '05_SAP BAP'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup '06_SAP CAP'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup Transformation
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 'Transformation\Transform File from PPM Time Card Interface'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Transformation\Transform File from PPM Time Card Interface Externals'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Transformation\Transform File from PPM Time Card Interface\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformation\Transform File from PPM Time Card Interface Externals\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 00_Other
+
+	annotation PBI_QueryGroupOrder = 9
+
+queryGroup 07_CAPEX
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup '08_Budget Report'
+
+	annotation PBI_QueryGroupOrder = 7
+
+queryGroup '09_PreRun Analysis'
+
+	annotation PBI_QueryGroupOrder = 8
+
+queryGroup '04_PPM\PPM-Data Flow-AT45'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup '04_PPM\PPM-Data Flow-SK44'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup '04_PPM\PPM-Data Flow-HU44'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup '04_PPM\PPM-Data Flow-SK45'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup '04_PPM\PPM-Data Flow-CZ45'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup '04_PPM\PPM-Data Flow-DE44'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 11_JMP
+
+	annotation PBI_QueryGroupOrder = 21
+
+annotation PBI_QueryOrder = ["SAP Time Recording Teleworking","SAP Time Recording Corrections","Customer Contacts","Customer Order Items","Customer Orders","Grade and Proficiency Levels","Date Table Main","SAP Resource Grades AT45","SAP Resource Org","Cost Centers","DE44 Employee Master Data","AT45 Employee Master Data","SAP Internal Resources AT45","SAP Internal Resources DE44","SAP Internal Resources HU44","SAP Internal Resources HU44 NEW","Rate Cards HU44","SAP Internal Resources SK45","SAP Internal Resources SK45 NEW","Rate Cards SK45","SAP Internal Resources SK44 NEW","SAP Internal Resources SK44","Rate Cards SK44","SAP Internal Resources CZ45","SAP Internal Resources CZ45 NEW","Rate Cards CZ45","Hierachy and Group Pillars","SAP Internal Resources","Refresh Time Stamp","SAP Internal Resources Changes","Customer Offerings","Measures Table","Masterdata Cost Elements","Special User Right","User Rights","User Roles","SAP Internal Resources Managers","OPEX from BAP AT45 and DE44","OPEX from BAP AT45 and DE44 2025","OPEX from BAP SK44 and SK45","OPEX from BAP SK44 2025","OPEX from BAP SK45 2025","OPEX from BAP CZ45","OPEX from BAP CZ45 2025","OPEX from BAP HU44","OPEX from BAP HU44 2025","OPEX from BAP CE","Opex from BAP with Plan CE","OPEX from BAP Plan CZ45","OPEX from BAP Plan CZ45 2025","OPEX from BAP Plan AT45 and DE44","OPEX from BAP Plan AT45 and DE44 2025","OPEX from BAP Plan HU44","OPEX from BAP Plan HU44 2025","OPEX from BAP Plan SK44 and SK45","OPEX from BAP Plan SK44 and SK45 2025","OPEX from BAP Plan CE","OPEX from BAP FC All 2025","PPM Time Card Interface","PPM Time Card Interface New 1","Sample File (4)","Parameter4","Transform Sample File (4)","Transform File (4)","PPM Time Card Interface New 2","PPM Time Card Interface 2025","PPM Time Card Interface Externals","PPM Time Card Interface Externals 2025","Billing Run Calendar","Sample File (2)","Parameter2","Transform Sample File (2)","Transform File (2)","Rate Cards CE","PPM Projects HU44","PPM Projects CZ45","Rate Cards Translation","Group Price List Materials","Group Price List Prices","PPM Projects SK44","PPM Projects SK45","PPM Projects DE44","PPM Projects","PPM Accounting Elements","PPM Accounting Elements HU44","Service Spend Details","HR Capacity Parameters","Group Price List Deactivated Materials","Tax Rates","Rate Cards From SAP","Rate Cards From SAP Sumarized","Rate Cards SAP Translation","Company Codes","Group Cost Centers","SAP Time Recording CZ45","SAP Time Recording SK45","SAP Time Recording SK44","SAP Time Recording HU44","SAP Time Recording","PPM Accounting Elements SK45","PPM Accounting Elements SK44","PPM Accounting Elements CZ45","PPM Accounting Elements DE44","User Rights Per Country","PPM Time Cards AT","PPM Time Cards SK44 NEW","PPM Time Cards SK45 NEW","PPM Time Cards CZ45 NEW","PPM Time Cards HU44 NEW","PPM Time Cards All","PPM Time Cards Internals","PPM Time Cards Externals","PPM Deactiveated Users","Group Debtors","OPEX from BAP Plan 2026-2028","O2I PreRun Errors","Functional Org Names","Organizational Unit List","Organizational Unit List Parent Check","Organizational Unit List Monthly","Organizational Unit List Monthly AT April","Organizational Unit List Monthly AT Jan","Organizational Unit List Monthly AT Feb","Organizational Unit List Monthly AT Mar","Organizational Unit List Last Month","Profit Center","Organizational Unit List Disciplinary","Organizational Unit List Functional","WBS Elements from SAP","Account Receivables","PPM Time Cards AT 2025","PPM Time Cards SK44 2025","PPM Time Cards SK45 2025","PPM Time Cards HU44 2025","PPM Time Cards CZ45 2025","PPM Time Cards DE44 2025","PPM Time Cards All 2025","PPM Deactiveated Users 2025","SAP Resource Grades AT45 2025","Asset List","Capex Bookings","Debtors","Asset Class","Group Cost Centers from SAP","Budget Report with DemandID","Budget Report per DemandID","Budget Report Vendors","O2I PreRun","Capex Bookings 2024","O2I PreRun Costs","extrernal_rate_cards_at45","extrernal_rate_cards_at45_unique","time_card_interface_set_a_at45","time_card_interface_set_b_at45","PPM Time Card Interface 2025 AT45","PPM Time Card Interface Externals 2025 AT45","extrernal_rate_cards_sk44","extrernal_rate_cards_sk44_unique","time_card_interface_set_a_sk44","time_card_interface_set_b_sk44","PPM Time Card Interface 2025 SK44","PPM Time Card Interface Externals 2025 SK44","extrernal_rate_cards_hu44","extrernal_rate_cards_hu44_unique","time_card_interface_set_a_hu44","time_card_interface_set_b_hu44","PPM Time Card Interface 2025 HU44","PPM Time Card Interface Externals 2025 HU44","extrernal_rate_cards_sk45","extrernal_rate_cards_sk45_unique","time_card_interface_set_a_sk45","time_card_interface_set_b_sk45","PPM Time Card Interface 2025 SK45","PPM Time Card Interface Externals 2025 SK45","extrernal_rate_cards_cz45","extrernal_rate_cards_cz45_unique","time_card_interface_set_b_cz45","time_card_interface_set_a_cz45","PPM Time Card Interface 2025 CZ45","PPM Time Card Interface Externals 2025 CZ45","extrernal_rate_cards_de44","extrernal_rate_cards_de44_unique","time_card_interface_set_a_de44","time_card_interface_set_b_de44","PPM Time Card Interface 2025 DE44","PPM Time Card Interface Externals 2025 DE44","SAP HU Internal Resource IDs","Planning Versions","Open Invoices","Supplier List","Document Type","GL Accounts","sys_users_sk45","sys_users_sk44","sys_users_at45","sys_users_hu44","sys_users_cz45","sys_users_de44","sys_users_all","Service Mapping","User Login Data","Group Price List Materials Catalogue","Budget Report per PlanBook","Group Debtors from SAP","FC Cost Element","FC Cost Element Groups","FC Cost Centers","at45_nonproductive_itat","at45_nonproductive_core","at45_noproductive_jira","Exchange Rates"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop"]
+
+ref table 'SAP Time Recording'
+ref table 'Date Table Main'
+ref table 'Grade and Proficiency Levels'
+ref table 'SAP Resource Grades AT45'
+ref table 'Cost Centers'
+ref table 'DE44 Employee Master Data'
+ref table 'AT45 Employee Master Data'
+ref table 'Hierachy and Group Pillars'
+ref table 'SAP Internal Resources'
+ref table 'Refresh Time Stamp'
+ref table 'SAP Internal Resources Changes'
+ref table 'Measures Table'
+ref table 'PPM Projects'
+ref table 'Masterdata Cost Elements'
+ref table 'Special User Right'
+ref table 'User Rights'
+ref table 'User Roles'
+ref table 'SAP Internal Resources Managers'
+ref table 'Opex from BAP with Plan CE'
+ref table 'PPM Time Card Interface'
+ref table 'Billing Run Calendar'
+ref table 'PPM Accounting Elements'
+ref table 'Rate Cards Translation'
+ref table 'Group Price List Materials'
+ref table 'Service Spend Details'
+ref table 'Rate Cards From SAP'
+ref table 'Rate Cards SAP Translation'
+ref table 'User Rights Per Country'
+ref table 'PPM Time Cards Internals'
+ref table 'PPM Time Cards Externals'
+ref table 'PPM Deactiveated Users'
+ref table 'Group Cost Centers'
+ref table 'Company Codes'
+ref table 'Rate Cards From SAP Sumarized'
+ref table 'Group Debtors'
+ref table 'SAP Resource Org'
+ref table 'Functional Org Names'
+ref table 'Profit Center'
+ref table 'Organizational Unit List Disciplinary'
+ref table 'Organizational Unit List Functional'
+ref table 'WBS Elements from SAP'
+ref table 'Account Receivables'
+ref table 'PPM Deactiveated Users 2025'
+ref table 'SAP Resource Grades AT45 2025'
+ref table 'Asset List'
+ref table 'Capex Bookings'
+ref table 'Asset Class'
+ref table Debtors
+ref table 'Group Cost Centers from SAP'
+ref table 'Budget Report with DemandID'
+ref table 'Budget Report per DemandID'
+ref table 'O2I PreRun'
+ref table 'O2I PreRun Errors'
+ref table 'SAP HU Internal Resource IDs'
+ref table 'Open Invoices'
+ref table 'User Login Data'
+ref table 'Group Price List Materials Catalogue'
+ref table 'Budget Report per PlanBook'
+ref table 'Group Debtors from SAP'
+ref table 'FC Cost Element'
+ref table 'FC Cost Element Groups'
+ref table 'FC Cost Centers'
+
+ref role User
+
+ref cultureInfo de-DE
+

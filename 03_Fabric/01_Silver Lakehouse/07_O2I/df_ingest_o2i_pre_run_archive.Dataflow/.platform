@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_o2i_pre_run_archive"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6ba7213b-6930-a2e1-4414-324fba1b2e8d"
+  }
+}

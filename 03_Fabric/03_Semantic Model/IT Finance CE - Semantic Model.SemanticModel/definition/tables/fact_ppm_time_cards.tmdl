@@ -1,0 +1,483 @@
+table fact_ppm_time_cards
+	lineageTag: 86d7a80e-e69f-4ee0-8e6f-03ba2acadf78
+	sourceLineageTag: [dbo].[fact_ppm_time_cards]
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: c516cb73-dc73-45d9-aad3-ddc33c23b1c3
+		sourceLineageTag: Project Name
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booked PDs'
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 4291543e-3516-4fd8-be2e-0dbb40c85a8b
+		sourceLineageTag: Booked PDs
+		summarizeBy: sum
+		sourceColumn: Booked PDs
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		lineageTag: 789c3dd4-7f3a-4b20-8eaf-c5e82d4346d4
+		sourceLineageTag: Amount
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Time Card Link'
+		dataType: string
+		lineageTag: eb735fa6-9253-46bf-84b7-09f3cb3b7ef4
+		sourceLineageTag: Time Card Link
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: Time Card Link
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: fe6f314c-4fee-4ec0-97c6-478ec6c5ff86
+		sourceLineageTag: Material
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card Name'
+		dataType: string
+		lineageTag: 12f2af14-7a9b-43dd-9922-58332baad24a
+		sourceLineageTag: Rate Card Name
+		summarizeBy: none
+		sourceColumn: Rate Card Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Daily Rate'
+		dataType: double
+		lineageTag: 87834542-e31e-40b5-981b-666e210714d1
+		sourceLineageTag: Daily Rate
+		summarizeBy: sum
+		sourceColumn: Daily Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Booked Hours'
+		dataType: double
+		lineageTag: 380cd1fc-4a75-49e8-923e-b7ce1dde9ca5
+		sourceLineageTag: Booked Hours
+		summarizeBy: sum
+		sourceColumn: Booked Hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company Code User'
+		dataType: string
+		lineageTag: c12c69fd-ce6b-49dd-87bd-c0a9852635f4
+		sourceLineageTag: Company Code User
+		summarizeBy: none
+		sourceColumn: Company Code User
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Key'
+		dataType: string
+		lineageTag: 31ce1d7d-3125-44bc-960b-72cf65cb962b
+		sourceLineageTag: Project Key
+		summarizeBy: none
+		sourceColumn: Project Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID'
+		dataType: string
+		lineageTag: 936abe7a-670d-4cd5-a0d5-1964684a5bc0
+		sourceLineageTag: User ID
+		summarizeBy: none
+		sourceColumn: User ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HR ID'
+		dataType: string
+		lineageTag: eebc3a81-5dc7-4069-a6fd-7fbb23854a32
+		sourceLineageTag: HR ID
+		summarizeBy: none
+		sourceColumn: HR ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column sys_updated_on
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f65ad63f-ab96-4f29-9b84-dd8bcfb31b88
+		sourceLineageTag: sys_updated_on
+		summarizeBy: none
+		sourceColumn: sys_updated_on
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource Plan Name'
+		dataType: string
+		lineageTag: 8ce92629-ce63-40cd-8556-fc98064a8a2f
+		sourceLineageTag: Resource Plan Name
+		summarizeBy: none
+		sourceColumn: Resource Plan Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Task Name'
+		dataType: string
+		lineageTag: 633016b3-51e4-4f8d-9777-cdf956e01f9d
+		sourceLineageTag: Task Name
+		summarizeBy: none
+		sourceColumn: Task Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column RefreshDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c62a7a53-032f-4b34-8bc8-60006553ce63
+		sourceLineageTag: RefreshDate
+		summarizeBy: none
+		sourceColumn: RefreshDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code Project'
+		dataType: string
+		lineageTag: 0b27e8c2-fc56-47ed-b5d2-1e46d29ecc02
+		sourceLineageTag: Company Code Project
+		summarizeBy: none
+		sourceColumn: Company Code Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource Manager'
+		dataType: string
+		lineageTag: 15e9599e-fdc1-43a5-91f6-5d8d756b55e3
+		sourceLineageTag: Resource Manager
+		summarizeBy: none
+		sourceColumn: Resource Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource Plan Number'
+		dataType: string
+		lineageTag: 1fd61da9-fccd-4bee-a8d7-adc5c1f72050
+		sourceLineageTag: Resource Plan Number
+		summarizeBy: none
+		sourceColumn: Resource Plan Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booked By'
+		dataType: string
+		lineageTag: 15f6b871-e80d-4ff4-9c48-cbac40364841
+		sourceLineageTag: Booked By
+		summarizeBy: none
+		sourceColumn: Booked By
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_sys_id
+		dataType: string
+		lineageTag: 1cbddc40-bb41-4e8f-90a3-19804a65a021
+		sourceLineageTag: user_sys_id
+		summarizeBy: none
+		sourceColumn: user_sys_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tc_sys_id
+		dataType: string
+		lineageTag: deb9c44f-ca02-47a6-bf9e-52f541fa6778
+		sourceLineageTag: tc_sys_id
+		summarizeBy: none
+		sourceColumn: tc_sys_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sys_updated_by
+		dataType: string
+		lineageTag: 02c2f9fd-4982-43fc-88df-968fa858357d
+		sourceLineageTag: sys_updated_by
+		summarizeBy: none
+		sourceColumn: sys_updated_by
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Cost Center and Name'
+		dataType: string
+		lineageTag: e9f0caa9-7fb4-4869-96c6-1127b1faa8d5
+		sourceLineageTag: User Cost Center and Name
+		summarizeBy: none
+		sourceColumn: User Cost Center and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Costs Center and Name'
+		dataType: string
+		lineageTag: 68b8dc1b-ef63-4e3e-8f6e-9a8172f27130
+		sourceLineageTag: Project Costs Center and Name
+		summarizeBy: none
+		sourceColumn: Project Costs Center and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column project_sys_id
+		dataType: string
+		lineageTag: 9b065744-c096-4eae-8c19-94762ce1dc7c
+		sourceLineageTag: project_sys_id
+		summarizeBy: none
+		sourceColumn: project_sys_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Role'
+		dataType: string
+		lineageTag: 8bd8330f-b8c9-4772-9e71-990badce39a5
+		sourceLineageTag: Rate Role
+		summarizeBy: none
+		sourceColumn: Rate Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Manager'
+		dataType: string
+		lineageTag: a0c363c5-cd33-4e35-8118-0369f48f2276
+		sourceLineageTag: Project Manager
+		summarizeBy: none
+		sourceColumn: Project Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Number'
+		dataType: string
+		lineageTag: 5f4bde48-23a8-49a2-bf77-ddc2e2c2171c
+		sourceLineageTag: Project Number
+		summarizeBy: none
+		sourceColumn: Project Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Task'
+		dataType: string
+		lineageTag: 426cbdc9-6271-436c-881c-7a8029885bbd
+		sourceLineageTag: Project Task
+		summarizeBy: none
+		sourceColumn: Project Task
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Cluster'
+		dataType: string
+		lineageTag: 9c2e34a9-ca7b-4318-9dff-0736cb86c69f
+		sourceLineageTag: Activity Cluster
+		summarizeBy: none
+		sourceColumn: Activity Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Starts On'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: b08ec8da-a25e-4ac1-9ce7-6ffba906e3e0
+		sourceLineageTag: Week Starts On
+		summarizeBy: none
+		sourceColumn: Week Starts On
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Booking Category'
+		dataType: string
+		lineageTag: 5af5e86b-db5b-41b7-853f-6a7d9e9fe330
+		sourceLineageTag: Booking Category
+		summarizeBy: none
+		sourceColumn: Booking Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 29f1ea93-16ae-4fe1-9aac-366dd9284751
+		sourceLineageTag: Month Date
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Daily Rate Charged'
+		dataType: double
+		lineageTag: 189a86b9-574d-4c0e-979f-9450a0c23cf8
+		sourceLineageTag: Daily Rate Charged
+		summarizeBy: sum
+		sourceColumn: Daily Rate Charged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column user_debtor
+		dataType: string
+		lineageTag: 8d407c57-7084-4d76-8a44-e4a7ffbc40ec
+		sourceLineageTag: user_debtor
+		summarizeBy: none
+		sourceColumn: user_debtor
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 765dc1e6-8db8-4540-b1ba-557eac49a278
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Card Source'
+		dataType: string
+		lineageTag: 0d4317a1-9ada-4dee-b3d0-2a4d93bc7265
+		sourceLineageTag: Time Card Source
+		summarizeBy: none
+		sourceColumn: Time Card Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExportFor
+		dataType: string
+		lineageTag: d3ec4321-e265-44cd-8a14-2028d5ea059f
+		sourceLineageTag: ExportFor
+		summarizeBy: none
+		sourceColumn: ExportFor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Group'
+		dataType: string
+		lineageTag: 19d647d1-9212-41d0-a415-c94bf43a79f8
+		sourceLineageTag: Project Group
+		summarizeBy: none
+		sourceColumn: Project Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource Type'
+		dataType: string
+		lineageTag: 224af1cd-8086-4c80-8ec8-cfbe86b1224a
+		sourceLineageTag: Resource Type
+		summarizeBy: none
+		sourceColumn: Resource Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP State Final'
+		dataType: string
+		lineageTag: 7727a387-fab2-4120-89ee-2fd82f9cdcba
+		sourceLineageTag: SAP State Final
+		summarizeBy: none
+		sourceColumn: SAP State Final
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Key'
+		dataType: string
+		lineageTag: ecef4d63-e9e6-4b42-b707-74b22d52369e
+		sourceLineageTag: Rate Key
+		summarizeBy: none
+		sourceColumn: Rate Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Key'
+		dataType: string
+		lineageTag: d58df39b-444c-4697-beb5-39c071be9d3f
+		sourceLineageTag: Employee Key
+		summarizeBy: none
+		sourceColumn: Employee Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project / Activity Name'
+		dataType: string
+		lineageTag: dc6dc269-41ec-410a-b8d7-f0261b4beb2b
+		sourceLineageTag: Project / Activity Name
+		summarizeBy: none
+		sourceColumn: Project / Activity Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booking Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1924eb61-f59b-4af5-8d89-636304597b86
+		sourceLineageTag: Booking Date
+		summarizeBy: none
+		sourceColumn: Booking Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column ponumber
+		dataType: string
+		lineageTag: 0678d183-ad14-4a21-840b-a91479ee2406
+		sourceLineageTag: ponumber
+		summarizeBy: none
+		sourceColumn: ponumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column raterole
+		dataType: string
+		lineageTag: 0045792d-462e-44f6-9bf0-2f0812346998
+		sourceLineageTag: raterole
+		summarizeBy: none
+		sourceColumn: raterole
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: b1be42d1-73ad-4121-82a6-fdc39f50a8ca
+		sourceLineageTag: currency
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_ppm_time_cards = entity
+		mode: directLake
+		source
+			entityName: fact_ppm_time_cards
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

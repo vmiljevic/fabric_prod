@@ -1,0 +1,141 @@
+table 'DE44 Employee Master Data'
+	lineageTag: 0f98f62f-b449-4482-a2a3-9a00e521cdf4
+
+	column 'Personal Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 90e156ae-2842-4b56-a9c0-22548bec2135
+		summarizeBy: sum
+		sourceColumn: Personal Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Name'
+		dataType: string
+		lineageTag: 2a6b9ca4-04c3-41ce-84f5-7ac1a377bab5
+		summarizeBy: none
+		sourceColumn: First Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name'
+		dataType: string
+		lineageTag: af6d0b96-1761-4c4d-a999-d41bda878108
+		summarizeBy: none
+		sourceColumn: Last Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grade
+		dataType: int64
+		formatString: 0
+		lineageTag: 0700dbd2-77ca-4cce-973b-d745975db587
+		summarizeBy: sum
+		sourceColumn: Grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: dffb3bd1-58bc-4397-a418-c00339fb282b
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID'
+		dataType: string
+		lineageTag: 4c143665-fa74-45c5-b9a2-35f53f646158
+		summarizeBy: none
+		sourceColumn: User ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'My HR Manager'
+		dataType: string
+		lineageTag: 5a169743-07f6-43d9-9a0b-51ea7e82d894
+		summarizeBy: none
+		sourceColumn: My HR Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 9458af55-0e3f-4240-ba4c-59465bf671ba
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Role Type'
+		dataType: string
+		lineageTag: 5c2ef28b-3cd5-4818-bb96-354013bf894b
+		summarizeBy: none
+		sourceColumn: Role Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Position
+		dataType: string
+		lineageTag: f03b9244-9722-4b7d-bf81-bd65f03b809f
+		summarizeBy: none
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract Type'
+		dataType: string
+		lineageTag: 867b9dc2-88a6-43b5-b2b4-87ffe1cf9726
+		summarizeBy: none
+		sourceColumn: Contract Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grade 2025'
+		dataType: string
+		lineageTag: d1a3404d-9a5a-4130-8294-008ae6955a71
+		summarizeBy: none
+		sourceColumn: Grade 2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit ID'
+		dataType: string
+		lineageTag: c24bb3de-b569-426e-9d1a-49d8330cdaf7
+		summarizeBy: none
+		sourceColumn: Functional OrgUnit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit ID'
+		dataType: string
+		lineageTag: 55943b47-607b-4c4a-8ccd-09d55a61f0ff
+		summarizeBy: none
+		sourceColumn: Disciplinary OrgUnit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit ID 2025'
+		dataType: string
+		lineageTag: 5c928d5c-cbaa-4514-b095-25f6fc201841
+		summarizeBy: none
+		sourceColumn: Disciplinary OrgUnit ID 2025
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DE44 Employee Master Data' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="DE44MasterData",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Personal Number", Int64.Type}, {"Grade", Int64.Type}}),
+				    #"Lowercased Text" = Table.TransformColumns(#"Changed Type",{{"Email", Text.Lower, type text}})
+				in
+				    #"Lowercased Text"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

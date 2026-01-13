@@ -1,0 +1,499 @@
+table 'Organizational Unit List Disciplinary'
+	lineageTag: 8dc58bd2-abe4-4637-b7ed-19a1b34439cf
+
+	column Entity
+		dataType: string
+		lineageTag: afc5f287-459d-4752-832f-03ab9b9395f4
+		summarizeBy: none
+		sourceColumn: Entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name of Org.Unit (dep. long name)'
+		dataType: string
+		lineageTag: ef9823c4-4569-44eb-b09a-e8d7e071d4f0
+		summarizeBy: none
+		sourceColumn: Name of Org.Unit (dep. long name)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit ID (Department ID)'
+		dataType: string
+		lineageTag: 7f24e292-07ea-4169-92b8-72851393a8d1
+		summarizeBy: none
+		sourceColumn: Org Unit ID (Department ID)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name of Manager (last name)'
+		dataType: string
+		lineageTag: 70e5189e-2386-4f43-b803-650bda20afb6
+		summarizeBy: none
+		sourceColumn: Name of Manager (last name)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name of Manager (first name)'
+		dataType: string
+		lineageTag: 6bb55100-2a26-4bf4-b721-a7614e45c59d
+		summarizeBy: none
+		sourceColumn: Name of Manager (first name)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager email'
+		dataType: string
+		lineageTag: ce4af017-6f3f-44b4-aa74-8926d529cfd0
+		summarizeBy: none
+		sourceColumn: Manager email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Org Unit ID'
+		dataType: string
+		lineageTag: 202097f2-459b-404f-94e4-2e9624b87a49
+		summarizeBy: none
+		sourceColumn: Parent Org Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OrgUnit type'
+		dataType: string
+		lineageTag: 59c174ba-3659-4787-9233-f001d07598f5
+		summarizeBy: none
+		sourceColumn: OrgUnit type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'In scope for Functional view'
+		dataType: string
+		lineageTag: 0f4b26d4-6793-46b1-84a3-06ca065fed08
+		summarizeBy: none
+		sourceColumn: In scope for Functional view
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'In scope for disciplinary view'
+		dataType: string
+		lineageTag: 311bf051-0eec-4f42-b5e5-059c464ec0e4
+		summarizeBy: none
+		sourceColumn: In scope for disciplinary view
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Employee ID'
+		dataType: string
+		lineageTag: e60ee87f-3ec9-4729-a874-56db200408a8
+		summarizeBy: none
+		sourceColumn: Manager Employee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 2a9e28f4-b6bc-47ae-a073-e3b76a245c46
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column L-1/L-2
+		dataType: string
+		lineageTag: 3d30fb9b-702b-4ed1-ba12-45aa5b529ebf
+		summarizeBy: none
+		sourceColumn: L-1/L-2
+
+		annotation SummarizationSetBy = Automatic
+
+	column L-1/L-3
+		dataType: string
+		lineageTag: fb0ff1dc-05c6-4dfb-ae18-8fbfdfed44df
+		summarizeBy: none
+		sourceColumn: L-1/L-3
+
+		annotation SummarizationSetBy = Automatic
+
+	column L-1/L-4
+		dataType: string
+		lineageTag: 5adeb56d-5e0e-4f05-bd0c-00bc0c89509d
+		summarizeBy: none
+		sourceColumn: L-1/L-4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment
+		dataType: string
+		lineageTag: 79167492-ed6d-4f9a-b765-cf3e9e951ee6
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Child Departments - original'
+		dataType: string
+		lineageTag: cb5b9efa-6cd9-4605-b8b4-163e5cec4997
+		summarizeBy: none
+		sourceColumn: Functional Child Departments - original
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 1' = MID(PATHITEM('Organizational Unit List Disciplinary'[Org Path],1,TEXT),8,50)
+		lineageTag: 2b887731-57de-451e-9ad7-11b3e80f6ec7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Path' = ```
+			
+			IFERROR(
+			    PATH(
+			        'Organizational Unit List Disciplinary'[Org Unit ID Composite],
+			        'Organizational Unit List Disciplinary'[Parent Org Unit ID Composite]
+			    ),
+			    BLANK()
+			)
+			
+			```
+		lineageTag: beb83829-af27-4968-9ac3-5da4bf021d3e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 2' = MID(PATHITEM('Organizational Unit List Disciplinary'[Org Path],2,TEXT),8,50)
+		lineageTag: 6dd85e7c-9e3b-4647-8bca-cda4fb6b5c6c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 3' = MID(PATHITEM('Organizational Unit List Disciplinary'[Org Path],3,TEXT),8,50)
+		lineageTag: 609fb425-74df-491c-9690-9d12cb4901e4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 4' = MID(PATHITEM('Organizational Unit List Disciplinary'[Org Path],4,TEXT),8,50)
+		lineageTag: e72d15ee-1887-42f1-a650-52cfa450bbd1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 5' = MID(PATHITEM('Organizational Unit List Disciplinary'[Org Path],5,TEXT),8,50)
+		lineageTag: 689f03fe-7d88-456c-a2e2-f8309bc39215
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 6' = MID(PATHITEM('Organizational Unit List Disciplinary'[Org Path],6,TEXT),8,50)
+		lineageTag: c556d260-34f9-4f73-b16d-d27b38f8d9bf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 7' = MID(PATHITEM('Organizational Unit List Disciplinary'[Org Path],7,TEXT),8,50)
+		lineageTag: 16593c89-d365-4496-917c-06e1a1adc77a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 8' = MID(PATHITEM('Organizational Unit List Disciplinary'[Org Path],8,TEXT),8,50)
+		lineageTag: abb9c8a7-e847-484b-8e17-f69480b882ca
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unique_ID
+		dataType: string
+		lineageTag: 1a9cea0a-1fce-4ce5-8c2d-cecef969f9f9
+		summarizeBy: none
+		sourceColumn: Unique_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manager = 'Organizational Unit List Disciplinary'[Name of Manager (first name)] & " " & 'Organizational Unit List Disciplinary'[Name of Manager (last name)]
+		lineageTag: cde945bb-f6c7-4bc5-adbc-761f6651d797
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 1' = ```
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 1 Composite]) = "N.N. N.N.","Agostino Ferrara",LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 1 Composite]))
+			    
+			
+			```
+		lineageTag: 52893a9c-8d88-43e2-9937-7f95a031fc58
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 2' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 2 Composite]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 1],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 2 Composite]))
+		lineageTag: ad0b891a-5da7-4a04-b469-82d7083ae125
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 3' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 3 Composite]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 2],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 3 Composite]))
+		lineageTag: 9476dc44-3df7-4dce-8351-84eb3aa53718
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 4' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 4 Composite]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 3],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 4 Composite]))
+		lineageTag: d1e90864-3c10-4647-96d6-f47b14e4b2de
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 5' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 5 Composite]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 4],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 5 Composite]))
+		lineageTag: 67e16073-f5a7-4178-b5b7-a1540ac49eff
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 6' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 6]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 5],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 6 Composite]))
+		lineageTag: 6bce41fe-5f22-44e1-9648-b885fd36a9dd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 7' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 7 Composite]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 6],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 7 Composite]))
+		lineageTag: 37b94d06-1ec4-40de-9ca5-495236f4117a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 8' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 8 Composite]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 7],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 8 Composite]))
+		lineageTag: f515c78b-1ef2-42d4-8657-75246fa446c9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 3 Email' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager email],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 3 Composite]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 2],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager email],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 3 Composite]))
+		lineageTag: 223e8a9a-f8ee-4fa3-8c2b-2819c8e98d6d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 4 Email' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager email],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 4 Composite]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 3],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager email],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 4 Composite]))
+		lineageTag: 1ed9b88c-977c-4ed6-aab2-26477c3790dc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diciplinary Manager Level 5 Email' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager email],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 5 Composite]) = "",'Organizational Unit List Disciplinary'[Diciplinary Manager Level 4],LOOKUPVALUE(
+			    'Organizational Unit List Disciplinary'[Manager email],
+			    'Organizational Unit List Disciplinary'[Org Unit ID Composite], 'Organizational Unit List Disciplinary'[Disciplinary OrgUnit level 5 Composite]))
+		lineageTag: f7d906c3-8488-4316-8de5-9f969cf60680
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit ID Composite'
+		dataType: string
+		lineageTag: 09b58b09-2a5f-4174-aa42-b6ab7e81f29d
+		summarizeBy: none
+		sourceColumn: Org Unit ID Composite
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Org Unit ID Composite'
+		dataType: string
+		lineageTag: bdff22fe-bf2c-48c6-b348-75a5b97aa62f
+		summarizeBy: none
+		sourceColumn: Parent Org Unit ID Composite
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 2 Composite' = PATHITEM('Organizational Unit List Disciplinary'[Org Path],2,TEXT)
+		lineageTag: e1152c5d-251e-413e-bb1d-f958fd95f76d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 3 Composite' = PATHITEM('Organizational Unit List Disciplinary'[Org Path],3,TEXT)
+		lineageTag: 1b1a2208-3636-4860-ab6a-5ad971c890c8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 1 Composite' = PATHITEM('Organizational Unit List Disciplinary'[Org Path],1,TEXT)
+		lineageTag: 1c50d353-06d4-4d88-a436-732b311f4897
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 4 Composite' = PATHITEM('Organizational Unit List Disciplinary'[Org Path],4,TEXT)
+		lineageTag: 94117c33-7e65-4956-9b1a-23aff30b43e0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 5 Composite' = PATHITEM('Organizational Unit List Disciplinary'[Org Path],5,TEXT)
+		lineageTag: a82b2ae6-5ac6-4b47-a3d8-97f477242524
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 6 Composite' = PATHITEM('Organizational Unit List Disciplinary'[Org Path],6,TEXT)
+		lineageTag: 161fd4c1-8078-4514-9cbf-b9f466d45eea
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 7 Composite' = PATHITEM('Organizational Unit List Disciplinary'[Org Path],7,TEXT)
+		lineageTag: f568c0db-4f19-4ad1-b917-36328035f775
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit level 8 Composite' = PATHITEM('Organizational Unit List Disciplinary'[Org Path],8,TEXT)
+		lineageTag: d3f45476-a86b-4d4a-a0fc-89b474a99cc0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Month'
+		dataType: string
+		lineageTag: d1fd6abd-2679-4626-84b2-f0beba491adb
+		summarizeBy: none
+		sourceColumn: Service Month
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Disciplinary OrgUnit'
+		lineageTag: 844175f9-3e2c-488b-b809-ba2f4c43c3cb
+
+		level 'Disciplinary OrgUnit level 1'
+			lineageTag: f557e8e3-3462-42f6-abb6-d12f59b8c752
+			column: 'Disciplinary OrgUnit level 1'
+
+		level 'Disciplinary OrgUnit level 2'
+			lineageTag: 1cfd76ef-003d-46d2-bb4f-99bad7ad0b5e
+			column: 'Disciplinary OrgUnit level 2'
+
+		level 'Disciplinary OrgUnit level 3'
+			lineageTag: f59c84a3-1c9c-4714-895b-554eca006c49
+			column: 'Disciplinary OrgUnit level 3'
+
+		level 'Disciplinary OrgUnit level 4'
+			lineageTag: 338d4537-f3c1-4053-a68d-ec767e9541e4
+			column: 'Disciplinary OrgUnit level 4'
+
+		level 'Disciplinary OrgUnit level 5'
+			lineageTag: 20d55bb5-0667-469c-a540-f441252b76ab
+			column: 'Disciplinary OrgUnit level 5'
+
+		level 'Disciplinary OrgUnit level 6'
+			lineageTag: 2f4648d4-1f46-415e-b5e2-2a5c6e560c68
+			column: 'Disciplinary OrgUnit level 6'
+
+		level 'Disciplinary OrgUnit level 7'
+			lineageTag: ff59d1c5-5511-4e74-83cb-fb77a90a3c37
+			column: 'Disciplinary OrgUnit level 7'
+
+		level 'Disciplinary OrgUnit level 8'
+			lineageTag: 003be5d3-b895-4abe-9dc9-b7c2d41b3479
+			column: 'Disciplinary OrgUnit level 8'
+
+	hierarchy 'Disciplinary Manager'
+		lineageTag: c9bbdabb-b536-43b9-8076-082ca799afc5
+
+		level 'Diciplinary Manager Level 1'
+			lineageTag: 2a7f14af-76c9-4b06-89f1-f7817b60b4c9
+			column: 'Diciplinary Manager Level 1'
+
+		level 'Diciplinary Manager Level 2'
+			lineageTag: 58590bff-09d5-4de3-89b3-2bec6f2ca2d9
+			column: 'Diciplinary Manager Level 2'
+
+		level 'Diciplinary Manager Level 3'
+			lineageTag: be0fd597-b223-4460-9e83-374010e4e217
+			column: 'Diciplinary Manager Level 3'
+
+		level 'Diciplinary Manager Level 4'
+			lineageTag: f30fe078-b36a-4505-94c3-ba7da2c64825
+			column: 'Diciplinary Manager Level 4'
+
+		level 'Diciplinary Manager Level 5'
+			lineageTag: 8ae0e190-1f3d-4fae-9c96-84051d76ec58
+			column: 'Diciplinary Manager Level 5'
+
+		level 'Diciplinary Manager Level 6'
+			lineageTag: df3b6013-faee-4d59-b3ba-6b1f58d47b0e
+			column: 'Diciplinary Manager Level 6'
+
+		level 'Diciplinary Manager Level 7'
+			lineageTag: b2ccffa6-4cd0-4f92-9fe1-828d6aafc3f8
+			column: 'Diciplinary Manager Level 7'
+
+		level 'Diciplinary Manager Level 8'
+			lineageTag: 96357e94-e0f4-45b1-ba6c-7df13a164a37
+			column: 'Diciplinary Manager Level 8'
+
+	partition 'Organizational Unit List Disciplinary' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = #"Organizational Unit List",
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([In scope for disciplinary view] = "X")),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Filtered Rows",{{"Manager email", type text}}),
+				    #"Lowercased Text" = Table.TransformColumns(#"Changed Type1",{{"Manager email", Text.Lower, type text}})
+				in
+				    #"Lowercased Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

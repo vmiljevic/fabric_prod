@@ -1,0 +1,35 @@
+table 'User Roles'
+	lineageTag: 4c35fd0f-3711-4f34-98d9-042626b63311
+
+	column 'User Email'
+		dataType: string
+		lineageTag: 51932ce6-d9db-405c-aa0f-8bf5d2ad26c7
+		summarizeBy: none
+		sourceColumn: User Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		lineageTag: 4b4e4683-5d24-4d00-9b8e-a33c2dfd86be
+		summarizeBy: none
+		sourceColumn: Role
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'User Roles' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="UserRoles",Kind="Table"]}[Data],
+				    #"Appended Query" = Table.Combine({GradeandProficiencyLevels_Table, #"SAP Internal Resources Managers"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Appended Query", {"User Email"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

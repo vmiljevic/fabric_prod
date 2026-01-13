@@ -1,0 +1,217 @@
+table fact_budget_demand_per_planbook
+	lineageTag: da7b8102-c115-4273-9060-4b53fd71ebae
+	sourceLineageTag: [dbo].[fact_budget_demand_per_planbook]
+
+	column 'Fiscal year'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 42075ae4-1cd3-4b2c-8e45-e6634a7cd132
+		sourceLineageTag: Fiscal year
+		summarizeBy: none
+		sourceColumn: Fiscal year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Name'
+		dataType: string
+		lineageTag: 552037a1-f51a-4ff6-9412-38a8897cb468
+		sourceLineageTag: WBS Name
+		summarizeBy: none
+		sourceColumn: WBS Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Acc_'
+		dataType: string
+		lineageTag: 00b5ff08-2918-4126-b17f-b8bda3acade9
+		sourceLineageTag: WBS Acc_
+		summarizeBy: none
+		sourceColumn: WBS Acc_
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: 345cbeb9-b201-4963-a6a7-70cd25ab47be
+		sourceLineageTag: Vendor Name
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor
+		dataType: string
+		lineageTag: 7c127d6a-4ad2-49e8-bebb-d513525439d7
+		sourceLineageTag: Vendor
+		summarizeBy: none
+		sourceColumn: Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CO Doc Line Item Txt'
+		dataType: string
+		lineageTag: 1d3931a1-56d5-44bf-bc30-5c823548ae82
+		sourceLineageTag: CO Doc Line Item Txt
+		summarizeBy: none
+		sourceColumn: CO Doc Line Item Txt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan ID MM PO'
+		dataType: string
+		lineageTag: a58e469a-ce61-433d-88b0-f923b616fcd4
+		sourceLineageTag: Plan ID MM PO
+		summarizeBy: none
+		sourceColumn: Plan ID MM PO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchasing order number PO'
+		dataType: string
+		lineageTag: 47b5410f-48c7-42a8-8cfe-65b17dadcf2d
+		sourceLineageTag: Purchasing order number PO
+		summarizeBy: none
+		sourceColumn: Purchasing order number PO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Demand ID'
+		dataType: string
+		lineageTag: 04ac6153-023e-4b53-9dbf-0323a5c7d6a2
+		sourceLineageTag: Demand ID
+		summarizeBy: none
+		sourceColumn: Demand ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: string
+		lineageTag: 331f0800-ee9e-4821-bcbb-e475deab90d5
+		sourceLineageTag: Order
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type Name'
+		dataType: string
+		lineageTag: 6d56b980-1acf-454f-8725-0faa9374dda0
+		sourceLineageTag: Order Type Name
+		summarizeBy: none
+		sourceColumn: Order Type Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: 75916599-15a4-482b-bda6-474756aaf558
+		sourceLineageTag: Order Type
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		lineageTag: b2788b0d-ff5e-495a-bb8b-a4f95aac728e
+		sourceLineageTag: Profit Center Name
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: 51b9f6b4-3157-4a6e-8e77-78ebd2cc4f70
+		sourceLineageTag: Profit Center
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pillar
+		dataType: string
+		lineageTag: 5f4f69f4-738e-4cc5-b169-e35f3f336fea
+		sourceLineageTag: Pillar
+		summarizeBy: none
+		sourceColumn: Pillar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: fcca1600-d247-4f4f-b339-e26019e2b973
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Approved'
+		dataType: double
+		lineageTag: 6de2f7bd-e975-4d2b-a34f-cfc755f8b8f0
+		sourceLineageTag: Budget Approved
+		summarizeBy: sum
+		sourceColumn: Budget Approved
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Spent'
+		dataType: double
+		lineageTag: efb5b350-f909-428c-8ca7-b6fe5fd614c9
+		sourceLineageTag: Budget Spent
+		summarizeBy: sum
+		sourceColumn: Budget Spent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Plan ID'
+		dataType: string
+		lineageTag: d12d3e5b-d797-4294-8676-b76e4eae9d83
+		sourceLineageTag: Plan ID
+		summarizeBy: none
+		sourceColumn: Plan ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center and Name'
+		dataType: string
+		lineageTag: 84ad155a-5737-4ad3-801d-4a518d92496a
+		sourceLineageTag: Profit Center and Name
+		summarizeBy: none
+		sourceColumn: Profit Center and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4a545bd1-dd67-49f0-bd98-745541e17397
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Available'
+		dataType: double
+		lineageTag: 7d5b52aa-79e8-4596-a40d-773850af3c61
+		sourceLineageTag: Budget Available
+		summarizeBy: sum
+		sourceColumn: Budget Available
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_budget_demand_per_planbook = entity
+		mode: directLake
+		source
+			entityName: fact_budget_demand_per_planbook
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

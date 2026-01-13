@@ -1,0 +1,184 @@
+table dim_cost_center
+	lineageTag: cdd5b660-28e4-4159-803b-aed39b25d881
+	sourceLineageTag: [dbo].[dim_cost_center]
+
+	column 'Cost Center'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d8e599cc-654a-40d8-a739-4b99701e1068
+		sourceLineageTag: Cost Center
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Name'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c9cc14eb-1a1d-487b-bb38-b22b8dc5d32e
+		sourceLineageTag: Cost Center Name
+		summarizeBy: none
+		sourceColumn: Cost Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ef2e91c7-d3ab-42d4-b7d2-39f199761780
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code Name'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: abee2041-5fd1-47e8-9a64-1f9847b1dcf0
+		sourceLineageTag: Company Code Name
+		summarizeBy: none
+		sourceColumn: Company Code Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b751eb8c-6095-4bb0-8083-fd356789ae3d
+		sourceLineageTag: Profit Center
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ad083893-4a15-48e4-9388-746b117b45eb
+		sourceLineageTag: Profit Center Name
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pillar
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9c23c318-4725-48eb-886d-ec471061d1ad
+		sourceLineageTag: Pillar
+		summarizeBy: none
+		sourceColumn: Pillar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Person Responsible'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 548765d8-7e25-49fd-b328-1c22f8df0848
+		sourceLineageTag: Person Responsible
+		summarizeBy: none
+		sourceColumn: Person Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 389080a1-0b04-4921-833d-d948df9e5873
+		sourceLineageTag: Department
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Costcenter Typ 1'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8b65241c-17fd-4061-89f5-60ccc74a2670
+		sourceLineageTag: Costcenter Typ 1
+		summarizeBy: none
+		sourceColumn: Costcenter Typ 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Costcenter Typ 2'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7382e478-5973-4e23-9d97-69bef0dc8cf0
+		sourceLineageTag: Costcenter Typ 2
+		summarizeBy: none
+		sourceColumn: Costcenter Typ 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Costcenter Typ 3'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 083d2f42-4e38-4e42-97c4-14d95505e4a2
+		sourceLineageTag: Costcenter Typ 3
+		summarizeBy: none
+		sourceColumn: Costcenter Typ 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ad5cc2cb-d0d1-437a-83ad-8672eacf2f85
+		sourceLineageTag: Valid From
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7eff81d8-e17b-4667-a434-388f5b6ade1d
+		sourceLineageTag: Valid To
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 86a1fe50-f767-4521-9aba-d140e37c73cd
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0e4f9245-fdf6-4028-b303-a6b2b170537d
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Number and Name'
+		dataType: string
+		lineageTag: a0092be0-e380-4ae7-a004-331105038e69
+		sourceLineageTag: Cost Center Number and Name
+		summarizeBy: none
+		sourceColumn: Cost Center Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_cost_center = entity
+		mode: directLake
+		source
+			entityName: dim_cost_center
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

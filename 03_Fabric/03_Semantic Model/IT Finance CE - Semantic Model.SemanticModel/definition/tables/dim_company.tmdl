@@ -1,0 +1,65 @@
+table dim_company
+	lineageTag: 31ad0d41-0f98-469d-a060-cfcbcf1441af
+	sourceLineageTag: [dbo].[dim_company]
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 6b9cd10f-21e4-4374-8e11-87b809695f1d
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Name'
+		dataType: string
+		lineageTag: beacdfcf-8fdf-4374-bb6a-caf3c09868de
+		sourceLineageTag: Company Name
+		summarizeBy: none
+		sourceColumn: Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debtor Number'
+		dataType: string
+		lineageTag: e7dc870b-c4a2-4fc3-b664-a39b77462cfc
+		sourceLineageTag: Debtor Number
+		summarizeBy: none
+		sourceColumn: Debtor Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Debtor
+		dataType: string
+		lineageTag: 2f30f0ba-9614-45d3-b46b-901b9cc9d617
+		sourceLineageTag: Debtor
+		summarizeBy: none
+		sourceColumn: Debtor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debtor Number and Name'
+		dataType: string
+		lineageTag: eb1a77e0-5e95-4853-bae6-ff9a7b118424
+		sourceLineageTag: Debtor Number and Name
+		summarizeBy: none
+		sourceColumn: Debtor Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 844cccc9-c406-435a-a67a-ce37ba5c3414
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_company = entity
+		mode: directLake
+		source
+			entityName: dim_company
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

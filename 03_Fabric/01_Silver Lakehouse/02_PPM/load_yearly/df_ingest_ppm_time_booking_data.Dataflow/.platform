@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_ppm_time_booking_data",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7e63881c-a027-bd75-49e3-d5a724305b11"
+  }
+}

@@ -1,0 +1,33 @@
+table 'Functional Org Names'
+	lineageTag: 8a5882c3-5a79-4d29-aec4-c90c2abaa1b4
+
+	column 'Functional ORG Unit ID'
+		dataType: string
+		lineageTag: 2d9fcdb0-4ef0-4dfc-bffe-d25d8ffeebf5
+		summarizeBy: none
+		sourceColumn: Functional ORG Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional ORG Unit Name'
+		dataType: string
+		lineageTag: 453ee675-ae96-497a-a410-3f97ff0bd2e9
+		summarizeBy: none
+		sourceColumn: Functional ORG Unit Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Functional Org Names' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="FuncOrg",Kind="Table"]}[Data]
+				in
+				    GradeandProficiencyLevels_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,90 @@
+table sec_user_right
+	lineageTag: a629adbd-021d-43ab-b914-2b3d97a90a76
+	sourceLineageTag: [dbo].[sec_user_right]
+
+	column User
+		dataType: string
+		lineageTag: 70c7a1db-958c-4c50-abbd-06e5efef4ece
+		sourceLineageTag: User
+		summarizeBy: none
+		sourceColumn: User
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee lists'
+		dataType: string
+		lineageTag: a6065bca-a92b-4d05-87e2-d8995e632f95
+		sourceLineageTag: Employee lists
+		summarizeBy: none
+		sourceColumn: Employee lists
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PPM Time Bookings'
+		dataType: string
+		lineageTag: 161661ce-225f-40bb-9c9c-c3e75960ade9
+		sourceLineageTag: PPM Time Bookings
+		summarizeBy: none
+		sourceColumn: PPM Time Bookings
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost & Revenue'
+		dataType: string
+		lineageTag: c37ce892-dbda-43e2-99b9-43eeceded5ce
+		sourceLineageTag: Cost & Revenue
+		summarizeBy: none
+		sourceColumn: Cost & Revenue
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Spend'
+		dataType: string
+		lineageTag: be98725b-405a-41b0-9af3-f8fb2ab13f54
+		sourceLineageTag: Service Spend
+		summarizeBy: none
+		sourceColumn: Service Spend
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Availability'
+		dataType: string
+		lineageTag: 47374281-554c-4aab-b7ce-f633ba9d1e7d
+		sourceLineageTag: Budget Availability
+		summarizeBy: none
+		sourceColumn: Budget Availability
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Receivables'
+		dataType: string
+		lineageTag: 78b7c8ac-0c63-48cd-8368-ea1e51bc4703
+		sourceLineageTag: Account Receivables
+		summarizeBy: none
+		sourceColumn: Account Receivables
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sec_user_right = entity
+		mode: directLake
+		source
+			entityName: sec_user_right
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	changedProperty = IsHidden
+

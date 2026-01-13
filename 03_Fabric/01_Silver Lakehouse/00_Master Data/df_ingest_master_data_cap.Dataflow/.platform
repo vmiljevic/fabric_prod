@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_master_data_cap"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3277c0b7-84cd-b010-49b2-40df3059101c"
+  }
+}

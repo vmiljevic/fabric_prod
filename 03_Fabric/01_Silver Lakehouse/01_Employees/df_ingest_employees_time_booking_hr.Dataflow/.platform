@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_employees_time_booking_hr"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "db1521bf-8870-b62f-4a9b-d655618560e7"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Test",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "a54ad326-5979-4bc5-957d-6ff4ac5f01b8",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "time_card_a": {
+      "queryId": "5b9491c3-9acf-4c07-9351-f5ff64217bd3",
+      "queryName": "time_card_a",
+      "loadEnabled": false
+    },
+    "QueryParameters": {
+      "queryId": "47dc52c2-af35-46a9-adc4-7b88cd03dc06",
+      "queryName": "QueryParameters",
+      "loadEnabled": false
+    },
+    "CompanyCode": {
+      "queryId": "c4fd5396-6e4b-4a77-b5da-4a999b04cd8e",
+      "queryName": "CompanyCode",
+      "loadEnabled": false
+    },
+    "time_card_b": {
+      "queryId": "e537f92c-ca49-41e9-8383-c8c2adc2ef06",
+      "queryName": "time_card_b",
+      "loadEnabled": false
+    },
+    "time_card_c": {
+      "queryId": "e77167b3-68db-4475-9e95-dedf7fe3bd29",
+      "queryName": "time_card_c",
+      "loadEnabled": false
+    },
+    "Query": {
+      "queryId": "aac6574b-79fd-469b-ad65-b03fc5227d2a",
+      "queryName": "Query",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"d9abe6b3-b7f5-4134-a409-ae81c836adf9\"}"
+    },
+    {
+      "path": "https://aztech.service-now.com/api/now/table/time_card",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"2aaf8889-6f5c-4fc6-a95e-b380d2b96af5\"}"
+    }
+  ],
+  "fastCombine": true
+}

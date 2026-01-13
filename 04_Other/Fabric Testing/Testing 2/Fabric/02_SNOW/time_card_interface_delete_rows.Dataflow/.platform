@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "time_card_interface_delete_rows"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "901f05ab-7c81-9383-478a-bf3b3d9396cb"
+  }
+}

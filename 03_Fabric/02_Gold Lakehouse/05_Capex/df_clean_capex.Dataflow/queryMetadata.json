@@ -1,0 +1,46 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_clean_master_data_sap",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fact_capex_bookings_archive": {
+      "queryId": "5bc3c017-d2d1-42c9-8cf5-6b3d0db460b7",
+      "queryName": "fact_capex_bookings_archive"
+    },
+    "fact_capex_bookings_current": {
+      "queryId": "96bc86c8-c7b1-442f-ad00-033f7b1b6f83",
+      "queryName": "fact_capex_bookings_current"
+    },
+    "fact_capex_bookings": {
+      "queryId": "c230c63b-1b8f-4b38-b1ad-1d6ef3116fe1",
+      "queryName": "fact_capex_bookings",
+      "loadEnabled": false
+    },
+    "dim_capex_assets": {
+      "queryId": "c83f4ace-8078-4938-973b-bb40842f1889",
+      "queryName": "dim_capex_assets",
+      "loadEnabled": false
+    },
+    "fact_capex_bookings_DataDestination": {
+      "queryId": "4c62ae27-61c4-4be4-8aa0-8f97f0802977",
+      "queryName": "fact_capex_bookings_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_capex_assets_DataDestination": {
+      "queryId": "8014f92f-9854-495c-b78e-4bf37236b95a",
+      "queryName": "dim_capex_assets_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

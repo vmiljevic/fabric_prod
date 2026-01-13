@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "dp_clean_budget_demand_1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "51f44589-b7a1-a626-4e86-00a9df605892"
+  }
+}

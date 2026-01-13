@@ -1,0 +1,173 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "AT45-PPM-1",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "CompanyCode": {
+      "queryId": "82625e2d-2474-4e8b-8505-0592d5553d55",
+      "queryName": "CompanyCode",
+      "loadEnabled": false
+    },
+    "NumberOfRecords": {
+      "queryId": "5566210f-41fc-42cd-bc63-941355fa86e2",
+      "queryName": "NumberOfRecords",
+      "loadEnabled": false
+    },
+    "DateFrom": {
+      "queryId": "1c9cce71-4515-45d6-8cb5-473bc058e836",
+      "queryName": "DateFrom",
+      "loadEnabled": false
+    },
+    "DateTo": {
+      "queryId": "a8c5f544-e86d-4f43-8d3a-e65128c07f74",
+      "queryName": "DateTo",
+      "loadEnabled": false
+    },
+    "Debtor": {
+      "queryId": "8714bf99-e6ef-484b-b101-df4a643c093c",
+      "queryName": "Debtor",
+      "loadEnabled": false
+    },
+    "OrgEntity": {
+      "queryId": "ac2ae22a-e62a-4594-8b85-829d49a98e63",
+      "queryName": "OrgEntity",
+      "loadEnabled": false
+    },
+    "tn_accounting_element": {
+      "queryId": "eaef8653-740d-4a40-90c9-88b18f99fbb8",
+      "queryName": "tn_accounting_element",
+      "loadEnabled": false
+    },
+    "tn_project": {
+      "queryId": "862d9eb3-1a0d-4b98-8e74-dcdb634dab54",
+      "queryName": "tn_project",
+      "loadEnabled": false
+    },
+    "tn_time_card_interface_a": {
+      "queryId": "5ab7e566-bbe4-44cd-9893-4fdfa16f60a5",
+      "queryName": "tn_time_card_interface_a",
+      "loadEnabled": false
+    },
+    "tn_time_card_interface_b": {
+      "queryId": "49aceafc-9961-4c30-9594-bac6ba68fc68",
+      "queryName": "tn_time_card_interface_b",
+      "loadEnabled": false
+    },
+    "tn_time_card_interface_ext": {
+      "queryId": "6a444d8a-d148-4daa-bd46-96b9f23dd815",
+      "queryName": "tn_time_card_interface_ext",
+      "loadEnabled": false
+    },
+    "tn_external_rate_cards": {
+      "queryId": "55d522e6-5735-43b4-941f-8e50b09f44d5",
+      "queryName": "tn_external_rate_cards",
+      "loadEnabled": false
+    },
+    "tn_sys_users": {
+      "queryId": "b1ae101a-881b-4c1b-98dc-4809af3ae403",
+      "queryName": "tn_sys_users",
+      "loadEnabled": false
+    },
+    "u_ppm_accounting_element": {
+      "queryId": "9bb2752b-64f6-46d2-ab5c-2fa784293c4f",
+      "queryName": "u_ppm_accounting_element",
+      "loadEnabled": false
+    },
+    "pm_projects": {
+      "queryId": "29024674-fc4e-4260-a1fe-2ad71957eb64",
+      "queryName": "pm_projects",
+      "loadEnabled": false
+    },
+    "time_card_interface_set_a": {
+      "queryId": "8b293a59-376e-4112-aaf9-aafb01f1c931",
+      "queryName": "time_card_interface_set_a",
+      "loadEnabled": false
+    },
+    "time_card_interface_set_b": {
+      "queryId": "66465427-b979-4078-bcca-9971f4929f2b",
+      "queryName": "time_card_interface_set_b",
+      "loadEnabled": false
+    },
+    "time_card_interface_externals": {
+      "queryId": "d3280eec-9e05-4cc5-baad-3506e0914a34",
+      "queryName": "time_card_interface_externals",
+      "loadEnabled": false
+    },
+    "extrernal_rate_cards": {
+      "queryId": "7bb190dc-648b-4749-b554-1e2cc0d85e2c",
+      "queryName": "extrernal_rate_cards",
+      "loadEnabled": false
+    },
+    "sys_users": {
+      "queryId": "dc35d4b1-4ef5-4ad5-b4e9-d0103fba3b96",
+      "queryName": "sys_users",
+      "loadEnabled": false
+    },
+    "u_ppm_accounting_element_DataDestination": {
+      "queryId": "58132deb-007b-478e-8b07-330bcb815562",
+      "queryName": "u_ppm_accounting_element_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "pm_projects_DataDestination": {
+      "queryId": "392fa976-10a0-4599-bf29-6a3e8bfd7641",
+      "queryName": "pm_projects_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "time_card_interface_set_a_DataDestination": {
+      "queryId": "47ac78b3-54fe-457d-9cfa-2095e50ed687",
+      "queryName": "time_card_interface_set_a_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "time_card_interface_set_b_DataDestination": {
+      "queryId": "389c69f0-faa3-48e5-9eb2-b6f914fe69e1",
+      "queryName": "time_card_interface_set_b_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "time_card_interface_externals_DataDestination": {
+      "queryId": "0c13bd03-1047-4516-90d5-93b062d59acb",
+      "queryName": "time_card_interface_externals_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "extrernal_rate_cards_DataDestination": {
+      "queryId": "19ecdef0-b18d-41bc-8c46-be12f183f861",
+      "queryName": "extrernal_rate_cards_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "sys_users_DataDestination": {
+      "queryId": "6a7a0f1f-190b-4349-8c8e-17c5444da5ce",
+      "queryName": "sys_users_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://aztech.service-now.com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"7f932ae2-b7eb-4c0d-9bc5-3458682fb116\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"d9abe6b3-b7f5-4134-a409-ae81c836adf9\"}"
+    }
+  ],
+  "fastCombine": true,
+  "allowNativeQueries": false,
+  "parametric": true
+}

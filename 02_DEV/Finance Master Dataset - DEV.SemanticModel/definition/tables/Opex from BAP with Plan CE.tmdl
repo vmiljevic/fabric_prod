@@ -1,0 +1,870 @@
+table 'Opex from BAP with Plan CE'
+	lineageTag: 7141aa6b-f461-4736-b24b-6ff00eafbdfa
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 3b289260-72e9-4d93-b792-520e3c7904a1
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CO Document Number'
+		dataType: string
+		lineageTag: 607b5a09-c494-44cc-81fc-4fb0b8d67626
+		summarizeBy: none
+		sourceColumn: CO Document Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CO Doc Line Item Txt'
+		dataType: string
+		lineageTag: 714afeec-74d5-4833-b9c9-78b7a72da13f
+		summarizeBy: none
+		sourceColumn: CO Doc Line Item Txt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost object'
+		dataType: string
+		lineageTag: 6629c863-0b31-44b9-a3a5-518a4b155e49
+		summarizeBy: none
+		sourceColumn: Cost object
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost object Name'
+		dataType: string
+		lineageTag: 6cccedf2-7590-4262-ae8b-0b4e73a72a8f
+		summarizeBy: none
+		sourceColumn: Cost object Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element'
+		dataType: string
+		lineageTag: 38a61f5e-f620-4c33-a172-8a18c8932c3b
+		summarizeBy: none
+		sourceColumn: Cost Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Name'
+		dataType: string
+		lineageTag: f56d8f62-58f4-4d3c-a551-2f195d7e2f84
+		summarizeBy: none
+		sourceColumn: Cost Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchasing document'
+		dataType: string
+		lineageTag: c932615c-c5ca-450a-babe-813c8bb7baf3
+		summarizeBy: none
+		sourceColumn: Purchasing document
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Vendor'
+		dataType: string
+		lineageTag: 3eac65b8-2d71-49aa-b3b4-59baa922c257
+		summarizeBy: none
+		sourceColumn: PO Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: 397d8d52-a723-4d8f-b275-d932050c1014
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Name'
+		dataType: string
+		lineageTag: 45a1b898-55c2-4489-8f52-f883e01368c1
+		summarizeBy: none
+		sourceColumn: Material Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Item Text'
+		dataType: string
+		lineageTag: 2af93d8d-f10b-49c1-9d06-3ac1eb7df2cd
+		summarizeBy: none
+		sourceColumn: PO Item Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting period'
+		dataType: string
+		lineageTag: af6c7e10-2d86-4c6d-a98d-434c677ca10a
+		summarizeBy: none
+		sourceColumn: Posting period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal year'
+		dataType: string
+		lineageTag: 507616af-c5c0-4a51-8f00-ce8f8ab80895
+		summarizeBy: none
+		sourceColumn: Fiscal year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company ID'
+		dataType: string
+		lineageTag: df2ca002-e321-4768-b053-11662dd6f42f
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Doc.number'
+		dataType: string
+		lineageTag: 8b6a0336-93a6-4681-b991-2850855ce0fd
+		summarizeBy: none
+		sourceColumn: Doc.number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Cost Center'
+		dataType: string
+		lineageTag: 6c2a0c4f-3e0a-40b8-bd43-e034302bbbf4
+		summarizeBy: none
+		sourceColumn: Customer Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offsetting Account'
+		dataType: string
+		lineageTag: 7128c4c8-5b64-45ef-9c5c-5397b793b0f6
+		summarizeBy: none
+		sourceColumn: Offsetting Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offsetting Account Name'
+		dataType: string
+		lineageTag: 402c31fd-b515-44bd-a947-0ea5ce1a4e08
+		summarizeBy: none
+		sourceColumn: Offsetting Account Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin Object'
+		dataType: string
+		lineageTag: 352301b2-3f2d-4f9f-badf-b251fbd448eb
+		summarizeBy: none
+		sourceColumn: Origin Object
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin Object Name'
+		dataType: string
+		lineageTag: b9d23246-c7c2-41ab-af51-afd9a244d950
+		summarizeBy: none
+		sourceColumn: Origin Object Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner company code'
+		dataType: string
+		lineageTag: a28b3f9b-2aef-402b-8719-22ee4678df32
+		summarizeBy: none
+		sourceColumn: Partner company code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner object'
+		dataType: string
+		lineageTag: a14aecb9-b002-401e-9dd2-4844c82cff46
+		summarizeBy: none
+		sourceColumn: Partner object
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner object Name'
+		dataType: string
+		lineageTag: 493adbd8-8874-4bc1-925b-f112c5004ab0
+		summarizeBy: none
+		sourceColumn: Partner object Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payer
+		dataType: string
+		isHidden
+		lineageTag: a1b022e5-e5aa-4d18-93b7-c2e0e00b83c8
+		summarizeBy: none
+		sourceColumn: Payer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Name'
+		dataType: string
+		isHidden
+		lineageTag: 3f5bd376-0144-4e05-a431-04b8a5e508fc
+		summarizeBy: none
+		sourceColumn: Payer Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reversal ref. number'
+		dataType: string
+		lineageTag: 67f0bf1c-0553-4a61-b8f1-9b9898ea7d94
+		summarizeBy: none
+		sourceColumn: Reversal ref. number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: e1380318-d96c-4559-8bcf-6d7c5474cdaf
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Name'
+		dataType: string
+		lineageTag: 4c0b5a51-f878-4190-98c3-fd150d3714f0
+		summarizeBy: none
+		sourceColumn: User Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit center'
+		dataType: string
+		lineageTag: 549fd83a-a6d8-4541-9462-f7f1a784ad69
+		summarizeBy: none
+		sourceColumn: Profit center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit center Name'
+		dataType: string
+		lineageTag: 4a556bb3-ec6f-4eb5-8ae3-c669178285e8
+		summarizeBy: none
+		sourceColumn: Profit center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 470b885c-82a4-4021-ac56-2e527be349a8
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount Acutals'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: e4aeed5c-2b5a-4eba-af52-dae6ba06b584
+		summarizeBy: sum
+		sourceColumn: Amount Acutals
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column Quantity
+		dataType: double
+		lineageTag: 626018a0-f000-43dd-8332-d0273bdda256
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: af6cfeb3-7230-42cc-9171-95573bfcc78f
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Amount Plan'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 8e2fa0b1-ad0e-4a4b-b707-291269180391
+		summarizeBy: sum
+		sourceColumn: Amount Plan
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Company Code Name'
+		dataType: string
+		lineageTag: 0d8fcc2c-7400-41bd-a9e1-918b47d77fd2
+		summarizeBy: none
+		sourceColumn: Company Code Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Number and Name' = 'OPEX from BAP with Plan CE'[Cost object] & " - " & 'Opex from BAP with Plan CE'[Cost object Name]
+		lineageTag: cca82708-5376-4b49-aa22-d38e76127886
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Number and Name' = 'OPEX from BAP with Plan CE'[Cost Element] & " - " & 'OPEX from BAP with Plan CE'[Cost Element Name]
+		lineageTag: 57644463-200d-44ae-ab41-79548bd890c9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delta Plan Actuals' = 'Opex from BAP with Plan CE'[Amount Plan]-'Opex from BAP with Plan CE'[Amount Acutals]
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 1e6d2b84-119e-4a5e-baf7-2a8cc13db96d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Delta Plan Actuals %' = IF ('Opex from BAP with Plan CE'[Amount Plan] <> 0,'Opex from BAP with Plan CE'[Amount Acutals]/'Opex from BAP with Plan CE'[Amount Plan]-1 , 0)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 75dabb9f-6afd-4afe-83c9-bca4a3e2d40b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Number and Name' = 'OPEX from BAP with Plan CE'[Material] & " - " & 'OPEX from BAP with Plan CE'[Material Name]
+		lineageTag: d641ff15-12d6-4757-bd7d-459c52fd211b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offsetting Account and Name' = 'OPEX from BAP with Plan CE'[Offsetting Account] & " - " & 'OPEX from BAP with Plan CE'[Offsetting Account Name]
+		lineageTag: f4aae08a-909e-47cf-8b38-935e2a09fae5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Number and Name' = 'Opex from BAP with Plan CE'[Payer Corrected] & " - " & 'Opex from BAP with Plan CE'[Payer Name Corrected]
+		lineageTag: 365e9669-47b1-4f29-9801-03149b69b48f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Refresh Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3be2c33a-60c8-4524-adff-a23e70c35f3f
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actuals Run Rate YE' = ```
+			divide('Opex from BAP with Plan CE'[Amount Acutals], Format(CALCULATE(max('Opex from BAP with Plan CE'[Month Date]),FILTER('Opex from BAP with Plan CE', 'Opex from BAP with Plan CE'[Amount Acutals] <>0),'Opex from BAP with Plan CE'[Month Date] <= today()),"M")-1)*12
+			//'Opex from BAP with Plan CE'[Amount Acutals] + (DIVIDE('Opex from BAP with Plan CE'[Amount Acutals];Format(MAX('Opex from BAP with Plan CE'[Month Date]);"M")-1) * (12 - Format(MAX('Opex from BAP with Plan CE'[Month Date]);"M")-1))
+			
+			
+			
+			```
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 70c8bd18-f249-4be4-b92d-9c8d1f04dcf1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column Include = IF('Opex from BAP with Plan CE'[Month Date] <= CALCULATE(max('Opex from BAP with Plan CE'[Month Date]),FILTER('Opex from BAP with Plan CE', 'Opex from BAP with Plan CE'[Amount Acutals] <>0), 'Opex from BAP with Plan CE'[Month Date] <= today()),1,0)
+		formatString: 0
+		lineageTag: f68823f2-e5be-461e-9d3e-2b0902e4ab6c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Months of Actuals' = Format(CALCULATE(max('Opex from BAP with Plan CE'[Month Date]),FILTER('Opex from BAP with Plan CE', 'Opex from BAP with Plan CE'[Amount Acutals] <>0),'Opex from BAP with Plan CE'[Month Date] <= today()),"M")-1
+		lineageTag: 698fe8a3-93a9-4a37-8b0a-96289447e614
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Profit Center Person Responsible'
+		dataType: string
+		lineageTag: 18088b4c-f3ea-4872-9e60-2baad7b5cc5e
+		summarizeBy: none
+		sourceColumn: Profit Center Person Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Pillar'
+		dataType: string
+		lineageTag: 7aafe89d-3d2c-4303-bd43-02e6396944dc
+		summarizeBy: none
+		sourceColumn: Profit Center Pillar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Division'
+		dataType: string
+		lineageTag: db519ae2-33cb-47af-ad28-e3454561e8c7
+		summarizeBy: none
+		sourceColumn: Profit Center Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Department'
+		dataType: string
+		lineageTag: 047fff85-367b-4593-b4c0-0caf17e43ca1
+		summarizeBy: none
+		sourceColumn: Profit Center Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Service Landscape'
+		dataType: string
+		lineageTag: eb662360-581e-4094-888d-03d6e69899bb
+		summarizeBy: none
+		sourceColumn: Profit Center Service Landscape
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Service Class'
+		dataType: string
+		lineageTag: 9b249a51-5d53-48bf-a911-93fe55df35bd
+		summarizeBy: none
+		sourceColumn: Profit Center Service Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Service Package'
+		dataType: string
+		lineageTag: 2811750d-2427-4990-9927-0466d41301c3
+		summarizeBy: none
+		sourceColumn: Profit Center Service Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L1 Looked' = RELATED('Masterdata Cost Elements'[L1 Name])
+		lineageTag: 95dae1c4-b6c5-4b69-96ad-36b27f18a1ee
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost =
+			SWITCH (
+			        TRUE,
+			       CONTAINSSTRING('Opex from BAP with Plan CE'[L1 Looked],"cost"), "Costs",
+			        CONTAINSSTRING('Opex from BAP with Plan CE'[L1 Looked],"revenue"), "Revenue")
+		lineageTag: e9abd277-2ee6-41e0-9cf9-0097a9fded35
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Costs' = IF ('Opex from BAP with Plan CE'[Cost] = "Costs", 'Opex from BAP with Plan CE'[Amount Acutals],0)
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 6493db62-b154-4e99-afb7-bb218b9acda5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Actual Revenue' = IF ('Opex from BAP with Plan CE'[Cost] = "Revenue", 'Opex from BAP with Plan CE'[Amount Acutals],0)
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 79ee942b-c232-4f95-b41a-6fbce6d950be
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Planned Costs' = IF ('Opex from BAP with Plan CE'[Cost] = "Costs", 'Opex from BAP with Plan CE'[Amount Plan],0)
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: f461044f-6c12-44d4-abc4-634a98680afa
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Planned Revenue' = IF ('Opex from BAP with Plan CE'[Cost] = "Revenue", 'Opex from BAP with Plan CE'[Amount Plan],0)
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 4e7c445b-3cf6-4fb7-b9cf-b565c872da8c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Actual Total' = 'Opex from BAP with Plan CE'[Actual Costs] + 'Opex from BAP with Plan CE'[Actual Revenue]
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 7b1e279c-d11b-4fab-8268-f28efdb847f9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Profit Center and Name' = 'Opex from BAP with Plan CE'[Profit center] & "-" & 'Opex from BAP with Plan CE'[Profit center Name]
+		lineageTag: 3a5211f6-b3de-47cd-b0c4-83163a7deb6e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Planned Total' = ```
+			'Opex from BAP with Plan CE'[Planned Costs] + 'Opex from BAP with Plan CE'[Planned Revenue] 
+			```
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: fcc92789-7047-436f-bf80-a2c09acb2c18
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Delta Plan Actuals PC' = 'Opex from BAP with Plan CE'[Planned Total] - 'Opex from BAP with Plan CE'[Actual Total]
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: c42cb524-0bdd-470b-80df-e6277b649c4d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'WBS Element Name'
+		dataType: string
+		lineageTag: db0b04eb-1467-4d3d-a08d-15fed0ecbbb7
+		summarizeBy: none
+		sourceColumn: WBS Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element and Name' = 'Opex from BAP with Plan CE'[WBS Element] & " - " & 'Opex from BAP with Plan CE'[WBS Element Name]
+		lineageTag: 37bd0fd4-b432-4be5-afd6-791f4d71018a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Company Code'
+		dataType: string
+		lineageTag: a01a2a33-3c32-4bc8-ad28-f24c399d7f82
+		summarizeBy: none
+		sourceColumn: Customer Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element Responsible'
+		dataType: string
+		lineageTag: 68ca8d3a-99e4-424f-919a-f499738f9b21
+		summarizeBy: none
+		sourceColumn: WBS Element Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Object'
+		dataType: string
+		lineageTag: 5d4716f7-59da-4ffb-9f25-380a04280d71
+		summarizeBy: none
+		sourceColumn: Customer Object
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Person Responsible'
+		dataType: string
+		lineageTag: f793ebaa-3dff-435b-9742-939b6ab44bdc
+		summarizeBy: none
+		sourceColumn: Cost Center Person Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ICC Payer'
+		dataType: string
+		lineageTag: e7b20d92-7424-4a26-8030-db0d2be5c31b
+		summarizeBy: none
+		sourceColumn: ICC Payer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ICC Payer Name'
+		dataType: string
+		lineageTag: a252e38f-ac11-41ef-9dd0-a24676280ea1
+		summarizeBy: none
+		sourceColumn: ICC Payer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Corrected' = ```
+			SWITCH (
+			        TRUE,
+			       ('Opex from BAP with Plan CE'[Payer] = "#" && 'Opex from BAP with Plan CE'[Cost]="Revenue" && 'Opex from BAP with Plan CE'[ICC Payer] <> ""),'Opex from BAP with Plan CE'[ICC Payer],
+			       
+			       'Opex from BAP with Plan CE'[Payer]
+			       )
+			```
+		lineageTag: 8b4ea1c1-21e9-4527-875d-04aa212bb04e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Name Corrected' = ```
+			SWITCH (
+			        TRUE,
+			       ('Opex from BAP with Plan CE'[Payer Name] = "Not Assigned" && 'Opex from BAP with Plan CE'[Cost]="Revenue" && 'Opex from BAP with Plan CE'[ICC Payer Name] <> ""),'Opex from BAP with Plan CE'[ICC Payer Name],
+			    
+			       'Opex from BAP with Plan CE'[Payer Name]
+			       )
+			```
+		lineageTag: 46a7d4cb-5816-4df7-95a9-cf005083137a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Object Responsible' =
+			SWITCH (
+			        TRUE,
+			        NOT(ISBLANK(LOOKUPVALUE('WBS Elements from SAP'[Project Leader],'WBS Elements from SAP'[WBS Element],'Opex from BAP with Plan CE'[Customer Object]))),LOOKUPVALUE('WBS Elements from SAP'[Project Leader],'WBS Elements from SAP'[WBS Element],'Opex from BAP with Plan CE'[Customer Object]),
+			         ISBLANK(LOOKUPVALUE('WBS Elements from SAP'[Project Leader],'WBS Elements from SAP'[WBS Element],'Opex from BAP with Plan CE'[Customer Object])),LOOKUPVALUE('Group Cost Centers'[Person Responsible],'Group Cost Centers'[Cost Center],'Opex from BAP with Plan CE'[Customer Object]),"#"
+			
+			       )
+		lineageTag: cf1eced1-9e70-4541-98ba-b6ce85446546
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Object and Name' = 'Opex from BAP with Plan CE'[Partner object] & " - " & 'Opex from BAP with Plan CE'[Partner object Name]
+		lineageTag: d475090f-b138-4888-a364-c7387fa34147
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Run and Change Indicator'
+		dataType: string
+		lineageTag: 879beb33-4443-413a-9301-9984db9519d9
+		summarizeBy: none
+		sourceColumn: Run and Change Indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PSP Status'
+		dataType: string
+		lineageTag: 5015183b-dc34-4b66-abb5-499cddb25000
+		summarizeBy: none
+		sourceColumn: PSP Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: c6acbe3a-86c1-44ec-8e89-8bc506663c94
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Profit Center'
+		dataType: string
+		lineageTag: d0169e2f-68a2-4e77-add0-b84c0975ea18
+		summarizeBy: none
+		sourceColumn: Material Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Profit Center Name'
+		dataType: string
+		lineageTag: 9fdddcb8-4c7a-4c50-97e0-57a93a8fa51b
+		summarizeBy: none
+		sourceColumn: Material Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Service Cluster'
+		dataType: string
+		lineageTag: b1757b47-19a1-4e61-9e68-1e6873c451cf
+		summarizeBy: none
+		sourceColumn: Material Service Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Service Class'
+		dataType: string
+		lineageTag: 893e08db-6e48-499b-b367-519377d519c4
+		summarizeBy: none
+		sourceColumn: Material Service Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Service Package'
+		dataType: string
+		lineageTag: e3240289-14c5-4178-892d-544e21b3baaa
+		summarizeBy: none
+		sourceColumn: Material Service Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Number'
+		dataType: string
+		lineageTag: db70c089-36e2-4726-a46d-cb51664c880c
+		summarizeBy: none
+		sourceColumn: Vendor Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: 1191e707-e1e9-4a5c-90ee-10bd1c726a34
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Profit Centar and Name' = 'Opex from BAP with Plan CE'[Material Profit Center] & " - " & 'Opex from BAP with Plan CE'[Material Profit Center Name]
+		lineageTag: 3c5f8b7b-d38d-48da-a0ab-6c24bc0f5a12
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Number and Name' = 'Opex from BAP with Plan CE'[Vendor Number] & " - " & 'Opex from BAP with Plan CE'[Vendor Name]
+		lineageTag: ecd65489-c425-47fe-8745-784de8d4d815
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount FC'
+		dataType: decimal
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: 6a8ad88d-1d8e-48b8-84d3-220dfbbae45b
+		summarizeBy: sum
+		sourceColumn: Amount FC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	column 'FC Costs' = IF ('Opex from BAP with Plan CE'[Cost] = "Costs", 'Opex from BAP with Plan CE'[Amount FC],0)
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: a9910b46-c041-42d7-8971-59013b0b13a5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	column 'FC Revenue' = IF ('Opex from BAP with Plan CE'[Cost] = "Revenue", 'Opex from BAP with Plan CE'[Amount FC],0)
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: d953f5be-6df4-49f2-990c-64d2058e364a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	column 'FC Total' = ```
+			'Opex from BAP with Plan CE'[FC Costs] + 'Opex from BAP with Plan CE'[FC Revenue] 
+			```
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: 7930603b-2fdf-4e72-85bf-d518da5a28aa
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	column 'Delta FC Actuals' = 'Opex from BAP with Plan CE'[Amount FC]-'Opex from BAP with Plan CE'[Amount Acutals]
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: c5bc9cca-9a07-4355-b769-a935fe07e7ac
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	column 'Delta FC Actuals PC' = 'Opex from BAP with Plan CE'[FC Total] - 'Opex from BAP with Plan CE'[Actual Total]
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: 8b3d7eb1-8dd3-4461-85ef-62abd3e59bec
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	column 'FC Cluster'
+		dataType: string
+		lineageTag: 9b4287c5-641a-4731-a172-4dd38e1e1cf9
+		summarizeBy: none
+		sourceColumn: FC Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FC Cost Element Group'
+		dataType: string
+		lineageTag: c7ccd198-2d6c-486d-abaf-38c10399100e
+		summarizeBy: none
+		sourceColumn: FC Cost Element Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Opex from BAP with Plan CE' = m
+		mode: import
+		queryGroup: '05_SAP BAP'
+		source =
+				let
+				    Source = Table.Combine({#"OPEX from BAP CE", #"OPEX from BAP Plan CE", #"OPEX from BAP FC All 2025"}),
+				    #"Replaced Value" = Table.ReplaceValue(Source,null,0,Replacer.ReplaceValue,{"Quantity"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value",null,"EUR",Replacer.ReplaceValue,{"Currency"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value1",{{"Amount Plan", Currency.Type}}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Changed Type",null,0,Replacer.ReplaceValue,{"Amount Plan"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2",null,0,Replacer.ReplaceValue,{"Amount Acutals"}),
+				    #"Replaced Value8" = Table.ReplaceValue(#"Replaced Value3",null,0,Replacer.ReplaceValue,{"Amount FC"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value8",{{"Amount Acutals", Currency.Type}, {"Amount Plan", Currency.Type}, {"Amount FC", Currency.Type}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type1", each Text.StartsWith([Cost Element], "7") or Text.StartsWith([Cost Element], "S7") or Text.StartsWith([Cost Element], "P")),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Filtered Rows",{{"SAP Refresh Time", type datetime}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type2", {"Profit center"}, #"Profit Center", {"Profit center"}, "Profit Center.1", JoinKind.LeftOuter),
+				    #"Expanded Profit Center.1" = Table.ExpandTableColumn(#"Merged Queries", "Profit Center.1", {"Person Responsible", "Pillar", "Division", "Department", "Service Landscape", "Service Class", "Service Package"}, {"Profit Center.1.Person Responsible", "Profit Center.1.Pillar", "Profit Center.1.Division", "Profit Center.1.Department", "Profit Center.1.Service Landscape", "Profit Center.1.Service Class", "Profit Center.1.Service Package"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Profit Center.1",{{"Profit Center.1.Person Responsible", "Profit Center Person Responsible"}, {"Profit Center.1.Pillar", "Profit Center Pillar"}, {"Profit Center.1.Division", "Profit Center Division"}, {"Profit Center.1.Department", "Profit Center Department"}, {"Profit Center.1.Service Landscape", "Profit Center Service Landscape"}, {"Profit Center.1.Service Class", "Profit Center Service Class"}, {"Profit Center.1.Service Package", "Profit Center Service Package"}}),
+				    #"Merged Queries1" = Table.NestedJoin(#"Renamed Columns", {"WBS Element"}, #"WBS Elements from SAP", {"WBS Element"}, "WBS Elements from SAP", JoinKind.LeftOuter),
+				    #"Expanded WBS Elements from SAP" = Table.ExpandTableColumn(#"Merged Queries1", "WBS Elements from SAP", {"WBS Element Name", "Change Run Indicator", "PSP System Status", "Project Leader"}, {"WBS Elements from SAP.WBS Element Name", "WBS Elements from SAP.Change Run Indicator", "WBS Elements from SAP.PSP System Status", "WBS Elements from SAP.Project Leader"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded WBS Elements from SAP",{{"WBS Elements from SAP.WBS Element Name", "WBS Element Name"}}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Renamed Columns1",{{"WBS Element Name", type text}}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Changed Type3",null,"#",Replacer.ReplaceValue,{"WBS Element Name"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Replaced Value4",{{"WBS Elements from SAP.Project Leader", "WBS Element Responsible"}}),
+				    #"Merged Queries2" = Table.NestedJoin(#"Renamed Columns2", {"Cost object"}, #"Group Cost Centers from SAP", {"Cost Center"}, "Group Cost Centers", JoinKind.LeftOuter),
+				    #"Expanded Group Cost Centers" = Table.ExpandTableColumn(#"Merged Queries2", "Group Cost Centers", {"Person Responsible"}, {"Group Cost Centers.Person Responsible"}),
+				    #"Renamed Columns3" = Table.RenameColumns(#"Expanded Group Cost Centers",{{"Group Cost Centers.Person Responsible", "Cost Center Person Responsible"}}),
+				    #"Merged Queries3" = Table.NestedJoin(#"Renamed Columns3", {"Customer Company Code"}, Debtors, {"Company Code"}, "Debtors", JoinKind.LeftOuter),
+				    #"Expanded Debtors" = Table.ExpandTableColumn(#"Merged Queries3", "Debtors", {"Debtor", "Name"}, {"Debtors.Debtor", "Debtors.Name"}),
+				    #"Renamed Columns4" = Table.RenameColumns(#"Expanded Debtors",{{"Debtors.Debtor", "ICC Payer"}, {"Debtors.Name", "ICC Payer Name"}, {"WBS Elements from SAP.PSP System Status", "PSP Status"}, {"WBS Elements from SAP.Change Run Indicator", "Run and Change Indicator"}}),
+				    #"Merged Queries4" = Table.NestedJoin(#"Renamed Columns4", {"Material"}, #"Group Price List Materials Catalogue", {"Material"}, "Group Price List Materials Catalogue", JoinKind.LeftOuter),
+				    #"Expanded Group Price List Materials Catalogue" = Table.ExpandTableColumn(#"Merged Queries4", "Group Price List Materials Catalogue", {"Profit Centre", "Profit Centre Text", "Service Cluster", "Service Class", "Service Package"}, {"Group Price List Materials Catalogue.Profit Centre", "Group Price List Materials Catalogue.Profit Centre Text", "Group Price List Materials Catalogue.Service Cluster", "Group Price List Materials Catalogue.Service Class", "Group Price List Materials Catalogue.Service Package"}),
+				    #"Renamed Columns5" = Table.RenameColumns(#"Expanded Group Price List Materials Catalogue",{{"Group Price List Materials Catalogue.Profit Centre", "Material Profit Center"}, {"Group Price List Materials Catalogue.Profit Centre Text", "Material Profit Center Name"}, {"Group Price List Materials Catalogue.Service Cluster", "Material Service Cluster"}, {"Group Price List Materials Catalogue.Service Class", "Material Service Class"}, {"Group Price List Materials Catalogue.Service Package", "Material Service Package"}}),
+				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns5", "Vendor Number", each if (Text.Length(Text.AfterDelimiter([PO Vendor], "/", 1)) = 10) then Text.AfterDelimiter([PO Vendor], "/", 1) else if Text.StartsWith([Offsetting Account],"K") = true then Text.AfterDelimiter([Offsetting Account], "/", 0) else "#"),
+				    #"Merged Queries5" = Table.NestedJoin(#"Added Custom1", {"Vendor Number"}, #"Supplier List", {"Supplier"}, "Supplier List", JoinKind.LeftOuter),
+				    #"Expanded Supplier List" = Table.ExpandTableColumn(#"Merged Queries5", "Supplier List", {"Supplier Name"}, {"Supplier List.Supplier Name"}),
+				    #"Renamed Columns6" = Table.RenameColumns(#"Expanded Supplier List",{{"Supplier List.Supplier Name", "Vendor Name"}}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Renamed Columns6",null,"#",Replacer.ReplaceValue,{"Vendor Name"}),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Replaced Value5",{{"Material Service Package", type text}, {"Material Profit Center", type text}, {"Material Profit Center Name", type text}, {"Material Service Cluster", type text}, {"Material Service Class", type text}}),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Changed Type4",null,"#",Replacer.ReplaceValue,{"Material Profit Center", "Material Profit Center Name", "Material Service Cluster", "Material Service Class", "Material Service Package"}),
+				    #"Replaced Value7" = Table.ReplaceValue(#"Replaced Value6","","#",Replacer.ReplaceValue,{"Material Profit Center Name", "Material Service Cluster", "Material Service Class", "Material Service Package"}),
+				    #"Merged Queries6" = Table.NestedJoin(#"Replaced Value7", {"Cost Element"}, #"FC Cost Element Groups", {"Cost Element"}, "FC Cost Element Groups", JoinKind.LeftOuter),
+				    #"Expanded FC Cost Element Groups" = Table.ExpandTableColumn(#"Merged Queries6", "FC Cost Element Groups", {"Forecast Cluster /SAC Mask"}, {"Forecast Cluster /SAC Mask"}),
+				    #"Renamed Columns7" = Table.RenameColumns(#"Expanded FC Cost Element Groups",{{"Forecast Cluster /SAC Mask", "FC Cluster"}}),
+				    #"Merged Queries7" = Table.NestedJoin(#"Renamed Columns7", {"Cost Element"}, #"FC Cost Element", {"Cost Element"}, "FC Cost Element", JoinKind.LeftOuter),
+				    #"Expanded FC Cost Element" = Table.ExpandTableColumn(#"Merged Queries7", "FC Cost Element", {"Forecast Cost Element Hierarchy"}, {"Forecast Cost Element Hierarchy"}),
+				    #"Renamed Columns8" = Table.RenameColumns(#"Expanded FC Cost Element",{{"Forecast Cost Element Hierarchy", "FC Cost Element Group"}})
+				in
+				    #"Renamed Columns8"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

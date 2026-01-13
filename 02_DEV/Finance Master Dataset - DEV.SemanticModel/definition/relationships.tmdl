@@ -1,0 +1,221 @@
+relationship 539f4c13-4510-4226-9152-b951c9f43a33
+	isActive: false
+	fromColumn: 'SAP Resource Grades AT45'.Grade
+	toColumn: 'Grade and Proficiency Levels'.Grade
+
+relationship 1ee4075c-de7e-4b7e-8050-2da3f4b90835
+	isActive: false
+	fromColumn: 'Cost Centers'.'Hierarchy Area'
+	toColumn: 'Hierachy and Group Pillars'.'Hierarchy Area'
+
+relationship 8ad624fc-4452-4e1d-910e-5ac29f19e89e
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'AT45 Employee Master Data'.'Personal Number'
+	toColumn: 'SAP Internal Resources'.'Personal Number'
+
+relationship 81c94d32-163e-492c-b932-6a9694ba1da4
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date Table Main'.'Month Date'
+	toColumn: 'Refresh Time Stamp'.Date
+
+relationship f1312cc5-5da9-4810-9ffa-0fc5a27737ea
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'DE44 Employee Master Data'.'Personal Number'
+	toColumn: 'SAP Internal Resources'.'Personal Number'
+
+relationship ac3778db-b834-4608-ac1e-fe62aa5a9b27
+	fromColumn: 'SAP Time Recording'.'Month Date'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship b64bd206-caa9-4509-a73f-6106255483b7
+	fromColumn: 'SAP Time Recording'.'Personal Number'
+	toColumn: 'SAP Internal Resources'.'Personal Number'
+
+relationship 2ee022fe-b5c4-4509-b0e3-90a4110d7b09
+	fromColumn: 'Special User Right'.'Cost Center'
+	toColumn: 'Cost Centers'.'Cost Center'
+
+relationship AutoDetected_a427a418-ace9-4bdf-891d-4ae10f103d95
+	fromColumn: 'User Rights'.'Cost Center'
+	toColumn: 'Cost Centers'.'Cost Center'
+
+relationship AutoDetected_fb473841-8d0e-498a-bf08-c766b3be29f8
+	fromColumn: 'SAP Internal Resources Changes'.Grade
+	toColumn: 'Grade and Proficiency Levels'.Grade
+
+relationship AutoDetected_ebd1bd50-5c23-4634-8b33-74d1ce7265eb
+	fromColumn: 'SAP Internal Resources Changes'.'Cost Center'
+	toColumn: 'Cost Centers'.'Cost Center'
+
+relationship AutoDetected_640e8250-08ca-4829-87a5-3a6438120a16
+	fromColumn: 'SAP Internal Resources Changes'.'Hierarchy Area'
+	toColumn: 'Hierachy and Group Pillars'.'Hierarchy Area'
+
+relationship AutoDetected_d6e4d272-0e5e-4c1f-8fb1-84647df31be2
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'SAP Internal Resources Changes'.'Personal Number'
+	toColumn: 'SAP Internal Resources'.'Personal Number'
+
+relationship cb57d4bf-cfbe-4315-879b-8cb51979e66f
+	fromColumn: 'SAP Internal Resources Changes'.'Month Date'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship AutoDetected_29cbf8f5-6873-4ae8-b536-4c312fee9b24
+	fromColumn: 'Opex from BAP with Plan CE'.'Cost Element'
+	toColumn: 'Masterdata Cost Elements'.'Cost Element'
+
+relationship c2ce4245-42e8-40a8-bc4c-b12d16c8d6f0
+	fromColumn: 'Opex from BAP with Plan CE'.'Month Date'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship d1ad13bb-62a1-4001-9554-35676968aa58
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'PPM Projects'.'AM Key'
+	toColumn: 'PPM Accounting Elements'.'AM Key'
+
+relationship 74cad02f-f62e-44b6-95fb-f07a3d4561f7
+	fromColumn: 'Service Spend Details'.'Cost Center'
+	toColumn: 'Cost Centers'.'Cost Center'
+
+relationship 08f73187-5a73-4d59-9fbf-1cb97119ae4e
+	fromColumn: 'Service Spend Details'.'Service Period'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship e02476ad-379e-42e5-aa72-036e15759ee7
+	fromColumn: 'Service Spend Details'.'Material and Sales Organisation'
+	toColumn: 'Group Price List Materials'.'Material and Sales Organisation'
+
+relationship 7ce58087-3329-c0f6-953b-b8fb5d9a35a0
+	fromColumn: 'PPM Time Cards Internals'.SYSID
+	toColumn: 'PPM Time Card Interface'.'Time Card SYSID'
+
+relationship 1b143b22-314b-8a82-8be6-505715d202da
+	fromColumn: 'PPM Time Cards Internals'.'User ID'
+	toColumn: 'SAP Internal Resources'.'User ID'
+
+relationship 8975216e-df80-1405-da82-80cc51fb0f47
+	fromColumn: 'PPM Time Cards Internals'.'Month Date'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship ed515e9a-dac3-90ec-6c80-5b7111b37821
+	fromColumn: 'PPM Time Cards Externals'.SYSID
+	toColumn: 'PPM Time Card Interface'.'Time Card SYSID'
+
+relationship 40991573-caf8-196a-7f08-7b0fa97a9f56
+	fromColumn: 'PPM Time Cards Externals'.'Month Date'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship b55aea8d-1e8d-b4b6-84fd-4383f50f1936
+	isActive: false
+	fromColumn: 'PPM Time Cards Internals'.'Export For'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship 389ad15e-ef5b-4213-a054-646c34d38641
+	fromColumn: 'SAP Internal Resources'.'Sales Organisation'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship b91e4fcf-1d6d-8802-4aca-2ab82171e05f
+	fromColumn: 'Opex from BAP with Plan CE'.'Company Code'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship 52e07281-d266-734b-8954-a703ba64e74f
+	fromColumn: 'Service Spend Details'.'Data For'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship 5256c9db-af17-1aa0-3898-eface5f0f6c0
+	fromColumn: 'Account Receivables'.'Month Date'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship 9fdbb3ee-a044-042c-cfa6-8e24cd1c7df5
+	fromColumn: 'Account Receivables'.'Company Code'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship b64438b7-901f-4b54-1357-67c07d60d87b
+	fromColumn: 'Capex Bookings'.'Asset Number Country'
+	toColumn: 'Asset List'.'Asset Number Country'
+
+relationship 74861445-2008-fef1-2695-1396e0762630
+	fromColumn: 'Asset List'.'Company Code'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship 90b82867-4a56-23a2-c00f-0f156484c82f
+	fromColumn: 'Capex Bookings'.'Month Date'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship abb90459-d010-0f5a-a261-e5cc75924dec
+	fromColumn: 'Asset List'.'Asset Class'
+	toColumn: 'Asset Class'.'Class Asset '
+
+relationship 67d38a83-385e-8164-1c67-12426eeb228b
+	fromColumn: 'Budget Report with DemandID'.'Fiscal year'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship 29473f64-e69a-8e3f-bfd8-aba07b945091
+	isActive: false
+	fromColumn: 'Capex Bookings'.'Company Code'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship 1f1aa8e6-cc38-68a7-07f0-3649e229af3a
+	fromColumn: 'Budget Report with DemandID'.'Company Code'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship 4110064a-7e9c-5741-ab7b-b8f99ac411a8
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Budget Report with DemandID'.KeyDemandPO
+	toColumn: 'Budget Report per DemandID'.KeyDemandPO
+
+relationship b88e5e8e-a325-1fa1-56e2-ebf962366f21
+	fromColumn: 'O2I PreRun'.'Service Date'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship d5e99053-81e0-8d6b-2c28-04416eb16ab0
+	fromColumn: 'O2I PreRun'.'Material and Sales Organization'
+	toColumn: 'Group Price List Materials'.'Material and Sales Organisation'
+
+relationship 8b30e73d-9348-9511-e55d-faa71f1883e3
+	fromColumn: 'O2I PreRun'.ExportFor
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship df311a63-44e6-0b75-75b7-57fa0184266a
+	fromColumn: 'O2I PreRun'.'Quote ID'
+	toColumn: 'O2I PreRun Errors'.'Quote ID'
+
+relationship 88c09817-dded-ee7e-ca87-99307981a508
+	fromColumn: 'PPM Time Cards Externals'.'Export For'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship d9706432-fecc-b3a3-9f4b-0bca8567f7e3
+	fromColumn: 'PPM Projects'.'Exported For'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship 97394b56-2233-1731-a66b-612e609def72
+	fromColumn: 'SAP Internal Resources Changes'.'Functional OrgUnit ID Key'
+	toColumn: 'Organizational Unit List Functional'.'Org Unit ID Composite'
+
+relationship d6cd8f65-ed9e-0b16-f29b-fda2e5fb7f62
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'SAP Internal Resources Changes'.'Disciplinary OrgUnit ID Key'
+	toColumn: 'Organizational Unit List Disciplinary'.'Org Unit ID Composite'
+
+relationship 1effa1db-eb4d-6f8f-3e44-684d32c1f002
+	fromColumn: 'Open Invoices'.'Company Code'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship a69e3a65-fe36-7626-552c-16f658060a45
+	fromColumn: 'Open Invoices'.'Month Date'
+	toColumn: 'Date Table Main'.'Month Date'
+
+relationship aaaae3a9-a8e6-fb9a-6c78-c047b7598ba8
+	fromColumn: 'Budget Report per PlanBook'.'Company Code'
+	toColumn: 'Company Codes'.'Company Code'
+
+relationship a63105aa-3e1e-ec36-be1c-8bc86fcd7274
+	fromColumn: 'Budget Report per PlanBook'.'Fiscal year'
+	toColumn: 'Date Table Main'.'Month Date'
+

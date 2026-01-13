@@ -1,0 +1,325 @@
+table 'Group Price List Materials Catalogue'
+	lineageTag: 994cebaf-03f0-4dda-afba-fa531d900f39
+
+	column 'search key'
+		dataType: string
+		lineageTag: 3dc9ab94-ee83-4afb-a032-a171762cbe9b
+		summarizeBy: none
+		sourceColumn: search key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: da776de3-2960-457e-92de-16f7deae0092
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Description'
+		dataType: string
+		lineageTag: eaf37752-be4a-46d7-b1b2-17f367c622f6
+		summarizeBy: none
+		sourceColumn: Material Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'St VTL'
+		dataType: string
+		lineageTag: d1e7c1a9-5d94-4a4a-9727-b3c81c4dce19
+		summarizeBy: none
+		sourceColumn: St VTL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DCh
+		dataType: string
+		lineageTag: 50d23a9e-ad6c-42aa-9d85-27fe51134b06
+		summarizeBy: none
+		sourceColumn: DCh
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice to Plan'
+		dataType: string
+		lineageTag: f4c1c93b-7b98-4003-8e99-53872e490e7c
+		summarizeBy: none
+		sourceColumn: Invoice to Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column MTyp
+		dataType: string
+		lineageTag: 7ad6babc-d45d-4533-be46-56b07142558a
+		summarizeBy: none
+		sourceColumn: MTyp
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organisation'
+		dataType: string
+		lineageTag: 0d068d05-7acf-4798-87d0-373bad002b0a
+		summarizeBy: none
+		sourceColumn: Sales Organisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plnt
+		dataType: string
+		lineageTag: cb1e0fc1-6e42-4d37-8790-293a0d14b3f2
+		summarizeBy: none
+		sourceColumn: Plnt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organization Name'
+		dataType: string
+		lineageTag: 8beb5287-829c-46b7-bbb7-d25b219218ea
+		summarizeBy: none
+		sourceColumn: Sales Organization Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Type'
+		dataType: string
+		lineageTag: f1be794b-daf9-4778-821f-3390ac50d352
+		summarizeBy: none
+		sourceColumn: Price Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Charging Unit'
+		dataType: string
+		lineageTag: 8dc722c9-e7d2-4c63-adf3-7db44ffeba80
+		summarizeBy: none
+		sourceColumn: Charging Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 05347382-6f50-4bf9-815d-aab29f2134bb
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Centre'
+		dataType: string
+		lineageTag: f73fdd1b-7b93-4130-9b27-50e274adceb0
+		summarizeBy: none
+		sourceColumn: Profit Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Centre Text'
+		dataType: string
+		lineageTag: 8fec5eec-8aeb-460b-bae8-c720874ffbc4
+		summarizeBy: none
+		sourceColumn: Profit Centre Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Owner Service Family'
+		dataType: string
+		lineageTag: 362d114c-bcd9-4244-a744-2752b9257037
+		summarizeBy: none
+		sourceColumn: Owner Service Family
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Person Responsible for Profit'
+		dataType: string
+		lineageTag: 96594621-73c2-4981-ae1f-b24c9a1b8e4c
+		summarizeBy: none
+		sourceColumn: Person Responsible for Profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Cluster'
+		dataType: string
+		lineageTag: b77e0a1e-ce6e-423a-be1d-88a8252fb7d3
+		summarizeBy: none
+		sourceColumn: Service Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Class'
+		dataType: string
+		lineageTag: 87b7e750-6b9c-42b1-a7c5-ea7cb451e5b7
+		summarizeBy: none
+		sourceColumn: Service Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Package'
+		dataType: string
+		lineageTag: bd5109d9-1831-4111-8d2d-72c4ebf498e7
+		summarizeBy: none
+		sourceColumn: Service Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'St VTL-cross'
+		dataType: string
+		lineageTag: 3c4311fb-5314-4b9b-9073-4ac1bfcdc8b7
+		summarizeBy: none
+		sourceColumn: St VTL-cross
+
+		annotation SummarizationSetBy = Automatic
+
+	column DChl
+		dataType: string
+		lineageTag: 036acad9-4a6a-4c74-8664-5dcd2105eb37
+		summarizeBy: none
+		sourceColumn: DChl
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created
+		dataType: string
+		lineageTag: e25093b3-be78-4376-865e-81298741baf7
+		summarizeBy: none
+		sourceColumn: Created
+
+		annotation SummarizationSetBy = Automatic
+
+	column AAG
+		dataType: string
+		lineageTag: c515f682-347c-4495-a15c-67f5ee2a0838
+		summarizeBy: none
+		sourceColumn: AAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Type'
+		dataType: string
+		lineageTag: c9217c66-6c48-4414-9807-dd79f2048281
+		summarizeBy: none
+		sourceColumn: Material Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material status'
+		dataType: string
+		lineageTag: 21b8ec15-8040-46ba-a52e-2bb87fc0d93a
+		summarizeBy: none
+		sourceColumn: Material status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'to be deactivated'
+		dataType: string
+		lineageTag: ef62080a-afb9-447e-b827-7e22439a05f7
+		summarizeBy: none
+		sourceColumn: to be deactivated
+
+		annotation SummarizationSetBy = Automatic
+
+	column billable
+		dataType: string
+		lineageTag: 105a935c-43cd-4e36-b302-577d026b8fb8
+		summarizeBy: none
+		sourceColumn: billable
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'plan only'
+		dataType: string
+		lineageTag: 40e5b066-e429-477a-9788-73b93d7bfca4
+		summarizeBy: none
+		sourceColumn: plan only
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material and Sales Organisation'
+		dataType: string
+		lineageTag: 09fe1bcb-fb82-4b27-be81-42365f74b4f6
+		summarizeBy: none
+		sourceColumn: Material and Sales Organisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Inside VAT Group'
+		dataType: decimal
+		formatString: "€"\ #,0.###############;-"€"\ #,0.###############;"€"\ #,0.###############
+		lineageTag: 90abc108-5a99-4b5d-8d1e-d7cc64bba521
+		summarizeBy: sum
+		sourceColumn: Price Inside VAT Group
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-AT"}
+
+	column 'Price Outside VAT Group'
+		dataType: decimal
+		formatString: "€"\ #,0.###############;-"€"\ #,0.###############;"€"\ #,0.###############
+		lineageTag: 0aebcf44-1423-465d-aba4-453db84c2c2b
+		summarizeBy: sum
+		sourceColumn: Price Outside VAT Group
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-AT"}
+
+	column 'Price External Market'
+		dataType: decimal
+		formatString: "€"\ #,0.###############;-"€"\ #,0.###############;"€"\ #,0.###############
+		lineageTag: 2191e49f-35f7-4f96-8bb8-bc2634c69385
+		summarizeBy: sum
+		sourceColumn: Price External Market
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-AT"}
+
+	column 'Profit Centre and Name'
+		dataType: string
+		lineageTag: 25b979a5-d466-4fba-812e-95bae6dc6689
+		summarizeBy: none
+		sourceColumn: Profit Centre and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LS Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d22c0ce-dba0-471b-a8a6-e74be9fd4dcb
+		summarizeBy: sum
+		sourceColumn: LS Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SC Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: a1aa7e0a-ce24-4d05-9e30-a04814ee2a04
+		summarizeBy: sum
+		sourceColumn: SC Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SP Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e5926ee-5112-426c-8b74-5e62f0274cac
+		summarizeBy: sum
+		sourceColumn: SP Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Group Price List Materials Catalogue' = m
+		mode: import
+		queryGroup: '05_SAP BAP'
+		source =
+				let
+				    Source = #"Group Price List Materials",
+				    #"Removed Duplicates1" = Table.Distinct(Source, {"Material"})
+				in
+				    #"Removed Duplicates1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

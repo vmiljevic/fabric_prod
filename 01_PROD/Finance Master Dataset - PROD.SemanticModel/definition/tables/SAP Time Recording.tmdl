@@ -1,0 +1,86 @@
+table 'SAP Time Recording'
+	lineageTag: 03fc95ce-9d59-44f5-8392-f9f8c8c0b323
+
+	column 'Personal Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d9b2858-9dac-4cb5-9783-8161d44f1d3b
+		summarizeBy: none
+		sourceColumn: Personal Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Name'
+		dataType: string
+		lineageTag: 9a5b201f-511e-40d8-86e2-ae1298aee3d3
+		summarizeBy: none
+		sourceColumn: First Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name'
+		dataType: string
+		lineageTag: 2ddd5bc2-07cb-46a7-b3b8-63fbd85f1b55
+		summarizeBy: none
+		sourceColumn: Last Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booked in SAP'
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 02620f58-b541-4649-97d3-40e702677fd1
+		summarizeBy: sum
+		sourceColumn: Booked in SAP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e34ec47d-9fa0-402a-85f9-15ff78376c2e
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Data For'
+		dataType: string
+		lineageTag: c1003ef2-b022-4c3e-bc6d-f15999305230
+		summarizeBy: none
+		sourceColumn: Data For
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Local ID'
+		dataType: string
+		lineageTag: e3c7901a-4505-47f1-97e7-5fab7b64bd29
+		summarizeBy: none
+		sourceColumn: Local ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SAP Time Recording' = m
+		mode: import
+		queryGroup: '03_HR SAP'
+		source =
+				let
+				    Source = Table.Combine({#"SAP Time Recording Teleworking", #"SAP Time Recording Corrections"}),
+				    #"Added Custom" = Table.AddColumn(Source, "Data For", each "AT45"),
+				    #"Appended Query" = Table.Combine({#"Added Custom", #"SAP Time Recording CZ45"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Appended Query",null,"CZ45",Replacer.ReplaceValue,{"Data For"}),
+				    #"Appended Query1" = Table.Combine({#"Replaced Value", #"SAP Time Recording SK45"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Appended Query1",null,"SK45",Replacer.ReplaceValue,{"Data For"}),
+				    #"Appended Query2" = Table.Combine({#"Replaced Value1", #"SAP Time Recording SK44"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Appended Query2",null,"SK44",Replacer.ReplaceValue,{"Data For"}),
+				    #"Appended Query3" = Table.Combine({#"Replaced Value2", #"SAP Time Recording HU44"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Appended Query3",null,"HU44",Replacer.ReplaceValue,{"Data For"})
+				in
+				    #"Replaced Value3"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

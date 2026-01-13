@@ -1,0 +1,201 @@
+table 'User Login Data'
+	lineageTag: dedfef21-2a2f-43f9-8db7-e525713b03d7
+
+	column Nr
+		dataType: int64
+		formatString: 0
+		lineageTag: 3dbb0528-7be7-41ab-b425-d576d8c9a873
+		summarizeBy: sum
+		sourceColumn: Nr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID'
+		dataType: string
+		lineageTag: c499f6ba-ae0d-419d-ab6f-4745ec0795af
+		summarizeBy: none
+		sourceColumn: User ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name'
+		dataType: string
+		lineageTag: 0d97f28b-083c-41e9-b43d-6cfd5a12eece
+		summarizeBy: none
+		sourceColumn: Last Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Name'
+		dataType: string
+		lineageTag: 104fe80c-88a9-4dd8-a753-337e18c20822
+		summarizeBy: none
+		sourceColumn: First Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Name'
+		dataType: string
+		lineageTag: 27f47655-4e0a-4c8d-95a5-111cadec7efa
+		summarizeBy: none
+		sourceColumn: Full Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: e4246418-111c-482c-8812-3fce7400b779
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column eMail
+		dataType: string
+		lineageTag: b2401470-f57d-4e5f-a67a-20b0dd3dfd0d
+		summarizeBy: none
+		sourceColumn: eMail
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ALLIANZGRUPPE FQDN'
+		dataType: string
+		lineageTag: 57a4b8cd-42c4-4806-baa6-f1901923ee4a
+		summarizeBy: none
+		sourceColumn: ALLIANZGRUPPE FQDN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ovl Last Login'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 880aad8e-329d-4175-88ea-d1a28ce19c91
+		summarizeBy: none
+		sourceColumn: Ovl Last Login
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Last Login'
+		dataType: string
+		lineageTag: 9b911f51-7a30-48f1-8934-61624ed76004
+		summarizeBy: none
+		sourceColumn: Last Login
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 929bfe41-1708-4b80-b327-76028949ddc3
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Creation Date'
+		dataType: int64
+		formatString: 0
+		lineageTag: f15c4f2e-f1f9-4b05-8374-1286ec91a8ce
+		summarizeBy: sum
+		sourceColumn: Creation Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disabled
+		dataType: string
+		lineageTag: 7ae3a1e9-ec95-4dca-8570-d6904425584b
+		summarizeBy: none
+		sourceColumn: Disabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Login Expiration'
+		dataType: string
+		lineageTag: 47ff80d5-bb6a-4b33-b643-827767c91cfc
+		summarizeBy: none
+		sourceColumn: Login Expiration
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner
+		dataType: string
+		lineageTag: f577632d-84e3-45a7-84b5-c1339f4ac5fc
+		summarizeBy: none
+		sourceColumn: Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Master User'
+		dataType: string
+		lineageTag: 3c5aaab3-f652-4ed8-9bd2-b943e393e379
+		summarizeBy: none
+		sourceColumn: Master User
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Object State'
+		dataType: string
+		lineageTag: fe81c27c-8465-4b06-8ec1-c3c2da14e8b8
+		summarizeBy: none
+		sourceColumn: Object State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP BookingCircle'
+		dataType: string
+		lineageTag: 6144693a-9141-4f40-9b30-86fe884bc88c
+		summarizeBy: none
+		sourceColumn: SAP BookingCircle
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hide from GIAM'
+		dataType: string
+		lineageTag: 319d1ecd-af29-40dd-93e6-d31d13b8235e
+		summarizeBy: none
+		sourceColumn: Hide from GIAM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ed6f3205-ae00-4d64-8b73-5014e078fb74
+		summarizeBy: none
+		sourceColumn: Current Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Days Without Login'
+		dataType: int64
+		formatString: 0
+		lineageTag: fd00f9da-4040-49a7-8101-9a8bfa055771
+		summarizeBy: sum
+		sourceColumn: Days Without Login
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'User Login Data' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/07_User%20Login/2025-User-Overall-Last-Login-Report.csv"),[Delimiter=","]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Replaced Value" = Table.ReplaceValue(#"Promoted Headers","0","19001231",Replacer.ReplaceValue,{"Ovl Last Login"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"Nr", Int64.Type}, {"User ID", type text}, {"Last Name", type text}, {"First Name", type text}, {"Full Name", type text}, {"Company", type text}, {"eMail", type text}, {"ALLIANZGRUPPE FQDN", type text}, {"Ovl Last Login", type date}, {"Last Login", type text}, {"Description", type text}, {"Creation Date", Int64.Type}, {"Disabled", type text}, {"Login Expiration", type text}, {"Owner", type text}, {"Master User", type text}, {"Object State", type text}, {"SAP BookingCircle", type text}, {"Hide from GIAM", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Current Date", each DateTime.LocalNow()),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Current Date", type date}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "Days Without Login", each if [Ovl Last Login] < [Current Date] then [Current Date] - [Ovl Last Login] else 0),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"Days Without Login", Int64.Type}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type2", each true)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

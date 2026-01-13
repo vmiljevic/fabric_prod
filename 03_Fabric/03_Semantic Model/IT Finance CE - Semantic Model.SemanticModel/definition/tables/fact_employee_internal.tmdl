@@ -1,0 +1,399 @@
+table fact_employee_internal
+	lineageTag: 7a89af0d-8da6-47e0-a2e6-3857ed4213f8
+	sourceLineageTag: [dbo].[fact_employee_internal]
+
+	column 'File Name'
+		dataType: string
+		lineageTag: 631c7308-ea5d-49cd-be37-c77b51928db4
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 45df345c-31b6-4ee9-a7a0-dc52ef1e3811
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID'
+		dataType: string
+		lineageTag: 696e5713-60ed-4059-95ef-4bc5b02324c8
+		sourceLineageTag: User ID
+		summarizeBy: none
+		sourceColumn: User ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name'
+		dataType: string
+		lineageTag: 482a5d66-c717-475a-b3a3-8be1efdaa0cf
+		sourceLineageTag: Last Name
+		summarizeBy: none
+		sourceColumn: Last Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Name'
+		dataType: string
+		lineageTag: 23049885-5a28-42ef-b090-f4d5c2505bd9
+		sourceLineageTag: First Name
+		summarizeBy: none
+		sourceColumn: First Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column AHC
+		dataType: int64
+		formatString: 0
+		lineageTag: b4624540-02f1-4115-b118-022891ba770a
+		sourceLineageTag: AHC
+		summarizeBy: sum
+		sourceColumn: AHC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Number and Name'
+		dataType: string
+		lineageTag: 88935d6f-87c6-4f8c-8f35-bde76a86e407
+		sourceLineageTag: Cost Center Number and Name
+		summarizeBy: none
+		sourceColumn: Cost Center Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DisciplinaryOrgUnit Key'
+		dataType: string
+		lineageTag: 2740e967-3db1-410d-9bb9-30dba6ddb3cc
+		sourceLineageTag: DisciplinaryOrgUnit Key
+		summarizeBy: none
+		sourceColumn: DisciplinaryOrgUnit Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FunctionalOrgUnit Key'
+		dataType: string
+		lineageTag: 54f5dc7b-00ab-4a06-b5eb-ea97f27d7391
+		sourceLineageTag: FunctionalOrgUnit Key
+		summarizeBy: none
+		sourceColumn: FunctionalOrgUnit Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grade
+		dataType: string
+		lineageTag: a1840897-cf0d-4a0e-8f45-6b8a04edd63c
+		sourceLineageTag: Grade
+		summarizeBy: none
+		sourceColumn: Grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract Type'
+		dataType: string
+		lineageTag: dc34360c-d824-4a53-afd3-2a7aeb15292e
+		sourceLineageTag: Contract Type
+		summarizeBy: none
+		sourceColumn: Contract Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card Material Number'
+		dataType: string
+		lineageTag: 0dce3914-cf93-45a9-8051-e423ffa8fe71
+		sourceLineageTag: Rate Card Material Number
+		summarizeBy: none
+		sourceColumn: Rate Card Material Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card Role'
+		dataType: string
+		lineageTag: 32f73c97-857f-4d8c-8894-10618705596c
+		sourceLineageTag: Rate Card Role
+		summarizeBy: none
+		sourceColumn: Rate Card Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card Name'
+		dataType: string
+		lineageTag: 9fcb24b6-81bf-403f-825d-e2b65d4a2d38
+		sourceLineageTag: Rate Card Name
+		summarizeBy: none
+		sourceColumn: Rate Card Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e914e8c8-8276-4a5e-ada7-16a8dbf2a2ed
+		sourceLineageTag: Month Date
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column FunctionalOrgUnit
+		dataType: string
+		lineageTag: e81c93a8-516c-42d0-9df9-913fdef7bf4d
+		sourceLineageTag: FunctionalOrgUnit
+		summarizeBy: none
+		sourceColumn: FunctionalOrgUnit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: 87dcd8ab-a772-416f-a44b-d6a75451eeb8
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 2c67c8e3-b375-455e-8be9-563ef9cbe1d4
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HR ID'
+		dataType: string
+		lineageTag: 63f896a4-b910-4c2d-9e18-509c00502efa
+		sourceLineageTag: HR ID
+		summarizeBy: none
+		sourceColumn: HR ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: cc510614-ef95-4d17-b711-b75daffd06b1
+		sourceLineageTag: Location
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoicing Method'
+		dataType: string
+		lineageTag: d1b52c54-1c54-4917-b176-b055a035014b
+		sourceLineageTag: Invoicing Method
+		summarizeBy: none
+		sourceColumn: Invoicing Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Role Type'
+		dataType: string
+		lineageTag: 8d80015a-8f5c-4bbc-bf5e-b3ca6d4adba3
+		sourceLineageTag: Role Type
+		summarizeBy: none
+		sourceColumn: Role Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: ac32f7ae-3bf6-479e-8584-50d9166ad5b1
+		sourceLineageTag: Start Date
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'End Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: f18e7fe2-d65f-456b-903c-d31d7b6c2bf5
+		sourceLineageTag: End Date
+		summarizeBy: none
+		sourceColumn: End Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Email
+		dataType: string
+		lineageTag: 48306307-15d7-4eae-aba2-7c111bcffb59
+		sourceLineageTag: Email
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HR Manager'
+		dataType: string
+		lineageTag: 4929a1a7-81c9-4d0d-b7f9-2fc2800e2b0a
+		sourceLineageTag: HR Manager
+		summarizeBy: none
+		sourceColumn: HR Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisciplinaryOrgUnit
+		dataType: string
+		lineageTag: 9d4fba8c-34a2-4582-85b8-3ee3aa6f102f
+		sourceLineageTag: DisciplinaryOrgUnit
+		summarizeBy: none
+		sourceColumn: DisciplinaryOrgUnit
+
+		annotation SummarizationSetBy = Automatic
+
+	column FTE
+		dataType: double
+		lineageTag: 7670a4a6-e40e-4e28-9b11-2ff89e6c09a2
+		sourceLineageTag: FTE
+		summarizeBy: sum
+		sourceColumn: FTE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 76ba0cf1-9f72-44d9-b449-5af4130b373a
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Number'
+		dataType: string
+		lineageTag: c5ebfb88-986c-489d-ab1d-a8cf80afc389
+		sourceLineageTag: Cost Center Number
+		summarizeBy: none
+		sourceColumn: Cost Center Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Name'
+		dataType: string
+		lineageTag: 4a403258-aef3-4a2c-8776-206f60468694
+		sourceLineageTag: Cost Center Name
+		summarizeBy: none
+		sourceColumn: Cost Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Position
+		dataType: string
+		lineageTag: 20e9227c-b7d9-4efb-a504-f249759b66ef
+		sourceLineageTag: Position
+		summarizeBy: none
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Name'
+		dataType: string
+		lineageTag: f14ef7ec-6ea9-4fce-9705-7f33ca85ded8
+		sourceLineageTag: Company Name
+		summarizeBy: none
+		sourceColumn: Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Name'
+		dataType: string
+		lineageTag: 0a47d1b5-fae9-44f1-b498-bf638a76f62e
+		sourceLineageTag: Employee Name
+		summarizeBy: none
+		sourceColumn: Employee Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Key'
+		dataType: string
+		lineageTag: 15b25d01-75fe-4b5e-bc96-1f4449819a72
+		sourceLineageTag: Rate Key
+		summarizeBy: none
+		sourceColumn: Rate Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Key'
+		dataType: string
+		lineageTag: 670ee796-04ef-40f9-ad6e-a760b67c974a
+		sourceLineageTag: Employee Key
+		summarizeBy: none
+		sourceColumn: Employee Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Daily Rate'
+		dataType: double
+		lineageTag: fe2c364d-deaf-4561-88d7-58515557b90a
+		sourceLineageTag: Daily Rate
+		summarizeBy: sum
+		sourceColumn: Daily Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column City
+		dataType: string
+		lineageTag: 10af0122-8d64-41a2-903f-293f3eb04797
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Available HR PDs'
+		dataType: double
+		lineageTag: bcb0fab9-5a67-4dfb-ad3e-12540b1c7568
+		sourceLineageTag: Available HR PDs
+		summarizeBy: sum
+		sourceColumn: Available HR PDs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 945d8841-9d9b-4ac5-98bf-dfa813afc04f
+		sourceLineageTag: Cost Center
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team Name'
+		dataType: string
+		lineageTag: 39ef1fb5-8538-40d0-8126-b4e1e1b97367
+		sourceLineageTag: Team Name
+		summarizeBy: none
+		sourceColumn: Team Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_employee_internal = entity
+		mode: directLake
+		source
+			entityName: fact_employee_internal
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

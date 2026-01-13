@@ -1,0 +1,77 @@
+table 'PPM Deactiveated Users'
+	lineageTag: 553c3b19-8734-4136-be1e-eca82dbef4ae
+
+	column User
+		dataType: string
+		lineageTag: 9dc22c1f-99cb-4fad-8945-ed84ad409052
+		summarizeBy: none
+		sourceColumn: User
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID'
+		dataType: string
+		lineageTag: 0e280561-dbf7-46c1-9eb8-db465743e6b5
+		summarizeBy: none
+		sourceColumn: User ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID Corrected'
+		dataType: string
+		lineageTag: 07a358bd-341a-4098-8215-70662cf811a6
+		summarizeBy: none
+		sourceColumn: User ID Corrected
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Internal Resources.User ID.1'
+		dataType: string
+		lineageTag: 7b80bf80-ecbc-4d18-9dde-661a45c390af
+		summarizeBy: none
+		sourceColumn: SAP Internal Resources.User ID.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Internal Resources.User ID'
+		dataType: string
+		lineageTag: 72232dec-9a68-4a6a-9940-f69e65dba6ab
+		summarizeBy: none
+		sourceColumn: SAP Internal Resources.User ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID Final'
+		dataType: string
+		lineageTag: c600d6f4-1a16-4d64-98a4-42d256f97d2d
+		summarizeBy: none
+		sourceColumn: User ID Final
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PPM Deactiveated Users' = m
+		mode: import
+		queryGroup: 04_PPM
+		source =
+				let
+				    Source = Table.Combine({#"PPM Time Cards AT", #"PPM Time Cards SK44 NEW", #"PPM Time Cards SK45 NEW", #"PPM Time Cards CZ45 NEW", #"PPM Time Cards HU44 NEW"}),
+				    #"Filtered Rows" = Table.SelectRows(Source, each Text.Contains([User ID], "DEACT_") or Text.Contains([User ID], "_DIS")),
+				    #"Removed Duplicates" = Table.Distinct(#"Filtered Rows", {"User ID"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Removed Duplicates",{"User", "User ID"}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Removed Other Columns", "User ID", "User ID - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"User ID - Copy", "User ID Corrected"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","DEACT_","",Replacer.ReplaceText,{"User ID Corrected"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","_DIS","",Replacer.ReplaceText,{"User ID Corrected"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Replaced Value1", {"User ID Corrected"}, #"SAP Internal Resources", {"User ID"}, "SAP Internal Resources", JoinKind.LeftOuter),
+				    #"Expanded SAP Internal Resources" = Table.ExpandTableColumn(#"Merged Queries", "SAP Internal Resources", {"User ID"}, {"SAP Internal Resources.User ID"}),
+				    #"Merged Queries1" = Table.NestedJoin(#"Expanded SAP Internal Resources", {"User"}, #"SAP Internal Resources", {"Employee Name"}, "SAP Internal Resources", JoinKind.LeftOuter),
+				    #"Expanded SAP Internal Resources1" = Table.ExpandTableColumn(#"Merged Queries1", "SAP Internal Resources", {"User ID"}, {"SAP Internal Resources.User ID.1"}),
+				    #"Added Custom" = Table.AddColumn(#"Expanded SAP Internal Resources1", "User ID Final", each if [SAP Internal Resources.User ID.1] <> null then [SAP Internal Resources.User ID.1] else if [SAP Internal Resources.User ID] <> null then [SAP Internal Resources.User ID] else null),
+				    #"Filtered Rows1" = Table.SelectRows(#"Added Custom", each ([User ID Final] <> null))
+				in
+				    #"Filtered Rows1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

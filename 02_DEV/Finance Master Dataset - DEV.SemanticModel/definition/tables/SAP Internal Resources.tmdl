@@ -1,0 +1,195 @@
+table 'SAP Internal Resources'
+	lineageTag: 0ec5d2da-f4b2-4c79-bb15-731ad1f92ff2
+
+	column 'Personal Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a29bcce-fc7d-4e8d-9ab0-173327ccb050
+		summarizeBy: none
+		sourceColumn: Personal Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organisation'
+		dataType: string
+		lineageTag: 5caafb7b-13e9-471f-b093-9c25767b081b
+		summarizeBy: none
+		sourceColumn: Sales Organisation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 8945d5ce-206a-433c-8cf6-4c38140ac7cf
+		summarizeBy: none
+		sourceColumn: Company
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date of Birth'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: 04a04ead-b53b-401c-a3af-e1893dafe17f
+		summarizeBy: none
+		sourceColumn: Date of Birth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Start Date'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: da416e11-eb82-4339-a026-b9f1ccb205ee
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Employee Name'
+		dataType: string
+		lineageTag: d8e1dca0-1e36-4cbb-9594-03014455db8d
+		summarizeBy: none
+		sourceColumn: Employee Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 570d5f74-193d-4e3b-bd18-eac1724d67b2
+		summarizeBy: none
+		sourceColumn: Gender
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location Name'
+		dataType: string
+		lineageTag: 58f2de3f-b912-4b68-b9bc-a5e9da1d289e
+		summarizeBy: none
+		sourceColumn: Location Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Years'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fd65c04-c91a-4b9a-aba0-6a255c0ebe46
+		summarizeBy: sum
+		sourceColumn: Total Years
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID'
+		dataType: string
+		lineageTag: 4bb94ea2-5d49-4a73-b711-b88062376bae
+		summarizeBy: none
+		sourceColumn: User ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract Type'
+		dataType: string
+		lineageTag: ebae2073-d8c2-4cd6-926b-e0eb48e15f8c
+		summarizeBy: none
+		sourceColumn: Contract Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'My HR Manager'
+		dataType: string
+		lineageTag: d69291bf-5b21-4e80-92d0-a4ccdf46691c
+		summarizeBy: none
+		sourceColumn: My HR Manager
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: d0929ef2-a08e-4f76-8809-5dba269320be
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Rights Email' = CONCATENATEX(FILTER('SAP Internal Resources Changes','SAP Internal Resources Changes'[Personal Number]='SAP Internal Resources'[Personal Number]),'SAP Internal Resources Changes'[User Rights Email])
+		lineageTag: 020c448b-5a05-4782-90eb-a4c5c503734b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Local ID'
+		dataType: string
+		lineageTag: 1020e14b-e007-4c00-8120-9508bddb057e
+		summarizeBy: none
+		sourceColumn: Local ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SAP Internal Resources' = m
+		mode: import
+		queryGroup: '03_HR SAP'
+		source =
+				let
+				    Source = Table.Combine({#"SAP Internal Resources DE44", #"SAP Internal Resources AT45", #"SAP Internal Resources HU44 NEW", #"SAP Internal Resources CZ45 NEW", #"SAP Internal Resources SK44 NEW", #"SAP Internal Resources SK45 NEW", #"SAP Internal Resources HU44", #"SAP Internal Resources CZ45", #"SAP Internal Resources SK44", #"SAP Internal Resources SK45"}),
+				    #"Inserted Age" = Table.AddColumn(Source, "Age", each Date.From(DateTime.LocalNow()) - [Date of Birth], type duration),
+				    #"Calculated Total Years" = Table.TransformColumns(#"Inserted Age",{{"Age", each Duration.TotalDays(_) / 365, type number}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Calculated Total Years",{{"Age", "Total Years"}}),
+				    #"Rounded Down" = Table.TransformColumns(#"Renamed Columns",{{"Total Years", Number.RoundDown, Int64.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Rounded Down","M","Male",Replacer.ReplaceValue,{"Gender"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","F","Female",Replacer.ReplaceValue,{"Gender"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Replaced Value1",{{"Month Service", "Month Date"}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns1",{"Personal Number", "Sales Organisation", "Company", "Date of Birth", "Start Date", "Month Date", "Employee Name", "Email", "Gender", "User ID", "Role Type", "Position", "Contract Type", "My HR Manager", "Grade", "Location Name", "End Date", "Local ID", "Total Years"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Removed Other Columns",{"Personal Number", "Sales Organisation", "Company", "Date of Birth", "Start Date", "Employee Name", "Email", "Gender", "User ID", "Contract Type", "My HR Manager", "Location Name", "Local ID", "Total Years"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Other Columns1",{{"Personal Number", Int64.Type}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type1", {"Personal Number", "Sales Organisation"}),
+				    #"Added Custom2" = Table.AddColumn(#"Removed Duplicates", "User ID 2", each if (Text.StartsWith([User ID], "A") and Text.EndsWith([User ID], "X") and Text.Length([User ID])=6) then Text.Middle([User ID],0,5) else [User ID]),
+				    #"Removed Other Columns2" = Table.SelectColumns(#"Added Custom2",{"Personal Number", "Sales Organisation", "Company", "Date of Birth", "Start Date", "Employee Name", "Email", "Gender", "Contract Type", "My HR Manager", "Location Name", "Local ID", "Total Years", "User ID 2"}),
+				    #"Renamed Columns3" = Table.RenameColumns(#"Removed Other Columns2",{{"User ID 2", "User ID"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns3", each [Personal Number] <> null),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Date of Birth", type date}, {"Personal Number", type text}, {"User ID", type text}, {"Sales Organisation", type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{{"Sales Organisation", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Sales Organisation", Text.Clean, type text}}),
+				    #"Trimmed Text1" = Table.TransformColumns(#"Cleaned Text",{{"User ID", Text.Trim, type text}}),
+				    #"Cleaned Text1" = Table.TransformColumns(#"Trimmed Text1",{{"User ID", Text.Clean, type text}}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Cleaned Text1",null,"Standard",Replacer.ReplaceValue,{"Contract Type"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value2",{{"Personal Number", Int64.Type}}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Changed Type2", each [User ID] <> null and [User ID] <> "")
+				in
+				    #"Filtered Rows1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

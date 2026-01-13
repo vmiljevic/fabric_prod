@@ -1,0 +1,81 @@
+table 'AT45 Employee Master Data'
+	lineageTag: 9f03bb53-eab5-4d49-9172-4c0e487fab63
+
+	column 'Personal Number'
+		dataType: string
+		lineageTag: 6368c80c-6e2a-4d93-9e72-741979208ae6
+		summarizeBy: none
+		sourceColumn: Personal Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Name'
+		dataType: string
+		lineageTag: e9b90627-c2d0-4ac5-bf09-7f444e5665bc
+		summarizeBy: none
+		sourceColumn: First Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name'
+		dataType: string
+		lineageTag: b9324806-203c-40a0-b70f-9142e9f597f2
+		summarizeBy: none
+		sourceColumn: Last Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Daily Rate'
+		dataType: decimal
+		formatString: "€"\ #,0.###############;-"€"\ #,0.###############;"€"\ #,0.###############
+		lineageTag: f5131c18-6f1b-40c1-a44e-9cb65f77c2ee
+		summarizeBy: sum
+		sourceColumn: Daily Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-AT"}
+
+	column 'Jobrole NEU'
+		dataType: string
+		lineageTag: f3fec4ba-a369-40de-86d3-1b3489cb4251
+		summarizeBy: none
+		sourceColumn: Jobrole NEU
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date of Birth'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 10ff3d08-fa9e-45c5-8b0c-3370e3e24345
+		summarizeBy: none
+		sourceColumn: Date of Birth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Contract Type'
+		dataType: string
+		lineageTag: 93fa989c-dd44-420f-af71-31d4d8aeecc6
+		summarizeBy: none
+		sourceColumn: Contract Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'AT45 Employee Master Data' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="AT45MasterData",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Daily Rate", Currency.Type}, {"Date of Birth", type date}}),
+				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Changed Type", {{"Date of Birth", #date(2000, 1, 1)}})
+				in
+				    #"Replaced Errors"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

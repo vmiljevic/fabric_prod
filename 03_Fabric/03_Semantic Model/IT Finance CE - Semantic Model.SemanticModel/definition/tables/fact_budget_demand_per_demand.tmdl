@@ -1,0 +1,145 @@
+table fact_budget_demand_per_demand
+	lineageTag: 85cce0db-0fa0-4e4e-b72f-2b5d2296d4b4
+	sourceLineageTag: [dbo].[fact_budget_demand_per_demand]
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 09a04f4d-35bd-4324-b9a9-35508d9e07f8
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column KeyDemandPO
+		dataType: string
+		lineageTag: 310c5b47-4702-4243-b0e0-af7647f11e7c
+		sourceLineageTag: KeyDemandPO
+		summarizeBy: none
+		sourceColumn: KeyDemandPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Demand ID'
+		dataType: string
+		lineageTag: 7a3df685-0a04-4c87-be6f-1e19cf65a408
+		sourceLineageTag: Demand ID
+		summarizeBy: none
+		sourceColumn: Demand ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchasing order number PO'
+		dataType: string
+		lineageTag: bf53edc2-586b-4bc3-ae2f-dcfc9cbe280d
+		sourceLineageTag: Purchasing order number PO
+		summarizeBy: none
+		sourceColumn: Purchasing order number PO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: 10bfd2b5-9f1a-4db7-9035-796336ff4de3
+		sourceLineageTag: Profit Center
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		lineageTag: 87c3f618-7ba0-42e7-a730-b3fc37da4a30
+		sourceLineageTag: Profit Center Name
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Approved'
+		dataType: double
+		lineageTag: 1803a809-9c2e-404b-a576-7455e1cbc293
+		sourceLineageTag: PO Approved
+		summarizeBy: none
+		sourceColumn: PO Approved
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PO Spent'
+		dataType: double
+		lineageTag: 73cd5a03-b96b-487c-9311-13e2c31c6170
+		sourceLineageTag: PO Spent
+		summarizeBy: none
+		sourceColumn: PO Spent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Vendor
+		dataType: string
+		lineageTag: b375dc67-3fdf-437e-85c0-65bee961ec08
+		sourceLineageTag: Vendor
+		summarizeBy: none
+		sourceColumn: Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: 5da9bcc8-3120-44d7-b539-7b37bcb2d630
+		sourceLineageTag: Vendor Name
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Approved inc. Tax'
+		dataType: double
+		lineageTag: b0f931f8-b328-471e-bc7c-622be554f15c
+		sourceLineageTag: PO Approved inc. Tax
+		summarizeBy: none
+		sourceColumn: PO Approved inc. Tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Profit Center and Name'
+		dataType: string
+		lineageTag: 52fd6e63-e9f2-4cf6-99f8-0246100c473d
+		sourceLineageTag: Profit Center and Name
+		summarizeBy: none
+		sourceColumn: Profit Center and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Number and Name'
+		dataType: string
+		lineageTag: 1f13d6db-f873-42d9-bb31-42774a57968b
+		sourceLineageTag: Vendor Number and Name
+		summarizeBy: none
+		sourceColumn: Vendor Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Remainging'
+		dataType: double
+		lineageTag: be2dc787-3a28-4b2e-876e-713f4aed3f8a
+		sourceLineageTag: PO Remainging
+		summarizeBy: none
+		sourceColumn: PO Remainging
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_budget_demand_per_demand = entity
+		mode: directLake
+		source
+			entityName: fact_budget_demand_per_demand
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

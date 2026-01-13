@@ -1,0 +1,512 @@
+table fact_cost_revenue
+	lineageTag: 84bc7bbf-f924-4208-910b-4958472fee1e
+	sourceLineageTag: [dbo].[fact_cost_revenue]
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: a9a0cd26-11cb-4b18-975b-0450c911d8dc
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CO Document Number'
+		dataType: string
+		lineageTag: 83907f43-46a7-46e1-b918-5db4d7c62c6e
+		sourceLineageTag: CO Document Number
+		summarizeBy: none
+		sourceColumn: CO Document Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CO Doc Line Item Txt'
+		dataType: string
+		lineageTag: 936ef990-36b5-4765-b901-c23c018836b1
+		sourceLineageTag: CO Doc Line Item Txt
+		summarizeBy: none
+		sourceColumn: CO Doc Line Item Txt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element'
+		dataType: string
+		lineageTag: 083be7be-60ff-49f6-8f0c-3034a49135f5
+		sourceLineageTag: Cost Element
+		summarizeBy: none
+		sourceColumn: Cost Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Name'
+		dataType: string
+		lineageTag: ce494ba3-dfdc-4f47-bf58-0cfe14f3dad5
+		sourceLineageTag: Cost Element Name
+		summarizeBy: none
+		sourceColumn: Cost Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Vendor'
+		dataType: string
+		lineageTag: f8771711-f755-41dc-b98d-6391f50f4015
+		sourceLineageTag: PO Vendor
+		summarizeBy: none
+		sourceColumn: PO Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: 647b4fb3-3318-43ee-a7b7-5f0d077eb732
+		sourceLineageTag: Material
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Name'
+		dataType: string
+		lineageTag: 15ecd493-84fc-4b9f-b27b-bdbc03ac79ec
+		sourceLineageTag: Material Name
+		summarizeBy: none
+		sourceColumn: Material Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Item Text'
+		dataType: string
+		lineageTag: 7a945620-e5bf-49b1-98ec-27b97a955032
+		sourceLineageTag: PO Item Text
+		summarizeBy: none
+		sourceColumn: PO Item Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company ID'
+		dataType: string
+		lineageTag: e7e0448f-735d-4eda-b09d-5179b9c4f0a9
+		sourceLineageTag: Company ID
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Doc.number'
+		dataType: string
+		lineageTag: 92bc18e1-23d0-43d3-8c6c-6c4c32a2473f
+		sourceLineageTag: Doc.number
+		summarizeBy: none
+		sourceColumn: Doc.number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Cost Center'
+		dataType: string
+		lineageTag: 28691a4c-4341-4f3c-b704-896c96ae00fb
+		sourceLineageTag: Customer Cost Center
+		summarizeBy: none
+		sourceColumn: Customer Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offsetting Account'
+		dataType: string
+		lineageTag: f7180658-da58-493a-8c86-574289352bec
+		sourceLineageTag: Offsetting Account
+		summarizeBy: none
+		sourceColumn: Offsetting Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offsetting Account Name'
+		dataType: string
+		lineageTag: bd129175-4a0a-488f-961a-11f6fb81bf06
+		sourceLineageTag: Offsetting Account Name
+		summarizeBy: none
+		sourceColumn: Offsetting Account Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin Object'
+		dataType: string
+		lineageTag: 06c97bb9-405e-43af-9c7b-e2ab27bdae02
+		sourceLineageTag: Origin Object
+		summarizeBy: none
+		sourceColumn: Origin Object
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin Object Name'
+		dataType: string
+		lineageTag: 8ffe6b4d-1454-4457-ae1d-6fa919932e39
+		sourceLineageTag: Origin Object Name
+		summarizeBy: none
+		sourceColumn: Origin Object Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payer
+		dataType: string
+		lineageTag: 225b7dbc-0132-4acb-9913-e48c547e644e
+		sourceLineageTag: Payer
+		summarizeBy: none
+		sourceColumn: Payer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Name'
+		dataType: string
+		lineageTag: a0948280-9672-44c2-bdd5-537f4d886028
+		sourceLineageTag: Payer Name
+		summarizeBy: none
+		sourceColumn: Payer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reversal ref. number'
+		dataType: string
+		lineageTag: 8ef7121c-00d3-44be-89c6-d119ee5db98a
+		sourceLineageTag: Reversal ref. number
+		summarizeBy: none
+		sourceColumn: Reversal ref. number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: 301cc574-524c-4e6d-9989-5ad95c358146
+		sourceLineageTag: WBS Element
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Name'
+		dataType: string
+		lineageTag: 85384494-026d-42a0-801b-667074344c80
+		sourceLineageTag: User Name
+		summarizeBy: none
+		sourceColumn: User Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 1ac234f3-5923-410b-bbb7-d3c1c50cb776
+		sourceLineageTag: Currency
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		lineageTag: 966655e9-7670-469e-9c74-b6a0f93827a2
+		sourceLineageTag: Amount
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: double
+		lineageTag: 8b840835-d80b-476c-bd57-752222bd0b49
+		sourceLineageTag: Quantity
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'File Name'
+		dataType: string
+		lineageTag: 3c778116-00a0-43b7-b4c4-b8df07a78a2f
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b364abec-dc42-48b0-b421-e3aca9c3605c
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: fffc55dc-4b8e-4f2e-8a7f-88ded2cd6ebe
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Row Type'
+		dataType: string
+		lineageTag: 74ffdd76-a9b6-4292-a93f-9f1561c09b15
+		sourceLineageTag: Row Type
+		summarizeBy: none
+		sourceColumn: Row Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchasing Document'
+		dataType: string
+		lineageTag: 418fcca5-fb48-46f4-829b-390364efc095
+		sourceLineageTag: Purchasing Document
+		summarizeBy: none
+		sourceColumn: Purchasing Document
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting Period'
+		dataType: string
+		lineageTag: c199e899-0ba9-409a-a278-047cd54f58e7
+		sourceLineageTag: Posting Period
+		summarizeBy: none
+		sourceColumn: Posting Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		dataType: string
+		lineageTag: 8f0dc66e-0080-43f8-bc87-b191dedc12c0
+		sourceLineageTag: Fiscal Year
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Company Code'
+		dataType: string
+		lineageTag: 4d217332-eed0-40ec-9c79-2fafb71a9339
+		sourceLineageTag: Partner Company Code
+		summarizeBy: none
+		sourceColumn: Partner Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Object'
+		dataType: string
+		lineageTag: bc8e0752-f343-4871-98e8-ded31201ad61
+		sourceLineageTag: Partner Object
+		summarizeBy: none
+		sourceColumn: Partner Object
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Object Name'
+		dataType: string
+		lineageTag: 7c719f73-3beb-4a3d-94e3-ed37ef4e0170
+		sourceLineageTag: Partner Object Name
+		summarizeBy: none
+		sourceColumn: Partner Object Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: af55fcc5-f01c-474a-9b00-38d078ca151d
+		sourceLineageTag: Profit Center
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		lineageTag: 97f3dad2-a714-4e65-90d3-d673804fd63d
+		sourceLineageTag: Profit Center Name
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 2c9490e2-8b05-4ba9-be44-c8166b673cbf
+		sourceLineageTag: Cost Center
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Name'
+		dataType: string
+		lineageTag: 922f9592-c3a0-492d-ac0d-93a79d7b10d8
+		sourceLineageTag: Cost Center Name
+		summarizeBy: none
+		sourceColumn: Cost Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code Name'
+		dataType: string
+		lineageTag: 95c4dfe1-e7a5-4ffd-836c-e8e975645a6b
+		sourceLineageTag: Company Code Name
+		summarizeBy: none
+		sourceColumn: Company Code Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Person responsible'
+		dataType: string
+		lineageTag: 9cd78585-fc96-4ff7-b33c-c481568a78b6
+		sourceLineageTag: Person responsible
+		summarizeBy: none
+		sourceColumn: Person responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element Name'
+		dataType: string
+		lineageTag: 521f8545-0368-42d8-a0fd-7adf5f977abb
+		sourceLineageTag: WBS Element Name
+		summarizeBy: none
+		sourceColumn: WBS Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Company Code'
+		dataType: string
+		lineageTag: 90deb944-1ab4-4835-8102-8cddcf8e5b95
+		sourceLineageTag: Customer Company Code
+		summarizeBy: none
+		sourceColumn: Customer Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Object'
+		dataType: string
+		lineageTag: 22831e3c-84d3-41fd-93c6-fb737c6a5f2c
+		sourceLineageTag: Customer Object
+		summarizeBy: none
+		sourceColumn: Customer Object
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 80601691-02dc-42cb-bea7-e51bd13abc64
+		sourceLineageTag: Version
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bc4ee485-abf7-495b-9fb9-d7d54c5434ec
+		sourceLineageTag: Month Date
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Number and Name'
+		dataType: string
+		lineageTag: 76dbcba5-9537-4b8b-8e24-108d842f9121
+		sourceLineageTag: Material Number and Name
+		summarizeBy: none
+		sourceColumn: Material Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offsetting Account and Name'
+		dataType: string
+		lineageTag: ae5dc57d-b10c-4635-b1c4-0dfa5534b784
+		sourceLineageTag: Offsetting Account and Name
+		summarizeBy: none
+		sourceColumn: Offsetting Account and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Number and Name'
+		dataType: string
+		lineageTag: 9bae553e-5d1e-4858-8655-d5f1a676e307
+		sourceLineageTag: Cost Center Number and Name
+		summarizeBy: none
+		sourceColumn: Cost Center Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Object Number and Name'
+		dataType: string
+		lineageTag: f37f96fd-f349-434b-ae50-9aa4fd93961c
+		sourceLineageTag: Partner Object Number and Name
+		summarizeBy: none
+		sourceColumn: Partner Object Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Number and Name'
+		dataType: string
+		lineageTag: c5861bd8-0f57-412c-9318-5edd9a129427
+		sourceLineageTag: Profit Center Number and Name
+		summarizeBy: none
+		sourceColumn: Profit Center Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Number and Name'
+		dataType: string
+		lineageTag: 81400092-8964-46c4-9a4a-f0545e9c2b48
+		sourceLineageTag: Payer Number and Name
+		summarizeBy: none
+		sourceColumn: Payer Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Number and Name'
+		dataType: string
+		lineageTag: 23ca986f-12e8-4fc2-8f1f-4200b5776152
+		sourceLineageTag: Cost Element Number and Name
+		summarizeBy: none
+		sourceColumn: Cost Element Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Key'
+		dataType: string
+		lineageTag: 18f8e851-fedf-427e-879c-2e3dd76c7823
+		sourceLineageTag: Vendor Key
+		summarizeBy: none
+		sourceColumn: Vendor Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Type'
+		dataType: string
+		lineageTag: 151ba8ce-f3d6-48fd-b69f-715e0e6f9f16
+		sourceLineageTag: Cost Element Type
+		summarizeBy: none
+		sourceColumn: Cost Element Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Key'
+		dataType: string
+		lineageTag: b1d84761-a570-4265-bc2b-68eadf4be0c6
+		sourceLineageTag: Material Key
+		summarizeBy: none
+		sourceColumn: Material Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_cost_revenue = entity
+		mode: directLake
+		source
+			entityName: fact_cost_revenue
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

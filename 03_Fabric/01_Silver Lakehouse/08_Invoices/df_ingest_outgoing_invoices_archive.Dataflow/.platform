@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_outgoing_invoices_archive"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "65bf7ab7-d15f-8f11-4066-029379c17a1c"
+  }
+}

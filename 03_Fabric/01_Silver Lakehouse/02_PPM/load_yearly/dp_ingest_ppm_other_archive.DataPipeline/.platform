@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "dp_ingest_ppm_other_archive",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1d0f062c-4ed4-b540-4b1c-f04c8f7e8c66"
+  }
+}

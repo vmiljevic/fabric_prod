@@ -1,0 +1,54 @@
+table 'SAP Resource Grades AT45'
+	lineageTag: 3d953b99-e158-4cb5-ad80-fd885bf93d96
+
+	column 'Personal Number'
+		dataType: double
+		lineageTag: a5ed9e98-03ab-4200-8219-dd04384900ed
+		summarizeBy: sum
+		sourceColumn: Personal Number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Grade
+		dataType: int64
+		formatString: 0
+		lineageTag: 038d729e-7a4a-4c4c-a95a-48cdcceb7a49
+		summarizeBy: sum
+		sourceColumn: Grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: d630776c-b3c8-4e83-9edf-0276a47c6f00
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SAP Resource Grades AT45' = m
+		mode: import
+		queryGroup: '03_HR SAP'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/03_HR/Other%20Data/2024%20Grades%20Vienna.xlsx"), null, true),
+				    Tabelle1_Sheet = Source{[Item="Tabelle1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Tabelle1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Lokale Personalnummer", Int64.Type}, {"Mitarbeiterkennung", Int64.Type}, {"Vorname", type text}, {"Nachname", type text}, {"Arbeitgebergesellschaft (Label)", type text}, {"Grades", Int64.Type}, {"Position Cluster (Picklist Label)", type text}, {"Führungskraft (Name)", type text}, {"Mitarbeiterstatus (Picklist Label)", type text}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Lokale Personalnummer", "Grades"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"Lokale Personalnummer", "Personal Number"}, {"Grades", "Grade"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns",440066,228864,Replacer.ReplaceValue,{"Personal Number"}),
+				    #"Added Custom" = Table.AddColumn(#"Replaced Value", "Year", each 2024),
+				    #"Appended Query" = Table.Combine({#"Added Custom", #"SAP Resource Grades AT45 2025"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Appended Query",null,2025,Replacer.ReplaceValue,{"Year"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value1",{{"Year", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

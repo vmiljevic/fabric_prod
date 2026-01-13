@@ -1,0 +1,52 @@
+model Model
+	culture: en-US
+	collation: Latin1_General_100_BIN2_UTF8
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	directLakeBehavior: directLakeOnly
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DatabaseQuery"]
+
+annotation PBI_ProTooling = ["WebModelingEdit","RemoteModeling","CalcGroup","DaxQueryView_Desktop","CopilotTooling"]
+
+ref table dim_cost_element
+ref table dim_cost_center
+ref table dim_material
+ref table dim_payer
+ref table dim_wbs
+ref table dim_profit_center
+ref table fact_cost_revenue
+ref table dim_company
+ref table sec_user_right
+ref table dim_vendor
+ref table _measures
+ref table dim_date
+ref table dim_organizational_unit_functional
+ref table dim_organizational_unit_disciplinary
+ref table fact_employee_internal
+ref table fact_ppm_time_cards
+ref table dim_ppm_project
+ref table fact_ppm_time_card_interface
+ref table fact_employee_all
+ref table fact_time_recording_hr
+ref table fact_capex_bookings
+ref table dim_asset_class
+ref table dim_capex_assets
+ref table fact_service_spend
+ref table fact_budget_demand_per_planbook
+ref table fact_budget_demand_per_demand
+ref table fact_outgoing_invoices
+ref table fact_budget_demand
+ref table fact_incoming_invoices
+ref table fact_o2i_pre_run
+
+ref role User
+
+ref cultureInfo en-US
+

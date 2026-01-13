@@ -1,0 +1,95 @@
+table 'Asset Class'
+	lineageTag: 11c04e04-92cf-4f37-91a5-50dd901437b5
+
+	column 'Class Asset '
+		dataType: string
+		lineageTag: b3c42b27-d557-45ba-8b75-cc790cf96565
+		summarizeBy: none
+		sourceColumn: "Class Asset "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Class Name'
+		dataType: string
+		lineageTag: c57ef412-69ca-4292-82dc-1910bbf9a6b1
+		summarizeBy: none
+		sourceColumn: Class Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Capex Hierarchy '
+		dataType: string
+		lineageTag: c3002365-8944-4033-a6ea-81aff20a534a
+		summarizeBy: none
+		sourceColumn: "Capex Hierarchy "
+
+		annotation SummarizationSetBy = Automatic
+
+	column AT45
+		dataType: string
+		lineageTag: 70754694-777d-4ee6-970c-69c4648142d5
+		summarizeBy: none
+		sourceColumn: AT45
+
+		annotation SummarizationSetBy = Automatic
+
+	column CZ45
+		dataType: string
+		lineageTag: 37b07e99-f19f-4ca3-9f66-329b06e628e5
+		summarizeBy: none
+		sourceColumn: CZ45
+
+		annotation SummarizationSetBy = Automatic
+
+	column DE44
+		dataType: string
+		lineageTag: be6cd2b8-44ec-4387-a09f-5ae5f6651b14
+		summarizeBy: none
+		sourceColumn: DE44
+
+		annotation SummarizationSetBy = Automatic
+
+	column HU44
+		dataType: string
+		lineageTag: ea33a218-900e-4255-9fe3-887a06c8cbd6
+		summarizeBy: none
+		sourceColumn: HU44
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK44
+		dataType: string
+		lineageTag: d2d248d8-3ad8-432d-95c4-e7ef6a608d11
+		summarizeBy: none
+		sourceColumn: SK44
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK45
+		dataType: string
+		lineageTag: 3646d63f-adaf-447e-8550-a85b3e10ff11
+		summarizeBy: none
+		sourceColumn: SK45
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Class and Name' = 'Asset Class'[Class Asset ] & " - " & 'Asset Class'[Class Name]
+		lineageTag: 2699cab1-13d0-4008-856d-e65d1370e766
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Asset Class' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    AssetClass_Table = Source{[Item="AssetClass",Kind="Table"]}[Data]
+				in
+				    AssetClass_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

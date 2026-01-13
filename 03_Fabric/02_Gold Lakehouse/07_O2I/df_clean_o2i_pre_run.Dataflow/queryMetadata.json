@@ -1,0 +1,76 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_clean_master_data_sap",
+  "queryGroups": [
+    {
+      "id": "1628cf52-6288-4022-9e2c-58beecaec108",
+      "name": "_map",
+      "description": ""
+    }
+  ],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fact_o2i_pre_run_cost_current": {
+      "queryId": "5bc3c017-d2d1-42c9-8cf5-6b3d0db460b7",
+      "queryName": "fact_o2i_pre_run_cost_current"
+    },
+    "fact_o2i_pre_run_cost_archive": {
+      "queryId": "71ab5da2-2a39-4a79-9c92-d84739ec365e",
+      "queryName": "fact_o2i_pre_run_cost_archive"
+    },
+    "fact_o2i_pre_run_revenue_current": {
+      "queryId": "f9070402-937f-4099-954a-0fee7b09f702",
+      "queryName": "fact_o2i_pre_run_revenue_current"
+    },
+    "fact_o2i_pre_run_revenue_archive": {
+      "queryId": "1a32dfdd-cd7f-43e9-aabe-bb4497cf23a7",
+      "queryName": "fact_o2i_pre_run_revenue_archive"
+    },
+    "fact_o2i_pre_run": {
+      "queryId": "e5913287-6d2f-4ea7-8755-d70a1fab7f6d",
+      "queryName": "fact_o2i_pre_run",
+      "loadEnabled": false
+    },
+    "dim_company": {
+      "queryId": "1999d9b5-ee4b-482a-aadb-f4fafb45d5b3",
+      "queryName": "dim_company",
+      "queryGroupId": "1628cf52-6288-4022-9e2c-58beecaec108"
+    },
+    "dim_material_price": {
+      "queryId": "cf4a508d-4d18-4cf2-8e78-58ec122a3537",
+      "queryName": "dim_material_price",
+      "queryGroupId": "1628cf52-6288-4022-9e2c-58beecaec108"
+    },
+    "dim_payer": {
+      "queryId": "9af334e4-d972-49d2-ab64-c1c3696f164f",
+      "queryName": "dim_payer",
+      "queryGroupId": "1628cf52-6288-4022-9e2c-58beecaec108"
+    },
+    "fact_o2i_pre_run_status_current": {
+      "queryId": "fe1a666b-b403-4648-a066-4fb831d4a35d",
+      "queryName": "fact_o2i_pre_run_status_current"
+    },
+    "fact_o2i_pre_run_current_DataDestination": {
+      "queryId": "aac4c9df-7e51-4af3-bae2-530ddbb628ba",
+      "queryName": "fact_o2i_pre_run_current_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "fact_o2i_pre_run_status_archive": {
+      "queryId": "09612907-f303-4eed-8c20-cdd2e36704e0",
+      "queryName": "fact_o2i_pre_run_status_archive"
+    },
+    "fact_o2i_pre_run_status": {
+      "queryId": "6b30747b-00f9-44dd-9903-605f40281d5f",
+      "queryName": "fact_o2i_pre_run_status"
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+table dim_profit_center
+	lineageTag: 1cea021d-68b6-4b6b-bb70-4e554e896dcc
+	sourceLineageTag: [dbo].[dim_profit_center]
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: 9fa41180-d4e6-457c-81b1-7aa8f06c2bcc
+		sourceLineageTag: Profit Center
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		lineageTag: f56c905f-874d-4f6d-a92f-9eedc7c27165
+		sourceLineageTag: Profit Center Name
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: string
+		lineageTag: 4b0c5d42-0d7e-403d-a45e-ee155da0084d
+		sourceLineageTag: Valid From
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: string
+		lineageTag: 9bf1c3c8-51f0-4e1e-8314-38496335333c
+		sourceLineageTag: Valid To
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Person Responsible'
+		dataType: string
+		lineageTag: 8d042317-b51c-4c0c-a1f9-03f1b20f34d8
+		sourceLineageTag: Person Responsible
+		summarizeBy: none
+		sourceColumn: Person Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lock Indicator'
+		dataType: string
+		lineageTag: e3382217-9211-4dec-8750-69e21da9c77b
+		sourceLineageTag: Lock Indicator
+		summarizeBy: none
+		sourceColumn: Lock Indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pillar
+		dataType: string
+		lineageTag: b547f3e2-278c-49d0-afb7-b8e18dc52111
+		sourceLineageTag: Pillar
+		summarizeBy: none
+		sourceColumn: Pillar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Category'
+		dataType: string
+		lineageTag: 438500ff-c46c-4c6a-b856-70a4a8c0533f
+		sourceLineageTag: Profit Center Category
+		summarizeBy: none
+		sourceColumn: Profit Center Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		lineageTag: 3161e195-ddc2-472c-9ee1-c19ca29cd4ee
+		sourceLineageTag: Division
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: c619b7a9-071a-4872-889a-4832c4818f67
+		sourceLineageTag: Department
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: d5628e81-18e3-4004-a578-86548c5cfce0
+		sourceLineageTag: Status
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Investment Type'
+		dataType: string
+		lineageTag: d145d3f1-7bb8-4a14-b45c-d56f45c95dc2
+		sourceLineageTag: Investment Type
+		summarizeBy: none
+		sourceColumn: Investment Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Portfolio
+		dataType: string
+		lineageTag: 8bfe11ec-aaac-4108-a3df-8824ce0f6794
+		sourceLineageTag: Portfolio
+		summarizeBy: none
+		sourceColumn: Portfolio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Program Cluster'
+		dataType: string
+		lineageTag: c18cbe9b-5903-467f-b5d3-cba5a1c3d114
+		sourceLineageTag: Program Cluster
+		summarizeBy: none
+		sourceColumn: Program Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Program Cluster Name'
+		dataType: string
+		lineageTag: 931bc608-bafc-4f99-a0c8-591967d53c6b
+		sourceLineageTag: Program Cluster Name
+		summarizeBy: none
+		sourceColumn: Program Cluster Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Program
+		dataType: string
+		lineageTag: 29e9fdba-56f8-41f1-9c7e-43398c9481f9
+		sourceLineageTag: Program
+		summarizeBy: none
+		sourceColumn: Program
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Program Name'
+		dataType: string
+		lineageTag: 7acf183a-40b7-4d8d-b683-2670d15323ab
+		sourceLineageTag: Program Name
+		summarizeBy: none
+		sourceColumn: Program Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Landscape'
+		dataType: string
+		lineageTag: 08868f75-4253-4c92-aec8-da8c9308687e
+		sourceLineageTag: Service Landscape
+		summarizeBy: none
+		sourceColumn: Service Landscape
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Landscape Name'
+		dataType: string
+		lineageTag: 4e46b5e0-3a56-49ad-b764-a9002ce10b9e
+		sourceLineageTag: Service Landscape Name
+		summarizeBy: none
+		sourceColumn: Service Landscape Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Class'
+		dataType: string
+		lineageTag: 0ce2fb12-dc42-4f7b-b544-0d5aa4316fd8
+		sourceLineageTag: Service Class
+		summarizeBy: none
+		sourceColumn: Service Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Class Name'
+		dataType: string
+		lineageTag: f4980470-dc89-4e22-8715-29371c74de36
+		sourceLineageTag: Service Class Name
+		summarizeBy: none
+		sourceColumn: Service Class Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Package'
+		dataType: string
+		lineageTag: 1fc5abe4-b314-4fc2-88b2-89ec61a5939f
+		sourceLineageTag: Service Package
+		summarizeBy: none
+		sourceColumn: Service Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Package Name'
+		dataType: string
+		lineageTag: 302c2275-e3a9-4c85-a850-84eaffb372d1
+		sourceLineageTag: Service Package Name
+		summarizeBy: none
+		sourceColumn: Service Package Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Name'
+		dataType: string
+		lineageTag: f38d957a-e4d1-4233-9475-2936b863ebf9
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c2317c0a-5840-4230-a298-1c5d095c2504
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: bdd72010-f83b-40ac-824f-792bbfc2e575
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_profit_center = entity
+		mode: directLake
+		source
+			entityName: dim_profit_center
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

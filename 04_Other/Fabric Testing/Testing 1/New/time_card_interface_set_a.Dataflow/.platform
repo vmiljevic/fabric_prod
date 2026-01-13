@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "time_card_interface_set_a"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "12b3776a-2da3-95e6-4ada-03e9a2dece6b"
+  }
+}

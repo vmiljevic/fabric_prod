@@ -1,0 +1,1120 @@
+table _measures
+	lineageTag: 5be8ab81-f6b6-4993-9a76-e50765ff4bf5
+	sourceLineageTag: [dbo].[_measures]
+
+	measure 'Cost and Revenue Count' = COUNTROWS('fact_cost_revenue')
+		formatString: 0
+		displayFolder: Cost and Revenue
+		lineageTag: 12610e38-61ce-4413-85ee-2baa85cd7191
+
+		changedProperty = IsHidden
+
+	measure 'Cost and Revenue Refresh Time' =
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(fact_cost_revenue[Refresh Date]),
+			            ALL(fact_cost_revenue[Month Date]),
+			            ALL(fact_cost_revenue[Company Code])
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+		displayFolder: Cost and Revenue
+		lineageTag: e857cec8-2a28-4568-b34e-5132393988d4
+
+		changedProperty = IsHidden
+
+	measure 'Total Actual Cost and Revenue' = CALCULATE([Total Cost and Revenue Amount], fact_cost_revenue[Row Type] = "Actuals")
+		displayFolder: Cost and Revenue
+		lineageTag: f9e78cc3-311f-4397-91e9-75762465b641
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Actual Costs' = CALCULATE([Total Cost and Revenue Amount], fact_cost_revenue[Row Type] = "Actuals",fact_cost_revenue[Cost Element Type] = "Costs")
+		displayFolder: Cost and Revenue
+		lineageTag: fd5f305c-2495-4a26-9de7-4988a8a12a4a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Actual Revenue' = CALCULATE([Total Cost and Revenue Amount], fact_cost_revenue[Row Type] = "Actuals",fact_cost_revenue[Cost Element Type] = "Revenue")
+		displayFolder: Cost and Revenue
+		lineageTag: 1c9172f3-4676-4dc6-a3ec-44bf44a07a17
+
+		changedProperty = IsHidden
+
+	measure 'Total Cost and Revenue Amount' = SUM(fact_cost_revenue[Amount])
+		displayFolder: Cost and Revenue
+		lineageTag: ccd96c4f-52e5-4ae0-973a-be2617d4320e
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Cost and Revenue Quantity' = SUM(fact_cost_revenue[Quantity])
+		displayFolder: Cost and Revenue
+		lineageTag: 267ab4fd-2ff4-4159-94a3-7faee9bf549a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Forecast Cost and Revenue' = CALCULATE([Total Cost and Revenue Amount], fact_cost_revenue[Row Type] = "Forecast")
+		displayFolder: Cost and Revenue
+		lineageTag: f1db8ee5-13a4-415a-b8a1-9be4501a5969
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Forecast Costs' = CALCULATE([Total Cost and Revenue Amount], fact_cost_revenue[Row Type] = "Forecast",fact_cost_revenue[Cost Element Type] = "Costs")
+		displayFolder: Cost and Revenue
+		lineageTag: d41fb84c-b594-4819-82b2-334751350f45
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Forecast Revenue' = CALCULATE([Total Cost and Revenue Amount], fact_cost_revenue[Row Type] = "Forecast",fact_cost_revenue[Cost Element Type] = "Revenue")
+		displayFolder: Cost and Revenue
+		lineageTag: 883a955e-3e10-4586-9d6b-d01eb93687e7
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Plan Cost and Revenue' = CALCULATE([Total Cost and Revenue Amount], fact_cost_revenue[Row Type] = "Plan")
+		displayFolder: Cost and Revenue
+		lineageTag: 6adb9aa9-b81e-427f-bc4f-74f652fd5ad3
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Plan Costs' = CALCULATE([Total Cost and Revenue Amount], fact_cost_revenue[Row Type] = "Plan",fact_cost_revenue[Cost Element Type] = "Costs")
+		displayFolder: Cost and Revenue
+		lineageTag: e0b17850-493b-440b-bb6b-9de2f8a22e94
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Plan Revenue' = CALCULATE([Total Cost and Revenue Amount], fact_cost_revenue[Row Type] = "Plan",fact_cost_revenue[Cost Element Type] = "Revenue")
+		displayFolder: Cost and Revenue
+		lineageTag: e5c0706f-9533-4704-bb6a-f5c9f946fd1a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Variance % Forecast Cost and Revenue' = DIVIDE([Variance Forecast Cost and Revenue], [Total Forecast Cost and Revenue])
+		displayFolder: Cost and Revenue
+		lineageTag: d2b0ae01-4804-4169-ba76-b7b5f19fa0d0
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Variance % Plan Cost and Revenue' = DIVIDE([Variance Plan Cost and Revenue], [Total Plan Cost and Revenue])
+		displayFolder: Cost and Revenue
+		lineageTag: 33f4d9db-0f27-4d43-a228-478b6181d789
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Variance Forecast Cost and Revenue' = [Total Actual Cost and Revenue] - [Total Forecast Cost and Revenue]
+		displayFolder: Cost and Revenue
+		lineageTag: 84bd224d-af7b-499f-805d-143e37fa371b
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Variance Plan Cost and Revenue' = [Total Actual Cost and Revenue] - [Total Plan Cost and Revenue]
+		displayFolder: Cost and Revenue
+		lineageTag: a27a45cb-263c-4c15-af38-45e7ca1bf8f6
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'User Rights for Service Spend' = ```
+			LOOKUPVALUE(sec_user_right[Service Spend],sec_user_right[User],[User]) 
+			```
+		displayFolder: User Login
+		lineageTag: 514e7d86-79fd-4cd9-aeb8-25ab4954aaae
+
+		changedProperty = IsHidden
+
+	measure 'User Rights for PPM Time Bookings' = ```
+			LOOKUPVALUE(sec_user_right[PPM Time Bookings],sec_user_right[User],[User]) 
+			```
+		displayFolder: User Login
+		lineageTag: 173b48ec-8ce8-41f2-aa5a-93ab8c41b764
+
+		changedProperty = IsHidden
+
+	measure 'User Rights for Employee lists' = ```
+			LOOKUPVALUE(sec_user_right[Employee lists],sec_user_right[User],[User]) 
+			```
+		displayFolder: User Login
+		lineageTag: 932b943b-28a0-42c4-a441-baaa6479c18a
+
+		changedProperty = IsHidden
+
+	measure 'User Rights for Cost & Revenue' = ```
+			LOOKUPVALUE(sec_user_right[Cost & Revenue],sec_user_right[User],[User]) 
+			```
+		displayFolder: User Login
+		lineageTag: a97c7021-2a79-4d45-962a-7a076f6322aa
+
+		changedProperty = IsHidden
+
+	measure 'User Rights for Budget Availability' = ```
+			LOOKUPVALUE(sec_user_right[Budget Availability],sec_user_right[User],[User]) 
+			```
+		displayFolder: User Login
+		lineageTag: bea89f20-36dd-4759-807f-40151bdb130f
+
+		changedProperty = IsHidden
+
+	measure 'User Rights for Account Receivables' = ```
+			LOOKUPVALUE(sec_user_right[Account Receivables],sec_user_right[User],[User]) 
+			```
+		displayFolder: User Login
+		lineageTag: 53831a08-6218-4116-bd49-197ba6c9b15b
+
+		changedProperty = IsHidden
+
+	measure User = UserPrincipalName()
+		displayFolder: User Login
+		lineageTag: 4c856e3f-8b1e-46c2-bb2e-486a7ba6855e
+
+		changedProperty = IsHidden
+
+	measure 'Message User Logged Service Spend' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Service Spend] & ")"
+		displayFolder: User Login
+		lineageTag: 041d5752-4a02-4426-8db4-e07d18c9fdd1
+
+		changedProperty = IsHidden
+
+	measure 'Message User Logged PPM Time Bookings' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for PPM Time Bookings] & ")"
+		displayFolder: User Login
+		lineageTag: 7f20b985-b507-4f46-b22d-9222ada590d3
+
+		changedProperty = IsHidden
+
+	measure 'Message User Logged Employee Lists' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Employee lists] & ")"
+		displayFolder: User Login
+		lineageTag: e966b792-2359-424e-9047-533028f3553c
+
+		changedProperty = IsHidden
+
+	measure 'Message User Logged Cost & Revenue' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Cost & Revenue] & ")"
+		displayFolder: User Login
+		lineageTag: 822b536c-0508-4d56-9802-3cb6d171acb9
+
+		changedProperty = IsHidden
+
+	measure 'Message User Logged Budget Availability' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Budget Availability] & ")"
+		displayFolder: User Login
+		lineageTag: acae736d-cb6f-4970-abc9-0ba3c5100f77
+
+		changedProperty = IsHidden
+
+	measure 'Message User Logged Account Receivables' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Account Receivables] & ")"
+		displayFolder: User Login
+		lineageTag: 1d7f7202-7eb4-4cbf-9c8d-8debbaf0b576
+
+		changedProperty = IsHidden
+
+	measure 'Employees Internal Count' = COUNTROWS('fact_employee_internal')
+		formatString: 0
+		displayFolder: Internal Employees
+		lineageTag: 8cf34c49-ed5c-40d0-a7a0-89c24b8b44c1
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Total Internal FTE' = SUM(fact_employee_internal[FTE])
+		formatString: #,0.00
+		displayFolder: Internal Employees
+		lineageTag: ebd99133-a675-482c-9ce4-be6c5ef129f1
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total Internal AHC' = SUM(fact_employee_internal[AHC])
+		formatString: #,0
+		displayFolder: Internal Employees
+		lineageTag: 67d48c6a-5de7-4939-b5e5-10194d4d9f51
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Employees Refresh Time' =
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(fact_employee_internal[Refresh Date]),
+			            ALL(fact_employee_internal[Month Date]),
+			            ALL(fact_employee_internal[Company Code])
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+		displayFolder: Internal Employees
+		lineageTag: 11155e3c-8164-4617-b09d-c8bf1cc563ad
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Time Booking Count' = COUNTROWS('fact_ppm_time_cards')
+		formatString: 0
+		displayFolder: PPM Time Booking
+		lineageTag: fda4fd50-a32f-4f09-b83e-91a81a61b6ac
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Total PPM PDs' = SUM(fact_ppm_time_cards[Booked PDs])
+		formatString: #,0.00
+		displayFolder: PPM Time Booking
+		lineageTag: 26e38df2-a2e3-441c-9a7a-b24eba5419de
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total PPM Amount' = SUM(fact_ppm_time_cards[Amount])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		displayFolder: PPM Time Booking
+		lineageTag: 76d89ab7-d0c2-46b9-8d84-3680a8ed84b5
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total PPM Hours' = SUM(fact_ppm_time_cards[Booked Hours])
+		formatString: #,0.00
+		displayFolder: PPM Time Booking
+		lineageTag: 667db154-65de-43e2-baca-7a95a5ba4389
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'PPM Time Booking Refresh Time' =
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(fact_ppm_time_cards[RefreshDate]),
+			            ALL(fact_ppm_time_cards[Month Date]),
+			            ALL(fact_ppm_time_cards[ExportFor])
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+		displayFolder: PPM Time Booking
+		lineageTag: cdf576e2-205e-487d-b5a5-e098afb4d60f
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Project Count' = COUNTROWS('dim_ppm_project')
+		formatString: 0
+		displayFolder: PPM Project
+		lineageTag: 413f033a-ec63-422d-b4e0-4fed92dfe26d
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Total Booked HR PDs' = SUM(fact_time_recording_hr[Booked in HR])
+		formatString: #,0.00
+		displayFolder: HR Time Booking
+		lineageTag: 43733e75-3e0a-46f3-9908-a5db0799213d
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total Available HR PDs' = SUM(fact_employee_internal[Available HR PDs])
+		displayFolder: Internal Employees
+		lineageTag: 75d997b5-e6a7-4500-ac06-60fbc69a71a5
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Diff PDs PPM vs HR Booked' = [Total PPM PDs] - [Total Booked HR PDs]
+		displayFolder: HR Time Booking
+		lineageTag: 51c4d399-e05f-4c8c-8c03-08d5c861e672
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Diff PDs PPM vs HR Booked' = DIVIDE([Total PPM PDs],  [Total Booked HR PDs], 0)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: HR Time Booking
+		lineageTag: d98382d0-c59f-4ad1-b903-55d60f8200ce
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Diff PDs PPM vs HR Available' = [Total PPM PDs] - [Total Available HR PDs]
+		displayFolder: Internal Employees
+		lineageTag: 16eb290d-589e-4444-bc62-456e3ba6baf7
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Diff PDs PPM vs HR Available' = DIVIDE([Total PPM PDs],  [Total Available HR PDs], 0)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Internal Employees
+		lineageTag: 60c2438a-f71f-4a58-8001-510db946d3bf
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total YE Run Rate Cost and Revenue' = ```
+			
+			VAR CurrentYear = YEAR(MAX('fact_cost_revenue'[Month Date]))
+			VAR MonthsWithData =
+			    COUNTROWS(
+			        FILTER(
+			            VALUES('fact_cost_revenue'[Month Date]),
+			            YEAR('fact_cost_revenue'[Month Date]) = CurrentYear &&
+			            NOT(ISBLANK([Total Actual Cost and Revenue]))
+			        )
+			    )
+			VAR ActualToDate = 
+			    CALCULATE(
+			        [Total Actual Cost and Revenue],
+			        YEAR('fact_cost_revenue'[Month Date]) = CurrentYear
+			    )
+			RETURN
+			DIVIDE(ActualToDate, MonthsWithData, 0) * 12
+			
+			```
+		displayFolder: Cost and Revenue
+		lineageTag: f0bc5e95-bdd7-4d1f-ad19-611b0c138a42
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Capex Bookings Count' = COUNTROWS('fact_capex_bookings')
+		formatString: 0
+		displayFolder: Capex
+		lineageTag: 2e56a2dd-6dfa-4947-9b91-288c5e9afbb3
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Asset Count' = ```
+			COUNTROWS('dim_capex_assets') 
+			```
+		formatString: 0
+		displayFolder: Capex
+		lineageTag: c25c9e49-f727-4acd-ab5b-592078ae12c9
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Total Asset Cumulative Value (Prior Years)' = SUM(dim_capex_assets[Cumulative Value])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		displayFolder: Capex
+		lineageTag: 86e051ed-f923-4182-ae90-3680964944d2
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total Asset Depreciation Value (Prior Years)' = SUM(dim_capex_assets[Accumulated depreciation])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		displayFolder: Capex
+		lineageTag: 8ac8daba-778f-4271-9712-77cf9805c056
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total Asset Bookings Value (Current Year)' = SUM(dim_capex_assets[APC acquisition 2025])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		displayFolder: Capex
+		lineageTag: 4de9b2da-d5ff-4b4e-b085-8fd6e1ddc7a2
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total Asset Depreciation Value (Current Year)' = SUM(dim_capex_assets[Depreciation in 2025])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		displayFolder: Capex
+		lineageTag: 023546be-c3fe-444d-8224-66fa93a6474f
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total Asset Book Value (End of Year)' = SUM(dim_capex_assets[Residual Value])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		displayFolder: Capex
+		lineageTag: 48d9dcde-4696-41a4-a5c3-c45d7b44551e
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'Total Capex Booking Amount' = SUM(fact_capex_bookings[Amount in EUR])
+		displayFolder: Capex
+		lineageTag: 222ed694-c190-40a2-b52a-9003eef98a83
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Service Spend Count' = COUNTROWS('fact_service_spend')
+		formatString: 0
+		displayFolder: Service Spend
+		lineageTag: a24e41db-3a92-461a-a81b-f9dda420191b
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Total Service Spend Amount incl. Tax' = SUM(fact_service_spend[Amount incl. Tax])
+		displayFolder: Service Spend
+		lineageTag: adffb697-7db7-4fb0-a01a-e2d33db09081
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Service Spend Quantity' = SUM(fact_service_spend[Quantity])
+		displayFolder: Service Spend
+		lineageTag: c888c9e8-c598-456f-b635-aae7380cdf46
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Service Spend Amount' = SUM(fact_service_spend[Amount])
+		displayFolder: Service Spend
+		lineageTag: 09dabe88-c4cc-4b93-8a45-38bf5c7edd99
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'O2I PreRun Count' = ```
+			COUNTROWS(fact_o2i_pre_run) 
+			```
+		formatString: 0
+		displayFolder: O2I
+		lineageTag: 318a7210-12d4-49f7-a43b-c333af1ebfe7
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Total O2I PreRun Amount' = SUM(fact_o2i_pre_run[Amount])
+		displayFolder: O2I
+		lineageTag: e8b5fd49-0cd1-4b52-9744-fd5d30f94866
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total O2I PreRun Quantity' = SUM(fact_o2i_pre_run[Quantity])
+		displayFolder: O2I
+		lineageTag: d4a54b29-c7ef-4258-8754-7e21cccb0d8a
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Incoming Invoices Count' = COUNTROWS(fact_incoming_invoices)
+		formatString: 0
+		displayFolder: Invoices
+		lineageTag: da4f2753-5fa4-47b4-a333-a4d041909604
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Outgoing Invoices Count' = COUNTROWS(fact_outgoing_invoices)
+		formatString: 0
+		displayFolder: Invoices
+		lineageTag: 83519772-93aa-4969-86c4-eb67981b345d
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Total Outgoing Invoices Amount' = SUM(fact_outgoing_invoices[Amount in EUR])
+		displayFolder: Invoices
+		lineageTag: 55eb19e4-e8d5-4123-a89a-3261fc476b93
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Incoming Invoices Amount' = SUM(fact_incoming_invoices[Amount in EUR])
+		displayFolder: Invoices
+		lineageTag: a90189f6-b7f1-4330-b0c9-8960ab0cb463
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Overdue Incoming Invoice Amount' = CALCULATE([Total Incoming Invoices Amount],fact_incoming_invoices[Status] = "Open - Overdue")
+		displayFolder: Invoices
+		lineageTag: 386a9ac1-8ece-4cf0-a073-f7a2982e7169
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Incoming Invoices Count Overdue' = ```
+			
+			CALCULATE(
+			    COUNTROWS(fact_incoming_invoices),
+			    fact_incoming_invoices[Status] = "Open - Overdue"
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Invoices
+		lineageTag: 740a5f99-28fc-46b8-832c-087f8b0f5756
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Total Incoming Invoices Amount in Local Currency' = SUM(fact_incoming_invoices[Amount in local currency])
+		displayFolder: Invoices
+		lineageTag: c7f2bb71-5b5a-4415-9c7f-92dfecf347ef
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Budget Demand Count' = COUNTROWS(fact_budget_demand)
+		formatString: 0
+		displayFolder: Budget Demand
+		lineageTag: 5eb3f13b-e10c-4380-9770-4e51746e9917
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Total Budget Approved' = SUM(fact_budget_demand[Budget Approved])
+		displayFolder: Budget Demand
+		lineageTag: 7bdd36a3-0222-4009-84f2-cac1fad585d3
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Budget Available' = SUM(fact_budget_demand[Budget Available])
+		displayFolder: Budget Demand
+		lineageTag: e54b2363-acda-4a99-8e49-c5715baec6e8
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Budget Spent' = SUM(fact_budget_demand[Budget Spent])
+		displayFolder: Budget Demand
+		lineageTag: f94400d4-3a49-49f9-9d27-3c11a2fc78c6
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Budget Spent PB' = SUM(fact_budget_demand_per_planbook[Budget Spent])
+		displayFolder: Budget Demand
+		lineageTag: e9eb283c-4d7d-4858-a9dd-eba1844f6f45
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Budget Approved PB' = SUM(fact_budget_demand_per_planbook[Budget Approved])
+		displayFolder: Budget Demand
+		lineageTag: 2e6c75ad-1803-4a7e-9750-5d2f77f11fd3
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Budget Available PB' = SUM(fact_budget_demand_per_planbook[Budget Available])
+		displayFolder: Budget Demand
+		lineageTag: 71a5ef87-a5be-4773-9cfd-5370ba114a3b
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Budget Approved DM' = SUM(fact_budget_demand_per_demand[PO Approved])
+		displayFolder: Budget Demand
+		lineageTag: 28fdab2d-8f39-4521-a989-986ebc6624a9
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Budget Available DM' = SUM(fact_budget_demand_per_demand[PO Remainging])
+		displayFolder: Budget Demand
+		lineageTag: f4930afb-a1f3-45ed-a523-a64f0a56618d
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Budget Spent DM' = SUM(fact_budget_demand_per_demand[PO Spent])
+		displayFolder: Budget Demand
+		lineageTag: da392241-e99a-4cde-a1aa-9d49cfa4acc5
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Budget Demand Refresh Time' =
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(fact_budget_demand[Refresh Date]),
+			            ALL(fact_budget_demand[Fiscal year]),
+			            ALL(fact_budget_demand[Company Code])
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+		displayFolder: Budget Demand
+		lineageTag: 608016ce-f8f3-426c-9c4d-389ec41fb34f
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'O2I Refresh Time' =
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(fact_o2i_pre_run[Refresh Date]),
+			            ALL(fact_o2i_pre_run[Month Date]),
+			            ALL(fact_o2i_pre_run[Sales Organization])
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+		displayFolder: O2I
+		lineageTag: 460f5484-315d-4483-80fe-f0f4aa0523a1
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Capex Refresh Time' =
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(fact_capex_bookings[Refresh Date]),
+			            ALL(fact_capex_bookings[Month Date]),
+			            ALL(fact_capex_bookings[Company Code])
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+		displayFolder: Capex
+		lineageTag: 9504561d-e0ac-4e2e-9d1d-f82a26444f19
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Service Spend Refresh Time' =
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(fact_service_spend[Refresh Date]),
+			            ALL(fact_service_spend[Month Date]),
+			            ALL(fact_service_spend[Data For])
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+		displayFolder: Service Spend
+		lineageTag: 1019dadb-b91f-4143-9dbe-82cd1173ca5f
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Incoming Invoices Refresh Time' =
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(fact_incoming_invoices[Refresh Date]),
+			            ALL(fact_incoming_invoices[Month Date]),
+			            ALL(fact_incoming_invoices[Company Code])
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+		displayFolder: Invoices
+		lineageTag: 27505c46-cb9b-4915-a9f0-428ac00975a3
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Outgoing Invoices Refresh Time' =
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(fact_outgoing_invoices[Refresh Date]),
+			            ALL(fact_outgoing_invoices[Month Date]),
+			            ALL(fact_outgoing_invoices[Company Code])
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+		displayFolder: Invoices
+		lineageTag: c2dec6f3-08e9-469b-b1fd-6718ea519247
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Cost Center Refresh Time' = ```
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(dim_cost_center[Refresh Date]),
+			            ALL(dim_cost_center)
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+			
+			```
+		displayFolder: Master Data
+		lineageTag: 5b871854-9a53-4968-b9a0-9bc3d76d0daa
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Profit Center Refresh Time' = ```
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(dim_profit_center[Refresh Date]),
+			            ALL(dim_profit_center)
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+			
+			```
+		displayFolder: Master Data
+		lineageTag: 09f94b62-f98a-469f-ad0b-0909ccb13a80
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Material Refresh Time' = ```
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(dim_material[Refresh Date]),
+			            ALL(dim_material)
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+			
+			```
+		displayFolder: Master Data
+		lineageTag: 40b7adfe-7dd5-4743-ae10-5d060d68bfb2
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'WBS Refresh Time' = ```
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(dim_wbs[Refresh Date]),
+			            ALL(dim_wbs)
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+			
+			```
+		displayFolder: Master Data
+		lineageTag: 732eb9a4-60cc-47e3-97e5-6e7229c1150b
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	measure 'Cost Element Refresh Time' = ```
+			
+			"Source data refreshed on: "
+			    & FORMAT(
+			        CALCULATE(
+			            MAX(dim_cost_element[Refresh Date]),
+			            ALL(dim_cost_element)
+			        ),
+			        "dd.MM.yyyy HH:mm"
+			    )
+			
+			```
+		displayFolder: Master Data
+		lineageTag: c5fb3662-f2b3-4670-9b48-3fdb1f2c8528
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+	column Placeholder
+		dataType: string
+		isHidden
+		displayFolder: _Placeholder
+		lineageTag: 0e6cb927-7f08-420b-8a89-e1cb43c2d299
+		sourceLineageTag: Placeholder
+		summarizeBy: none
+		sourceColumn: Placeholder
+
+		changedProperty = IsHidden
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _measures = entity
+		mode: directLake
+		source
+			entityName: _measures
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	changedProperty = IsHidden
+

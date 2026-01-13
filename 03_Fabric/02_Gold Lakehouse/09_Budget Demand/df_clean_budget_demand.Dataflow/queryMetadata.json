@@ -1,0 +1,64 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_clean_budget_demand",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fact_budget_demand_current": {
+      "queryId": "15b194a5-ceb8-4916-ae58-b5a03f9bd536",
+      "queryName": "fact_budget_demand_current",
+      "loadEnabled": false
+    },
+    "fact_budget_demand_archive": {
+      "queryId": "37212d99-6f46-4ab4-a983-5bef4a8e748b",
+      "queryName": "fact_budget_demand_archive",
+      "loadEnabled": false
+    },
+    "fact_budget_demand": {
+      "queryId": "acade584-cf01-424b-9d80-7683c1572ada",
+      "queryName": "fact_budget_demand",
+      "loadEnabled": false
+    },
+    "fact_budget_demand_per_demand": {
+      "queryId": "ff27b359-ec1b-42f3-b339-fbe304000a88",
+      "queryName": "fact_budget_demand_per_demand",
+      "loadEnabled": false
+    },
+    "fact_budget_demand_per_vendors": {
+      "queryId": "09514e97-a720-4880-bbce-3ee5d32bedfa",
+      "queryName": "fact_budget_demand_per_vendors",
+      "loadEnabled": false
+    },
+    "fact_budget_demand_per_planbook": {
+      "queryId": "08a5099e-1cb0-4026-9261-05a2b11c105f",
+      "queryName": "fact_budget_demand_per_planbook",
+      "loadEnabled": false
+    },
+    "fact_budget_demand_per_demand_DataDestination": {
+      "queryId": "dfd599fd-3f6e-4225-8281-98c4153708e9",
+      "queryName": "fact_budget_demand_per_demand_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "fact_budget_demand_per_planbook_DataDestination": {
+      "queryId": "e6fc835b-1840-45d9-ac0d-5f0645ff2ba8",
+      "queryName": "fact_budget_demand_per_planbook_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "fact_budget_demand_DataDestination": {
+      "queryId": "e95bd891-8640-4dae-b5b0-9a259b8e092c",
+      "queryName": "fact_budget_demand_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+table 'Group Price List Materials'
+	lineageTag: f7e4a555-9764-437c-bb1b-d13ef6f39fb7
+
+	column 'search key'
+		dataType: string
+		lineageTag: 261c8f73-1879-45c0-85e3-c6ff9f81e587
+		summarizeBy: none
+		sourceColumn: search key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: c18411a1-12c5-4679-9ac2-2bfcc739eccd
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Description'
+		dataType: string
+		lineageTag: 123fb5c2-3537-4c0f-9803-26516a36b3be
+		summarizeBy: none
+		sourceColumn: Material Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'St VTL'
+		dataType: string
+		lineageTag: 02c63855-5d6f-4efa-8e2a-425429ef767a
+		summarizeBy: none
+		sourceColumn: St VTL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DCh
+		dataType: string
+		lineageTag: add12c9a-fbe7-482d-82c7-3e1523237c63
+		summarizeBy: none
+		sourceColumn: DCh
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice to Plan'
+		dataType: string
+		lineageTag: 8a76e5b3-1e96-4a83-bc4d-8eecb6b696d9
+		summarizeBy: none
+		sourceColumn: Invoice to Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column MTyp
+		dataType: string
+		lineageTag: 816dd139-0a3d-4523-8faa-c8744d179064
+		summarizeBy: none
+		sourceColumn: MTyp
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organisation'
+		dataType: string
+		lineageTag: d6082b6d-dbf5-4709-bd7b-e64b49620727
+		summarizeBy: none
+		sourceColumn: Sales Organisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plnt
+		dataType: string
+		lineageTag: 3f141be4-4431-4696-94c0-2c516799ddb1
+		summarizeBy: none
+		sourceColumn: Plnt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organization Name'
+		dataType: string
+		lineageTag: f0e46432-9e14-4e96-a0bb-41e436ddd719
+		summarizeBy: none
+		sourceColumn: Sales Organization Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Type'
+		dataType: string
+		lineageTag: b0949c5d-1756-4964-889f-38ae8274570b
+		summarizeBy: none
+		sourceColumn: Price Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Charging Unit'
+		dataType: string
+		lineageTag: bfa6e9f1-9535-44bb-b4b9-624426a47a70
+		summarizeBy: none
+		sourceColumn: Charging Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 9adab263-0430-493a-b433-7b20ea307f9f
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Centre'
+		dataType: string
+		lineageTag: 8ac8cf5d-c381-49ae-87b0-a5a5d5d7c04a
+		summarizeBy: none
+		sourceColumn: Profit Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Centre Text'
+		dataType: string
+		lineageTag: f88049b7-d8c2-4db4-9b5e-05d1f8956669
+		summarizeBy: none
+		sourceColumn: Profit Centre Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Owner Service Family'
+		dataType: string
+		lineageTag: 4de3fa28-d97c-4a89-9661-99d47ffd361d
+		summarizeBy: none
+		sourceColumn: Owner Service Family
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Person Responsible for Profit'
+		dataType: string
+		lineageTag: 88121f2c-5a51-4325-9584-178ee4012d4e
+		summarizeBy: none
+		sourceColumn: Person Responsible for Profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Cluster'
+		dataType: string
+		lineageTag: 9f84c057-51db-455e-b3a5-0f3876fba0e8
+		summarizeBy: none
+		sourceColumn: Service Cluster
+		sortByColumn: 'LS Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Class'
+		dataType: string
+		lineageTag: 2e843e92-a524-40aa-9d27-dbbe8370b2a0
+		summarizeBy: none
+		sourceColumn: Service Class
+		sortByColumn: 'SC Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Package'
+		dataType: string
+		lineageTag: 5c738b0b-0113-4919-a257-b3b2a31ed7ec
+		summarizeBy: none
+		sourceColumn: Service Package
+		sortByColumn: 'SP Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'St VTL-cross'
+		dataType: string
+		lineageTag: b59c33b6-b367-45e9-8cbc-f5c5a80511c4
+		summarizeBy: none
+		sourceColumn: St VTL-cross
+
+		annotation SummarizationSetBy = Automatic
+
+	column DChl
+		dataType: string
+		lineageTag: 66012509-a05b-4cdb-9720-5804e93392d5
+		summarizeBy: none
+		sourceColumn: DChl
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created
+		dataType: string
+		lineageTag: f0de1cb2-bb21-48f5-a4cb-a68719d32512
+		summarizeBy: none
+		sourceColumn: Created
+
+		annotation SummarizationSetBy = Automatic
+
+	column AAG
+		dataType: string
+		lineageTag: 2c06c5b6-432b-4ea0-81e9-efaf6f0818df
+		summarizeBy: none
+		sourceColumn: AAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Type'
+		dataType: string
+		lineageTag: 3d0eab04-faef-4798-a807-f649ad180f3e
+		summarizeBy: none
+		sourceColumn: Material Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material status'
+		dataType: string
+		lineageTag: cc815eb9-d2e2-4f7a-a183-a660e2c9de93
+		summarizeBy: none
+		sourceColumn: Material status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'to be deactivated'
+		dataType: string
+		lineageTag: 7b842058-5740-4690-9e27-a1f33db66a91
+		summarizeBy: none
+		sourceColumn: to be deactivated
+
+		annotation SummarizationSetBy = Automatic
+
+	column billable
+		dataType: string
+		lineageTag: 3115c3c3-c357-44e3-bf7c-b6cfacd3d2ee
+		summarizeBy: none
+		sourceColumn: billable
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'plan only'
+		dataType: string
+		lineageTag: 77cb5b49-97ed-4441-85d0-b655b6a5fa1d
+		summarizeBy: none
+		sourceColumn: plan only
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material and Sales Organisation'
+		dataType: string
+		lineageTag: 42544876-2f51-4390-9317-07301f2d55e1
+		summarizeBy: none
+		sourceColumn: Material and Sales Organisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Inside VAT Group'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 343cfe8e-2ecf-4a6c-83d3-75da51159df5
+		summarizeBy: sum
+		sourceColumn: Price Inside VAT Group
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Price Outside VAT Group'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 3d64a98a-ade0-475b-a17f-5123e0c51624
+		summarizeBy: sum
+		sourceColumn: Price Outside VAT Group
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Price External Market'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: a9890ef0-bdd4-4531-8eca-39931428217d
+		summarizeBy: sum
+		sourceColumn: Price External Market
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Profit Centre and Name'
+		dataType: string
+		lineageTag: ce80696a-3134-4032-b463-9b9ef7613788
+		summarizeBy: none
+		sourceColumn: Profit Centre and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LS Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4819462c-085e-4be5-803a-2e2afe017e5f
+		summarizeBy: sum
+		sourceColumn: LS Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SC Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: b57a06ac-5110-473e-89e9-e71d521711fb
+		summarizeBy: sum
+		sourceColumn: SC Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SP Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: f063c64e-48f8-4fcc-99f7-1c2200bd0abd
+		summarizeBy: sum
+		sourceColumn: SP Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Number and Name' = 'Group Price List Materials'[Material] & " - " & 'Group Price List Materials'[Material Description]
+		lineageTag: 5dc5d1cc-0eb9-4000-abc2-2e2f8aa0ec65
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Group Price List Materials' = m
+		mode: import
+		queryGroup: '05_SAP BAP'
+		source =
+				let
+				    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/DE1214-6208581/", [ApiVersion = 15]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Folder Path] = "https://allianzms.sharepoint.com/teams/DE1214-6208581/Shared Documents/PRICING/02_Price Lists/") and ([Extension] = ".xlsx" or [Extension] = ".XLSX")),
+				    #"Filtered Rows3" = Table.SelectRows(#"Filtered Rows", each Text.Contains([Name], "price")),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows3", let latest = List.Max(#"Filtered Rows3"[Date created]) in each [Date created] = latest),
+				    #"Added Custom5" = Table.AddColumn(#"Filtered Rows1", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Master Data")),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Added Custom5",{"Extracted Data"}),
+				    #"Expanded Extracted Data" = Table.ExpandTableColumn(#"Removed Other Columns", "Extracted Data", {"Data"}, {"Extracted Data.Data"}),
+				    #"Expanded Extracted Data.Data" = Table.ExpandTableColumn(#"Expanded Extracted Data", "Extracted Data.Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32"}, {"Extracted Data.Data.Column1", "Extracted Data.Data.Column2", "Extracted Data.Data.Column3", "Extracted Data.Data.Column4", "Extracted Data.Data.Column5", "Extracted Data.Data.Column6", "Extracted Data.Data.Column7", "Extracted Data.Data.Column8", "Extracted Data.Data.Column9", "Extracted Data.Data.Column10", "Extracted Data.Data.Column11", "Extracted Data.Data.Column12", "Extracted Data.Data.Column13", "Extracted Data.Data.Column14", "Extracted Data.Data.Column15", "Extracted Data.Data.Column16", "Extracted Data.Data.Column17", "Extracted Data.Data.Column18", "Extracted Data.Data.Column19", "Extracted Data.Data.Column20", "Extracted Data.Data.Column21", "Extracted Data.Data.Column22", "Extracted Data.Data.Column23", "Extracted Data.Data.Column24", "Extracted Data.Data.Column25", "Extracted Data.Data.Column26", "Extracted Data.Data.Column27", "Extracted Data.Data.Column28", "Extracted Data.Data.Column29", "Extracted Data.Data.Column30", "Extracted Data.Data.Column31", "Extracted Data.Data.Column32"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Expanded Extracted Data.Data", [PromoteAllScalars=true]),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Promoted Headers",{{"SOrg.", "Sales Organisation"}, {"Sales Organization", "Sales Organization Name"}, {"ind. quantity/value", "Price Type"}, {"BUn", "Charging Unit"}, {"Profit Ctr", "Profit Centre"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns2",{{"Material", type text}}),
+				    #"Cleaned Text1" = Table.TransformColumns(#"Changed Type1",{{"Material", Text.Clean, type text}}),
+				    #"Trimmed Text1" = Table.TransformColumns(#"Cleaned Text1",{{"Material", Text.Trim, type text}}),
+				    #"Changed Type5" = Table.TransformColumnTypes(#"Trimmed Text1",{{"Sales Organisation", type text}}),
+				    #"Trimmed Text2" = Table.TransformColumns(#"Changed Type5",{{"Sales Organisation", Text.Trim, type text}}),
+				    #"Cleaned Text2" = Table.TransformColumns(#"Trimmed Text2",{{"Sales Organisation", Text.Clean, type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Cleaned Text2", "Material and Sales Organisation", each [Sales Organisation]&"-"&[Material]),
+				    #"Appended Query" = Table.Combine({#"Added Custom", #"Group Price List Deactivated Materials"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Appended Query",{{"Material and Sales Organisation", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type",null,"deactivated",Replacer.ReplaceValue,{"Material status"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Replaced Value", {"Material and Sales Organisation"}, #"Group Price List Prices", {"Material and Sales Organisation"}, "Group Price List Prices", JoinKind.LeftOuter),
+				    #"Expanded Group Price List Prices" = Table.ExpandTableColumn(#"Merged Queries", "Group Price List Prices", {"Price Inside VAT Group", "Price Outside VAT Group", "Price External Market"}, {"Group Price List Prices.Price Inside VAT Group", "Group Price List Prices.Price Outside VAT Group", "Group Price List Prices.Price External Market"}),
+				    #"Renamed Columns3" = Table.RenameColumns(#"Expanded Group Price List Prices",{{"Group Price List Prices.Price Inside VAT Group", "Price Inside VAT Group"}, {"Group Price List Prices.Price Outside VAT Group", "Price Outside VAT Group"}, {"Group Price List Prices.Price External Market", "Price External Market"}}),
+				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns3", "Profit Centre and Name", each [Profit Centre] & " - "& [Profit Centre Text]),
+				    #"Trimmed Text" = Table.TransformColumns(#"Added Custom1",{{"LS Description", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"LS Description", Text.Clean, type text}}),
+				    #"Added Custom2" = Table.AddColumn(#"Cleaned Text", "LS Cleaned", each Text.From([LS])),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom2",{{"LS Cleaned", Int64.Type}}),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Changed Type2",{"LS"}),
+				    #"Renamed Columns4" = Table.RenameColumns(#"Removed Columns2",{{"LS Cleaned", "LS Sort"}}),
+				    #"Added Custom3" = Table.AddColumn(#"Renamed Columns4", "SC Cleaned", each Text.From([SC])),
+				    #"Removed Columns3" = Table.RemoveColumns(#"Added Custom3",{"SC"}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Removed Columns3",{{"SC Cleaned", Int64.Type}}),
+				    #"Renamed Columns5" = Table.RenameColumns(#"Changed Type3",{{"SC Cleaned", "SC Sort"}}),
+				    #"Added Custom4" = Table.AddColumn(#"Renamed Columns5", "SP Cleaned", each Text.From([SP])),
+				    #"Removed Columns4" = Table.RemoveColumns(#"Added Custom4",{"SP"}),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Removed Columns4",{{"SP Cleaned", Int64.Type}}),
+				    #"Renamed Columns6" = Table.RenameColumns(#"Changed Type4",{{"SP Cleaned", "SP Sort"}, {"LS Description", "Service Cluster"}, {"SC Description", "Service Class"}, {"SP Description", "Service Package"}}),
+				    #"Filtered Rows2" = Table.SelectRows(#"Renamed Columns6", each [Material and Sales Organisation] <> null),
+				    #"Changed Type6" = Table.TransformColumnTypes(#"Filtered Rows2",{{"Price Inside VAT Group", Currency.Type}, {"Price Outside VAT Group", Currency.Type}, {"Price External Market", Currency.Type}})
+				in
+				    #"Changed Type6"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

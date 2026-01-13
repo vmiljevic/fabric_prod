@@ -1,0 +1,51 @@
+table 'Group Cost Centers'
+	lineageTag: ea90f9f7-53b0-4889-8bca-6b7b4c0936ec
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: f28f2c66-2a1d-4bda-a846-ee520d9ba41b
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 27374f9a-0088-4bbb-812f-b3823c440071
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Person Responsible'
+		dataType: string
+		lineageTag: 662f633e-f839-4bb3-ac71-c43dac3c5823
+		summarizeBy: none
+		sourceColumn: Person Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Group Cost Centers' = m
+		mode: import
+		queryGroup: '05_SAP BAP'
+		source =
+				let
+				    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/DE1214-6208581/", [ApiVersion = 15]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Extension] = ".xlsx" or [Extension] = ".XLSX") and ([Folder Path] = "https://allianzms.sharepoint.com/teams/DE1214-6208581/Shared Documents/PRICING/02_Price Lists/")),
+				    #"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each Text.Contains([Name], "price")),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows2", let latest = List.Max(#"Filtered Rows2"[Date created]) in each [Date created] = latest),
+				    #"Added Custom" = Table.AddColumn(#"Filtered Rows1", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "CC list")),
+				    #"Removed Other Columns2" = Table.SelectColumns(#"Added Custom",{"Extracted Data"}),
+				    #"Expanded Extracted Data" = Table.ExpandTableColumn(#"Removed Other Columns2", "Extracted Data", {"Data"}, {"Extracted Data.Data"}),
+				    #"Expanded Extracted Data.Data" = Table.ExpandTableColumn(#"Expanded Extracted Data", "Extracted Data.Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22"}, {"Extracted Data.Data.Column1", "Extracted Data.Data.Column2", "Extracted Data.Data.Column3", "Extracted Data.Data.Column4", "Extracted Data.Data.Column5", "Extracted Data.Data.Column6", "Extracted Data.Data.Column7", "Extracted Data.Data.Column8", "Extracted Data.Data.Column9", "Extracted Data.Data.Column10", "Extracted Data.Data.Column11", "Extracted Data.Data.Column12", "Extracted Data.Data.Column13", "Extracted Data.Data.Column14", "Extracted Data.Data.Column15", "Extracted Data.Data.Column16", "Extracted Data.Data.Column17", "Extracted Data.Data.Column18", "Extracted Data.Data.Column19", "Extracted Data.Data.Column20", "Extracted Data.Data.Column21", "Extracted Data.Data.Column22"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Expanded Extracted Data.Data", [PromoteAllScalars=true]),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers",{"Cost Center", "Person Responsible", "Company Code"}),
+				    #"Removed Duplicates1" = Table.Distinct(#"Removed Other Columns", {"Cost Center", "Company Code"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates1",{{"Cost Center", type text}, {"Company Code", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

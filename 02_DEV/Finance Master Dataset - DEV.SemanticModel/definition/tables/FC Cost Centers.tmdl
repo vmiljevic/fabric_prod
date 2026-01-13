@@ -1,0 +1,73 @@
+table 'FC Cost Centers'
+	lineageTag: 60dd11ea-fca4-4028-aa17-c6b7c1ce2471
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 6787ec6c-1551-49da-bd64-a32db7093c63
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 7ba1a2bc-b18b-4257-bd66-e2f3c80b153a
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hierarchy Area'
+		dataType: string
+		lineageTag: f46e5b3c-326d-4152-ae4c-2bf7b3a5b1fa
+		summarizeBy: none
+		sourceColumn: Hierarchy Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: f6b3b50d-579d-42de-a230-2b12af5e4621
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: 794c7875-703e-4b2c-a16c-f4101679c308
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line/ Overhead'
+		dataType: string
+		lineageTag: f9cd6822-e8bf-4f8f-94c3-b32f7f38c735
+		summarizeBy: none
+		sourceColumn: Line/ Overhead
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dummy WBS'
+		dataType: string
+		lineageTag: d3bb55bc-b458-40c6-b389-2e27c166d513
+		summarizeBy: none
+		sourceColumn: Dummy WBS
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FC Cost Centers' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="FCCC",Kind="Table"]}[Data]
+				in
+				    GradeandProficiencyLevels_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

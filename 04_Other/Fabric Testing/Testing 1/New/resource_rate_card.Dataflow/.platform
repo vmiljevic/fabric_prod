@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "resource_rate_card"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "17caf3d9-b601-868b-4164-d992ba896a3a"
+  }
+}

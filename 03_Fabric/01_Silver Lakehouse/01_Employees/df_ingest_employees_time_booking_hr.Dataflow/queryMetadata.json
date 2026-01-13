@@ -1,0 +1,74 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_ingest_master_data",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fact_time_recording_hr_tele_at45": {
+      "queryId": "a687342d-d8ab-4b96-8a97-fd13c7d3222c",
+      "queryName": "fact_time_recording_hr_tele_at45",
+      "loadEnabled": false
+    },
+    "fact_time_recording_hr_corr_at45": {
+      "queryId": "ff5435f0-33f6-4cba-b19a-c3de2c982dec",
+      "queryName": "fact_time_recording_hr_corr_at45",
+      "loadEnabled": false
+    },
+    "fact_time_recording_hr_ce": {
+      "queryId": "060a3115-dbb0-449d-8db4-dc1c1bf78897",
+      "queryName": "fact_time_recording_hr_ce",
+      "loadEnabled": false
+    },
+    "fact_time_recording_hr_tele_at45_DataDestination": {
+      "queryId": "6c73d330-4870-4c16-94e4-2a0388310a33",
+      "queryName": "fact_time_recording_hr_tele_at45_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "fact_time_recording_hr_corr_at45_DataDestination": {
+      "queryId": "091baa3d-8217-4dcd-9ff9-55c94496335e",
+      "queryName": "fact_time_recording_hr_corr_at45_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "fact_time_recording_hr_ce_DataDestination": {
+      "queryId": "3a9983cd-b106-4921-841a-9d4edff4931a",
+      "queryName": "fact_time_recording_hr_ce_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data/Master%20Data/SAP%20BW/Master%20Data%20Reporting%20SAP_CC.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"59c3d509-86b6-4a7c-8be0-ac921ad1f949\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"33411680-e2e8-426c-9999-033d22c8201d\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"ddd60dd0-8aee-4de0-abf8-bc8307999ec6\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared%20Documents/01_Power%20BI/01_Data/HR/Time%20Booking/AT45/Telearbeit_AZTECH_2024_V1.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"9ab72b02-56df-40c5-8b0f-be88003c37f8\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared%20Documents/01_Power%20BI/01_Data/HR/Time%20Booking/AT45/Zeitbuchungen_AZTECH_2024_V1.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"d38e2b83-df2b-4c99-a944-912da0eed3bc\"}"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_ingest_master_data",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "dim_cost_center_current": {
+      "queryId": "a687342d-d8ab-4b96-8a97-fd13c7d3222c",
+      "queryName": "dim_cost_center_current",
+      "loadEnabled": false
+    },
+    "dim_cost_center_archive": {
+      "queryId": "ca18a1e3-753a-4805-8f53-418692d680de",
+      "queryName": "dim_cost_center_archive",
+      "loadEnabled": false
+    },
+    "dim_payer_current": {
+      "queryId": "fd86b66b-0492-48f6-91b4-64a6d3a93498",
+      "queryName": "dim_payer_current",
+      "loadEnabled": false
+    },
+    "dim_payer_archive": {
+      "queryId": "01721e33-3f8a-4e21-87d5-f0b20c4b9ef9",
+      "queryName": "dim_payer_archive",
+      "loadEnabled": false
+    },
+    "dim_payer_current_DataDestination": {
+      "queryId": "91a256ff-e39c-45ce-ab84-1cfa4bf2126a",
+      "queryName": "dim_payer_current_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_payer_archive_DataDestination": {
+      "queryId": "951ebb8f-c546-4164-88d6-a98c10ba167b",
+      "queryName": "dim_payer_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_profit_center_current": {
+      "queryId": "1c064b98-5d42-4969-8f0d-1d5c1df61b95",
+      "queryName": "dim_profit_center_current",
+      "loadEnabled": false
+    },
+    "dim_profit_center_archive": {
+      "queryId": "5ae7541c-d5ce-4c36-85af-2a1344737b5a",
+      "queryName": "dim_profit_center_archive",
+      "loadEnabled": false
+    },
+    "dim_wbs_current": {
+      "queryId": "2e82a99e-8c23-4b75-b196-00105b109912",
+      "queryName": "dim_wbs_current",
+      "loadEnabled": false
+    },
+    "dim_wbs_archive": {
+      "queryId": "61ccb100-019a-4ebb-afd3-c6650ec29d06",
+      "queryName": "dim_wbs_archive",
+      "loadEnabled": false
+    },
+    "dim_materials_current": {
+      "queryId": "ddc8be9b-7ca1-4c03-aebb-d76c670a76e5",
+      "queryName": "dim_materials_current",
+      "loadEnabled": false
+    },
+    "dim_materials_archive": {
+      "queryId": "f95f7d5b-2262-47c5-8930-56676ff40776",
+      "queryName": "dim_materials_archive",
+      "loadEnabled": false
+    },
+    "dim_material_prices_current": {
+      "queryId": "53698b1f-60bd-4462-aa66-8d001c5f19dc",
+      "queryName": "dim_material_prices_current",
+      "loadEnabled": false
+    },
+    "dim_material_prices_archive": {
+      "queryId": "d5a3225e-ed10-4232-afa8-aea413057dfe",
+      "queryName": "dim_material_prices_archive",
+      "loadEnabled": false
+    },
+    "dim_rates_current": {
+      "queryId": "a16b8764-43c3-4111-8b5d-0dc935df6d0f",
+      "queryName": "dim_rates_current",
+      "loadEnabled": false
+    },
+    "dim_rates_archive": {
+      "queryId": "290df871-e747-4aa9-8a2d-50e3a95f75b5",
+      "queryName": "dim_rates_archive",
+      "loadEnabled": false
+    },
+    "dim_profit_center_current_DataDestination": {
+      "queryId": "c6e01013-ae70-490b-9682-2e921b1e3e4d",
+      "queryName": "dim_profit_center_current_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_cost_center_current_DataDestination": {
+      "queryId": "093a2c8e-1990-48f9-9b7a-12deb45e5e87",
+      "queryName": "dim_cost_center_current_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_wbs_current_DataDestination": {
+      "queryId": "e4c65491-1be1-4b5e-90d0-fd09085b4902",
+      "queryName": "dim_wbs_current_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_wbs_archive_DataDestination": {
+      "queryId": "068697de-de7a-4e45-b9d2-9b5eb1236fb8",
+      "queryName": "dim_wbs_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_materials_current_DataDestination": {
+      "queryId": "ebfc9b93-4bef-4954-9d17-27a13ee9e414",
+      "queryName": "dim_materials_current_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_materials_archive_DataDestination": {
+      "queryId": "89affc7e-4cea-4519-b219-4b1f8978022f",
+      "queryName": "dim_materials_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_material_prices_current_DataDestination": {
+      "queryId": "26f22a74-988d-4fc8-bd97-5e30f3dc46ad",
+      "queryName": "dim_material_prices_current_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_material_prices_archive_DataDestination": {
+      "queryId": "767261c4-0cac-4b1a-9392-10bbad34b073",
+      "queryName": "dim_material_prices_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_rates_current_DataDestination": {
+      "queryId": "6e83b10c-bda1-46e1-9a0a-c3afede12ffd",
+      "queryName": "dim_rates_current_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_rates_archive_DataDestination": {
+      "queryId": "0642a383-5d21-448a-808a-70dcafe89113",
+      "queryName": "dim_rates_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_profit_center_archive_DataDestination": {
+      "queryId": "d809fe0d-ee2e-48dc-9d43-0cd0969ec776",
+      "queryName": "dim_profit_center_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_cost_center_archive_DataDestination": {
+      "queryId": "202ff97c-5c77-462d-b0fa-354fb8fd6385",
+      "queryName": "dim_cost_center_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data/Master%20Data/SAP%20BW/Master%20Data%20Reporting%20SAP_CC.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"59c3d509-86b6-4a7c-8be0-ac921ad1f949\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"33411680-e2e8-426c-9999-033d22c8201d\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"ddd60dd0-8aee-4de0-abf8-bc8307999ec6\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

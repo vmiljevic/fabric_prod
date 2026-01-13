@@ -1,0 +1,237 @@
+table fact_capex_bookings
+	lineageTag: fd49a618-c6a4-4a09-8dab-a42a671d3e04
+	sourceLineageTag: [dbo].[fact_capex_bookings]
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: c542698b-5f04-42e1-93d6-b41b4f98cde1
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Number'
+		dataType: string
+		lineageTag: 9dec48db-e16f-4d2e-84ed-d632ccef7abc
+		sourceLineageTag: Document Number
+		summarizeBy: none
+		sourceColumn: Document Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: e823edd0-01d7-4305-98d4-eead1b2e0418
+		sourceLineageTag: Document Date
+		summarizeBy: none
+		sourceColumn: Document Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Posting Key'
+		dataType: string
+		lineageTag: 4eded23e-72ed-41af-92b2-85475cc68a5f
+		sourceLineageTag: Posting Key
+		summarizeBy: none
+		sourceColumn: Posting Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: da291bad-3b08-4f73-8659-391d9b337456
+		sourceLineageTag: Posting Date
+		summarizeBy: none
+		sourceColumn: Posting Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Booking Text'
+		dataType: string
+		lineageTag: e0622d96-6ae1-43bc-9553-3cc7afd08469
+		sourceLineageTag: Booking Text
+		summarizeBy: none
+		sourceColumn: Booking Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column Assignment
+		dataType: string
+		lineageTag: 1c7afcad-62c2-46b8-a338-5989ec981a37
+		sourceLineageTag: Assignment
+		summarizeBy: none
+		sourceColumn: Assignment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tax Code'
+		dataType: string
+		lineageTag: 2e5dbe5c-cd04-4f92-bee2-71e3bbac864a
+		sourceLineageTag: Tax Code
+		summarizeBy: none
+		sourceColumn: Tax Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offsetting Account Number'
+		dataType: string
+		lineageTag: 6d60cf4f-6527-4ab7-ac1e-dd56126004e6
+		sourceLineageTag: Offsetting Account Number
+		summarizeBy: none
+		sourceColumn: Offsetting Account Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account
+		dataType: string
+		lineageTag: d7dd5fbd-45a4-4639-bb27-7238f6ab82ec
+		sourceLineageTag: Account
+		summarizeBy: none
+		sourceColumn: Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debit and Credit Indicator'
+		dataType: string
+		lineageTag: a1da637a-789a-4f8e-ab5f-67d5d46baa27
+		sourceLineageTag: Debit and Credit Indicator
+		summarizeBy: none
+		sourceColumn: Debit and Credit Indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reversed with'
+		dataType: string
+		lineageTag: fe806419-718f-411b-8445-214cca527192
+		sourceLineageTag: Reversed with
+		summarizeBy: none
+		sourceColumn: Reversed with
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asset
+		dataType: string
+		lineageTag: 8e78c68a-bcd0-4ffb-918f-0b680559b62d
+		sourceLineageTag: Asset
+		summarizeBy: none
+		sourceColumn: Asset
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS element'
+		dataType: string
+		lineageTag: ee8ade62-be24-4738-bc77-40cfb4c0b4f5
+		sourceLineageTag: WBS element
+		summarizeBy: none
+		sourceColumn: WBS element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Stamp'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0b230279-b097-47b9-a7e1-236edb06cad3
+		sourceLineageTag: Time Stamp
+		summarizeBy: none
+		sourceColumn: Time Stamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: e63142f1-b3a0-47db-8ed3-c13eec0cd4f0
+		sourceLineageTag: Profit Center
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount in EUR'
+		dataType: double
+		lineageTag: 0d4e5f57-0977-4c57-bcc2-b7d0c297b3ad
+		sourceLineageTag: Amount in EUR
+		summarizeBy: sum
+		sourceColumn: Amount in EUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'File Name'
+		dataType: string
+		lineageTag: 45457f83-72f6-4b27-a938-8052f584a5f8
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f2e312ee-8b5d-4e3e-b9cb-8177659ba7f4
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Number'
+		dataType: string
+		lineageTag: 97a8fbe5-e9f3-4e22-834f-5838dafe08b4
+		sourceLineageTag: Asset Number
+		summarizeBy: none
+		sourceColumn: Asset Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Number Country'
+		dataType: string
+		lineageTag: be4f7181-245c-4ff0-8f35-fc43b4deddc4
+		sourceLineageTag: Asset Number Country
+		summarizeBy: none
+		sourceColumn: Asset Number Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: bf6f14d8-743d-4b26-9799-91a0dfcaf209
+		sourceLineageTag: Month Date
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Order
+		dataType: string
+		lineageTag: f6597458-51a2-4815-8fe4-a4b7629925b0
+		sourceLineageTag: Order
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_capex_bookings = entity
+		mode: directLake
+		source
+			entityName: fact_capex_bookings
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

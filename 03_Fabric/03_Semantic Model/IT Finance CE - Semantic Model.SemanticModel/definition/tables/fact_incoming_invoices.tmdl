@@ -1,0 +1,364 @@
+table fact_incoming_invoices
+	lineageTag: 5203e5ff-a569-4e9c-a329-541c03ec4c5b
+	sourceLineageTag: [dbo].[fact_incoming_invoices]
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 513ff6c5-ef93-4d72-a179-a7495dc204da
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account
+		dataType: string
+		lineageTag: 640e5872-b2f9-4f42-a8b5-077ace59b295
+		sourceLineageTag: Account
+		summarizeBy: none
+		sourceColumn: Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'G/L Account'
+		dataType: string
+		lineageTag: bc39830d-3284-4751-b5f6-f24c88d9ae14
+		sourceLineageTag: G/L Account
+		summarizeBy: none
+		sourceColumn: G/L Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Number'
+		dataType: string
+		lineageTag: 1aacb394-de44-4cc1-aa30-53daa13d0611
+		sourceLineageTag: Document Number
+		summarizeBy: none
+		sourceColumn: Document Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3e1b3b2c-b718-47fd-a160-607a225c091b
+		sourceLineageTag: Document Date
+		summarizeBy: none
+		sourceColumn: Document Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clearing Document'
+		dataType: string
+		lineageTag: 8dbab734-f0a7-4c12-b1c4-6dca72e98c3a
+		sourceLineageTag: Clearing Document
+		summarizeBy: none
+		sourceColumn: Clearing Document
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Type'
+		dataType: string
+		lineageTag: c6fd05cf-a548-4718-9bbe-9686acf4d5f5
+		sourceLineageTag: Document Type
+		summarizeBy: none
+		sourceColumn: Document Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c53d1d6d-afd5-47fe-8af3-b8cb5c130937
+		sourceLineageTag: Posting Date
+		summarizeBy: none
+		sourceColumn: Posting Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		dataType: string
+		lineageTag: 4c5e87c2-6541-4fef-8bb0-5a8867749f1f
+		sourceLineageTag: Fiscal Year
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting Period'
+		dataType: string
+		lineageTag: 26969136-53b3-4f4f-8818-8f0c25fc7f4d
+		sourceLineageTag: Posting Period
+		summarizeBy: none
+		sourceColumn: Posting Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net due date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c5617b10-f49f-45e4-9615-2289a3113c54
+		sourceLineageTag: Net due date
+		summarizeBy: none
+		sourceColumn: Net due date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting Key'
+		dataType: string
+		lineageTag: 571070ce-3c6a-4075-8d90-dce812a12bf6
+		sourceLineageTag: Posting Key
+		summarizeBy: none
+		sourceColumn: Posting Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount in doc. curr_'
+		dataType: string
+		lineageTag: 0ed205a0-891e-444a-81f6-6fd5b2bc7229
+		sourceLineageTag: Amount in doc. curr_
+		summarizeBy: none
+		sourceColumn: Amount in doc. curr_
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document currency'
+		dataType: string
+		lineageTag: 3e4df04d-3665-4a10-89da-71acdf74be52
+		sourceLineageTag: Document currency
+		summarizeBy: none
+		sourceColumn: Document currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount in local currency'
+		dataType: double
+		lineageTag: 998a24c8-edf4-4ef7-b263-f5c5be26587f
+		sourceLineageTag: Amount in local currency
+		summarizeBy: sum
+		sourceColumn: Amount in local currency
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Local Currency'
+		dataType: string
+		lineageTag: 45f42bec-13b0-4aa6-844f-aa10517cfb0e
+		sourceLineageTag: Local Currency
+		summarizeBy: none
+		sourceColumn: Local Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount in EUR'
+		dataType: double
+		lineageTag: 6019cf0d-b48c-4b3f-8947-e1d0c10d0374
+		sourceLineageTag: Amount in EUR
+		summarizeBy: sum
+		sourceColumn: Amount in EUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Local Currency 2'
+		dataType: string
+		lineageTag: f943ae1b-1634-4bc7-a631-f17692cb2c9d
+		sourceLineageTag: Local Currency 2
+		summarizeBy: none
+		sourceColumn: Local Currency 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trading partner'
+		dataType: string
+		lineageTag: e4f95bed-6d28-4b8d-820b-083e8e8324c6
+		sourceLineageTag: Trading partner
+		summarizeBy: none
+		sourceColumn: Trading partner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: 3c03f27f-7e42-4277-8233-4965e00de942
+		sourceLineageTag: Reference
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Header Text'
+		dataType: string
+		lineageTag: cbd0e506-6b1d-4f7f-864c-55804219f290
+		sourceLineageTag: Document Header Text
+		summarizeBy: none
+		sourceColumn: Document Header Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column Text
+		dataType: string
+		lineageTag: ac4a88ad-83de-4083-b724-dfc425aaea4b
+		sourceLineageTag: Text
+		summarizeBy: none
+		sourceColumn: Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Name'
+		dataType: string
+		lineageTag: d9f5a0d1-3977-43e6-9c82-7c96a83584f1
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2a270396-c0f5-4b31-bdb7-27f7efdba6a5
+		sourceLineageTag: Month Date
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2de98b29-c6b7-4953-861a-397e5981168e
+		sourceLineageTag: Current Date
+		summarizeBy: none
+		sourceColumn: Current Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: a5cd85a0-d7ec-4ad3-98be-b9d4a8a955c1
+		sourceLineageTag: Status
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Overdue Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: 064f20f9-b82e-41ee-82f7-35ef20b0f833
+		sourceLineageTag: Overdue Days
+		summarizeBy: sum
+		sourceColumn: Overdue Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: 0fc0a13b-c1ab-4371-88d5-c698e5ae8987
+		sourceLineageTag: Vendor Name
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Type Name'
+		dataType: string
+		lineageTag: c2ab9df9-4a6a-474b-b11c-1a297e9b4ff2
+		sourceLineageTag: Document Type Name
+		summarizeBy: none
+		sourceColumn: Document Type Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GL Account Name'
+		dataType: string
+		lineageTag: 978317ea-9448-4767-94ad-7d32857b766c
+		sourceLineageTag: GL Account Name
+		summarizeBy: none
+		sourceColumn: GL Account Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Overdue Days Range'
+		dataType: string
+		lineageTag: 62d965b4-f9c8-44f0-98d7-1533f55515a5
+		sourceLineageTag: Overdue Days Range
+		summarizeBy: none
+		sourceColumn: Overdue Days Range
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GL Account Number and Name'
+		dataType: string
+		lineageTag: 6be8e8e9-c575-4bd7-9072-676e4e2b5947
+		sourceLineageTag: GL Account Number and Name
+		summarizeBy: none
+		sourceColumn: GL Account Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Type Code and Name_'
+		dataType: string
+		lineageTag: f44e0393-1716-45d2-9961-801e1318eb11
+		sourceLineageTag: Document Type Code and Name_
+		summarizeBy: none
+		sourceColumn: Document Type Code and Name_
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Number and Name'
+		dataType: string
+		lineageTag: e456882c-dc5f-40d1-b27d-fdd7ec99416e
+		sourceLineageTag: Vendor Number and Name
+		summarizeBy: none
+		sourceColumn: Vendor Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Processing
+		dataType: string
+		lineageTag: ac9e3550-4b44-4e88-8385-9c0100870ccb
+		sourceLineageTag: Processing
+		summarizeBy: none
+		sourceColumn: Processing
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Name'
+		dataType: string
+		lineageTag: 3c2a7e21-34c7-4dc2-9f86-ddd8900b613c
+		sourceLineageTag: User Name
+		summarizeBy: none
+		sourceColumn: User Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3581bf9a-c0d5-4238-9a5c-0afbd6f121a1
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Key'
+		dataType: string
+		lineageTag: 27317841-2a6c-4459-9bac-2115ae6ff494
+		sourceLineageTag: Vendor Key
+		summarizeBy: none
+		sourceColumn: Vendor Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_incoming_invoices = entity
+		mode: directLake
+		source
+			entityName: fact_incoming_invoices
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

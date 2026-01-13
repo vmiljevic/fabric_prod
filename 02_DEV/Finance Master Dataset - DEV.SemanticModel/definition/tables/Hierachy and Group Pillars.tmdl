@@ -1,0 +1,33 @@
+table 'Hierachy and Group Pillars'
+	lineageTag: d0127a6a-3a15-4af3-a716-49e8222d186f
+
+	column 'Hierarchy Area'
+		dataType: string
+		lineageTag: 56c9db46-3f38-4675-801f-0dd5042afd4e
+		summarizeBy: none
+		sourceColumn: Hierarchy Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Group Pillar'
+		dataType: string
+		lineageTag: e1cde638-7532-478e-9437-8ee2ee44caf2
+		summarizeBy: none
+		sourceColumn: Group Pillar
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Hierachy and Group Pillars' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="HierachyToGroupPillar",Kind="Table"]}[Data]
+				in
+				    GradeandProficiencyLevels_Table
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

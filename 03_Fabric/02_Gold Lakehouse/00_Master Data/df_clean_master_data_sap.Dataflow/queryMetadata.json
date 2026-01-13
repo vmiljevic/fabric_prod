@@ -1,0 +1,153 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_clean_master_data_sap",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "dim_cost_center_archive": {
+      "queryId": "b5fd38c9-c750-4d53-8098-8b84ec3db943",
+      "queryName": "dim_cost_center_archive"
+    },
+    "dim_cost_center_current": {
+      "queryId": "e34d01cc-a630-433d-9572-459f107c4659",
+      "queryName": "dim_cost_center_current"
+    },
+    "dim_cost_center": {
+      "queryId": "3ea3a4de-389c-44ed-87e1-174d8fa38710",
+      "queryName": "dim_cost_center",
+      "loadEnabled": false
+    },
+    "dim_material_prices_archive": {
+      "queryId": "c399cbd1-0d5b-4049-a2ee-c52062866f37",
+      "queryName": "dim_material_prices_archive"
+    },
+    "dim_material_prices_current": {
+      "queryId": "ecb9a4c4-44ab-4da7-9d7f-68d03fdf5faa",
+      "queryName": "dim_material_prices_current"
+    },
+    "dim_material_price": {
+      "queryId": "2344ebc4-113c-43f1-99da-0f8a164884f4",
+      "queryName": "dim_material_price",
+      "loadEnabled": false
+    },
+    "dim_materials_archive": {
+      "queryId": "260ab6f2-2d66-40b2-b689-b61210eac349",
+      "queryName": "dim_materials_archive"
+    },
+    "dim_materials_current": {
+      "queryId": "9ff42abf-7809-4d6a-b7bb-506d34903a58",
+      "queryName": "dim_materials_current"
+    },
+    "dim_material": {
+      "queryId": "919fd24f-3a63-46a8-9889-6dfb1f06192c",
+      "queryName": "dim_material",
+      "loadEnabled": false
+    },
+    "dim_payer_archive": {
+      "queryId": "c08ecab0-8716-47b0-a4e7-56d02c00235f",
+      "queryName": "dim_payer_archive"
+    },
+    "dim_payer_current": {
+      "queryId": "46194ec7-6d67-4121-b9b6-cddc5198a6cc",
+      "queryName": "dim_payer_current"
+    },
+    "dim_payer": {
+      "queryId": "b389ab14-091e-46ef-8522-9065b8f241a2",
+      "queryName": "dim_payer",
+      "loadEnabled": false
+    },
+    "dim_profit_center_archive": {
+      "queryId": "002d4480-4f29-401a-a3b7-ff1a249e54b5",
+      "queryName": "dim_profit_center_archive"
+    },
+    "dim_profit_center_current": {
+      "queryId": "c4347fdd-9ea8-4354-97f5-18fee9b84552",
+      "queryName": "dim_profit_center_current"
+    },
+    "dim_profit_center": {
+      "queryId": "8fc40465-c1d9-4d3d-8a80-d34a913ecf88",
+      "queryName": "dim_profit_center",
+      "loadEnabled": false
+    },
+    "dim_rates_archive": {
+      "queryId": "3ba929c4-5f7f-4f6d-944a-c41759378ef6",
+      "queryName": "dim_rates_archive"
+    },
+    "dim_rates_current": {
+      "queryId": "9d46f34c-8675-419d-bfd5-5e4ff61e5fc9",
+      "queryName": "dim_rates_current"
+    },
+    "dim_rate_card": {
+      "queryId": "c4931e30-708d-480b-9333-8a0e5de1df52",
+      "queryName": "dim_rate_card",
+      "loadEnabled": false
+    },
+    "dim_wbs_archive": {
+      "queryId": "25e8c03c-4f1f-4465-aacb-f62d9b9777e3",
+      "queryName": "dim_wbs_archive"
+    },
+    "dim_wbs_current": {
+      "queryId": "75d7fd79-8b77-4dff-b90f-a4f266df945c",
+      "queryName": "dim_wbs_current"
+    },
+    "dim_wbs": {
+      "queryId": "1e779b21-9d23-4405-9e13-d3364b936782",
+      "queryName": "dim_wbs",
+      "loadEnabled": false
+    },
+    "dim_material_price_DataDestination": {
+      "queryId": "8390a76d-096e-4fe1-b573-260ab78c4ed3",
+      "queryName": "dim_material_price_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_payer_DataDestination": {
+      "queryId": "1d64e9cc-630f-4b00-bfd6-eaedbb414c84",
+      "queryName": "dim_payer_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_rate_card_DataDestination": {
+      "queryId": "006b0391-7450-4016-8a78-13b00fecfade",
+      "queryName": "dim_rate_card_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_profit_center_DataDestination": {
+      "queryId": "0b0dcfb7-b177-4bf2-8bbc-db61fa01bb5e",
+      "queryName": "dim_profit_center_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_wbs_DataDestination": {
+      "queryId": "a0a00305-0278-46c4-9d93-aba7fc658bbd",
+      "queryName": "dim_wbs_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "sup_material_landscape": {
+      "queryId": "c5ba5fe9-cd8c-4780-9481-c78aa49e0653",
+      "queryName": "sup_material_landscape"
+    },
+    "dim_material_DataDestination": {
+      "queryId": "684edc41-d9fc-4de6-ac03-db8030671510",
+      "queryName": "dim_material_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_cost_center_DataDestination": {
+      "queryId": "566c0755-3a87-4059-b4ac-8767964963f0",
+      "queryName": "dim_cost_center_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

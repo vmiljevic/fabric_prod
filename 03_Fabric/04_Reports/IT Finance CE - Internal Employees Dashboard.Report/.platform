@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "IT Finance CE - Internal Employees Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "805a3845-2ae8-b34e-4b96-7a56aef2835e"
+  }
+}

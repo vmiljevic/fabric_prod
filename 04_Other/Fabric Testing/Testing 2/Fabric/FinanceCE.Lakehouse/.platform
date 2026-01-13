@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "FinanceCE",
+    "description": "Testing Fabric Features"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9f7dc6b5-591b-a6eb-47a0-6c4212187422"
+  }
+}

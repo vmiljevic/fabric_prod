@@ -1,0 +1,64 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_ingest_master_data",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fact_o2i_pre_run_cost_archive": {
+      "queryId": "a687342d-d8ab-4b96-8a97-fd13c7d3222c",
+      "queryName": "fact_o2i_pre_run_cost_archive",
+      "loadEnabled": false
+    },
+    "fact_o2i_pre_run_revenue_archive": {
+      "queryId": "8bfa13e9-7e55-4fc8-b3d5-a1f33c7f7fbd",
+      "queryName": "fact_o2i_pre_run_revenue_archive",
+      "loadEnabled": false
+    },
+    "fact_o2i_status_archive": {
+      "queryId": "afa1bdce-9096-45ed-8305-8555ba32aa17",
+      "queryName": "fact_o2i_status_archive",
+      "loadEnabled": false
+    },
+    "fact_o2i_status_archive_DataDestination": {
+      "queryId": "1e91cfff-42b7-49ca-8831-9e2b041a3966",
+      "queryName": "fact_o2i_status_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "fact_o2i_pre_run_cost_archive_DataDestination": {
+      "queryId": "934af9ac-c619-4fa2-9937-19346c8cadbe",
+      "queryName": "fact_o2i_pre_run_cost_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "fact_o2i_pre_run_revenue_archive_DataDestination": {
+      "queryId": "934f6647-3bd8-48e0-9d2e-2c217792bd12",
+      "queryName": "fact_o2i_pre_run_revenue_archive_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data/Master%20Data/SAP%20BW/Master%20Data%20Reporting%20SAP_CC.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"59c3d509-86b6-4a7c-8be0-ac921ad1f949\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"33411680-e2e8-426c-9999-033d22c8201d\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"ddd60dd0-8aee-4de0-abf8-bc8307999ec6\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

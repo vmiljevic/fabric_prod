@@ -1,0 +1,201 @@
+table dim_wbs
+	lineageTag: e3283617-1499-49df-98fe-15894bcad4b2
+	sourceLineageTag: [dbo].[dim_wbs]
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: 5c194333-bf04-4640-a069-be0a04e700d3
+		sourceLineageTag: WBS Element
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element Name'
+		dataType: string
+		lineageTag: e01da75f-39ee-4fdd-82f5-511704d196c5
+		sourceLineageTag: WBS Element Name
+		summarizeBy: none
+		sourceColumn: WBS Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Change Run Indicator'
+		dataType: string
+		lineageTag: c428919b-6719-4f3e-b68a-663838b29ad3
+		sourceLineageTag: Change Run Indicator
+		summarizeBy: none
+		sourceColumn: Change Run Indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Creation Date'
+		dataType: string
+		lineageTag: 2576deb8-4614-4de2-8822-fbc97804a484
+		sourceLineageTag: Creation Date
+		summarizeBy: none
+		sourceColumn: Creation Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Changed on'
+		dataType: string
+		lineageTag: 959abff2-fd5b-4662-b3f7-8f8c112b5d39
+		sourceLineageTag: Changed on
+		summarizeBy: none
+		sourceColumn: Changed on
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PSP System Status'
+		dataType: string
+		lineageTag: ac79da9a-6785-4a52-abc0-f84a4b1dfb32
+		sourceLineageTag: PSP System Status
+		summarizeBy: none
+		sourceColumn: PSP System Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Start Date'
+		dataType: string
+		lineageTag: c022271a-8f29-429e-a1db-058537d5d4b2
+		sourceLineageTag: Project Start Date
+		summarizeBy: none
+		sourceColumn: Project Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project End Date'
+		dataType: string
+		lineageTag: cf30bcb6-1235-4ee7-be15-08449a412ca1
+		sourceLineageTag: Project End Date
+		summarizeBy: none
+		sourceColumn: Project End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 3773767b-bdf7-4c77-bf3e-5bafb09736ae
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code Name'
+		dataType: string
+		lineageTag: f2941bb4-c48e-4385-b461-454551f77921
+		sourceLineageTag: Company Code Name
+		summarizeBy: none
+		sourceColumn: Company Code Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: 45bec73e-39f6-429a-b91c-4b7fa7b7b8b2
+		sourceLineageTag: Profit Center
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		lineageTag: 019dea5b-2c84-4720-857a-3a2c53197996
+		sourceLineageTag: Profit Center Name
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsible Cost Centre'
+		dataType: string
+		lineageTag: 4567ffbc-d54e-4470-8f2a-ee590d0c2bde
+		sourceLineageTag: Responsible Cost Centre
+		summarizeBy: none
+		sourceColumn: Responsible Cost Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsible Cost Centre Name'
+		dataType: string
+		lineageTag: 0e68daf3-5340-4757-a163-546fa818b5fc
+		sourceLineageTag: Responsible Cost Centre Name
+		summarizeBy: none
+		sourceColumn: Responsible Cost Centre Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Short ID'
+		dataType: string
+		lineageTag: add572f5-6865-4675-9a3e-8105964b95e7
+		sourceLineageTag: Short ID
+		summarizeBy: none
+		sourceColumn: Short ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Main WBS Element'
+		dataType: string
+		lineageTag: d490e3ba-bcae-4335-9f57-b3f842ca1f81
+		sourceLineageTag: Main WBS Element
+		summarizeBy: none
+		sourceColumn: Main WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Leader'
+		dataType: string
+		lineageTag: 634c4535-0a2b-494c-9859-ad71bfeab4b6
+		sourceLineageTag: Project Leader
+		summarizeBy: none
+		sourceColumn: Project Leader
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Name'
+		dataType: string
+		lineageTag: cee2ccf3-0112-4581-84ca-504bdacb5ee3
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4071a3ca-d49f-4e89-9f9d-644f75a37cdd
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: 916ee385-9b60-45d5-b1c5-18488fffa1da
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element and Name'
+		dataType: string
+		lineageTag: 3cc0404a-7938-4049-b3cb-0fdc7f52157e
+		sourceLineageTag: WBS Element and Name
+		summarizeBy: none
+		sourceColumn: WBS Element and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_wbs = entity
+		mode: directLake
+		source
+			entityName: dim_wbs
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

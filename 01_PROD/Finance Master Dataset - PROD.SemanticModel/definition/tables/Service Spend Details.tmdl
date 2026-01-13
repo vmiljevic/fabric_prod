@@ -1,0 +1,503 @@
+table 'Service Spend Details'
+	lineageTag: 5c2823de-84a4-463f-89f7-6173ea4b2a25
+
+	column 'SAP Refresh Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 69ee70b5-82ff-49af-9ad2-bdda165d504d
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill-to Party'
+		dataType: string
+		lineageTag: 78640f2c-7dc8-4496-b289-903c7372370f
+		summarizeBy: none
+		sourceColumn: Bill-to Party
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Assigned To'
+		dataType: string
+		lineageTag: b209ba99-775f-4cd5-ba5b-7f30c3066055
+		summarizeBy: none
+		sourceColumn: Account Assigned To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill. Doc. Numbers'
+		dataType: string
+		lineageTag: 5d1c47bc-e5b6-43e0-927d-2107a264f09d
+		summarizeBy: none
+		sourceColumn: Bill. Doc. Numbers
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Charging Type'
+		dataType: string
+		lineageTag: 76ce8f8f-06cd-4fe3-8333-d4e56341cdc6
+		summarizeBy: none
+		sourceColumn: Charging Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 29410597-21ee-4c32-9477-6e1850097eec
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 09fa67ce-fc16-4f8a-8419-03eb2cc56c4e
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Tag'
+		dataType: string
+		lineageTag: ee7d1a33-164a-4a86-974b-5e8f75dbce3d
+		summarizeBy: none
+		sourceColumn: Customer Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feeder ID'
+		dataType: string
+		lineageTag: 0ec45926-8f22-4729-b09b-dfa2d24e44fd
+		summarizeBy: none
+		sourceColumn: Feeder ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feeder System'
+		dataType: string
+		lineageTag: 1859ec49-f671-45b9-9397-caf875023757
+		summarizeBy: none
+		sourceColumn: Feeder System
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feeder User Name'
+		dataType: string
+		lineageTag: afd78cd4-bdf9-4656-9cfa-c964174a7afd
+		summarizeBy: none
+		sourceColumn: Feeder User Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GIAM ID Assigned To'
+		dataType: string
+		lineageTag: d25ce8f1-ab8f-49e8-96c9-37530ab03cfc
+		summarizeBy: none
+		sourceColumn: GIAM ID Assigned To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GIAM ID Owner'
+		dataType: string
+		lineageTag: e62db43b-a3a3-494b-8189-a28aa386e18f
+		summarizeBy: none
+		sourceColumn: GIAM ID Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: b1946d27-eebf-4132-85fa-d3d28b07fdf9
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Owner Account'
+		dataType: string
+		lineageTag: 459f63b6-8f98-4524-958d-cd2774a92b97
+		summarizeBy: none
+		sourceColumn: Owner Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payer
+		dataType: string
+		lineageTag: fc0ff8a7-ff62-4565-8862-467ff7a73aed
+		summarizeBy: none
+		sourceColumn: Payer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Name'
+		dataType: string
+		lineageTag: b3072e43-44d5-49a2-aa22-1a49471c9381
+		summarizeBy: none
+		sourceColumn: Primary Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 69d46d1f-1d68-448c-990d-672e87e7b0f8
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Order ID'
+		dataType: string
+		lineageTag: d7ee7a53-b73f-4362-b102-31a3a6c8c5e3
+		summarizeBy: none
+		sourceColumn: Product Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote ID'
+		dataType: string
+		lineageTag: 93efc14f-ca88-4ecf-9565-010088762315
+		summarizeBy: none
+		sourceColumn: Quote ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organization'
+		dataType: string
+		lineageTag: 525d7c67-d354-4c76-819d-c777bc8badbe
+		summarizeBy: none
+		sourceColumn: Sales Organization
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Secondary Name'
+		dataType: string
+		lineageTag: f244feda-aa79-42ea-af1f-280243cde026
+		summarizeBy: none
+		sourceColumn: Secondary Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 56d00223-1774-4857-a317-f2fd3a6025db
+		summarizeBy: none
+		sourceColumn: Service Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Service Inst. Status'
+		dataType: string
+		lineageTag: bcd89b47-e708-45bd-87d2-cfec0888dee1
+		summarizeBy: none
+		sourceColumn: Service Inst. Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Instance ID'
+		dataType: string
+		lineageTag: a2d25c96-93da-4215-8162-559f790db245
+		summarizeBy: none
+		sourceColumn: Service Instance ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Period'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3dd98771-0278-4fe3-85fe-35e71b6b1031
+		summarizeBy: none
+		sourceColumn: Service Period
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'SI Location'
+		dataType: string
+		lineageTag: c480cb9d-3f9c-44cb-865a-9df2b7d92d51
+		summarizeBy: none
+		sourceColumn: SI Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI Name'
+		dataType: string
+		lineageTag: 5ff37d90-fd75-4b77-8680-eb708d075ee5
+		summarizeBy: none
+		sourceColumn: SI Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI Provider'
+		dataType: string
+		lineageTag: b8c12c60-c4e8-44d1-9fbd-f70861a2e8db
+		summarizeBy: none
+		sourceColumn: SI Provider
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SI SLA'
+		dataType: string
+		lineageTag: 80edff41-cba8-42b5-9bfe-fc3215f8bb4a
+		summarizeBy: none
+		sourceColumn: SI SLA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: decimal
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: 69d92836-684b-4490-8bd6-290d498d8959
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 09238c60-d00a-4817-8192-16a2aab7c685
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material and Sales Organisation'
+		dataType: string
+		lineageTag: bfc341cf-b55e-4368-a8af-727de6384bba
+		summarizeBy: none
+		sourceColumn: Material and Sales Organisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Outside VAT Group' = RELATED('Group Price List Materials'[Service Class])
+		lineageTag: abd57c79-9149-4cc5-8606-e8c9510279c8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Instance ID and Name' = 'Service Spend Details'[Service Instance ID] & " - " & 'Service Spend Details'[SI Name]
+		lineageTag: 830c193d-a675-46f4-92ca-4b2ee1a6f6b3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Name' = ```
+			SWITCH (
+			        TRUE,
+			        NOT(ISBLANK(RELATED('Cost Centers'[Cost Center Number and Name]))),RELATED('Cost Centers'[Cost Center Number and Name]),
+			        'Service Spend Details'[Cost Center] & " - Dummy Cost Centre"
+			        )
+			
+			
+			```
+		lineageTag: 3ec44e40-b9c2-4353-9266-ab7040e6b80a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tax Rate'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: d7d679b2-3ca5-44ec-9786-c9219a2f34d2
+		summarizeBy: sum
+		sourceColumn: Tax Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Amount incl. Tax' = 'Service Spend Details'[Amount] * 'Service Spend Details'[Tax Rate]
+		dataType: decimal
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: ccdc9335-dcb7-4057-96f6-101b1acaa4dd
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data For'
+		dataType: string
+		lineageTag: 326a624b-3368-4cf7-af31-f094553c9e84
+		summarizeBy: none
+		sourceColumn: Data For
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booking text'
+		dataType: string
+		lineageTag: 51a5693f-a6dc-4d8d-af48-9a65fc08e422
+		summarizeBy: none
+		sourceColumn: Booking text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Orig. (Service Now)'
+		dataType: string
+		lineageTag: 2e6be329-51da-4678-9655-f20cc7b64103
+		summarizeBy: none
+		sourceColumn: Cost Center Orig. (Service Now)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debitor Original (Service Now)'
+		dataType: string
+		lineageTag: a19c4ab5-663c-47a5-ad96-0c7786931b4e
+		summarizeBy: none
+		sourceColumn: Debitor Original (Service Now)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: fd2f835f-d6a6-4830-ba63-ed30cbcc2dd0
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote ID Link' = IF('Service Spend Details'[Quote ID]<>"#","https://aztech.service-now.com/nav_to.do?uri=%2Fu_csm_quote.do%3Fsysparm_query=number=" & 'Service Spend Details'[Quote ID],"#")
+		lineageTag: 631dbb23-5133-4e8b-aef3-15399faf368f
+		dataCategory: WebUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Instance ID Link' = IF('Service Spend Details'[Service Instance ID]<>"#","https://aztech.service-now.com/nav_to.do?uri=%2Fu_cmdb_ci_si_billing_plan.do?sysparm_query=u_number%3D" & 'Service Spend Details'[Service Instance ID],"#")
+		lineageTag: 8b9adf72-2db4-4164-a869-47ffc59abf21
+		dataCategory: WebUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Assigned Legal Entity'
+		dataType: string
+		lineageTag: c50dc5bc-381a-4dbd-a90d-ffd8470c23b3
+		summarizeBy: none
+		sourceColumn: User Assigned Legal Entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Assigned Name'
+		dataType: string
+		lineageTag: 255bff3d-0b40-41dc-b2c8-e57b176407a2
+		summarizeBy: none
+		sourceColumn: User Assigned Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Assigned' = 'Service Spend Details'[Account Assigned To] & "-" &'Service Spend Details'[User Assigned Name]
+		lineageTag: ae6fabd7-1daf-4ed3-a5af-a58ae93a70c4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Internal IT Cost'
+		dataType: string
+		lineageTag: 35424ab1-8e86-444e-8e7c-3fbd16de81f6
+		summarizeBy: none
+		sourceColumn: Internal IT Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 9f0e32a9-40f8-4690-bc57-d6dd19b4eda5
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ovl Last Login'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: 2de87fcf-49f1-4914-9bf0-cd4000f2a535
+		summarizeBy: none
+		sourceColumn: Ovl Last Login
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Days Without Login'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ca48e99-efbd-404b-b75e-74bc432c4ad9
+		summarizeBy: sum
+		sourceColumn: Days Without Login
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Login' =
+			SWITCH(
+			    True,
+			    'Service Spend Details'[Days Without Login] <= 30,"Between 0 and 30 Days",
+			    AND('Service Spend Details'[Days Without Login]>30,'Service Spend Details'[Days Without Login]<=90),"Between 30 and 90 Days",
+			    AND('Service Spend Details'[Days Without Login]>90,'Service Spend Details'[Days Without Login]<=180),"Between 90 and 180 Days",
+			    AND('Service Spend Details'[Days Without Login]>180,'Service Spend Details'[Days Without Login]<=360),"Between 180 and 360 Days",
+			    "More than 360 Days"
+			)
+		lineageTag: 48f2506c-36cc-4b9f-9614-ede1aa34a631
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Service Spend Details' = m
+		mode: import
+		queryGroup: '05_SAP BAP'
+		source =
+				let
+				    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/", [ApiVersion = 15]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each Text.Contains([Folder Path], "06_O2C Revenue Analysis")),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"Content", "Name"}),
+				    #"Added Custom3" = Table.AddColumn(#"Removed Other Columns", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Sheet1")),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Added Custom3",{"Content", "Name"}),
+				    #"Expanded Extracted Data" = Table.ExpandTableColumn(#"Removed Columns2", "Extracted Data", {"Data"}, {"Extracted Data.Data"}),
+				    #"Expanded Extracted Data.Data" = Table.ExpandTableColumn(#"Expanded Extracted Data", "Extracted Data.Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33", "Column34", "Column35", "Column36", "Column37"}, {"Extracted Data.Data.Column1", "Extracted Data.Data.Column2", "Extracted Data.Data.Column3", "Extracted Data.Data.Column4", "Extracted Data.Data.Column5", "Extracted Data.Data.Column6", "Extracted Data.Data.Column7", "Extracted Data.Data.Column8", "Extracted Data.Data.Column9", "Extracted Data.Data.Column10", "Extracted Data.Data.Column11", "Extracted Data.Data.Column12", "Extracted Data.Data.Column13", "Extracted Data.Data.Column14", "Extracted Data.Data.Column15", "Extracted Data.Data.Column16", "Extracted Data.Data.Column17", "Extracted Data.Data.Column18", "Extracted Data.Data.Column19", "Extracted Data.Data.Column20", "Extracted Data.Data.Column21", "Extracted Data.Data.Column22", "Extracted Data.Data.Column23", "Extracted Data.Data.Column24", "Extracted Data.Data.Column25", "Extracted Data.Data.Column26", "Extracted Data.Data.Column27", "Extracted Data.Data.Column28", "Extracted Data.Data.Column29", "Extracted Data.Data.Column30", "Extracted Data.Data.Column31", "Extracted Data.Data.Column32", "Extracted Data.Data.Column33", "Extracted Data.Data.Column34", "Extracted Data.Data.Column35", "Extracted Data.Data.Column36", "Extracted Data.Data.Column37"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Expanded Extracted Data.Data", [PromoteAllScalars=true]),
+				    #"Filtered Rows1" = Table.SelectRows(#"Promoted Headers", each ([#"Bill-to Party"] <> "Bill-to Party")),
+				    #"Merged Queries1" = Table.NestedJoin(#"Filtered Rows1", {"Payer"}, #"Company Codes", {"Debtor Number"}, "Company Codes", JoinKind.LeftOuter),
+				    #"Expanded Company Codes" = Table.ExpandTableColumn(#"Merged Queries1", "Company Codes", {"Company Code"}, {"Company Codes.Company Code"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded Company Codes",{{"Company Codes.Company Code", "Data For"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns1",{{"Data For", type text}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "Material and Sales Organisation", each [Sales Organization]& "-"& [Material]),
+				    #"Merged Queries" = Table.NestedJoin(#"Added Custom1", {"Data For"}, #"Tax Rates", {"Sales Organisation"}, "Tax Rates", JoinKind.LeftOuter),
+				    #"Expanded Tax Rates" = Table.ExpandTableColumn(#"Merged Queries", "Tax Rates", {"Tax Rate"}, {"Tax Rates.Tax Rate"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Tax Rates",{{"Tax Rates.Tax Rate", "Tax Rate"}}),
+				    #"Added Custom2" = Table.AddColumn(#"Renamed Columns", "Tax Rate Corrected", each if [Sales Organization] = [Data For] then 1 else 1+ [Tax Rate]),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Added Custom2",{"Tax Rate"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Removed Columns1",{{"Tax Rate Corrected", "Tax Rate"}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns2",{{"Amount", Currency.Type}, {"Tax Rate", Currency.Type}, {"Service Period", type date}, {"Service Date", type date}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"Semantic Key CAP"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Columns","DEACT_","",Replacer.ReplaceText,{"Account Assigned To"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","_DIS","",Replacer.ReplaceText,{"Account Assigned To"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","_PAD01","",Replacer.ReplaceText,{"Account Assigned To"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","_PAD0","",Replacer.ReplaceText,{"Account Assigned To"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","_ALLIANZ","",Replacer.ReplaceText,{"Account Assigned To"}),
+				    #"Merged Queries2" = Table.NestedJoin(#"Replaced Value4", {"Account Assigned To"}, sys_users_all, {"final_user_name"}, "sys_users_all", JoinKind.LeftOuter),
+				    #"Expanded sys_users_all" = Table.ExpandTableColumn(#"Merged Queries2", "sys_users_all", {"legal_entity",  "name"}, {"legal_entity", "name"}),
+				    #"Renamed Columns3" = Table.RenameColumns(#"Expanded sys_users_all",{{"legal_entity", "User Assigned Legal Entity"}, {"name", "User Assigned Name"}}),
+				    #"Merged Queries3" = Table.NestedJoin(#"Renamed Columns3", {"Material"}, #"Service Mapping", {"Material"}, "Service Mapping", JoinKind.LeftOuter),
+				    #"Expanded Service Mapping" = Table.ExpandTableColumn(#"Merged Queries3", "Service Mapping", {"Internal IT Cost", "Category"}, {"Internal IT Cost", "Category"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Expanded Service Mapping",null,"N/A",Replacer.ReplaceValue,{"Internal IT Cost"}),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5",null,"N/A",Replacer.ReplaceValue,{"Category"}),
+				    #"Merged Queries4" = Table.NestedJoin(#"Replaced Value6", {"Account Assigned To"}, #"User Login Data", {"User ID"}, "User Login Data", JoinKind.LeftOuter),
+				    #"Expanded User Login Data" = Table.ExpandTableColumn(#"Merged Queries4", "User Login Data", {"Ovl Last Login", "Days Without Login"}, {"Ovl Last Login", "Days Without Login"}),
+				    #"Filtered Rows2" = Table.SelectRows(#"Expanded User Login Data", each ([SAP Refresh Time] <> "SAP Refresh Time")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows2",{{"SAP Refresh Time", type datetime}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

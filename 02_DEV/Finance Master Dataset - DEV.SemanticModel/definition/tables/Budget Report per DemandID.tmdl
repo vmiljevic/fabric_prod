@@ -1,0 +1,160 @@
+table 'Budget Report per DemandID'
+	lineageTag: f73208a5-e8b1-46da-a2a7-726decfaa9f6
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: b89e5f6f-8483-4b3a-b857-cd7540068e32
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Demand ID'
+		dataType: string
+		lineageTag: c4cd66ba-7a40-4901-b391-a54434a28a00
+		summarizeBy: none
+		sourceColumn: Demand ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchasing order number (PO)'
+		dataType: string
+		lineageTag: f20c5b72-dca0-4dbc-b5d2-47f1d66e227e
+		summarizeBy: none
+		sourceColumn: Purchasing order number (PO)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Approved'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 3890d0cb-7853-4d53-aba9-6a1e89881088
+		summarizeBy: none
+		sourceColumn: PO Approved
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'PO Spent'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 3e841c5c-4f6b-4dc0-a0fa-590422ddeca9
+		summarizeBy: sum
+		sourceColumn: PO Spent
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column Vendor
+		dataType: string
+		lineageTag: cf444222-a0ad-48ed-be54-8dec64f5008b
+		summarizeBy: none
+		sourceColumn: Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: e13bce67-8195-46bd-8bb3-ccb97e3ce08a
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Approved inc. Tax'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: b08f5b5e-49e1-41a3-9b0e-9c3b1194f41d
+		summarizeBy: sum
+		sourceColumn: PO Approved inc. Tax
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Vendor and Name' = 'Budget Report per DemandID'[Vendor] & " - "&'Budget Report per DemandID'[Vendor Name]
+		lineageTag: 992bd9b6-65b5-4288-b73f-e380b9c9ccc6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Remainging' = 'Budget Report per DemandID'[PO Approved inc. Tax] - 'Budget Report per DemandID'[PO Spent]
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 440112b4-0f44-4da1-9fc6-e9bf24a6eb42
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: 044ca2f6-5c5d-4f41-a4d9-76d079437552
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		lineageTag: d3a4db0e-b9fc-43cf-94fc-7dcbcb605655
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center and Name' = 'Budget Report per DemandID'[Profit Center] & " - "&'Budget Report per DemandID'[Profit Center Name]
+		lineageTag: 066c4df7-46bf-47c4-8406-05d242289a4a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column KeyDemandPO
+		dataType: string
+		lineageTag: ee07b1d3-5e83-48cd-9b76-7f40d5156831
+		summarizeBy: none
+		sourceColumn: KeyDemandPO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Budget Report per DemandID' = m
+		mode: import
+		queryGroup: '08_Budget Report'
+		source =
+				let
+				    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi", [ApiVersion = 15]),
+				    #"Filtered Rows4" = Table.SelectRows(Source, each Text.Contains([Folder Path], "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared Documents/01_Power BI/Data Sources/06_Budget Demand/")),
+				    #"Removed Other Columns2" = Table.SelectColumns(#"Filtered Rows4",{"Content"}),
+				    #"Added Custom1" = Table.AddColumn(#"Removed Other Columns2", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Sheet1")),
+				    #"Expanded Extracted Data" = Table.ExpandTableColumn(#"Added Custom1", "Extracted Data", {"Data"}, {"Extracted Data.Data"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded Extracted Data",{"Content"}),
+				    #"Expanded Extracted Data.Data" = Table.ExpandTableColumn(#"Removed Columns", "Extracted Data.Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33"}, {"Extracted Data.Data.Column1", "Extracted Data.Data.Column2", "Extracted Data.Data.Column3", "Extracted Data.Data.Column4", "Extracted Data.Data.Column5", "Extracted Data.Data.Column6", "Extracted Data.Data.Column7", "Extracted Data.Data.Column8", "Extracted Data.Data.Column9", "Extracted Data.Data.Column10", "Extracted Data.Data.Column11", "Extracted Data.Data.Column12", "Extracted Data.Data.Column13", "Extracted Data.Data.Column14", "Extracted Data.Data.Column15", "Extracted Data.Data.Column16", "Extracted Data.Data.Column17", "Extracted Data.Data.Column18", "Extracted Data.Data.Column19", "Extracted Data.Data.Column20", "Extracted Data.Data.Column21", "Extracted Data.Data.Column22", "Extracted Data.Data.Column23", "Extracted Data.Data.Column24", "Extracted Data.Data.Column25", "Extracted Data.Data.Column26", "Extracted Data.Data.Column27", "Extracted Data.Data.Column28", "Extracted Data.Data.Column29", "Extracted Data.Data.Column30", "Extracted Data.Data.Column31", "Extracted Data.Data.Column32", "Extracted Data.Data.Column33"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Expanded Extracted Data.Data", [PromoteAllScalars=true]),
+				    #"Filtered Rows1" = Table.SelectRows(#"Promoted Headers", each ([Company Code] <> "" and [Company Code] <> "Company Code")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows1",{{"Budget #(lf)CO Order", Currency.Type}, {"Actual #(lf)CO Order", Currency.Type}, {"Commitment#(lf)Total", Currency.Type}, {"Commitment #(lf)P.Requisition", Currency.Type}, {"Commitment #(lf)P.Order", Currency.Type}, {"Actual #(lf)Alloted", Currency.Type}, {"Budget #(lf)Available", Currency.Type}, {"Demandbook#(lf)Cash Out Total #(lf)inc. VAT", Currency.Type}, {"Demandbook#(lf)Cash Out BudgetYear #(lf)inc. VAT", Currency.Type}, {"Demandbook #(lf)Cost effective BudgetYear #(lf)inc. VAT", Currency.Type}, {"Cash Out #(lf)Planning Year #(lf)(Net)", Currency.Type}, {"Cash Out #(lf)Plan Year #(lf)(Gross)", Currency.Type}, {"Net purchase order value (PR) - All", Currency.Type}, {"Net purchase order value (PR) - New without PO", Currency.Type}, {"Net purchase order value (PO)", Currency.Type}, {"Net purchase order value (PO+PR new)", Currency.Type}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Fiscal year", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Budget #(lf)CO Order", "Budget Approved"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns",null,0,Replacer.ReplaceValue,{"Budget Approved", "Actual #(lf)CO Order", "Commitment#(lf)Total", "Commitment #(lf)P.Requisition", "Commitment #(lf)P.Order", "Actual #(lf)Alloted", "Budget #(lf)Available", "Demandbook#(lf)Cash Out Total #(lf)inc. VAT", "Demandbook#(lf)Cash Out BudgetYear #(lf)inc. VAT", "Demandbook #(lf)Cost effective BudgetYear #(lf)inc. VAT", "Cash Out #(lf)Planning Year #(lf)(Net)", "Cash Out #(lf)Plan Year #(lf)(Gross)", "Net purchase order value (PR) - All", "Net purchase order value (PR) - New without PO", "Net purchase order value (PO)", "Net purchase order value (PO+PR new)"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value",{{"SAP Refresh Time", type datetime}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type2", "KeyDemandPO", each [Demand ID]&"-"&[#"Purchasing order number (PO)"]),
+				    #"Filtered Rows3" = Table.SelectRows(#"Added Custom", each ([Profit Center] <> "#" and [Profit Center] <> null )),
+				    #"Filtered Rows31" = Table.SelectRows(#"Filtered Rows3", each Text.StartsWith([Demand ID], "GBUY") or Text.StartsWith([Demand ID], "RITM")),
+				    #"Filtered Rows7" = Table.SelectRows(#"Filtered Rows31", each ([Profit Center] <> "#")),
+				    #"Grouped Rows" = Table.Group(#"Filtered Rows7", {"Company Code", "KeyDemandPO", "Demand ID", "Purchasing order number (PO)", "Profit Center", "Profit Center Name"}, {{"PO Approved", each List.Max([#"Net purchase order value (PO+PR new)"]), type nullable number}, {"PO Spent", each List.Sum([#"Actual #(lf)CO Order"]), type nullable number}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Grouped Rows", {"Demand ID"}, #"Budget Report Vendors", {"Demand ID"}, "Budget Report Vendors", JoinKind.LeftOuter),
+				    #"Expanded Budget Report Vendors" = Table.ExpandTableColumn(#"Merged Queries", "Budget Report Vendors", {"Vendor", "Vendor Name"}, {"Budget Report Vendors.Vendor", "Budget Report Vendors.Vendor Name"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Expanded Budget Report Vendors",null,"#",Replacer.ReplaceValue,{"Budget Report Vendors.Vendor"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1",null,"Not assigned",Replacer.ReplaceValue,{"Budget Report Vendors.Vendor Name"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Replaced Value2",{{"Budget Report Vendors.Vendor", "Vendor"}, {"Budget Report Vendors.Vendor Name", "Vendor Name"}}),
+				    #"Added Custom 1" = Table.AddColumn(#"Renamed Columns1", "PO Approved inc. Tax", each [PO Approved] * 1.076),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom 1",{{"PO Approved inc. Tax", Currency.Type}, {"PO Spent", Currency.Type}, {"PO Approved", Currency.Type}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type3", {"KeyDemandPO"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

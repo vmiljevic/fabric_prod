@@ -1,0 +1,271 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "7e63881c-a027-bd75-49e3-d5a724305b11",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "SK44",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": "2024-12-29",
+              "type": "String"
+            },
+            "DateTo": {
+              "value": "2025-12-28",
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "9d2a756969c65200e4854a54f2f9271a",
+              "type": "String"
+            },
+            "tn_time_cards": {
+              "value": "fact_ppm_sk44_time_cards_current",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_sk44_ingest_ppm_time_booking_data_current",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "7e63881c-a027-bd75-49e3-d5a724305b11",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "SK45",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": "2024-12-29",
+              "type": "String"
+            },
+            "DateTo": {
+              "value": "2025-12-28",
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "996ee8fb1b9f0190e728a6c8bb4bcba3",
+              "type": "String"
+            },
+            "tn_time_cards": {
+              "value": "fact_ppm_sk45_time_cards_current",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_sk45_ingest_ppm_time_booking_data_current",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "7e63881c-a027-bd75-49e3-d5a724305b11",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "HU44",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": "2024-12-29",
+              "type": "String"
+            },
+            "DateTo": {
+              "value": "2025-12-28",
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "9f742c4bfd596200e4858c32d11c99db",
+              "type": "String"
+            },
+            "tn_time_cards": {
+              "value": "fact_ppm_hu44_time_cards_current",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_hu44_ingest_ppm_time_booking_data_current",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "7e63881c-a027-bd75-49e3-d5a724305b11",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "CZ45",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": "2024-12-29",
+              "type": "String"
+            },
+            "DateTo": {
+              "value": "2025-12-28",
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "1f0d4636db4e01d423590ad9f496195b",
+              "type": "String"
+            },
+            "tn_time_cards": {
+              "value": "fact_ppm_cz45_time_cards_current",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_cz45_ingest_ppm_time_booking_data_current",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "7e63881c-a027-bd75-49e3-d5a724305b11",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "AT45",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": "2024-12-29",
+              "type": "String"
+            },
+            "DateTo": {
+              "value": "2025-12-28",
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "6b8aa1d234111200e4851dede6f89c82",
+              "type": "String"
+            },
+            "tn_time_cards": {
+              "value": "fact_ppm_at45_time_cards_current",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_at45_ingest_ppm_time_booking_data_current",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "7e63881c-a027-bd75-49e3-d5a724305b11",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "parameters": {
+            "CompanyCode": {
+              "value": "DE44",
+              "type": "String"
+            },
+            "NumberOfRecords": {
+              "value": "9999",
+              "type": "String"
+            },
+            "DateFrom": {
+              "value": "2024-12-29",
+              "type": "String"
+            },
+            "DateTo": {
+              "value": "2025-12-28",
+              "type": "String"
+            },
+            "Debtor": {
+              "value": "c3a70ce2db30a810eb27e03cd39619c9",
+              "type": "String"
+            },
+            "tn_time_cards": {
+              "value": "fact_ppm_de44_time_cards_current",
+              "type": "String"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_de44_ingest_ppm_time_booking_data_current",
+        "dependsOn": []
+      }
+    ],
+    "concurrency": 2
+  }
+}

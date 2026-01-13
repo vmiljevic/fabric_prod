@@ -1,0 +1,66 @@
+table fact_employee_all
+	lineageTag: b2742186-0d82-40c5-bbfd-a4640c995e50
+	sourceLineageTag: [dbo].[fact_employee_all]
+
+	column 'Resource Type'
+		dataType: string
+		lineageTag: 8d2c9b70-8d83-4254-9464-9a151ff65c29
+		sourceLineageTag: Resource Type
+		summarizeBy: none
+		sourceColumn: Resource Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booked in PPM'
+		dataType: string
+		lineageTag: 040ef682-bcb7-4bc1-824f-81a29df53d73
+		sourceLineageTag: Booked in PPM
+		summarizeBy: none
+		sourceColumn: Booked in PPM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Key'
+		dataType: string
+		lineageTag: cb95e84a-a038-4720-ac5d-17f49f0308ec
+		sourceLineageTag: Employee Key
+		summarizeBy: none
+		sourceColumn: Employee Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 8bacacae-4719-4e20-a117-17dcc4e5a5a6
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Name'
+		dataType: string
+		lineageTag: ab8701b6-aa2c-4daf-acc7-e7404865e669
+		sourceLineageTag: Employee Name
+		summarizeBy: none
+		sourceColumn: Employee Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1bc0a717-19be-4cdd-a799-2f0779446c23
+		sourceLineageTag: Month Date
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_employee_all = entity
+		mode: directLake
+		source
+			entityName: fact_employee_all
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

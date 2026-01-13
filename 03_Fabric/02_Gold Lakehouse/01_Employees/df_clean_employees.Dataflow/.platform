@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_clean_employees"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "638324f1-3e79-9baf-46a8-7ccfd8a46652"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_clean_master_data_sap",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fact_cost_revenue_actuals_archive": {
+      "queryId": "5bc3c017-d2d1-42c9-8cf5-6b3d0db460b7",
+      "queryName": "fact_cost_revenue_actuals_archive"
+    },
+    "fact_cost_revenue_actuals_current": {
+      "queryId": "3ce95599-0b12-4354-93e6-1200dff70d1b",
+      "queryName": "fact_cost_revenue_actuals_current"
+    },
+    "fact_cost_revenue": {
+      "queryId": "345d3fea-d398-41e9-b7a3-d4da58f4fe12",
+      "queryName": "fact_cost_revenue",
+      "loadEnabled": false
+    },
+    "fact_cost_revenue_forecast_current": {
+      "queryId": "6c964a70-c698-4c28-86a3-90330c9cac6b",
+      "queryName": "fact_cost_revenue_forecast_current"
+    },
+    "fact_cost_revenue_plan_archive": {
+      "queryId": "687268cb-3cca-47ea-91e5-916c3a616d58",
+      "queryName": "fact_cost_revenue_plan_archive"
+    },
+    "fact_cost_revenue_plan_current": {
+      "queryId": "4841b84f-c5f6-46c3-99bb-2013f3b88ec7",
+      "queryName": "fact_cost_revenue_plan_current"
+    },
+    "fact_cost_revenue_plan_future": {
+      "queryId": "9f36af63-7815-4150-b46b-fc12e8995636",
+      "queryName": "fact_cost_revenue_plan_future"
+    },
+    "fact_cost_revenue_actuals_DataDestination": {
+      "queryId": "8b4165ad-80b5-4577-90c0-e9f1c49fd698",
+      "queryName": "fact_cost_revenue_actuals_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_cost_element": {
+      "queryId": "d780b570-6f91-4652-ae29-baf59bf6f7bf",
+      "queryName": "dim_cost_element"
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

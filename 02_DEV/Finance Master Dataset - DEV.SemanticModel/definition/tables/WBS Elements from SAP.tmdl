@@ -1,0 +1,163 @@
+table 'WBS Elements from SAP'
+	lineageTag: ed9ae652-a623-4fe2-8a24-4cf0a3218818
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: 76d7f391-002d-4536-a409-211f2554cc9d
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Changed on'
+		dataType: string
+		lineageTag: d76499fa-243b-43d5-81ad-9171872872c9
+		summarizeBy: none
+		sourceColumn: Changed on
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PSP System Status'
+		dataType: string
+		lineageTag: ad54ab34-eeca-4f44-9024-0bcee580c427
+		summarizeBy: none
+		sourceColumn: PSP System Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Start Date'
+		dataType: string
+		lineageTag: 958985bd-f504-4d5e-88cd-0c338f5136a7
+		summarizeBy: none
+		sourceColumn: Project Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project End Date'
+		dataType: string
+		lineageTag: 5d05af11-0d2b-4c5a-a401-577adeb966d2
+		summarizeBy: none
+		sourceColumn: Project End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company code'
+		dataType: string
+		lineageTag: 594e06b6-e250-4325-8961-22537916fef8
+		summarizeBy: none
+		sourceColumn: Company code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit center'
+		dataType: string
+		lineageTag: 570eaa48-e824-4bde-8017-8c71aa19e80d
+		summarizeBy: none
+		sourceColumn: Profit center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resp. cost cntr'
+		dataType: string
+		lineageTag: 15cf2a96-5f6e-4562-b362-82e67e04e4cd
+		summarizeBy: none
+		sourceColumn: Resp. cost cntr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Short ID'
+		dataType: string
+		lineageTag: 0cd09a01-49a9-402e-8598-20c296ba0334
+		summarizeBy: none
+		sourceColumn: Short ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Main WBS Element'
+		dataType: string
+		lineageTag: 771e324b-8837-4c03-813e-b9c9e44fd9d7
+		summarizeBy: none
+		sourceColumn: Main WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Refresh Time'
+		dataType: string
+		lineageTag: f5b14031-dfdf-4cb2-af7a-3e9bae70f977
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element Name'
+		dataType: string
+		lineageTag: 2cccb3fd-1c6d-4973-8dec-2021dcee2e21
+		summarizeBy: none
+		sourceColumn: WBS Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Creation Date'
+		dataType: string
+		lineageTag: 5660bb36-550f-40f9-be15-6cb923396b9d
+		summarizeBy: none
+		sourceColumn: Creation Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Leader'
+		dataType: string
+		lineageTag: f655cd81-c05e-4e45-b73b-67a1332f2433
+		summarizeBy: none
+		sourceColumn: Project Leader
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Change Run Indicator'
+		dataType: string
+		lineageTag: b1439a6b-61c6-42ea-9804-e394742ea67a
+		summarizeBy: none
+		sourceColumn: Change Run Indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: afc4bab9-9c80-4d1d-8cff-b9752383cc09
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column13
+		dataType: string
+		lineageTag: c7c9f951-4734-43a0-9998-49e3e3f4f6ff
+		summarizeBy: none
+		sourceColumn: Column13
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column15
+		dataType: string
+		lineageTag: 6d6f784b-aa2f-4492-b518-720ad3528231
+		summarizeBy: none
+		sourceColumn: Column15
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WBS Elements from SAP' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/SAP/Master%20Data%20Reporting%20SAP_WBS.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers2" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Renamed Columns" = Table.RenameColumns(#"Promoted Headers2",{{"Column3", "WBS Element Name"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

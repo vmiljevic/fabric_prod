@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_jmp_nonproductive"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "954553a2-47f8-b3b3-437c-169a930561a5"
+  }
+}

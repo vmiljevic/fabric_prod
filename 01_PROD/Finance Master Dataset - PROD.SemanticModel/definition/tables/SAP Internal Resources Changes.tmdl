@@ -1,0 +1,393 @@
+table 'SAP Internal Resources Changes'
+	lineageTag: 83e0c360-386f-4ab8-ac61-ec128501e66a
+
+	column 'If Booked' = ```
+			if ([PPM Booked PDs Internals]=0,"Not booked","Booked") 
+			```
+		lineageTag: 96f6c08e-cc86-4aa7-aaef-1ffa7aadbed3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'My HR Manager'
+		dataType: string
+		lineageTag: 88fdb645-0461-4f66-bf7a-73d898d5157c
+		summarizeBy: none
+		sourceColumn: My HR Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Rights Email' = 'SAP Internal Resources Changes'[Email] &"|"& LOOKUPVALUE('User Rights'[User Rights],'User Rights'[Cost Center],'SAP Internal Resources Changes'[Cost Center])
+		lineageTag: d04a83de-bbb1-4e2b-a2b2-b3aa549786be
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Personal Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ea3d77b-141c-418f-b006-4e4be0a7fc7d
+		summarizeBy: none
+		sourceColumn: Personal Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 973d8d47-eb28-4af8-b17a-1607db87419d
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column AHC
+		dataType: int64
+		formatString: 0
+		lineageTag: bf4d4737-7ac2-441f-a0e0-4b2481b340e3
+		summarizeBy: sum
+		sourceColumn: AHC
+
+		annotation SummarizationSetBy = Automatic
+
+	column FTE
+		dataType: double
+		lineageTag: 16d7fcea-a6f2-47f8-8d72-89c6c04c95ce
+		summarizeBy: sum
+		sourceColumn: FTE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5f99debf-f364-4e5d-b2af-2af243d6a76a
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Email
+		dataType: string
+		lineageTag: 8fe3576a-2479-4584-b5c8-1128e8d39cef
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grade
+		dataType: string
+		lineageTag: cce0a53c-4997-4c3a-a16c-ef9980d8d740
+		summarizeBy: none
+		sourceColumn: Grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Role Type'
+		dataType: string
+		lineageTag: 4fceb55c-a3c3-417e-b109-1d1af5d80ac3
+		summarizeBy: none
+		sourceColumn: Role Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Position
+		dataType: string
+		lineageTag: 340bda7c-5754-4187-bae1-20e7a558cf8c
+		summarizeBy: none
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Date'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: b46ec30a-3c46-4532-8101-44ac2a684e24
+		summarizeBy: none
+		sourceColumn: End Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Daily Rate'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 11224d2c-ea83-4444-b3d3-cea8bc224d6b
+		summarizeBy: sum
+		sourceColumn: Daily Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Hierarchy Area'
+		dataType: string
+		lineageTag: 2f11e6da-dc50-4fe3-8160-b43c59cff851
+		summarizeBy: none
+		sourceColumn: Hierarchy Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Name'
+		dataType: string
+		lineageTag: 5773bbe8-17da-4d83-8f4e-f36e964dc417
+		summarizeBy: none
+		sourceColumn: Cost Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card'
+		dataType: string
+		lineageTag: 45d6d327-c442-4503-ba0e-9bc0c1587c73
+		summarizeBy: none
+		sourceColumn: Rate Card
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Group Pillar'
+		dataType: string
+		lineageTag: a1308348-3d42-4f86-98a5-102afdf18521
+		summarizeBy: none
+		sourceColumn: Group Pillar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center and Name'
+		dataType: string
+		lineageTag: 5b13cff9-b491-4370-abac-5e50ca25ff53
+		summarizeBy: none
+		sourceColumn: Cost Center and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monthly Capacity PDs'
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 9b5b974f-763a-41ac-a3e4-9f5ff92074af
+		summarizeBy: sum
+		sourceColumn: Monthly Capacity PDs
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card Direct'
+		dataType: string
+		lineageTag: 330be998-9a97-4195-aa3c-0e6504e092c0
+		summarizeBy: none
+		sourceColumn: Rate Card Direct
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoicing Method Direct'
+		dataType: string
+		lineageTag: 587b26a3-9cbc-4b43-b712-0c9d1014a472
+		summarizeBy: none
+		sourceColumn: Invoicing Method Direct
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoicing Method'
+		dataType: string
+		lineageTag: 4c4ef36f-4560-4300-9671-1046f1d83fa2
+		summarizeBy: none
+		sourceColumn: Invoicing Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card Full'
+		dataType: string
+		lineageTag: 1f6fb66a-69b1-498e-a3e5-768fc0054b36
+		summarizeBy: none
+		sourceColumn: Rate Card Full
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'My HR Manager.1'
+		dataType: string
+		lineageTag: 24343be3-cbb1-4e51-8d53-eb766a076ce5
+		summarizeBy: none
+		sourceColumn: My HR Manager.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'My HR Manager.2'
+		dataType: string
+		lineageTag: 86e75538-6e0b-4587-be9c-8ce37146f504
+		summarizeBy: none
+		sourceColumn: My HR Manager.2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'My HR Manager.3'
+		dataType: string
+		lineageTag: 1f2231df-23fd-4851-8489-415069397596
+		summarizeBy: none
+		sourceColumn: My HR Manager.3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'My HR Manager.4'
+		dataType: string
+		lineageTag: a3a30fc9-433e-48b1-993f-8fa3339d97d8
+		summarizeBy: none
+		sourceColumn: My HR Manager.4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organisation'
+		dataType: string
+		lineageTag: 27aa876a-3140-471a-ae55-1b8c3aaca5af
+		summarizeBy: none
+		sourceColumn: Sales Organisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID L' = RELATED('SAP Internal Resources'[User ID])
+		lineageTag: 5814b2cf-8c4a-4f81-9146-8e8c60d7adff
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Annual Capacity in PDs'
+		dataType: int64
+		formatString: 0
+		lineageTag: 721d96cf-9afb-4b4a-9e2c-984e81bbd670
+		summarizeBy: sum
+		sourceColumn: Annual Capacity in PDs
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card Full Material Number' = IF(ISBLANK(LOOKUPVALUE('Rate Cards SAP Translation'[Material],'Rate Cards SAP Translation'[Material Name Corrected],'SAP Internal Resources Changes'[Rate Card Full])),"",LOOKUPVALUE('Rate Cards SAP Translation'[Material],'Rate Cards SAP Translation'[Material Name Corrected],'SAP Internal Resources Changes'[Rate Card Full]))
+		lineageTag: d7960b9c-3922-43c4-93b1-c2c1fc0f2dda
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card Price' = LOOKUPVALUE('Rate Cards From SAP'[Daily Rate in EUR],'Rate Cards From SAP'[Material],'SAP Internal Resources Changes'[Rate Card Full Material Number],'Rate Cards From SAP'[Sales Organization],'SAP Internal Resources Changes'[Sales Organisation],'Rate Cards From SAP'[Cost Center Clean],'SAP Internal Resources Changes'[Cost Center])
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: 6f8b1aa2-8c4f-4824-8581-0a2f54adc8b0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Proficiency Level'
+		dataType: string
+		lineageTag: 4265a568-6697-403b-97cb-5facad23a0bf
+		summarizeBy: none
+		sourceColumn: Proficiency Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Card Full Rate Role' = IF(ISBLANK(LOOKUPVALUE('Rate Cards SAP Translation'[Rate Role],'Rate Cards SAP Translation'[Material Name Corrected],'SAP Internal Resources Changes'[Rate Card Full])),"",LOOKUPVALUE('Rate Cards SAP Translation'[Rate Role],'Rate Cards SAP Translation'[Material Name Corrected],'SAP Internal Resources Changes'[Rate Card Full]))
+		lineageTag: 1d3034cc-badb-4ff7-a633-d270a0075267
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit ID'
+		dataType: string
+		lineageTag: 54a8a294-bdf1-4de5-9c9c-f54680b741ab
+		summarizeBy: none
+		sourceColumn: Disciplinary OrgUnit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit ID'
+		dataType: string
+		lineageTag: d344d472-b679-4a90-b958-2a634033b5c9
+		summarizeBy: none
+		sourceColumn: Functional OrgUnit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e54ce41a-0eba-49ed-bbc2-c065cd1d6c74
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disciplinary OrgUnit ID Key'
+		dataType: string
+		lineageTag: 7c7232ed-4ab9-46e8-a012-887917f26817
+		summarizeBy: none
+		sourceColumn: Disciplinary OrgUnit ID Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit ID Key'
+		dataType: string
+		lineageTag: ab6da4fe-25e2-40f9-8fd9-02fbada05ef5
+		summarizeBy: none
+		sourceColumn: Functional OrgUnit ID Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SAP Internal Resources Changes' = m
+		mode: import
+		queryGroup: '03_HR SAP'
+		source =
+				let
+				    Source = Table.Combine({#"SAP Internal Resources AT45", #"SAP Internal Resources DE44", #"SAP Internal Resources HU44 NEW", #"SAP Internal Resources CZ45 NEW", #"SAP Internal Resources SK44 NEW", #"SAP Internal Resources SK45 NEW",  #"SAP Internal Resources HU44", #"SAP Internal Resources CZ45", #"SAP Internal Resources SK44", #"SAP Internal Resources SK45"}),
+				    #"Changed Type5" = Table.TransformColumnTypes(Source,{{"FTE", type text}}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Changed Type5",".",",",Replacer.ReplaceText,{"FTE"}),
+				    #"Changed Type6" = Table.TransformColumnTypes(#"Replaced Value3",{{"FTE", type number}}),
+				    #"Inserted Age" = Table.AddColumn(#"Changed Type6", "Age", each Date.From(DateTime.LocalNow()) - [Date of Birth], type duration),
+				    #"Calculated Total Years" = Table.TransformColumns(#"Inserted Age",{{"Age", each Duration.TotalDays(_) / 365, type number}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Calculated Total Years",{{"Age", "Total Years"}}),
+				    #"Rounded Down" = Table.TransformColumns(#"Renamed Columns",{{"Total Years", Number.RoundDown, Int64.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Rounded Down","M","Male",Replacer.ReplaceValue,{"Gender"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","F","Female",Replacer.ReplaceValue,{"Gender"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Replaced Value1", {"Cost Center"}, #"Cost Centers", {"Cost Center"}, "Cost Centers", JoinKind.LeftOuter),
+				    #"Filtered Rows1" = Table.SelectRows(#"Merged Queries", each [Personal Number] <> null),
+				    #"Expanded Cost Centers" = Table.ExpandTableColumn(#"Filtered Rows1", "Cost Centers", {"Hierarchy Area", "Invoicing Method", "Name", "Rate Card"}, {"Hierarchy Area", "Invoicing Method", "Name", "Rate Card"}),
+				    #"Merged Queries1" = Table.NestedJoin(#"Expanded Cost Centers", {"Grade"}, #"Grade and Proficiency Levels", {"Grade"}, "Grade and Proficiency Levels", JoinKind.LeftOuter),
+				    #"Expanded Grade and Proficiency Levels" = Table.ExpandTableColumn(#"Merged Queries1", "Grade and Proficiency Levels", {"Proficiency Level"}, {"Proficiency Level"}),
+				    #"Merged Queries2" = Table.NestedJoin(#"Expanded Grade and Proficiency Levels", {"Hierarchy Area"}, #"Hierachy and Group Pillars", {"Hierarchy Area"}, "Hierachy and Group Pillars", JoinKind.LeftOuter),
+				    #"Expanded Hierachy and Group Pillars" = Table.ExpandTableColumn(#"Merged Queries2", "Hierachy and Group Pillars", {"Group Pillar"}, {"Group Pillar"}),
+				    #"Added Custom6" = Table.AddColumn(#"Expanded Hierachy and Group Pillars", "Proficiency Level Corrected", each if [Rate Card] = "Project Management" and ([Proficiency Level] = "I" or [Proficiency Level] = "II") then "III" else [Proficiency Level]),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Added Custom6",{"Proficiency Level"}),
+				    #"Renamed Columns7" = Table.RenameColumns(#"Removed Columns1",{{"Proficiency Level Corrected", "Proficiency Level"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns7", "Rate Card Full", each if [Rate Card] <> "Overhead" then [Rate Card] & " - " & [Proficiency Level] else "Overhead"),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Cost Center and Name", each [Cost Center] & " - " & [Name]),
+				    #"Removed Duplicates" = Table.Distinct(#"Added Custom1", {"Personal Number", "Month Service"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates",{{"AHC", Int64.Type}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Month Service", type date}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type1",{{"Month Service", "Month Date"}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns1",{"Month Date", "Personal Number", "AHC", "FTE", "Sales Organisation", "Cost Center", "Position", "Role Type", "End Date", "Email", "Disciplinary OrgUnit ID", "Functional OrgUnit ID", "Refresh Date", "My HR Manager", "Grade", "Daily Rate", "Rate Card Direct", "Invoicing Method Direct", "Hierarchy Area", "Invoicing Method", "Name", "Rate Card", "Group Pillar", "Proficiency Level", "Rate Card Full", "Cost Center and Name"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Removed Other Columns",{{"Name", "Cost Center Name"}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Renamed Columns2", "My HR Manager", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"My HR Manager.1", "My HR Manager.2", "My HR Manager.3", "My HR Manager.4"}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"My HR Manager.1", type text}, {"My HR Manager.2", type text}, {"My HR Manager.3", type text}, {"My HR Manager.4", type text}}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Changed Type3",",","",Replacer.ReplaceText,{"My HR Manager.2"}),
+				    #"Added Custom3" = Table.AddColumn(#"Replaced Value2", "My HR Manager", each [My HR Manager.2]&" "&[My HR Manager.1]),
+				    #"Added Custom4" = Table.AddColumn(#"Added Custom3", "Invoicing Method New", each if [Invoicing Method] is null then [Invoicing Method Direct] else [Invoicing Method]),
+				    #"Added Custom5" = Table.AddColumn(#"Added Custom4", "Rate Card Full New", each if [Rate Card Full] is null then [Rate Card Direct] else [Rate Card Full]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom5",{"Invoicing Method", "Rate Card Full"}),
+				    #"Renamed Columns5" = Table.RenameColumns(#"Removed Columns",{{"Rate Card Full New", "Rate Card Full"}, {"Invoicing Method New", "Invoicing Method"}}),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Renamed Columns5",{{"Sales Organisation", type text}, {"Rate Card Full", type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type4",{{"Sales Organisation", Text.Trim, type text}}),
+				    #"Cleaned Text1" = Table.TransformColumns(#"Trimmed Text",{{"Sales Organisation", Text.Clean, type text}}),
+				    #"Trimmed Text1" = Table.TransformColumns(#"Cleaned Text1",{{"Rate Card Full", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text1",{{"Rate Card Full", Text.Clean, type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Cleaned Text", each [Personal Number] <> null),
+				    #"Merged Queries4" = Table.NestedJoin(#"Filtered Rows", {"Sales Organisation"}, #"HR Capacity Parameters", {"Sales Organisation"}, "HR Capacity Parameters", JoinKind.LeftOuter),
+				    #"Expanded HR Capacity Parameters" = Table.ExpandTableColumn(#"Merged Queries4", "HR Capacity Parameters", {"Annual Capacity in PDs"}, {"HR Capacity Parameters.Annual Capacity in PDs"}),
+				    #"Renamed Columns6" = Table.RenameColumns(#"Expanded HR Capacity Parameters",{{"HR Capacity Parameters.Annual Capacity in PDs", "Annual Capacity in PDs"}}),
+				    #"Added Custom2" = Table.AddColumn(#"Renamed Columns6", "Monthly Capacity PDs", each [FTE]*[Annual Capacity in PDs]/12),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom2",{{"Monthly Capacity PDs", Currency.Type}, {"End Date", type date}, {"Personal Number", Int64.Type}, {"FTE", type number}}),
+				    #"Added Custom7" = Table.AddColumn(#"Changed Type2", "Disciplinary OrgUnit ID Key", each Date.ToText([Month Date],"yyyy","en-US") & Date.ToText([Month Date],"MM","en-US") &"-"& [Disciplinary OrgUnit ID]),
+				    #"Added Custom8" = Table.AddColumn(#"Added Custom7", "Functional OrgUnit ID Key", each Date.ToText([Month Date],"yyyy","en-US") & Date.ToText([Month Date],"MM","en-US") &"-"& [Functional OrgUnit ID])
+				in
+				    #"Added Custom8"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

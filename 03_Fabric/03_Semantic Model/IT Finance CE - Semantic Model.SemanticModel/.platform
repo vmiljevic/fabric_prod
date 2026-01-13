@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "IT Finance CE - Semantic Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d7b96d31-d489-9496-48d1-83ed7d264e36"
+  }
+}

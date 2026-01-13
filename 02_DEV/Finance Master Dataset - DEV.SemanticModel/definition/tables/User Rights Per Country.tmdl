@@ -1,0 +1,97 @@
+table 'User Rights Per Country'
+	lineageTag: 7cc80249-051b-41ab-b791-75d6aa61d5fd
+
+	column User
+		dataType: string
+		lineageTag: 92733254-dabc-4e76-b5d7-79fff28f36fd
+		summarizeBy: none
+		sourceColumn: User
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Spend'
+		dataType: string
+		lineageTag: 0738febf-5f8b-40c9-aa93-71e7e19556b7
+		summarizeBy: none
+		sourceColumn: Service Spend
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Receivables'
+		dataType: string
+		lineageTag: cc8a697b-bbbf-4e50-89d9-7411085c68cc
+		summarizeBy: none
+		sourceColumn: Account Receivables
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee lists'
+		dataType: string
+		lineageTag: 170ab1e9-89ed-4d12-a666-f6f4ee5ead0f
+		summarizeBy: none
+		sourceColumn: Employee lists
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PPM Time Bookings'
+		dataType: string
+		lineageTag: fd6a7dd1-5cfd-4ac9-ad6f-ac9f1e73059a
+		summarizeBy: none
+		sourceColumn: PPM Time Bookings
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost & Revenue'
+		dataType: string
+		lineageTag: 23812ab4-afd8-4dea-baf2-ba43574a4d2a
+		summarizeBy: none
+		sourceColumn: Cost & Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: e414547b-29f1-42c0-b04a-59263fd0523e
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		lineageTag: 1570fafe-d2cf-4b5f-ab15-194b03869fc8
+		summarizeBy: none
+		sourceColumn: Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Availability'
+		dataType: string
+		lineageTag: 4a2efc1c-08ba-4794-9a0b-191878eb257e
+		summarizeBy: none
+		sourceColumn: Budget Availability
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flag
+		dataType: string
+		lineageTag: b0ed6a3f-d5da-4047-a2b5-5bf823601b33
+		summarizeBy: none
+		sourceColumn: Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'User Rights Per Country' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="UserRightsPerCountry",Kind="Table"]}[Data]
+				in
+				    GradeandProficiencyLevels_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

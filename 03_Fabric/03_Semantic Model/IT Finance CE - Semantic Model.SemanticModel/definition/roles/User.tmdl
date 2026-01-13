@@ -1,0 +1,21 @@
+role User
+	modelPermission: read
+
+	tablePermission fact_cost_revenue = OR(PATHCONTAINS ([User Rights for Cost & Revenue],fact_cost_revenue[Company Code]),[User Rights for Cost & Revenue]="ALL")
+
+	tablePermission fact_employee_internal = OR(PATHCONTAINS ([User Rights for Employee lists],fact_employee_internal[Company Code]),[User Rights for Employee lists]="ALL")
+
+	tablePermission fact_ppm_time_cards = OR(PATHCONTAINS ([User Rights for PPM Time Bookings],fact_ppm_time_cards[ExportFor]),[User Rights for PPM Time Bookings]="ALL")
+
+	tablePermission fact_budget_demand = OR(PATHCONTAINS ([User Rights for Budget Availability],fact_budget_demand[Company Code]),[User Rights for Budget Availability]="ALL")
+
+	tablePermission fact_incoming_invoices = OR(PATHCONTAINS ([User Rights for Account Receivables],fact_incoming_invoices[Company Code]),[User Rights for Account Receivables]="ALL")
+
+	tablePermission fact_outgoing_invoices = OR(PATHCONTAINS ([User Rights for Account Receivables],fact_outgoing_invoices[Company Code]),[User Rights for Account Receivables]="ALL")
+
+	tablePermission fact_service_spend = OR(PATHCONTAINS ([User Rights for Service Spend],fact_service_spend[Data For]),[User Rights for Service Spend]="ALL")
+
+	tablePermission fact_o2i_pre_run = OR(PATHCONTAINS ([User Rights for Cost & Revenue],fact_o2i_pre_run[Export For]),[User Rights for Cost & Revenue]="ALL")
+
+	annotation PBI_Id = 8af4e0594f9a498bbb0177f57293a86c
+

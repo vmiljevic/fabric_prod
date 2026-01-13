@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "insert_dates"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6bc5416d-9a5f-839c-4b68-4462fd26daf5"
+  }
+}

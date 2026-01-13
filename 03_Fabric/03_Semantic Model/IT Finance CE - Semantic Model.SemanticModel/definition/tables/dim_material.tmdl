@@ -1,0 +1,336 @@
+table dim_material
+	lineageTag: 6d4b936e-fcc8-47cf-94d4-0d5126f92585
+	sourceLineageTag: [dbo].[dim_material]
+
+	column Material
+		dataType: string
+		lineageTag: cc07c840-31b5-4a1f-9ead-517988d2843b
+		sourceLineageTag: Material
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Name'
+		dataType: string
+		lineageTag: 4d5a483c-b7f5-4bd2-a9ec-5b9e0bd09729
+		sourceLineageTag: Material Name
+		summarizeBy: none
+		sourceColumn: Material Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created on'
+		dataType: string
+		lineageTag: 52ad611f-32b8-40d2-b510-c72b6e22b43f
+		sourceLineageTag: Created on
+		summarizeBy: none
+		sourceColumn: Created on
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Pricing Grp'
+		dataType: string
+		lineageTag: b34a752a-d5d1-4e5b-aca3-f02dfd2ec1fe
+		sourceLineageTag: Material Pricing Grp
+		summarizeBy: none
+		sourceColumn: Material Pricing Grp
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Pricing Grp_1'
+		dataType: string
+		lineageTag: 0e17cfc2-8183-4616-b30f-3a0ad230b9a3
+		sourceLineageTag: Material Pricing Grp_1
+		summarizeBy: none
+		sourceColumn: Material Pricing Grp_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 5dc4a78d-e429-4729-92c8-4822392f5e95
+		sourceLineageTag: Cost Center
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center_2'
+		dataType: string
+		lineageTag: 579bff57-fc8c-4eb8-922d-e734a1597354
+		sourceLineageTag: Cost Center_2
+		summarizeBy: none
+		sourceColumn: Cost Center_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organization'
+		dataType: string
+		lineageTag: 4912d2fa-58bc-4ca0-8a3d-ec370a8b62f6
+		sourceLineageTag: Sales Organization
+		summarizeBy: none
+		sourceColumn: Sales Organization
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organization_3'
+		dataType: string
+		lineageTag: 3efc28ce-00f2-49bb-9fa7-fe7ed3131d1c
+		sourceLineageTag: Sales Organization_3
+		summarizeBy: none
+		sourceColumn: Sales Organization_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Status SalesOrg'
+		dataType: string
+		lineageTag: 5ff687a2-332d-412b-a5ee-0a5a14402fb3
+		sourceLineageTag: Material Status SalesOrg
+		summarizeBy: none
+		sourceColumn: Material Status SalesOrg
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Del.Ind. SalesOrg'
+		dataType: string
+		lineageTag: bc08bc48-4afb-4c65-9ba1-5a1b5d7d0324
+		sourceLineageTag: Del.Ind. SalesOrg
+		summarizeBy: none
+		sourceColumn: Del.Ind. SalesOrg
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Type'
+		dataType: string
+		lineageTag: 199b6755-ccde-4fd3-a3ba-4fb3d50c0943
+		sourceLineageTag: Material Type
+		summarizeBy: none
+		sourceColumn: Material Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Group'
+		dataType: string
+		lineageTag: 91fe9dff-1d7d-4f7e-97f7-4a2fff8c6223
+		sourceLineageTag: Material Group
+		summarizeBy: none
+		sourceColumn: Material Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AZT Landscape'
+		dataType: string
+		lineageTag: 0d3292dd-5e3b-409d-b001-6751451b2a58
+		sourceLineageTag: AZT Landscape
+		summarizeBy: none
+		sourceColumn: AZT Landscape
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AZT Service Class'
+		dataType: string
+		lineageTag: 8ec4e940-87b4-417c-bcfe-28e2ec10e9e8
+		sourceLineageTag: AZT Service Class
+		summarizeBy: none
+		sourceColumn: AZT Service Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AZT Service Package'
+		dataType: string
+		lineageTag: a1a77137-9799-4bb2-9e39-9c41a4afd9c2
+		sourceLineageTag: AZT Service Package
+		summarizeBy: none
+		sourceColumn: AZT Service Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Status'
+		dataType: string
+		lineageTag: 9d0e6bbf-a42c-46c0-9c30-daf7d45ed902
+		sourceLineageTag: Material Status
+		summarizeBy: none
+		sourceColumn: Material Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deletion Indicator'
+		dataType: string
+		lineageTag: 30233a66-ce6d-4221-a444-b6e40f95ed94
+		sourceLineageTag: Deletion Indicator
+		summarizeBy: none
+		sourceColumn: Deletion Indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Method'
+		dataType: string
+		lineageTag: c183dbab-7ceb-4d3f-b145-94ef57f74057
+		sourceLineageTag: Price Method
+		summarizeBy: none
+		sourceColumn: Price Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Indicator Quantity'
+		dataType: string
+		lineageTag: 240058b9-1b7e-4320-ba5a-0b38f27ac343
+		sourceLineageTag: Indicator Quantity
+		summarizeBy: none
+		sourceColumn: Indicator Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Status Plan'
+		dataType: string
+		lineageTag: 1f0f5a4e-8cbf-45fe-8e8f-5b6b2d4d0564
+		sourceLineageTag: Material Status Plan
+		summarizeBy: none
+		sourceColumn: Material Status Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Generally not in Scope  KPI'
+		dataType: string
+		lineageTag: ff71707f-5b43-47c4-a613-425f4544f97d
+		sourceLineageTag: Generally not in Scope  KPI
+		summarizeBy: none
+		sourceColumn: Generally not in Scope  KPI
+
+		annotation SummarizationSetBy = Automatic
+
+	column Implemented
+		dataType: string
+		lineageTag: d1ff321f-4dfd-4cfb-9bd0-5ad45750b7cb
+		sourceLineageTag: Implemented
+		summarizeBy: none
+		sourceColumn: Implemented
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item category group from material master'
+		dataType: string
+		lineageTag: 5c69081e-b577-4219-af35-fca3a5f8e08f
+		sourceLineageTag: Item category group from material master
+		summarizeBy: none
+		sourceColumn: Item category group from material master
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Lifecycle'
+		dataType: string
+		lineageTag: 052d6b71-8e43-4236-a747-c76c1bdda06a
+		sourceLineageTag: Service Lifecycle
+		summarizeBy: none
+		sourceColumn: Service Lifecycle
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Name'
+		dataType: string
+		lineageTag: 56283c84-4d5b-440e-a27a-f35846fba798
+		sourceLineageTag: File Name
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d5b6e2a7-0e1b-425c-90c3-1dd20c5a9626
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: 8c474dad-1ca7-422c-aacf-e8bb018822c8
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Landscape Name'
+		dataType: string
+		lineageTag: 37da391b-fc53-4efa-b9c5-5eb7b7c044a0
+		sourceLineageTag: Service Landscape Name
+		summarizeBy: none
+		sourceColumn: Service Landscape Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Class Name'
+		dataType: string
+		lineageTag: f65aac79-7f85-4a1d-a834-2878e8f8b78a
+		sourceLineageTag: Service Class Name
+		summarizeBy: none
+		sourceColumn: Service Class Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Package Name'
+		dataType: string
+		lineageTag: 507324db-dfc0-49da-af63-d2d2a9dfb7dd
+		sourceLineageTag: Service Package Name
+		summarizeBy: none
+		sourceColumn: Service Package Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: 85c09d73-dfe8-4fbc-ad57-6d3bdac528c3
+		sourceLineageTag: Profit Center
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		lineageTag: a5901844-adbb-40c7-91ea-519c1ce616a3
+		sourceLineageTag: Profit Center Name
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center and Name'
+		dataType: string
+		lineageTag: 1229411a-aa59-4905-85c6-5dce97ec12de
+		sourceLineageTag: Profit Center and Name
+		summarizeBy: none
+		sourceColumn: Profit Center and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Key'
+		dataType: string
+		lineageTag: 5c935792-2ac3-4ddc-ad56-a3787f587600
+		sourceLineageTag: Material Key
+		summarizeBy: none
+		sourceColumn: Material Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Number and Name'
+		dataType: string
+		lineageTag: ec4d7380-ee8c-444b-9227-be52b2ca4a8d
+		sourceLineageTag: Material Number and Name
+		summarizeBy: none
+		sourceColumn: Material Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_material = entity
+		mode: directLake
+		source
+			entityName: dim_material
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

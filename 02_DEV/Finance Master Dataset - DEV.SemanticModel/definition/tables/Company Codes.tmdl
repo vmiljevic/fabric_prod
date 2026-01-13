@@ -1,0 +1,58 @@
+table 'Company Codes'
+	lineageTag: ac23d800-2370-40cd-9e84-32fcebb05ac6
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 8342f3e2-7936-4b7c-b9e9-c319005cc748
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Name'
+		dataType: string
+		lineageTag: 8faeefad-486c-4fd4-9259-1fa381908495
+		summarizeBy: none
+		sourceColumn: Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debtor Number'
+		dataType: string
+		lineageTag: eabd2cdd-d617-4359-ae15-1df346cb2187
+		summarizeBy: none
+		sourceColumn: Debtor Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Debtor
+		dataType: string
+		lineageTag: d50058c3-7878-4775-a288-a385793bcbe1
+		summarizeBy: none
+		sourceColumn: Debtor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column1
+		dataType: string
+		lineageTag: 2c41a363-57d4-4172-a5d0-0a9901418a16
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Company Codes' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="CompanyCodes",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Debtor Number", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

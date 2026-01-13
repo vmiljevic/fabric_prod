@@ -1,0 +1,50 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_clean_employees_time_booking_hr",
+  "queryGroups": [
+    {
+      "id": "908e6afa-bc59-4992-9e33-cbc28f51cf50",
+      "name": "_gold",
+      "description": ""
+    }
+  ],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fact_time_recording_hr_ce": {
+      "queryId": "50a1963d-08db-4c89-910c-a0d1a556261b",
+      "queryName": "fact_time_recording_hr_ce"
+    },
+    "fact_time_recording_hr_corr_at45": {
+      "queryId": "f5d60642-10d5-49f0-b4b6-88dfaa2e5fc1",
+      "queryName": "fact_time_recording_hr_corr_at45"
+    },
+    "fact_time_recording_hr_tele_at45": {
+      "queryId": "e290e4f2-2197-46e0-b019-4b3ca57a9eb9",
+      "queryName": "fact_time_recording_hr_tele_at45"
+    },
+    "fact_employee_internal_ce_unique": {
+      "queryId": "fb7c4487-f4bf-4a6c-ad0f-1994644313c2",
+      "queryName": "fact_employee_internal_ce_unique",
+      "queryGroupId": "908e6afa-bc59-4992-9e33-cbc28f51cf50"
+    },
+    "fact_time_recording_hr": {
+      "queryId": "5dd09299-79b0-4c15-8a69-5c6e4bec968b",
+      "queryName": "fact_time_recording_hr",
+      "loadEnabled": false
+    },
+    "fact_time_recording_hr_DataDestination": {
+      "queryId": "7e7cc1f4-ca61-4461-ad02-e5474701a7a6",
+      "queryName": "fact_time_recording_hr_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

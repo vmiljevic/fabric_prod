@@ -1,0 +1,386 @@
+table 'Budget Report with DemandID'
+	lineageTag: 449066b0-e5e6-4ef6-a2d1-ccef47d043c8
+
+	column 'SAP Refresh Time'
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: c822ecdd-0a01-40bd-88e9-633c81b1ff8b
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: c642dd3d-a4dc-49ae-8f3a-9983ec00c41b
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pillar
+		dataType: string
+		lineageTag: 036c7c99-0570-41f1-aa72-7395c038136e
+		summarizeBy: none
+		sourceColumn: Pillar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center'
+		dataType: string
+		lineageTag: ecfd5b4c-ec32-4441-822e-503920225e26
+		summarizeBy: none
+		sourceColumn: Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit Center Name'
+		dataType: string
+		lineageTag: 89855231-ea2e-41af-9e6f-c9aae278049a
+		summarizeBy: none
+		sourceColumn: Profit Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: dd4e471f-5133-4c26-a422-56ba192bef52
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type Name'
+		dataType: string
+		lineageTag: fd1a4afe-3918-495c-95e2-4d9ac7bbc0c9
+		summarizeBy: none
+		sourceColumn: Order Type Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: string
+		lineageTag: f084122c-d0fb-4dd7-a22f-8700899e8ee8
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Demand ID'
+		dataType: string
+		lineageTag: fe8fa553-1817-4eab-bab5-143c89561ee2
+		summarizeBy: none
+		sourceColumn: Demand ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchasing order number (PO)'
+		dataType: string
+		lineageTag: 1a20cedb-a6d7-4b5c-9888-13b5217dbb85
+		summarizeBy: none
+		sourceColumn: Purchasing order number (PO)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan ID (MM PO)'
+		dataType: string
+		lineageTag: c15b19e8-9339-4e02-82c5-b732f5374ee7
+		summarizeBy: none
+		sourceColumn: Plan ID (MM PO)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CO Doc Line Item Txt'
+		dataType: string
+		lineageTag: 72c0e93d-ec08-4e37-9619-1fd7b0c85f4a
+		summarizeBy: none
+		sourceColumn: CO Doc Line Item Txt
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor
+		dataType: string
+		lineageTag: 22b860e5-e50a-4b34-b0d0-2d44efa276e1
+		summarizeBy: none
+		sourceColumn: Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: a77453f1-8628-4d8a-bccc-663a22e4144d
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS (Acc.)'
+		dataType: string
+		lineageTag: fadeafa3-9adc-4a97-acd4-14605c1301c4
+		summarizeBy: none
+		sourceColumn: WBS (Acc.)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Name'
+		dataType: string
+		lineageTag: 066bc9ae-ab4b-4c0a-bd92-d04c27e6d9e0
+		summarizeBy: none
+		sourceColumn: WBS Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal year'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: 55b02cef-ca3b-4efc-acdf-cda0b83e0443
+		summarizeBy: none
+		sourceColumn: Fiscal year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Actual CO Order'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: bb4aa891-e195-4d26-b23d-e0ff86de31e5
+		summarizeBy: sum
+		sourceColumn: Actual CO Order
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column CommitmentTotal
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: bde65f3c-04b3-4450-93fd-4b8ab3941a32
+		summarizeBy: sum
+		sourceColumn: CommitmentTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Commitment P.Requisition'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 26c13084-944d-4ff0-8b69-997f311e76ff
+		summarizeBy: sum
+		sourceColumn: Commitment P.Requisition
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Commitment P.Order'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 966b1936-7519-4a39-a3f8-3d7f443b3b10
+		summarizeBy: sum
+		sourceColumn: Commitment P.Order
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Actual Alloted'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 0e7899fb-ad72-4961-839c-18a83afc7ee4
+		summarizeBy: sum
+		sourceColumn: Actual Alloted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Budget Available'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: f5cb1f4d-0c7e-4744-81e8-68523cd44246
+		summarizeBy: sum
+		sourceColumn: Budget Available
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'DemandbookCash Out Total inc. VAT'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: be477952-43e8-4920-9bc8-59510e51a53b
+		summarizeBy: sum
+		sourceColumn: DemandbookCash Out Total inc. VAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'DemandbookCash Out BudgetYear inc. VAT'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 340712c9-75ad-4114-9472-39a87ad3f916
+		summarizeBy: sum
+		sourceColumn: DemandbookCash Out BudgetYear inc. VAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Demandbook Cost effective BudgetYear inc. VAT'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: d2c71052-6e3e-4efd-90f7-e5684336b276
+		summarizeBy: sum
+		sourceColumn: Demandbook Cost effective BudgetYear inc. VAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Cash Out Planning Year (Net)'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 22e8ddc1-07bb-4ab7-a1b4-8ace6b186cb4
+		summarizeBy: sum
+		sourceColumn: Cash Out Planning Year (Net)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Cash Out Plan Year (Gross)'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 14b43c48-2c4a-4632-849e-d610c75939cf
+		summarizeBy: sum
+		sourceColumn: Cash Out Plan Year (Gross)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Net purchase order value (PR) - All'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 86e54b0a-e744-4b02-9fa2-72f7c51b8f9d
+		summarizeBy: sum
+		sourceColumn: Net purchase order value (PR) - All
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Net purchase order value (PR) - New without PO'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 1806b1f8-bd82-4579-a9ae-822635017791
+		summarizeBy: sum
+		sourceColumn: Net purchase order value (PR) - New without PO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Net purchase order value (PO)'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: e83058ac-c321-4305-94c0-2f19f90e3d22
+		summarizeBy: sum
+		sourceColumn: Net purchase order value (PO)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Net purchase order value (PO+PR new)'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 91bab1e3-6cf9-425c-872a-348ccf17ee3f
+		summarizeBy: sum
+		sourceColumn: Net purchase order value (PO+PR new)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Budget Spent' = 'Budget Report with DemandID'[Budget Approved] - 'Budget Report with DemandID'[Budget Available]
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: edb43f10-ecb6-4e00-8a4c-5424032f9f7c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Budget Approved'
+		dataType: double
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 39a81e97-6010-4d80-9494-ec7900aa328f
+		summarizeBy: sum
+		sourceColumn: Budget Approved
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Profit Center and Name' = 'Budget Report with DemandID'[Profit Center] & " - "&'Budget Report with DemandID'[Profit Center Name]
+		lineageTag: fdafeef2-9f15-40b8-8065-bb549731ca42
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS and Name' = 'Budget Report with DemandID'[WBS (Acc.)] &" - "&'Budget Report with DemandID'[WBS Name]
+		lineageTag: fb40954e-e718-4ea3-b550-273c33664741
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor and Name' = 'Budget Report with DemandID'[Vendor] & " - "&'Budget Report with DemandID'[Vendor Name]
+		lineageTag: b8b6d185-f02d-4ad2-abb1-2d30de028316
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column KeyDemandPO
+		dataType: string
+		lineageTag: 1f32150a-043b-4848-914d-c2cec0294d84
+		summarizeBy: none
+		sourceColumn: KeyDemandPO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Budget Report with DemandID' = m
+		mode: import
+		queryGroup: '08_Budget Report'
+		source =
+				let
+				    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi", [ApiVersion = 15]),
+				    #"Filtered Rows4" = Table.SelectRows(Source, each Text.Contains([Folder Path], "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared Documents/01_Power BI/Data Sources/06_Budget Demand/")),
+				    #"Removed Other Columns2" = Table.SelectColumns(#"Filtered Rows4",{"Content"}),
+				    #"Added Custom1" = Table.AddColumn(#"Removed Other Columns2", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Sheet1")),
+				    #"Expanded Extracted Data" = Table.ExpandTableColumn(#"Added Custom1", "Extracted Data", {"Data"}, {"Extracted Data.Data"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded Extracted Data",{"Content"}),
+				    #"Expanded Extracted Data.Data" = Table.ExpandTableColumn(#"Removed Columns", "Extracted Data.Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33"}, {"Extracted Data.Data.Column1", "Extracted Data.Data.Column2", "Extracted Data.Data.Column3", "Extracted Data.Data.Column4", "Extracted Data.Data.Column5", "Extracted Data.Data.Column6", "Extracted Data.Data.Column7", "Extracted Data.Data.Column8", "Extracted Data.Data.Column9", "Extracted Data.Data.Column10", "Extracted Data.Data.Column11", "Extracted Data.Data.Column12", "Extracted Data.Data.Column13", "Extracted Data.Data.Column14", "Extracted Data.Data.Column15", "Extracted Data.Data.Column16", "Extracted Data.Data.Column17", "Extracted Data.Data.Column18", "Extracted Data.Data.Column19", "Extracted Data.Data.Column20", "Extracted Data.Data.Column21", "Extracted Data.Data.Column22", "Extracted Data.Data.Column23", "Extracted Data.Data.Column24", "Extracted Data.Data.Column25", "Extracted Data.Data.Column26", "Extracted Data.Data.Column27", "Extracted Data.Data.Column28", "Extracted Data.Data.Column29", "Extracted Data.Data.Column30", "Extracted Data.Data.Column31", "Extracted Data.Data.Column32", "Extracted Data.Data.Column33"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Expanded Extracted Data.Data", [PromoteAllScalars=true]),
+				    #"Filtered Rows1" = Table.SelectRows(#"Promoted Headers", each ([Company Code] <> "" and [Company Code] <> "Company Code")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows1",{{"Budget #(lf)CO Order", Currency.Type}, {"Actual #(lf)CO Order", Currency.Type}, {"Commitment#(lf)Total", Currency.Type}, {"Commitment #(lf)P.Requisition", Currency.Type}, {"Commitment #(lf)P.Order", Currency.Type}, {"Actual #(lf)Alloted", Currency.Type}, {"Budget #(lf)Available", Currency.Type}, {"Demandbook#(lf)Cash Out Total #(lf)inc. VAT", Currency.Type}, {"Demandbook#(lf)Cash Out BudgetYear #(lf)inc. VAT", Currency.Type}, {"Demandbook #(lf)Cost effective BudgetYear #(lf)inc. VAT", Currency.Type}, {"Cash Out #(lf)Planning Year #(lf)(Net)", Currency.Type}, {"Cash Out #(lf)Plan Year #(lf)(Gross)", Currency.Type}, {"Net purchase order value (PR) - All", Currency.Type}, {"Net purchase order value (PR) - New without PO", Currency.Type}, {"Net purchase order value (PO)", Currency.Type}, {"Net purchase order value (PO+PR new)", Currency.Type}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Fiscal year", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Budget #(lf)CO Order", "Budget Approved"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns",null,0,Replacer.ReplaceValue,{"Budget Approved", "Actual #(lf)CO Order", "Commitment#(lf)Total", "Commitment #(lf)P.Requisition", "Commitment #(lf)P.Order", "Actual #(lf)Alloted", "Budget #(lf)Available", "Demandbook#(lf)Cash Out Total #(lf)inc. VAT", "Demandbook#(lf)Cash Out BudgetYear #(lf)inc. VAT", "Demandbook #(lf)Cost effective BudgetYear #(lf)inc. VAT", "Cash Out #(lf)Planning Year #(lf)(Net)", "Cash Out #(lf)Plan Year #(lf)(Gross)", "Net purchase order value (PR) - All", "Net purchase order value (PR) - New without PO", "Net purchase order value (PO)", "Net purchase order value (PO+PR new)"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value",{{"SAP Refresh Time", type datetime}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type2", "KeyDemandPO", each [Demand ID]&"-"&[#"Purchasing order number (PO)"]),
+				    #"Filtered Rows3" = Table.SelectRows(#"Added Custom", each ([Profit Center] <> "#" and [Profit Center] <> null ))
+				in
+				    #"Filtered Rows3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

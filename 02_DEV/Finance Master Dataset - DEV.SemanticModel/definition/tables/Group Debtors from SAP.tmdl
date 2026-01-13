@@ -1,0 +1,107 @@
+table 'Group Debtors from SAP'
+	lineageTag: c8062c95-000e-48e1-bca6-d4ed46ab0dfe
+
+	column 'SAP Refresh Time'
+		dataType: string
+		lineageTag: ef4eeb1c-a210-4fdf-ab89-5010df6c060a
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payer
+		dataType: string
+		lineageTag: f4774eaa-56fe-4942-9f0b-170e7aee1cdc
+		summarizeBy: none
+		sourceColumn: Payer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Name'
+		dataType: string
+		lineageTag: 00889be2-2fa7-4822-86be-398cf87a8e9b
+		summarizeBy: none
+		sourceColumn: Payer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Chief Technology & Transformation Officers'
+		dataType: string
+		lineageTag: 74b6a7a7-2dbc-4136-ae15-fe7ad9d1a19b
+		summarizeBy: none
+		sourceColumn: Chief Technology & Transformation Officers
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: d3c58725-66aa-4850-bdd9-a42ed6330f77
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 589f30fe-a818-4c72-859b-7db40c23b6e5
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 5b1c76e3-c8df-4366-a286-0d64350eea45
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account
+		dataType: string
+		lineageTag: 39b38edc-3671-4e3a-90d4-6ec787f8c0bd
+		summarizeBy: none
+		sourceColumn: Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Group'
+		dataType: string
+		lineageTag: 7776113c-37da-4636-b0f5-42dcaa1957ab
+		summarizeBy: none
+		sourceColumn: Account Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Groups & Regions'
+		dataType: string
+		lineageTag: f34f29c3-3fcb-4340-88a5-31225445646c
+		summarizeBy: none
+		sourceColumn: Groups & Regions
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Region
+		dataType: string
+		lineageTag: e1775db5-2696-4a78-916d-0d6eecbb9132
+		summarizeBy: none
+		sourceColumn: GL_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Group Debtors from SAP' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/SAP/Master%20Data%20Reporting%20SAP_Payer.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers2" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Promoted Headers2",{{"Column3", "Payer Name"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

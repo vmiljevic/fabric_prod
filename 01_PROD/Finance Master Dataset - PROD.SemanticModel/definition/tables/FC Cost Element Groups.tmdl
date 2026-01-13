@@ -1,0 +1,44 @@
+table 'FC Cost Element Groups'
+	lineageTag: 8b806abd-fb71-44b7-bac9-51fe6fe9999c
+
+	column 'Cost Element'
+		dataType: string
+		lineageTag: fbd2bb32-17dd-4e88-96c6-2a3bba7c7cda
+		summarizeBy: none
+		sourceColumn: Cost Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AMOS Rep L3'
+		dataType: string
+		lineageTag: f29257cd-5931-4189-8ddc-aded1f6f93e4
+		summarizeBy: none
+		sourceColumn: AMOS Rep L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Cluster /SAC Mask'
+		dataType: string
+		lineageTag: 06adda35-2f48-4de1-a26c-a7b81c1205bc
+		summarizeBy: none
+		sourceColumn: Forecast Cluster /SAC Mask
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FC Cost Element Groups' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="FCCostElementGroups",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Cost Element", type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{{"Cost Element", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Cost Element", Text.Clean, type text}})
+				in
+				    #"Cleaned Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

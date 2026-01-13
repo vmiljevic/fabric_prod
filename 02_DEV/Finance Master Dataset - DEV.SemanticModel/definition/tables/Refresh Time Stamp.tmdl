@@ -1,0 +1,75 @@
+table 'Refresh Time Stamp'
+	lineageTag: e9befbc5-1182-4fd2-b70b-df1d5b11b0f8
+
+	column DateTime
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn:ss
+		lineageTag: b6e8eaa5-3493-4860-9d1c-933edd243235
+		summarizeBy: none
+		sourceColumn: DateTime
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f1f65731-51b1-4435-8030-eaf542d5ba14
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 39e2e8b1-e21c-458b-b5c5-ebdba4075874
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition 'Refresh Time Stamp' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				
+				SummerTimeStartDate = Date.StartOfWeek(#date(Date.Year(DateTime.LocalNow()), 3, 31), Day.Sunday),
+				WinterTimeStartDate = Date.StartOfWeek(#date(Date.Year(DateTime.LocalNow()), 10, 31), Day.Sunday),
+				
+				Timezonehours = if DateTimeZone.RemoveZone(DateTimeZone.UtcNow()) < SummerTimeStartDate & #time(1, 0, 0) or
+				DateTimeZone.RemoveZone(DateTimeZone.UtcNow()) > WinterTimeStartDate & #time(1, 0, 0) then
+				1 else 2,
+				
+				#"Date and Time" = DateTimeZone.SwitchZone(DateTimeZone.UtcNow(), Timezonehours, 0),
+				
+				#"Converted to Table" = #table(1, {{#"Date and Time"}}),
+				
+				#"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "DateTime"}}),
+				
+				#"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"DateTime", type datetimezone}}),
+				
+				#"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "DateTime", "DateTime - Copy"),
+				
+				#"Renamed Columns1" = Table.RenameColumns(#"Duplicated Column",{{"DateTime - Copy", "Date"}}),
+				
+				#"Duplicated Column1" = Table.DuplicateColumn(#"Renamed Columns1", "Date", "Date - Copy"),
+				
+				#"Changed Type1" = Table.TransformColumnTypes(#"Duplicated Column1",{{"Date - Copy", type time}, {"Date", type date}}),
+				
+				#"Renamed Columns2" = Table.RenameColumns(#"Changed Type1",{{"Date - Copy", "Time"}})
+				
+				in
+				
+				#"Renamed Columns2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_clean_ppm_data"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "02dbb305-cf97-b32a-415e-6f0e8852a503"
+  }
+}

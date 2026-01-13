@@ -1,0 +1,35 @@
+table 'Grade and Proficiency Levels'
+	lineageTag: d5445be5-8456-4f5c-8650-d9ad5c1e7430
+
+	column Grade
+		dataType: int64
+		formatString: 0
+		lineageTag: 28224c73-5b8c-4527-82db-ba75cd3e7859
+		summarizeBy: none
+		sourceColumn: Grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Proficiency Level'
+		dataType: string
+		lineageTag: eaf29daf-1643-4378-89ad-380c939f4d97
+		summarizeBy: none
+		sourceColumn: Proficiency Level
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Grade and Proficiency Levels' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="GradeandProficiencyLevels",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Grade", Int64.Type}, {"Proficiency Level", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

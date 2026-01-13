@@ -1,0 +1,47 @@
+table dim_asset_class
+	lineageTag: e9d34e94-b2aa-48f7-8adb-2521c272d38f
+	sourceLineageTag: [dbo].[dim_asset_class]
+
+	column 'Class Asset'
+		dataType: string
+		lineageTag: 4803e406-9942-4173-80a1-8eacdfb39a0d
+		sourceLineageTag: Class Asset
+		summarizeBy: none
+		sourceColumn: Class Asset
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Class Name'
+		dataType: string
+		lineageTag: d3b27e21-8aee-465e-bd81-576fb7396243
+		sourceLineageTag: Class Name
+		summarizeBy: none
+		sourceColumn: Class Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Capex Hierarchy'
+		dataType: string
+		lineageTag: cd95475e-9d3e-43f5-b28a-24fc0a35e961
+		sourceLineageTag: Capex Hierarchy
+		summarizeBy: none
+		sourceColumn: Capex Hierarchy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Class and Name'
+		dataType: string
+		lineageTag: 1bdae9bf-ada1-4ee8-82e3-75fc189b7eea
+		sourceLineageTag: Asset Class and Name
+		summarizeBy: none
+		sourceColumn: Asset Class and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_asset_class = entity
+		mode: directLake
+		source
+			entityName: dim_asset_class
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

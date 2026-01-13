@@ -1,0 +1,264 @@
+table 'Asset List'
+	lineageTag: 39c728a4-63b6-4765-8ab2-aa794bc45bf8
+
+	column 'Asset Number'
+		dataType: string
+		lineageTag: e9f3c2dd-83f0-48e8-8e08-7f4969f67e7c
+		summarizeBy: none
+		sourceColumn: Asset Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 04f28234-a26a-4ad5-bc5d-6575eb23b3af
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: 487a35a7-138e-4c46-89d5-781c65a83bbb
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Class'
+		dataType: string
+		lineageTag: 34b3edac-cca5-4040-b6f7-70d9510ec5d5
+		summarizeBy: none
+		sourceColumn: Asset Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Capitalization date'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: f2c926c7-19c9-4b8b-8cd4-e5a58138b975
+		summarizeBy: none
+		sourceColumn: Capitalization date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Object type description'
+		dataType: string
+		lineageTag: fade3850-2fb8-472c-a985-0993163b210e
+		summarizeBy: none
+		sourceColumn: Object type description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: cf23b1ac-05e4-4dd2-94ae-f8c7e0602457
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cumulative Value'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 68193fe4-e7e3-47a5-b104-0d6a5ee469ff
+		summarizeBy: sum
+		sourceColumn: Cumulative Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Accumulated depreciation'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: a5c96e70-15e6-44c4-a0d5-bffdcfd9f1b8
+		summarizeBy: sum
+		sourceColumn: Accumulated depreciation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Depreciation in 2025'
+		dataType: decimal
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: f3d3c332-91be-45c8-bc04-aa47bab95466
+		summarizeBy: sum
+		sourceColumn: Depreciation in 2025
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: bfdaecb1-0d92-4991-a175-eacbae58ee89
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Depreciation key'
+		dataType: string
+		lineageTag: a331d3ad-652c-4e54-ba67-cc5428fbe526
+		summarizeBy: none
+		sourceColumn: Depreciation key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Depreciation Start Date'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: 3a83b1c8-fc85-486c-bfa8-7002b188b31d
+		summarizeBy: none
+		sourceColumn: Depreciation Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Useful life'
+		dataType: string
+		lineageTag: ca2dd117-82d0-43bf-b4cf-999f723a676d
+		summarizeBy: none
+		sourceColumn: Useful life
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Number Country'
+		dataType: string
+		lineageTag: 426f8ca0-ef94-4a5b-b19a-885b3d96048b
+		summarizeBy: none
+		sourceColumn: Asset Number Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Number and Name'
+		dataType: string
+		lineageTag: b8013cab-cbe4-4f7a-a699-3fcbadec7373
+		summarizeBy: none
+		sourceColumn: Asset Number and Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Capitalization Year' = Year('Asset List'[Capitalization date])
+		formatString: 0
+		lineageTag: 0df5c691-147c-42fc-9181-6200f9b5cec1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Refresh Time'
+		dataType: dateTime
+		formatString: dd.mm.yy hh:nn
+		lineageTag: cb6fe465-ef50-4b0b-8bd1-cdb11cdbdd2a
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Residual Value' = 'Asset List'[Cumulative Value] + 'Asset List'[Accumulated depreciation] + 'Asset List'[Depreciation in 2025]+ 'Asset List'[APC acquisition 2025]
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: ec098ff7-af8e-4f36-aa71-0252c64b8cbf
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Capitalization Month' = FORMAT('Asset List'[Capitalization date], "MMM")
+		lineageTag: 59978a0c-2842-4013-bf6a-1d82e6c91c79
+		summarizeBy: none
+		sortByColumn: 'Capitalization Month Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Capitalization Quarter' = "Q" & FORMAT(QUARTER('Asset List'[Capitalization date]), "0")
+		lineageTag: 90ba1c96-cd27-44d9-95d1-3cd86d18ed7a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Capitalization Month Sort' = Month('Asset List'[Capitalization date])
+		formatString: 0
+		lineageTag: 95ecf075-fef4-446f-a687-9bdc2f20b48e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'APC acquisition 2025'
+		dataType: decimal
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: c7b8d07b-cc05-47e9-a4d7-4124ce6c4b46
+		summarizeBy: sum
+		sourceColumn: APC acquisition 2025
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-AT"}
+
+	hierarchy 'Capitalization Date Hierarchy'
+		lineageTag: b8f07dfb-2a97-48b9-944f-69401a353562
+
+		level Y
+			lineageTag: c1a5f02f-553e-48a7-8021-b14f418c2dc2
+			column: 'Capitalization Year'
+
+		level Q
+			lineageTag: c70c9745-e65d-4f7c-ad9d-a16513bccec2
+			column: 'Capitalization Quarter'
+
+		level M
+			lineageTag: a489c952-f10a-4e46-a3d5-9b7f5b50c466
+			column: 'Capitalization Month'
+
+		level D
+			lineageTag: 336b9eca-494b-43fa-8ca6-6d89e6adb857
+			column: 'Capitalization date'
+
+	partition 'Asset List' = m
+		mode: import
+		queryGroup: 07_CAPEX
+		source =
+				let
+				    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/", [ApiVersion = 15]),
+				    #"Filtered Rows3" = Table.SelectRows(Source, each ([Folder Path] = "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared Documents/01_Power BI/Data Sources/04_Capex/") and ([Name] = "Asset List ALL_2025.XLSX")),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows3", let latest = List.Max(#"Filtered Rows3"[Date created]) in each [Date created] = latest),
+				    #"Added Custom1" = Table.AddColumn(#"Filtered Rows1", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Sheet1")),
+				    #"Expanded Extracted Data" = Table.ExpandTableColumn(#"Added Custom1", "Extracted Data", {"Data"}, {"Extracted Data.Data"}),
+				    #"Expanded Extracted Data.Data" = Table.ExpandTableColumn(#"Expanded Extracted Data", "Extracted Data.Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27"}, {"Extracted Data.Data.Column1", "Extracted Data.Data.Column2", "Extracted Data.Data.Column3", "Extracted Data.Data.Column4", "Extracted Data.Data.Column5", "Extracted Data.Data.Column6", "Extracted Data.Data.Column7", "Extracted Data.Data.Column8", "Extracted Data.Data.Column9", "Extracted Data.Data.Column10", "Extracted Data.Data.Column11", "Extracted Data.Data.Column12", "Extracted Data.Data.Column13", "Extracted Data.Data.Column14", "Extracted Data.Data.Column15", "Extracted Data.Data.Column16", "Extracted Data.Data.Column17", "Extracted Data.Data.Column18", "Extracted Data.Data.Column19", "Extracted Data.Data.Column20", "Extracted Data.Data.Column21", "Extracted Data.Data.Column22", "Extracted Data.Data.Column23", "Extracted Data.Data.Column24", "Extracted Data.Data.Column25", "Extracted Data.Data.Column26", "Extracted Data.Data.Column27"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded Extracted Data.Data",{"Content", "Name", "Extension", "Date accessed", "Date created", "Attributes", "Folder Path"}),
+				    #"Added Custom2" = Table.AddColumn(#"Removed Columns", "SAP Refresh Time", each if [Extracted Data.Data.Column1] = "Balance sheet item" then "SAP Refresh Time" else [Date modified]),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Added Custom2",{"Date modified"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Columns2", [PromoteAllScalars=true]),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers",{"Balance sheet item", "Object", "Cost Center", "WBS Element for Acct Assignment of Costs", "Asset Class", "Capitaliz. date", "Object type description", "Description", "Cuml. APC/repl.val.", "Accumulated deprec.", "Depr. 2025", "Company Code", "Depreciation key", "Ord.dep.start date", "Useful life", "APC acquisition 2025", "SAP Refresh Time"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"Capitaliz. date", "Capitalization date"}, {"WBS Element for Acct Assignment of Costs", "WBS Element"}, {"Object", "Asset Number"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Capitalization date", type date}, {"Cuml. APC/repl.val.", Currency.Type}, {"Accumulated deprec.", Currency.Type}, {"Depr. 2025", Currency.Type}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type",{{"Ord.dep.start date", "Depreciation Start Date"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns1",{{"Depreciation Start Date", type date}}),
+				    #"Removed Columns10" = Table.RemoveColumns(#"Changed Type1",{ "Balance sheet item"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Removed Columns10",{{"Depr. 2025", "Depreciation in 2025"}, {"Accumulated deprec.", "Accumulated depreciation"}, {"Cuml. APC/repl.val.", "Cumulative Value"}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns2",{{"Asset Number", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type2", "Asset Number Country", each [Company Code]&"-"&[Asset Number]),
+				    #"Added Custom10" = Table.AddColumn(#"Added Custom", "Asset Number and Name", each [Asset Number] & " - "&[Description]),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom10",{{"SAP Refresh Time", type datetime}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type3", each ([Asset Number Country] <> "-")),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Filtered Rows",{{"APC acquisition 2025", Currency.Type}})
+				in
+				    #"Changed Type4"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

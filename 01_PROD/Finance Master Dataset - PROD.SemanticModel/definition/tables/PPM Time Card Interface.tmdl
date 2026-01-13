@@ -1,0 +1,88 @@
+table 'PPM Time Card Interface'
+	lineageTag: 44da5abd-efc3-4981-892d-db9e6c3cf244
+
+	column 'Time Card SYSID'
+		dataType: string
+		lineageTag: b51dfa6c-54b9-48b8-a051-ef5cb5355975
+		summarizeBy: none
+		sourceColumn: Time Card SYSID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP State'
+		dataType: string
+		lineageTag: eb6bff36-7642-4474-85b6-9a789a5fc3b8
+		summarizeBy: none
+		sourceColumn: SAP State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Posting Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b3254b63-c367-4b9a-b7be-aa051cd619b6
+		summarizeBy: none
+		sourceColumn: SAP Posting Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Comment
+		dataType: string
+		lineageTag: 0c87bc9e-9ce5-4e94-bee6-68bed51e5b4a
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_starts_on
+		dataType: string
+		lineageTag: 84e0069d-8f15-425a-a264-c20d2ef40e6e
+		summarizeBy: none
+		sourceColumn: week_starts_on
+
+		annotation SummarizationSetBy = Automatic
+
+	column raterole
+		dataType: string
+		lineageTag: a039b1ef-eaee-4e72-9082-e689e0384bbf
+		summarizeBy: none
+		sourceColumn: raterole
+
+		annotation SummarizationSetBy = Automatic
+
+	column rate_per_hour
+		dataType: string
+		lineageTag: 0d261c43-a9a4-4f07-b708-7f2c9b142b8c
+		summarizeBy: none
+		sourceColumn: rate_per_hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExportFor
+		dataType: string
+		lineageTag: b2d514ae-0e14-457d-b6f3-275ab7c700e5
+		summarizeBy: none
+		sourceColumn: ExportFor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PPM Time Card Interface' = m
+		mode: import
+		queryGroup: 04_PPM
+		source =
+				let
+				    Source = Table.Combine({ #"PPM Time Card Interface 2025", #"PPM Time Card Interface Externals 2025"}),
+				    #"Appended Query" = Table.Combine({Source, #"PPM Time Card Interface New 1", #"PPM Time Card Interface New 2", #"PPM Time Card Interface Externals"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Appended Query", each ([Time Card SYSID] <> null)),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"SAP Posting Date", type date}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"Time Card SYSID"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Duplicates",{{"Time Card SYSID", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

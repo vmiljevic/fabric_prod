@@ -1,0 +1,123 @@
+table 'Group Cost Centers from SAP'
+	lineageTag: 77f12ddc-e1ef-485b-afad-19ccbdb195a9
+
+	column 'SAP Refresh Time'
+		dataType: string
+		lineageTag: cf75827b-efe3-4dde-95d2-92171e1d66d8
+		summarizeBy: none
+		sourceColumn: SAP Refresh Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 6c227347-0470-4f58-9fb3-3a3c63a0410a
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element Name'
+		dataType: string
+		lineageTag: f35c39d1-159d-4ffc-a6ac-9ceaf9e7c324
+		summarizeBy: none
+		sourceColumn: WBS Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: string
+		lineageTag: 10d9ef61-e997-4a92-b2de-aada0794d6b5
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: string
+		lineageTag: e361d36e-f40f-4e11-928b-d8c9ca6dc151
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 7342182a-7294-484e-a7e7-5dc74043ad92
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Person Responsible'
+		dataType: string
+		lineageTag: b375ac4e-01c8-4378-a52e-105296ead173
+		summarizeBy: none
+		sourceColumn: Person Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 2e6d7352-4903-45b4-bd31-38ac075e9e36
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Costcenter Typ (Name3)'
+		dataType: string
+		lineageTag: e826cd40-7f14-49db-bcc1-b3d5f95c2abd
+		summarizeBy: none
+		sourceColumn: Costcenter Typ (Name3)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Costcenter Typ (Name4)'
+		dataType: string
+		lineageTag: 64a0fcf7-f971-4ed3-a68f-89601b763c1e
+		summarizeBy: none
+		sourceColumn: Costcenter Typ (Name4)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Costcenter Typ (Name1)'
+		dataType: string
+		lineageTag: 33098c8e-7e3e-4fbd-b4bd-155cfddd1642
+		summarizeBy: none
+		sourceColumn: Costcenter Typ (Name1)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lock Indicator Actuals Revenues'
+		dataType: string
+		lineageTag: 80350b33-6fc2-49d1-99a5-c238521832cf
+		summarizeBy: none
+		sourceColumn: Lock Indicator Actuals Revenues
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lock Indicator for Planning Revenues'
+		dataType: string
+		lineageTag: 4d393bc2-d928-4744-ac53-0eb64c13edeb
+		summarizeBy: none
+		sourceColumn: Lock Indicator for Planning Revenues
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Group Cost Centers from SAP' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/SAP/Master%20Data%20Reporting%20SAP_CC.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers2" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Renamed Columns" = Table.RenameColumns(#"Promoted Headers2",{{"Column3", "WBS Element Name"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

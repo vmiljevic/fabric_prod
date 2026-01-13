@@ -1,0 +1,267 @@
+table 'PPM Projects'
+	lineageTag: 426601fd-48ed-484b-aec2-1a5af39ff46d
+
+	column WBS
+		dataType: string
+		lineageTag: 8f8a0378-078e-4e22-b6ce-8d87941184eb
+		summarizeBy: none
+		sourceColumn: WBS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Service'
+		dataType: string
+		lineageTag: aea4566a-41c0-49a1-b109-f913d38774ed
+		summarizeBy: none
+		sourceColumn: Year Service
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Capitalised in AT' = IF (LOOKUPVALUE('PPM Accounting Elements'[Expense Type],'PPM Accounting Elements'[Project Number],[Project Number])="Capex","Capitalised","Not Capitalised")
+		lineageTag: 0736343a-6deb-47a9-890b-7d468175331c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AM Key'
+		dataType: string
+		lineageTag: f11b9c70-38a2-4a7b-9dab-21890ac96345
+		summarizeBy: none
+		sourceColumn: AM Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Change Run Type' = LOOKUPVALUE('WBS Elements from SAP'[Change Run Indicator],'WBS Elements from SAP'[WBS Element],'PPM Projects'[Accounting Master])
+		lineageTag: e878041e-9fe0-44a0-a7ac-422692595d9e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: 0825761b-a2eb-452f-b7c6-8d21af52360e
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Number'
+		dataType: string
+		lineageTag: 1efb31b7-4223-455e-bbd5-a9311bbf619d
+		summarizeBy: none
+		sourceColumn: Project Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Accounting Master'
+		dataType: string
+		lineageTag: 1ea3f272-82b2-4379-90c7-7728fe294748
+		summarizeBy: none
+		sourceColumn: Accounting Master
+
+		annotation SummarizationSetBy = Automatic
+
+	column project_sys_id
+		dataType: string
+		lineageTag: 82c1ae42-d0d4-4f22-af6f-75440dda6e4c
+		summarizeBy: none
+		sourceColumn: project_sys_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project State'
+		dataType: string
+		lineageTag: 4c755789-ceaf-4bb0-bee3-9c6f9309d48c
+		summarizeBy: none
+		sourceColumn: Project State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Category'
+		dataType: string
+		lineageTag: a16f7a1b-25c5-4c96-9a35-d1d02164affa
+		summarizeBy: none
+		sourceColumn: Project Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill Code'
+		dataType: string
+		lineageTag: c2cbf26c-8d8e-4f6f-b1cd-161ea3757dc0
+		summarizeBy: none
+		sourceColumn: Bill Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub Portfolio/ Profit Center'
+		dataType: string
+		lineageTag: f37695db-71b0-4020-aa69-99b0021b7ea0
+		summarizeBy: none
+		sourceColumn: Sub Portfolio/ Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Portfolio'
+		dataType: string
+		lineageTag: d91500c9-cca6-4b8d-97b2-93247333d0af
+		summarizeBy: none
+		sourceColumn: Project Portfolio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Manager / Product owner'
+		dataType: string
+		lineageTag: 819c52b7-db59-4785-9868-1d13b97da522
+		summarizeBy: none
+		sourceColumn: Project Manager / Product owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Manager Deputy / Product Owner Deputy'
+		dataType: string
+		lineageTag: 2bd74a68-96a0-45b5-aad4-8f53f74d3807
+		summarizeBy: none
+		sourceColumn: Project Manager Deputy / Product Owner Deputy
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: c45c3f2c-97ed-47cb-ab22-91275cc40113
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Complexity Level'
+		dataType: string
+		lineageTag: 47e79cc5-35db-479f-bf5b-7eceaf488c46
+		summarizeBy: none
+		sourceColumn: Complexity Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Controller'
+		dataType: string
+		lineageTag: ba69321f-3157-4a7e-a2c6-0a68c9c12e0d
+		summarizeBy: none
+		sourceColumn: Project Controller
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 2080fc84-49a2-4098-bf23-ed9fa5b4cc87
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Demand
+		dataType: string
+		lineageTag: fa8dc682-196c-4bed-8a0c-0038565f6300
+		summarizeBy: none
+		sourceColumn: Demand
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Planned start date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 83c4b5ab-d2d6-4537-99da-4b723c10e2b4
+		summarizeBy: none
+		sourceColumn: Planned start date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Planned end date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 03efb77a-1bce-4be9-9685-c0e64ff662f0
+		summarizeBy: none
+		sourceColumn: Planned end date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Debtor
+		dataType: string
+		lineageTag: 7b8671ef-22fc-4e19-a167-8ef6a7e54280
+		summarizeBy: none
+		sourceColumn: Debtor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Percent Complete'
+		dataType: string
+		lineageTag: 751639a6-fc47-4914-88fb-42719aaad74e
+		summarizeBy: none
+		sourceColumn: Percent Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Sponsor'
+		dataType: string
+		lineageTag: 495d8ac6-0e5e-4f8b-a790-1b1a4cd30652
+		summarizeBy: none
+		sourceColumn: Project Sponsor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Group Project ID'
+		dataType: string
+		lineageTag: 6d9dd769-7a9e-451f-a1d9-714ada3f9cb1
+		summarizeBy: none
+		sourceColumn: Group Project ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Exported For'
+		dataType: string
+		lineageTag: d2b19248-b186-4283-a0ad-3a065f94ad27
+		summarizeBy: none
+		sourceColumn: Exported For
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PPM Projects' = m
+		mode: import
+		queryGroup: 04_PPM
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"bd777a6f-f8b4-4d15-bcad-2edf46657ec3" = Workspaces{[workspaceId="bd777a6f-f8b4-4d15-bcad-2edf46657ec3"]}[Data],
+				    #"64bf773d-aa10-44ca-88c5-f01597de345a" = #"bd777a6f-f8b4-4d15-bcad-2edf46657ec3"{[dataflowId="64bf773d-aa10-44ca-88c5-f01597de345a"]}[Data],
+				    pm_projects_ = #"64bf773d-aa10-44ca-88c5-f01597de345a"{[entity="pm_projects",version=""]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(pm_projects_,{{"project_number", "Project Number"}, {"u_profit_center", "Sub Portfolio/ Profit Center"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Demand.1", each [u_ppm_request_envelope_id] & " - " & [demand]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"u_ppm_request_envelope_id", "demand"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns",{{"Demand.1", "Demand"}, {"u_bill_code", "Bill Code"}, {"sys_id", "project_sys_id"}, {"primary_portfolio", "Project Portfolio"}, {"u_project_controller", "Project Controller"}, {"project_manager", "Project Manager / Product owner"}, {"u_project_manager_deputee", "Project Manager Deputy / Product Owner Deputy"}, {"u_project_category", "Project Category"}, {"u_project_state", "Project State"}, {"start_date", "Planned start date"}, {"end_date", "Planned end date"}, {"status", "Status"}, {"accounting_master", "Accounting Master"}}),
+				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns1", "WBS", each "NA"),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Added Custom1",{{"u_ppm_debtor_relationship", "Debtor"}, {"u_complexity", "Complexity Level"}, {"u_project_sponsor", "Project Sponsor"}}),
+				    #"Added Custom3" = Table.AddColumn(#"Renamed Columns2", "Planned start date 1", each DateTime.FromText([Planned start date], "en-US")),
+				    #"Added Custom4" = Table.AddColumn(#"Added Custom3", "Planned end date 1", each DateTime.FromText([Planned end date], "en-US")),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom4",{{"Planned end date 1", type date}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed Type1",{{"Planned start date 1", type date}}),
+				    #"Renamed Columns5" = Table.RenameColumns(#"Changed Type",{{"u_az_group_project_id", "Group Project ID"}, {"percent_complete", "Percent Complete"}, {"short_description", "Project Name"}, {"u_company_code", "Company Code"}, {"ExportFor", "Exported For"}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns5",{"Planned start date", "Planned end date"}),
+				    #"Renamed Columns3" = Table.RenameColumns(#"Removed Columns1",{{"Planned start date 1", "Planned start date"}, {"Planned end date 1", "Planned end date"}}),
+				    #"Added Custom2" = Table.AddColumn(#"Renamed Columns3", "Year Service", each if Date.Year([Planned end date]) >= Date.Year(DateTime.LocalNow()) then Text.From(Date.Year(DateTime.LocalNow())) else Text.From(Date.Year([Planned end date]))),
+				    #"Added Custom5" = Table.AddColumn(#"Added Custom2", "AM Key", each [Project Number]&[Exported For]),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Added Custom5",{"Project Name", "Project Number", "Accounting Master", "project_sys_id", "Project State", "Project Category", "Bill Code", "Debtor", "Sub Portfolio/ Profit Center", "Project Portfolio", "Percent Complete", "Project Manager / Product owner", "Project Manager Deputy / Product Owner Deputy", "Status", "Complexity Level", "Project Controller", "Project Sponsor", "Group Project ID", "Company Code", "Exported For", "Demand", "WBS", "Planned start date", "Planned end date"}),
+				    #"Added Custom12" = Table.AddColumn(#"Removed Other Columns", "Year Service", each if Date.Year([Planned end date]) >= Date.Year(DateTime.LocalNow()) then Text.From(Date.Year(DateTime.LocalNow())) else Text.From(Date.Year([Planned end date]))),
+				    #"Changed Type22" = Table.TransformColumnTypes(#"Added Custom12",{{"Planned start date", type date}, {"Planned end date", type date}}),
+				    #"Appended Query" = Table.Combine({#"Changed Type22", #"PPM Projects HU44", #"PPM Projects CZ45", #"PPM Projects SK45", #"PPM Projects SK44", #"PPM Projects DE44"}),
+				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Appended Query", {{"Company Code", null}}),
+				    #"Added Custom222" = Table.AddColumn(#"Replaced Errors", "AM Key", each [Project Number]&[Exported For])
+				in
+				    #"Added Custom222"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

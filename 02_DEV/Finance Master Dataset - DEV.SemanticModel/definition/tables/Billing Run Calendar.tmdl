@@ -1,0 +1,98 @@
+table 'Billing Run Calendar'
+	lineageTag: 4f39f35c-ac20-4eba-bb09-e537512bbc8f
+
+	column 'Date From'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: 27ee7175-6f4d-466a-af83-714d59f07f26
+		summarizeBy: none
+		sourceColumn: Date From
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Date To'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: f94bbe45-c7fa-4107-8aa9-61fb9e34e6b2
+		summarizeBy: none
+		sourceColumn: Date To
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: mmmm yyyy
+		lineageTag: fcc07511-87b6-42ea-b5eb-1fd5f89ee472
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Month Billing'
+		dataType: string
+		lineageTag: d0a57bb8-b219-4591-b94f-549b27de3173
+		summarizeBy: none
+		sourceColumn: Month Billing
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: string
+		lineageTag: d608d960-9ba0-468f-abc2-d536e1bb7cdb
+		summarizeBy: none
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date From ICC'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8f4d57ed-23d9-4db3-8831-c880364c23d8
+		summarizeBy: none
+		sourceColumn: Date From ICC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Date To ICC'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 87638e4e-5fd9-42cd-8d75-5f2a0e03384d
+		summarizeBy: none
+		sourceColumn: Date To ICC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Billing Run Calendar' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="BillingRunCalendar",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Date From", type date}, {"Date To", type date}, {"Month Date", type date}, {"Date From ICC", type date}, {"Date To ICC", type date}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Month Billing", each Date.ToText([Month Date],"MMM","en-US") & " " &Date.ToText([Month Date],"yyyy","en-US")),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Month Billing", type text}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "Month Number", each Number.FromText((Date.ToText([Month Date],"yy")&Date.ToText([Month Date],"MM"))))
+				in
+				    #"Added Custom1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

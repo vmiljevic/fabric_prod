@@ -1,0 +1,53 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Test",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "a54ad326-5979-4bc5-957d-6ff4ac5f01b8",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "QueryParameters": {
+      "queryId": "47dc52c2-af35-46a9-adc4-7b88cd03dc06",
+      "queryName": "QueryParameters",
+      "loadEnabled": false
+    },
+    "CompanyCode": {
+      "queryId": "c4fd5396-6e4b-4a77-b5da-4a999b04cd8e",
+      "queryName": "CompanyCode",
+      "loadEnabled": false
+    },
+    "time_card_interface_externals": {
+      "queryId": "aac6574b-79fd-469b-ad65-b03fc5227d2a",
+      "queryName": "time_card_interface_externals",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"d9abe6b3-b7f5-4134-a409-ae81c836adf9\"}"
+    },
+    {
+      "path": "https://aztech.service-now.com/api/now/table/time_card",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"2aaf8889-6f5c-4fc6-a95e-b380d2b96af5\"}"
+    },
+    {
+      "path": "https://aztech.service-now.com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"7f932ae2-b7eb-4c0d-9bc5-3458682fb116\"}"
+    }
+  ],
+  "fastCombine": true
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "time_card_interface_create_table"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fe84742e-431a-960b-4119-6a31a979025c"
+  }
+}

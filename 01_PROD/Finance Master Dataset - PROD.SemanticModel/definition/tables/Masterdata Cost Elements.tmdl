@@ -1,0 +1,121 @@
+table 'Masterdata Cost Elements'
+	lineageTag: 71ef10d9-e983-4a13-aaf6-ea9e10171a33
+
+	column 'Cost Element'
+		dataType: string
+		lineageTag: b3583b51-4a37-46ec-9fe3-70ef8dabf102
+		summarizeBy: none
+		sourceColumn: Cost Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Name'
+		dataType: string
+		lineageTag: 66c019c4-3e3b-4629-8eeb-93ca432be1d7
+		summarizeBy: none
+		sourceColumn: Cost Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Group'
+		dataType: string
+		lineageTag: 17a5fa60-8c7b-4a25-893c-eb9171137591
+		summarizeBy: none
+		sourceColumn: Cost Element Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column KSC_CRV_FC
+		dataType: string
+		lineageTag: a7f126be-6f82-493f-80a7-ac4b11aae0fa
+		summarizeBy: none
+		sourceColumn: KSC_CRV_FC
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostElements-Group:Prim-Sec
+		dataType: string
+		lineageTag: c4fe3624-149c-4efd-b429-b0ce2602bdb9
+		summarizeBy: none
+		sourceColumn: CostElements-Group:Prim-Sec
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Code'
+		dataType: string
+		lineageTag: 444ab5be-7507-48f0-9fa4-3565cb501a43
+		summarizeBy: none
+		sourceColumn: L3 Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Name'
+		dataType: string
+		lineageTag: e405c6d8-62a9-400b-b1f4-a2885fca718d
+		summarizeBy: none
+		sourceColumn: L3 Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L2 Code'
+		dataType: string
+		lineageTag: 084fc207-eaaa-4223-97b6-c99599c9b590
+		summarizeBy: none
+		sourceColumn: L2 Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L2 Name'
+		dataType: string
+		lineageTag: 60b15ae5-d825-49d0-8410-5e77b31e3a8f
+		summarizeBy: none
+		sourceColumn: L2 Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L1 Code'
+		dataType: string
+		lineageTag: bb414d9c-3823-4eb9-a863-2a85c0771b0a
+		summarizeBy: none
+		sourceColumn: L1 Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L1 Name'
+		dataType: string
+		lineageTag: 73408f92-3629-425e-a05e-01ef08d484ce
+		summarizeBy: none
+		sourceColumn: L1 Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Code and Name' = 'Masterdata Cost Elements'[L3 Code] & " " & 'Masterdata Cost Elements'[L3 Name]
+		lineageTag: f89a0ed3-1587-44dd-b89b-6490d1290624
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Masterdata Cost Elements' = m
+		mode: import
+		queryGroup: '05_SAP BAP'
+		source =
+				let
+				    Source = SharePoint.Tables("https://allianzms.sharepoint.com/teams/DE1214-4322362/", [Implementation="2.0", ViewMode="All"]),
+				    #"b3093836-4a96-4033-8782-71e92faa8b61" = Source{[Id="b3093836-4a96-4033-8782-71e92faa8b61"]}[Items],
+				    #"Filtered Rows1" = Table.SelectRows(#"b3093836-4a96-4033-8782-71e92faa8b61", each true),
+				    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows1",{{"Title", "Cost Element"}, {"CostElement name", "Cost Element Name"}}),
+				    #"Expanded CostElements-Group" = Table.ExpandListColumn(#"Renamed Columns", "CostElements-Group"),
+				    #"Expanded CostElements-Group1" = Table.ExpandRecordColumn(#"Expanded CostElements-Group", "CostElements-Group", {"lookupValue"}, {"CostElements-Group.lookupValue"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded CostElements-Group1",{{"CostElements-Group.lookupValue", "Cost Element Group"}, {"AMOS Rep L3:Amos-Rep L3 Name", "L3 Name"}}),
+				    #"Expanded AMOS Rep L3" = Table.ExpandListColumn(#"Renamed Columns1", "AMOS Rep L3"),
+				    #"Expanded AMOS Rep L1" = Table.ExpandRecordColumn(#"Expanded AMOS Rep L3", "AMOS Rep L3", {"lookupValue"}, {"AMOS Rep L3.lookupValue"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Expanded AMOS Rep L1",{{"AMOS Rep L3.lookupValue", "L3 Code"}, {"AMOS Rep L3:Amos-Rep L2 Code", "L2 Code"}, {"AMOS Rep L3:Amos-Rep L2 Name", "L2 Name"}, {"AMOS Rep L3:Amos-Rep L1 Code", "L1 Code"}, {"AMOS Rep L3:Amos-Rep L1 Name", "L1 Name"}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns2",{"Cost Element", "Cost Element Name", "Cost Element Group", "KSC_CRV_FC", "CostElements-Group:Prim-Sec", "L3 Code", "L3 Name", "L2 Code", "L2 Name", "L1 Code", "L1 Name"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([L3 Name] <> null))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

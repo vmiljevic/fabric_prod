@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_capex_bookings_archive",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "718f0a15-7283-923a-4c44-99855d48d702"
+  }
+}

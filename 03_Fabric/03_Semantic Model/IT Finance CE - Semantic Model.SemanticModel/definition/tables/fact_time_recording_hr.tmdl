@@ -1,0 +1,77 @@
+table fact_time_recording_hr
+	lineageTag: d999ba5a-4cc9-4641-abaf-e77ccab28f6b
+	sourceLineageTag: [dbo].[fact_time_recording_hr]
+
+	column 'Employee Key'
+		dataType: string
+		lineageTag: 8f104eb2-1266-4584-8cb2-165eb9b2449d
+		sourceLineageTag: Employee Key
+		summarizeBy: none
+		sourceColumn: Employee Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: c923c247-c31d-4716-97b1-86cd58aa3c66
+		sourceLineageTag: Company Code
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HR ID'
+		dataType: string
+		lineageTag: a5d2cade-ceb6-4c84-b456-bff618daa07a
+		sourceLineageTag: HR ID
+		summarizeBy: none
+		sourceColumn: HR ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booked in HR'
+		dataType: double
+		lineageTag: 5d2af70e-8a58-4ab0-a8b2-267b4573605a
+		sourceLineageTag: Booked in HR
+		summarizeBy: sum
+		sourceColumn: Booked in HR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 266cf4bc-20ea-4b0b-9b91-cd94f8404e67
+		sourceLineageTag: Month Date
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name'
+		dataType: string
+		lineageTag: cddd20fb-c9e9-48fc-b321-c6cb030e5592
+		sourceLineageTag: Last Name
+		summarizeBy: none
+		sourceColumn: Last Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Name'
+		dataType: string
+		lineageTag: cf0b3864-fc77-4bef-ad28-0af887730c89
+		sourceLineageTag: First Name
+		summarizeBy: none
+		sourceColumn: First Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_time_recording_hr = entity
+		mode: directLake
+		source
+			entityName: fact_time_recording_hr
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Finance Master Report - PROD"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e0d536b2-1efe-b09b-44a8-78bd55838a31"
+  }
+}

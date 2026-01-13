@@ -1,0 +1,41 @@
+table 'SAP Resource Grades AT45 2025'
+	lineageTag: 8bfef7ee-6975-4105-9d8d-a4bd3cf53c86
+
+	column 'Personal Number'
+		dataType: double
+		lineageTag: 05800ba5-311a-4ccf-a9e9-8fbb07d3320e
+		summarizeBy: sum
+		sourceColumn: Personal Number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Grade
+		dataType: int64
+		formatString: 0
+		lineageTag: 628a3e48-6db2-460b-bf6b-202373478212
+		summarizeBy: sum
+		sourceColumn: Grade
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SAP Resource Grades AT45 2025' = m
+		mode: import
+		queryGroup: '03_HR SAP'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/03_HR/Other%20Data/2025%20Grades%20Vienna.xlsx"), null, true),
+				    Tabelle1_Sheet = Source{[Item="Tabelle1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Tabelle1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Lokale Personalnummer", Int64.Type}, {"Mitarbeiterkennung", Int64.Type}, {"Vorname", type text}, {"Nachname", type text}, {"Arbeitgebergesellschaft (Label)", type text}, {"Grades", Int64.Type}, {"Position Cluster (Picklist Label)", type text}, {"Führungskraft (Name)", type text}, {"Mitarbeiterstatus (Picklist Label)", type text}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Lokale Personalnummer", "Grades"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"Lokale Personalnummer", "Personal Number"}, {"Grades", "Grade"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns",440066,228864,Replacer.ReplaceValue,{"Personal Number"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,577 @@
+table 'PPM Time Cards Internals'
+	lineageTag: 8820588b-e918-4d08-af4d-6d5792694a4c
+
+	column 'Export Date'
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: 47369fcc-4a74-4719-a3a9-b275a5bb78eb
+		summarizeBy: none
+		sourceColumn: Export Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Month Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ab18ce1a-88dc-40b1-8f17-95bfab2f2746
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Booked By'
+		dataType: string
+		lineageTag: cb3d3e20-3b13-4b7f-a242-76b0ad8b01f7
+		summarizeBy: none
+		sourceColumn: Booked By
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User ID'
+		dataType: string
+		lineageTag: 535decc3-1bfb-4bb4-a37f-6b3a63b2dd85
+		summarizeBy: none
+		sourceColumn: User ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booking State'
+		dataType: string
+		lineageTag: 524ad07c-04f9-4782-a6a9-7fee688d33a2
+		summarizeBy: none
+		sourceColumn: Booking State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total PDs'
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 9bd9f4b9-3fa1-4912-be72-5b29dab1da47
+		summarizeBy: sum
+		sourceColumn: Total PDs
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Hours'
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 689a37b7-001c-4aec-a867-8e296eed3eac
+		summarizeBy: sum
+		sourceColumn: Total Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Number'
+		dataType: string
+		lineageTag: 5a03e5e9-9c3e-4cc7-a2b0-308a7177a366
+		summarizeBy: none
+		sourceColumn: Project Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: 9a8f643f-e327-4ea5-87c6-ab0ad31911ad
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Category'
+		dataType: string
+		lineageTag: f7f20cbb-68e1-4786-954b-9727edc4f050
+		summarizeBy: none
+		sourceColumn: Project Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Manager'
+		dataType: string
+		lineageTag: 3862cdd1-b28d-49b0-9d73-99389a330c4b
+		summarizeBy: none
+		sourceColumn: Project Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Manager Deputy'
+		dataType: string
+		lineageTag: b4cacb70-08ab-463c-9725-9c3505c1653f
+		summarizeBy: none
+		sourceColumn: Project Manager Deputy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Cost Center'
+		dataType: string
+		lineageTag: f4a80316-1fa9-47c2-9d70-9f9fd5e7a3b7
+		summarizeBy: none
+		sourceColumn: Project Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Cost Center'
+		dataType: string
+		lineageTag: 62b9da93-1bc4-409f-86aa-3f600071902a
+		summarizeBy: none
+		sourceColumn: Department Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column Task
+		dataType: string
+		lineageTag: 2736c33f-7385-43a3-8867-619bf05532fe
+		summarizeBy: none
+		sourceColumn: Task
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource plan'
+		dataType: string
+		lineageTag: 3f79ca23-dbd1-4165-9bab-07bde289e430
+		summarizeBy: none
+		sourceColumn: Resource plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Cluster'
+		dataType: string
+		lineageTag: f0a883af-bd59-46ac-9895-5363c8ca7461
+		summarizeBy: none
+		sourceColumn: Activity Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booking Correction'
+		dataType: string
+		lineageTag: 056e320d-3936-4e77-b621-85200da695cd
+		summarizeBy: none
+		sourceColumn: Booking Correction
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Approved by'
+		dataType: string
+		lineageTag: 673ecdb3-5252-4d4d-86ec-a2c5850b5e5c
+		summarizeBy: none
+		sourceColumn: Approved by
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booking Category'
+		dataType: string
+		lineageTag: 14bccfd4-62aa-4db4-9ed5-7846a9c7786d
+		summarizeBy: none
+		sourceColumn: Booking Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comments
+		dataType: string
+		lineageTag: d31e1f9a-2617-42ba-8696-356f14e648e3
+		summarizeBy: none
+		sourceColumn: Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Hours From Resoure Plan'
+		dataType: string
+		lineageTag: 79c471f5-af84-4023-aa88-49ee5089e77e
+		summarizeBy: none
+		sourceColumn: Actual Hours From Resoure Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource Manager'
+		dataType: string
+		lineageTag: 1eab3f3f-2c97-4179-88d4-224eebe532df
+		summarizeBy: none
+		sourceColumn: Resource Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBS Element'
+		dataType: string
+		lineageTag: b8ab0ff7-77d6-4939-b37f-1430a50e0d00
+		summarizeBy: none
+		sourceColumn: WBS Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Task Name'
+		dataType: string
+		lineageTag: af7f00e3-c0a1-4038-b55e-38490fe7f9a6
+		summarizeBy: none
+		sourceColumn: Project Task Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource Plan Name'
+		dataType: string
+		lineageTag: a5750975-ea59-4008-99d0-479cca26d06a
+		summarizeBy: none
+		sourceColumn: Resource Plan Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource Group'
+		dataType: string
+		lineageTag: 9bead7b6-10dd-4a8a-a72a-755f981995a5
+		summarizeBy: none
+		sourceColumn: Resource Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Rate Card'
+		dataType: string
+		lineageTag: 01a112b1-fd08-4a88-9cf6-9689da52a9e7
+		summarizeBy: none
+		sourceColumn: User Rate Card
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Manager'
+		dataType: string
+		lineageTag: c17d4aab-748e-4a80-865b-c44df95e2ad1
+		summarizeBy: none
+		sourceColumn: Line Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column Debtor
+		dataType: string
+		lineageTag: 8879633d-c3fc-489e-a6f5-b6461ad79a31
+		summarizeBy: none
+		sourceColumn: Debtor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'External Rate'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: a4c09eab-6037-488b-bf8c-a88c70ca227f
+		summarizeBy: none
+		sourceColumn: External Rate
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: c71216a5-cdf9-419b-a2af-0803da0a8162
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column SYSID
+		dataType: string
+		lineageTag: e1674150-c5da-4d08-aea8-2c6d0a9a55a5
+		summarizeBy: none
+		sourceColumn: SYSID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date of Time Booking'
+		dataType: string
+		lineageTag: 64f37201-411f-4a8e-a084-24e68d1a7f13
+		summarizeBy: none
+		sourceColumn: Date of Time Booking
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill Code'
+		dataType: string
+		lineageTag: e3af5cb9-7700-4221-b9aa-c1cc27a323c4
+		summarizeBy: none
+		sourceColumn: Bill Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 25b3cf69-96c7-4824-8d9c-fb7e9be56644
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project / Activity Name'
+		dataType: string
+		lineageTag: 6d3b1c4f-a4e9-4632-8d66-cc45d4bc66d0
+		summarizeBy: none
+		sourceColumn: Project / Activity Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Export For'
+		dataType: string
+		lineageTag: 0165dbd3-0f13-4573-bf1d-977765fba7b8
+		summarizeBy: none
+		sourceColumn: Export For
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Personal Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fca5418-452f-4856-bc07-41bd2cf1542a
+		summarizeBy: sum
+		sourceColumn: Personal Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource Type'
+		dataType: string
+		lineageTag: 124b8e59-a000-4e5e-a3d1-6babcae4c998
+		summarizeBy: none
+		sourceColumn: Resource Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP Posting Date' = RELATED('PPM Time Card Interface'[SAP Posting Date])
+		formatString: dd.mm.yyyy
+		lineageTag: a3ff05ab-28ad-4e2e-ba22-fca0fcc681eb
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'SAP State' = RELATED('PPM Time Card Interface'[SAP State])
+		lineageTag: 1b1e551a-a4d8-466f-9b1d-cc475135deb1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAP State Final' = ```
+			SWITCH (
+			        TRUE,
+			        AND(ISBLANK([SAP State]),[Booking Category] <> "Project/Project Task"), "0 - Non Chargable",
+			        AND(ISBLANK([SAP State]),[Booking Category] = "Project/Project Task"), "1 - Not Transfered to SAP",
+			        AND(OR([SAP State] = "Successful",[SAP State] = "Processed"),ISBLANK('PPM Time Cards Internals'[Billing Month])),"4 - Booked in SAP",
+			        AND(OR([SAP State] = "Successful",[SAP State] = "Processed"),NOT(ISBLANK('PPM Time Cards Internals'[Billing Month]))),"5 - Charged in SAP",
+			        [SAP State] = "Pending","3 - Booking in SAP Pending",
+			        [SAP State] = "Rejected","2 - SAP Booking Rejected",
+			        "6 - SAP State Unclear"
+			        )
+			
+			```
+		lineageTag: d7b50864-542c-43ab-be6f-e85e0d05c419
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Group New' = ```
+			SWITCH (
+			        TRUE,
+			        'PPM Time Cards Internals'[Booking Category] <> "Project/Project Task", "6 - Non-Chargable",
+			        OR('PPM Time Cards Internals'[Bill Code] = "Billing to Customer ( T& M )",'PPM Time Cards Internals'[Bill Code] = "Multi Debtor"),"1 - Billing to Customer (T&M)",
+			        AND('PPM Time Cards Internals'[Project Capitalised in AT] = "Capitalised",'PPM Time Cards Internals'[Project Category] = "Change / Strategic"), "5 - IT Assets",
+			        AND('PPM Time Cards Internals'[Project Category] = "Maintenance Support (WA)",'PPM Time Cards Internals'[Export For]='PPM Time Cards Internals'[Company Code]), "3 - IT Services Run",
+			         AND('PPM Time Cards Internals'[Bill Code] <> "Billing to Customer ( T& M )",'PPM Time Cards Internals'[Project Category] = "Maintenance Change (PF)"), "4 - IT Service Internal Change",
+			         AND('PPM Time Cards Internals'[Bill Code] <> "Billing to Customer ( T& M )",'PPM Time Cards Internals'[Export For]<>'PPM Time Cards Internals'[Company Code]), "2 - Internal Billing ICC (T&M)",
+			                "Other")
+			
+			```
+		lineageTag: 48f3188e-dad6-46ef-8ef2-e27b74d10f23
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Capitalised in AT' = IF (AND(LOOKUPVALUE('PPM Accounting Elements'[Expense Type],'PPM Accounting Elements'[Project Number],[Project Number]) = "Capex", AND('PPM Time Cards Internals'[Bill Code] <> "Billing to Customer ( T& M )",'PPM Time Cards Internals'[Bill Code] <> "Multi Debtor")),"Capitalised","Not Capitalised")
+		lineageTag: a48b0b67-5783-4c11-86c9-7e8c4f83b126
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rate Price' = LOOKUPVALUE('SAP Internal Resources Changes'[Rate Card Price],'SAP Internal Resources Changes'[Personal Number],'PPM Time Cards Internals'[Personal Number],'SAP Internal Resources Changes'[Month Date],'PPM Time Cards Internals'[Month Date])
+		formatString: 0.00
+		lineageTag: 88269702-4d5f-41c9-b003-7a49ad03f3db
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total EUR' = 'PPM Time Cards Internals'[Total PDs] * 'PPM Time Cards Internals'[Rate Price]
+		dataType: decimal
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: e8b07e64-4e60-4226-b237-4741a40f1dc7
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Debtor Corrected' = ```
+			SWITCH (
+			        TRUE,
+			             AND(AND('PPM Time Cards Internals'[Debtor] = "", 'PPM Time Cards Internals'[Company Code]="0044"),'PPM Time Cards Internals'[Booking Category] = "Project/Project Task"), "1200000024 Allianz Technology SE",
+			AND(AND('PPM Time Cards Internals'[Debtor] = "", 'PPM Time Cards Internals'[Company Code]="AT45"),'PPM Time Cards Internals'[Booking Category] = "Project/Project Task"), "2000009339 Allianz Technology GmbH",
+			AND(AND('PPM Time Cards Internals'[Debtor] = "", 'PPM Time Cards Internals'[Company Code]="UK44"),'PPM Time Cards Internals'[Booking Category] = "Project/Project Task"), "2000009173 Allianz Technology SE UK",
+			AND(AND('PPM Time Cards Internals'[Debtor] = "", 'PPM Time Cards Internals'[Company Code]="AU44"),'PPM Time Cards Internals'[Booking Category] = "Project/Project Task"), "2000011963 Allianz Technology SE Australi",
+			AND(AND('PPM Time Cards Internals'[Debtor] = "", 'PPM Time Cards Internals'[Company Code]="CZ45"),'PPM Time Cards Internals'[Booking Category] = "Project/Project Task"), "1300000069 Allianz Pojistovna, a.s.",
+			AND(AND('PPM Time Cards Internals'[Debtor] = "", 'PPM Time Cards Internals'[Company Code]="HU44"),'PPM Time Cards Internals'[Booking Category] = "Project/Project Task"), "1300000064 Allianz Hungária Biztosító Zrt",
+			AND(AND('PPM Time Cards Internals'[Debtor] = "", 'PPM Time Cards Internals'[Company Code]="SK44"),'PPM Time Cards Internals'[Booking Category] = "Project/Project Task"), "1300000004 Allianz-Slovenská Poistovna a.",
+			AND(AND('PPM Time Cards Internals'[Debtor] = "", 'PPM Time Cards Internals'[Company Code]="SK45"),'PPM Time Cards Internals'[Booking Category] = "Project/Project Task"), "1300000004 Allianz-Slovenská Poistovna a.",
+			    'PPM Time Cards Internals'[Debtor])
+			        
+			```
+		lineageTag: 1eff7753-f180-444b-958b-23879c9489f7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organisation New'
+		dataType: string
+		lineageTag: 767a40c7-177f-42d4-bee6-40c14f09ef6f
+		summarizeBy: none
+		sourceColumn: Sales Organisation New
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Rate Card Material Number'
+		dataType: string
+		lineageTag: 184b9657-594f-4da7-8252-2e5696c5aec8
+		summarizeBy: none
+		sourceColumn: User Rate Card Material Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Rate Card SAP Name'
+		dataType: string
+		lineageTag: 65d7bb86-594b-4500-8cba-4823bf53134f
+		summarizeBy: none
+		sourceColumn: User Rate Card SAP Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Rate Card AT Name'
+		dataType: string
+		lineageTag: 39537973-dc27-485e-b06b-54ed81729c22
+		summarizeBy: none
+		sourceColumn: User Rate Card AT Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Rate Card Rate Role'
+		dataType: string
+		lineageTag: 5b5137fd-8741-44dd-afe9-ceafa15b6860
+		summarizeBy: none
+		sourceColumn: User Rate Card Rate Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing Month' = ```
+			SWITCH (
+			        TRUE,
+			        AND('PPM Time Cards Internals'[SAP State] <> "Rejected", 'PPM Time Cards Internals'[Project Group New] = "1 - Billing to Customer (T&M)"), CALCULATE(VALUES('Billing Run Calendar'[Month Billing]),FILTER('Billing Run Calendar', 'PPM Time Cards Internals'[SAP Posting Date] >='Billing Run Calendar'[Date From] ),FILTER('Billing Run Calendar', 'PPM Time Cards Internals'[SAP Posting Date]  <= 'Billing Run Calendar'[Date To] ), Today() > 'Billing Run Calendar'[Date To]),
+			         AND('PPM Time Cards Internals'[SAP State] <> "Rejected", 'PPM Time Cards Internals'[Project Group New] <> "1 - Billing to Customer (T&M)"), CALCULATE(VALUES('Billing Run Calendar'[Month Billing]),FILTER('Billing Run Calendar', 'PPM Time Cards Internals'[SAP Posting Date] >='Billing Run Calendar'[Date From ICC] ),FILTER('Billing Run Calendar', 'PPM Time Cards Internals'[SAP Posting Date]  <= 'Billing Run Calendar'[Date To ICC] ), Today() > 'Billing Run Calendar'[Date To]),
+			                     BLANK() )
+			
+			
+			        
+			
+			```
+		lineageTag: 7f3b8ed1-5dac-47f8-ac54-d72b34cf5877
+		summarizeBy: none
+		sortByColumn: 'Billing Month Sort'
+
+		changedProperty = DataType
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Billing Month Sort' =
+			SWITCH (
+			        TRUE,
+			        AND('PPM Time Cards Internals'[SAP State] <> "Rejected", 'PPM Time Cards Internals'[Project Group New] = "1 - Billing to Customer (T&M)"), CALCULATE(VALUES('Billing Run Calendar'[Month Number]),FILTER('Billing Run Calendar', 'PPM Time Cards Internals'[SAP Posting Date] >='Billing Run Calendar'[Date From] ),FILTER('Billing Run Calendar', 'PPM Time Cards Internals'[SAP Posting Date]  <= 'Billing Run Calendar'[Date To] ), Today() > 'Billing Run Calendar'[Date To]),
+			         AND('PPM Time Cards Internals'[SAP State] <> "Rejected", 'PPM Time Cards Internals'[Project Group New] <> "1 - Billing to Customer (T&M)"), CALCULATE(VALUES('Billing Run Calendar'[Month Number]),FILTER('Billing Run Calendar', 'PPM Time Cards Internals'[SAP Posting Date] >='Billing Run Calendar'[Date From ICC] ),FILTER('Billing Run Calendar', 'PPM Time Cards Internals'[SAP Posting Date]  <= 'Billing Run Calendar'[Date To ICC] ), Today() > 'Billing Run Calendar'[Date To]),
+			                     BLANK() )
+		lineageTag: 85eb8cfe-fcb3-4147-93d9-bac9ccbbd8c5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Updated on'
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: eaf9648d-1414-44a2-9ca6-4d120558dc30
+		summarizeBy: none
+		sourceColumn: Updated on
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Updated by'
+		dataType: string
+		lineageTag: 38a8179e-9e9c-4607-a4a5-bacec6c9cf27
+		summarizeBy: none
+		sourceColumn: Updated by
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Card Link' = IF ('PPM Time Cards Internals'[SYSID] <> "","https://aztech.service-now.com/nav_to.do?uri=%2Ftime_card.do%3Fsys_id%3D" & 'PPM Time Cards Internals'[SYSID] & "%26","")
+		lineageTag: f7c84fbb-2050-4f8f-bd25-7b5582962246
+		dataCategory: WebUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week starts on'
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: 2c0d0b2c-46aa-4094-ab89-6df90177c7ff
+		summarizeBy: none
+		sourceColumn: Week starts on
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Profit Center' = LOOKUPVALUE('PPM Projects'[Sub Portfolio/ Profit Center],'PPM Projects'[Project Number],'PPM Time Cards Internals'[Project Number],'PPM Projects'[Exported For],'PPM Time Cards Internals'[Export For])
+		lineageTag: b13fcec7-9f6c-4204-afa8-64045b30d0bf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Run Change Indicator' = LOOKUPVALUE('PPM Projects'[Change Run Type],'PPM Projects'[Project Number],'PPM Time Cards Internals'[Project Number],'PPM Projects'[Exported For],'PPM Time Cards Internals'[Export For])
+		lineageTag: 3473a73f-aee1-475e-a34a-497eab3bde2b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PPM Time Cards Internals' = m
+		mode: import
+		queryGroup: 04_PPM
+		source =
+				let
+				    Source = #"PPM Time Cards All 2025",
+				    #"Appended Query" = Table.Combine({Source, #"PPM Time Cards All"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Appended Query", each ([Resource Type] = "Internal"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

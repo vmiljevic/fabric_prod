@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_ppm_other_data",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8d943975-2144-9f99-425f-9778262fe7ab"
+  }
+}

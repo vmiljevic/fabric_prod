@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_clean_budget_demand"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "677c53af-99d8-8ba7-4824-374365499d81"
+  }
+}

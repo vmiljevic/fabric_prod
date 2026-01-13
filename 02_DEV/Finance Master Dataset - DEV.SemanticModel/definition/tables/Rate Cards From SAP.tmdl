@@ -1,0 +1,140 @@
+table 'Rate Cards From SAP'
+	lineageTag: 29995477-d373-461c-bdaf-4f05cf62647e
+
+	column 'Sales Organization'
+		dataType: string
+		lineageTag: d0d2c75b-0cf9-4388-8e69-316c75ef2b3d
+		summarizeBy: none
+		sourceColumn: Sales Organization
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Organization Name'
+		dataType: string
+		lineageTag: 6a6e8428-db6e-412c-9ab7-5d814807c769
+		summarizeBy: none
+		sourceColumn: Sales Organization Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Name'
+		dataType: string
+		lineageTag: b48eff13-f26d-4296-999b-2825c3d55049
+		summarizeBy: none
+		sourceColumn: Cost Center Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: f9188334-75e4-4bf4-be58-c9b5c838e4f8
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'H_Valid From'
+		dataType: string
+		lineageTag: d8db501a-e7b8-4b7d-ade9-ab7da31e66c6
+		summarizeBy: none
+		sourceColumn: H_Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'H_Valid To'
+		dataType: string
+		lineageTag: 7f816faf-b026-40c5-9cd7-5414475123eb
+		summarizeBy: none
+		sourceColumn: H_Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: d7984b61-a9aa-4fc9-b0ec-51d71e5382e9
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Daily Rate'
+		dataType: string
+		lineageTag: b5a025f6-3a1f-4008-9480-3f4ab9a873e5
+		summarizeBy: none
+		sourceColumn: Daily Rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center Clean'
+		dataType: string
+		lineageTag: fb641811-9098-400a-af65-332daacff138
+		summarizeBy: none
+		sourceColumn: Cost Center Clean
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Name'
+		dataType: string
+		lineageTag: 09c549f5-3931-4838-bccd-ba1956218047
+		summarizeBy: none
+		sourceColumn: Material Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Daily Rate in EUR'
+		dataType: decimal
+		formatString: "€"\ #,0.00;-"€"\ #,0.00;"€"\ #,0.00
+		lineageTag: eeefdc2e-7767-4fb5-b22c-6eb84e3a5df9
+		summarizeBy: none
+		sourceColumn: Daily Rate in EUR
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Exchange Rates to EUR'
+		dataType: string
+		lineageTag: 46c105db-1683-4189-b8c0-58e80036af16
+		summarizeBy: none
+		sourceColumn: Exchange Rates to EUR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Rate Cards From SAP' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/SAP/Rate%20Cards%20Prices%20from%20SAP%20BAP.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers2" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Removed Top Rows" = Table.Skip(#"Promoted Headers2",2),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Top Rows",{{"Rate", "Hourly Rate"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Daily Rate", each [Hourly Rate]*8),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Cost Center Clean", each Text.Middle([Cost Center],5,10)),
+				    #"Trimmed Text" = Table.TransformColumns(#"Added Custom1",{{"Cost Center Clean", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Cost Center Clean", Text.Clean, type text}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Cleaned Text", {"Sales Organization", "Material", "Cost Center Clean"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Removed Duplicates",{"Sales Organization", "Sales Organization Name", "Cost Center Name", "Material", "Material Name", "H_Valid From", "H_Valid To", "Currency", "Daily Rate", "Cost Center Clean"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([Cost Center Clean] <> "" and [Cost Center Clean] <> "#") and ([Material] <> "#")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Cost Center Clean", Int64.Type}}),
+				    #"Trimmed Text1" = Table.TransformColumns(#"Changed Type",{{"Material", Text.Trim, type text}}),
+				    #"Cleaned Text1" = Table.TransformColumns(#"Trimmed Text1",{{"Material", Text.Clean, type text}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Cleaned Text1", {"Material"}, #"Rate Cards SAP Translation", {"Material"}, "Rate Cards SAP Translation", JoinKind.LeftOuter),
+				    #"Expanded Rate Cards SAP Translation" = Table.ExpandTableColumn(#"Merged Queries", "Rate Cards SAP Translation", {"Material Name Corrected"}, {"Rate Cards SAP Translation.Material Name Corrected"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded Rate Cards SAP Translation",{"Material Name"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns",{{"Rate Cards SAP Translation.Material Name Corrected", "Material Name"}}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Renamed Columns1", each ([Currency] = "EUR") or ([Sales Organization] = "CZ45")),
+				    #"Merged Queries1" = Table.NestedJoin(#"Filtered Rows1", {"Currency"}, #"Exchange Rates", {"Currency"}, "Exchange Rates", JoinKind.LeftOuter),
+				    #"Expanded Exchange Rates" = Table.ExpandTableColumn(#"Merged Queries1", "Exchange Rates", {"EUR"}, {"Exchange Rates.EUR"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Expanded Exchange Rates",{{"Exchange Rates.EUR", "Exchange Rates to EUR"}}),
+				    #"Added Custom2" = Table.AddColumn(#"Renamed Columns2", "Daily Rate in EUR", each [Daily Rate] / [Exchange Rates to EUR]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom2",{{"Daily Rate in EUR", type number}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Changed Type1",{{"Cost Center Clean", type text}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

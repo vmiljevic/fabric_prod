@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "SK45-PPM"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d0a90898-cfc7-895f-4c3b-96bcff3a08ff"
+  }
+}

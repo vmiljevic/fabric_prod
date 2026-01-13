@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "dp_ingest_cost_revenue_archive_1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f9fe554c-9aa6-8e9d-408e-4c07b5180c8e"
+  }
+}

@@ -1,0 +1,469 @@
+table 'Organizational Unit List Functional'
+	lineageTag: 8a3e564f-41c6-48f4-82e4-a528295e659e
+
+	column Entity
+		dataType: string
+		lineageTag: b37029aa-e7fb-4191-b294-daab21a3bd11
+		summarizeBy: none
+		sourceColumn: Entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name of Org.Unit (dep. long name)'
+		dataType: string
+		lineageTag: b18501ad-e2be-4f8f-9a5a-55fa20c44041
+		summarizeBy: none
+		sourceColumn: Name of Org.Unit (dep. long name)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit ID (Department ID)'
+		dataType: string
+		lineageTag: 06bbf090-c87e-43a5-bd05-d50b33b8bf60
+		summarizeBy: none
+		sourceColumn: Org Unit ID (Department ID)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name of Manager (last name)'
+		dataType: string
+		lineageTag: 58ba4a8e-3c9b-4574-9ccd-e40af6bf3ae8
+		summarizeBy: none
+		sourceColumn: Name of Manager (last name)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name of Manager (first name)'
+		dataType: string
+		lineageTag: 381683ee-2b42-417a-8a45-622da0fd1c58
+		summarizeBy: none
+		sourceColumn: Name of Manager (first name)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager email'
+		dataType: string
+		lineageTag: 5b7d32cc-e1bd-4954-87b8-aff856993ef5
+		summarizeBy: none
+		sourceColumn: Manager email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Org Unit ID'
+		dataType: string
+		lineageTag: f642f2b3-e2dd-4042-90d9-235e6d28fd99
+		summarizeBy: none
+		sourceColumn: Parent Org Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OrgUnit type'
+		dataType: string
+		lineageTag: 9cbeefb7-0180-409c-93bc-d9ec84610bb8
+		summarizeBy: none
+		sourceColumn: OrgUnit type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'In scope for Functional view'
+		dataType: string
+		lineageTag: ace95405-c29e-4305-b8a4-2c91a8b6f3f4
+		summarizeBy: none
+		sourceColumn: In scope for Functional view
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'In scope for disciplinary view'
+		dataType: string
+		lineageTag: f4e2e776-51b8-43e3-bcf8-3ba54fdf2afa
+		summarizeBy: none
+		sourceColumn: In scope for disciplinary view
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manager Employee ID'
+		dataType: string
+		lineageTag: d9d07a56-762f-4b34-82c5-f45edc957905
+		summarizeBy: none
+		sourceColumn: Manager Employee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 4745d84e-0ea0-4e56-bceb-7d84065446f8
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column L-1/L-2
+		dataType: string
+		lineageTag: 1b24f32b-5efb-46f8-9eb2-b7ac10c828b1
+		summarizeBy: none
+		sourceColumn: L-1/L-2
+
+		annotation SummarizationSetBy = Automatic
+
+	column L-1/L-3
+		dataType: string
+		lineageTag: b438d615-6fa0-49cd-a6a9-548e92143dc4
+		summarizeBy: none
+		sourceColumn: L-1/L-3
+
+		annotation SummarizationSetBy = Automatic
+
+	column L-1/L-4
+		dataType: string
+		lineageTag: f5a5abd0-b222-476b-9f1a-ac168295f0fe
+		summarizeBy: none
+		sourceColumn: L-1/L-4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment
+		dataType: string
+		lineageTag: 07a040e2-d819-4822-a89d-406f5a346ee8
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Child Departments - original'
+		dataType: string
+		lineageTag: 9bf135c8-34aa-4eb5-ae31-a72e73c6b581
+		summarizeBy: none
+		sourceColumn: Functional Child Departments - original
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Path' =
+			
+			IFERROR(
+			    PATH(
+			        'Organizational Unit List Functional'[Org Unit ID Composite],
+			        'Organizational Unit List Functional'[Parent Org Unit ID Composite]
+			    ),
+			    BLANK()
+			)
+		lineageTag: a96f3066-4cd8-4aae-8bd1-30d2dacd3087
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 1' = MID(PATHITEM('Organizational Unit List Functional'[Org Path],1,TEXT),8,50)
+		lineageTag: cc77ce97-fe8c-4fad-9410-c265eea0c8d1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 2' = MID(PATHITEM('Organizational Unit List Functional'[Org Path],2,TEXT),8,50)
+		lineageTag: 32efb0fd-4c16-4724-ac89-a77315ca6322
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 3' = MID(PATHITEM('Organizational Unit List Functional'[Org Path],3,TEXT),8,50)
+		isHidden
+		lineageTag: f5084dc7-a54c-470d-b909-115e021f120b
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 4' = MID(PATHITEM('Organizational Unit List Functional'[Org Path],4,TEXT),8,50)
+		lineageTag: 93eb35c1-0f50-47b8-aefa-bcce39a1ef98
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 5' = MID(PATHITEM('Organizational Unit List Functional'[Org Path],5,TEXT),8,50)
+		lineageTag: 98aec02e-71df-446e-ac9d-2321e75d7232
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 6' = MID(PATHITEM('Organizational Unit List Functional'[Org Path],6,TEXT),8,50)
+		lineageTag: 5f6996f1-229f-47a1-8120-d10179ad9e86
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 7' = MID(PATHITEM('Organizational Unit List Functional'[Org Path],7,TEXT),8,50)
+		lineageTag: ed5ee049-e067-447c-adc6-200d3973aa80
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 8' = MID(PATHITEM('Organizational Unit List Functional'[Org Path],8,TEXT),8,50)
+		lineageTag: e40ade50-0e17-47ac-9abc-ce9747f76b94
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unique_ID
+		dataType: string
+		lineageTag: 8cef9293-afc2-49b2-ac5d-09de2bd8026d
+		summarizeBy: none
+		sourceColumn: Unique_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Manager Level 1' = ```
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 1 Composite]) = "N.N. N.N.","Agostino Ferrara",LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 1 Composite]))
+			
+			
+			
+			```
+		lineageTag: 0f21e30f-bb2e-43e9-8655-38c47b2a7b12
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manager = 'Organizational Unit List Functional'[Name of Manager (first name)] & " " & 'Organizational Unit List Functional'[Name of Manager (last name)]
+		lineageTag: 90a8e2fc-fc06-476e-b94b-37564bc3ae81
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Manager Level 2' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 2 Composite]) = "",'Organizational Unit List Functional'[Functional Manager Level 1],LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 2 Composite]))
+		lineageTag: 254c719a-638c-4b95-8233-db41266b9163
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Manager Level 3' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 3 Composite]) = "",'Organizational Unit List Functional'[Functional Manager Level 2],LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 3 Composite]))
+		lineageTag: 3005fb8b-2f18-4de6-98cc-2dc5dea9d377
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Manager Level 4' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 4 Composite]) = "",'Organizational Unit List Functional'[Functional Manager Level 3],LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 4 Composite]))
+		lineageTag: 2a6d041f-5aec-468e-baaf-34bc9a432593
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Manager Level 5' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 5]) = "",'Organizational Unit List Functional'[Functional Manager Level 4],LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 5]))
+		lineageTag: d59349c4-f6b2-4a59-b856-fbb95a3f01fd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Manager Level 6' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 6]) = "",'Organizational Unit List Functional'[Functional Manager Level 5],LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 6]))
+		lineageTag: a45606a6-eb41-448b-beb5-13f1b7484c6e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Manager Level 7' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 7 Composite]) = "",'Organizational Unit List Functional'[Functional Manager Level 6],LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 7 Composite]))
+		lineageTag: 7e9e2748-539f-46bc-8f6b-51a9e82fc0b2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional Manager Level 8' =
+			IF(LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 8 Composite]) = "",'Organizational Unit List Functional'[Functional Manager Level 7],LOOKUPVALUE(
+			    'Organizational Unit List Functional'[Manager],
+			    'Organizational Unit List Functional'[Org Unit ID Composite], 'Organizational Unit List Functional'[Functional OrgUnit level 8 Composite]))
+		lineageTag: b1eed0ad-cd8c-4b1b-96dd-2abde5a790f2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Unit ID Composite'
+		dataType: string
+		lineageTag: 8bcbb894-24f4-47b4-9762-77715a9caf17
+		summarizeBy: none
+		sourceColumn: Org Unit ID Composite
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Org Unit ID Composite'
+		dataType: string
+		lineageTag: d6b77c0a-74cc-413c-8f01-d8af84486312
+		summarizeBy: none
+		sourceColumn: Parent Org Unit ID Composite
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 1 Composite' = PATHITEM('Organizational Unit List Functional'[Org Path],1,TEXT)
+		lineageTag: 7a8e09b9-95a0-4f46-a950-1428505716b6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 2 Composite' = PATHITEM('Organizational Unit List Functional'[Org Path],2,TEXT)
+		lineageTag: 656835a5-fe60-43aa-9dfd-35a6b01bcb33
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 3 Composite' = PATHITEM('Organizational Unit List Functional'[Org Path],3,TEXT)
+		lineageTag: b428bec2-b706-49d2-97b5-c7e2542734d3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 4 Composite' = PATHITEM('Organizational Unit List Functional'[Org Path],4,TEXT)
+		lineageTag: b67bb1de-04ca-4040-8830-5645e9a24155
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 5 Composite' = PATHITEM('Organizational Unit List Functional'[Org Path],5,TEXT)
+		lineageTag: 28b2eb6d-2418-44fb-9347-f45cbb056eea
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 6 Composite' = PATHITEM('Organizational Unit List Functional'[Org Path],6,TEXT)
+		lineageTag: ceda0255-754a-40d0-ba7b-ba7502cbb506
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 7 Composite' = PATHITEM('Organizational Unit List Functional'[Org Path],7,TEXT)
+		lineageTag: a0dfe12c-dd6e-41ff-81ea-375eb160715a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Functional OrgUnit level 8 Composite' = PATHITEM('Organizational Unit List Functional'[Org Path],8,TEXT)
+		lineageTag: cb56b718-a07f-49fb-9fce-112ffb730c53
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Month'
+		dataType: string
+		lineageTag: 72c3b7b1-8302-4b3b-b0d2-766795a6702e
+		summarizeBy: none
+		sourceColumn: Service Month
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Functional OrgUnit'
+		lineageTag: aa94d73d-fdb9-4be6-b058-8d7f1e1e4246
+
+		level 'Functional OrgUnit level 1'
+			lineageTag: 59574fa4-ddad-4fa8-8751-3478d5e6b0f6
+			column: 'Functional OrgUnit level 1'
+
+		level 'Functional OrgUnit level 2'
+			lineageTag: ad42b2dd-8d44-464e-8542-0334fdefe51b
+			column: 'Functional OrgUnit level 2'
+
+		level 'Functional OrgUnit level 3'
+			lineageTag: d412cc47-995f-4a51-bb36-b6bf10c65a68
+			column: 'Functional OrgUnit level 3'
+
+		level 'Functional OrgUnit level 4'
+			lineageTag: 3e5447e0-5965-4518-85f1-094a8632c366
+			column: 'Functional OrgUnit level 4'
+
+		level 'Functional OrgUnit level 5'
+			lineageTag: 3794d87c-2f15-4408-b41b-ffb69a996bb9
+			column: 'Functional OrgUnit level 5'
+
+		level 'Functional OrgUnit level 6'
+			lineageTag: 4e8cbf76-d4f0-4e40-a089-c1012a84a33f
+			column: 'Functional OrgUnit level 6'
+
+		level 'Functional OrgUnit level 7'
+			lineageTag: a2a5709b-7092-4749-b25e-b2f0578adf2b
+			column: 'Functional OrgUnit level 7'
+
+		level 'Functional OrgUnit level 8'
+			lineageTag: 61752a35-a6b6-499e-b396-8e709b2fbe11
+			column: 'Functional OrgUnit level 8'
+
+	hierarchy 'Functional Manager'
+		lineageTag: 9b2415bf-235e-487f-b9dd-21949dfedaa8
+
+		level 'Functional Manager Level 1'
+			lineageTag: ba4e6f2f-5b8d-4ecf-8640-73c09e6ca2cd
+			column: 'Functional Manager Level 1'
+
+		level 'Functional Manager Level 2'
+			lineageTag: 5f02ab9d-73ff-4ba5-896e-7b43c93546aa
+			column: 'Functional Manager Level 2'
+
+		level 'Functional Manager Level 3'
+			lineageTag: fbfbe516-287c-4853-b7ed-92b7ad90adc7
+			column: 'Functional Manager Level 3'
+
+		level 'Functional Manager Level 4'
+			lineageTag: c7b0abbc-f81f-486a-8bfd-c27579215a45
+			column: 'Functional Manager Level 4'
+
+		level 'Functional Manager Level 5'
+			lineageTag: d79f486b-becf-4067-a123-e50d9ac0d534
+			column: 'Functional Manager Level 5'
+
+		level 'Functional Manager Level 6'
+			lineageTag: 14268500-173b-4226-a845-73ef789476bf
+			column: 'Functional Manager Level 6'
+
+		level 'Functional Manager Level 7'
+			lineageTag: 8f8695a6-c231-4e70-aab1-d058a2fe7262
+			column: 'Functional Manager Level 7'
+
+		level 'Functional Manager Level 8'
+			lineageTag: 6d9eae47-2a9f-4d69-bd2e-ada836055568
+			column: 'Functional Manager Level 8'
+
+	partition 'Organizational Unit List Functional' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = #"Organizational Unit List",
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([In scope for Functional view] = "X")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Manager email", type text}}),
+				    #"Lowercased Text" = Table.TransformColumns(#"Changed Type",{{"Manager email", Text.Lower, type text}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Lowercased Text", {"Org Unit ID Composite"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

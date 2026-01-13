@@ -1,0 +1,49 @@
+table 'SAP Internal Resources Managers'
+	lineageTag: 715b95e6-6449-4786-bd2a-2c1f55102cf0
+
+	column 'User Email'
+		dataType: string
+		lineageTag: 568bb8bd-39b2-4c1b-aa8a-a9113f97f1f7
+		summarizeBy: none
+		sourceColumn: User Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		lineageTag: 3e83c680-4998-453f-b206-d3b9ccba07b1
+		summarizeBy: none
+		sourceColumn: Role
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SAP Internal Resources Managers' = m
+		mode: import
+		queryGroup: '03_HR SAP'
+		source =
+				let
+				    Source = Table.Combine({#"SAP Internal Resources DE44", #"SAP Internal Resources AT45", #"SAP Internal Resources HU44", #"SAP Internal Resources CZ45", #"SAP Internal Resources SK44", #"SAP Internal Resources SK45"}),
+				    #"Removed Other Columns2" = Table.SelectColumns(Source,{"My HR Manager"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns2"),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Removed Duplicates", "My HR Manager", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"My HR Manager.1", "My HR Manager.2", "My HR Manager.3", "My HR Manager.4"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Split Column by Delimiter",",","",Replacer.ReplaceText,{"My HR Manager.2"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"My HR Manager.1", type text}, {"My HR Manager.2", type text}, {"My HR Manager.3", type text}, {"My HR Manager.4", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "My HR Manager", each [My HR Manager.2] &" "&[My HR Manager.1]),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Added Custom","Wolfgang Fassbender","Wolfgang Faßbender",Replacer.ReplaceText,{"My HR Manager"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Daniela Cimpeanu","Daniela Alina Cimpeanu",Replacer.ReplaceText,{"My HR Manager"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","Mutlu Takmaz","Sinem Takmaz Mutlu",Replacer.ReplaceText,{"My HR Manager"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","Ali Saral","Ali Riza Savas Saral",Replacer.ReplaceText,{"My HR Manager"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","Xaver Woelfl","Xaver Woelfl",Replacer.ReplaceText,{"My HR Manager"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Replaced Value5", {"My HR Manager"}, #"SAP Internal Resources", {"Employee Name"}, "SAP Internal Resources", JoinKind.LeftOuter),
+				    #"Expanded SAP Internal Resources" = Table.ExpandTableColumn(#"Merged Queries", "SAP Internal Resources", {"Employee Name", "Email"}, {"SAP Internal Resources.Employee Name", "SAP Internal Resources.Email"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Expanded SAP Internal Resources",{"SAP Internal Resources.Email"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([SAP Internal Resources.Email] <> null)),
+				    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"SAP Internal Resources.Email", "User Email"}}),
+				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns", "Role", each "Admin")
+				in
+				    #"Added Custom1"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

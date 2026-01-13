@@ -1,0 +1,145 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource"
+          },
+          "datasetSettings": {
+            "type": "LakehouseTable",
+            "typeProperties": {
+              "table": "Dates"
+            },
+            "schema": [],
+            "linkedService": {
+              "name": "FinanceCE",
+              "properties": {
+                "type": "Lakehouse",
+                "typeProperties": {
+                  "artifactId": "9f7dc6b5-591b-a6eb-47a0-6c4212187422",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000",
+                  "rootFolder": "Tables"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "LookupDates",
+        "dependsOn": [
+          {
+            "activity": "Dataflow2",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "batchCount": 5,
+          "items": {
+            "value": "@activity('LookupDates').output.value",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "RefreshDataflow",
+              "typeProperties": {
+                "dataflowId": "d057e07e-e635-b36b-4ceb-08e74a7f676a",
+                "workspaceId": "00000000-0000-0000-0000-000000000000",
+                "notifyOption": "NoNotification",
+                "dataflowType": "DataflowFabric",
+                "parameters": {
+                  "DateWeek": {
+                    "value": "@item().date",
+                    "type": "string"
+                  }
+                }
+              },
+              "policy": {
+                "timeout": "0.20:00:00",
+                "retry": 3,
+                "retryIntervalInSeconds": 180,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Dataflow1",
+              "dependsOn": []
+            },
+            {
+              "type": "RefreshDataflow",
+              "typeProperties": {
+                "dataflowId": "f025342b-efe4-afef-4675-d56c63fcc082",
+                "workspaceId": "00000000-0000-0000-0000-000000000000",
+                "notifyOption": "NoNotification",
+                "dataflowType": "DataflowFabric",
+                "parameters": {
+                  "DateWeek": {
+                    "value": "@item().date",
+                    "type": "string"
+                  }
+                }
+              },
+              "policy": {
+                "timeout": "0.20:00:00",
+                "retry": 3,
+                "retryIntervalInSeconds": 180,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Dataflow3",
+              "dependsOn": [
+                {
+                  "activity": "Dataflow1",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "name": "ForEach1",
+        "dependsOn": [
+          {
+            "activity": "LookupDates",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "901f05ab-7c81-9383-478a-bf3b3d9396cb",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Dataflow2",
+        "dependsOn": []
+      }
+    ]
+  }
+}

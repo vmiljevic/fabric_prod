@@ -1,0 +1,41 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "test_ppm",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fact_employee_internal": {
+      "queryId": "d498b84b-4d68-4698-845d-65b0a22bae21",
+      "queryName": "fact_employee_internal",
+      "loadEnabled": false
+    },
+    "fact_employee_internals_sumarized": {
+      "queryId": "7da16202-e099-4743-aa7f-e705605fb397",
+      "queryName": "fact_employee_internals_sumarized"
+    },
+    "fact_employee_all": {
+      "queryId": "6c46c7e9-6df6-4df8-bb16-d28941e9844f",
+      "queryName": "fact_employee_all",
+      "loadEnabled": false
+    },
+    "fact_employee_all_DataDestination": {
+      "queryId": "35420ff1-0d33-4fc9-be55-a790b69b90b9",
+      "queryName": "fact_employee_all_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "fact_ppm_time_cards_sumarized": {
+      "queryId": "2bc9765d-76ea-48d1-8faa-319c5b373280",
+      "queryName": "fact_ppm_time_cards_sumarized",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}

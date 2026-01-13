@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_employees_de_archive"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "07f11b5b-9310-9eff-4d45-959a2b1f927c"
+  }
+}

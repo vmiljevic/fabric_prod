@@ -1,0 +1,60 @@
+table 'FC Cost Element'
+	lineageTag: 877071e8-a7ca-454d-80e5-e9777213674e
+
+	column 'Cost Element'
+		dataType: string
+		lineageTag: 5712b4c8-0b0e-4bff-a380-646b92e40d38
+		summarizeBy: none
+		sourceColumn: Cost Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Element Name'
+		dataType: string
+		lineageTag: 60899f64-3c39-44c7-b9d7-d8e287ee0bec
+		summarizeBy: none
+		sourceColumn: Cost Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Cost Element Hierarchy'
+		dataType: string
+		lineageTag: e6f658ec-a94f-499f-adf0-2eefdcf5d9f6
+		summarizeBy: none
+		sourceColumn: Forecast Cost Element Hierarchy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Default Cost Element'
+		dataType: string
+		lineageTag: 438bc528-5d99-4b82-a7e1-ab873eb8b47a
+		summarizeBy: none
+		sourceColumn: Forecast Default Cost Element
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Default Cost Element Name'
+		dataType: string
+		lineageTag: eb48a90f-cc11-42eb-bfe6-420435325f37
+		summarizeBy: none
+		sourceColumn: Forecast Default Cost Element Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FC Cost Element' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="FCCostElementMapping",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Cost Element", type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{{"Cost Element", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Cost Element", Text.Clean, type text}})
+				in
+				    #"Cleaned Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

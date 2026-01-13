@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ingest_capex_assets"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "29c9c232-f091-9186-4c19-8352c74d1e5f"
+  }
+}

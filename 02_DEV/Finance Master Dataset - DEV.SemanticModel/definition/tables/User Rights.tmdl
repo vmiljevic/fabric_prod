@@ -1,0 +1,48 @@
+table 'User Rights'
+	lineageTag: a842907a-bdc5-46fe-b13c-b0e8c25c7754
+
+	column 'Cost Center'
+		dataType: string
+		lineageTag: 3e44f9bb-a95d-4df4-8077-b763cb750c0d
+		summarizeBy: none
+		sourceColumn: Cost Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Rights'
+		dataType: string
+		lineageTag: 4565cbf8-a900-4a84-ae69-cd6fe4c25052
+		summarizeBy: none
+		sourceColumn: User Rights
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'User Rights' = m
+		mode: import
+		queryGroup: '01_Master Domain Data'
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+				    GradeandProficiencyLevels_Table = Source{[Item="CostCenters",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(GradeandProficiencyLevels_Table,{{"Controlling Area", type text}, {"Cost Center", Int64.Type}, {"Valid From", type date}, {"Valid To", type date}, {"Name", type text}, {"Description", type text}, {"User Responsible", type text}, {"Responsible 1 Level", type text}, {"Responsible 2 Level", type text}, {"Responsible 3 Level", type text}, {"Cost Center Category", type text}, {"Hierarchy Area", type text}, {"Company Code", type text}, {"Rate Card", type text}, {"Invoicing Method", type text}, {"Business Area", type any}, {"Column1", Int64.Type}, {"Profit Center", type text}, {"Name 1", type any}, {"Name 2", type any}, {"Name 3", type text}, {"Name 4", type text}, {"Allianz TOM Core Cost Center", Int64.Type}, {"Allianz TOM Actual Location", Int64.Type}, {"City", type any}, {"Department", type text}, {"Actual: Primary Costs (Lock Indicator)", type text}, {"Actual: Secondary Costs (Lock Indicator)", type text}, {"Plan: Primary Costs (Lock Indicator)", type text}, {"Plan: Secondary Costs (Lock Indicator)", type text}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Cost Center", "User Responsible", "Responsible 1 Level", "Responsible 2 Level", "Responsible 3 Level", "Responsible 1 Level Email", "Responsible 2 Level Email", "Responsible 3 Level Email"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Cost Center", type text}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type1", {"Cost Center"}, #"Special User Right", {"Cost Center"}, "Special User Right", JoinKind.LeftOuter),
+				    #"Expanded Special User Right" = Table.ExpandTableColumn(#"Merged Queries", "Special User Right", {"Emails"}, {"Special User Right.Emails"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Special User Right",{{"Special User Right.Emails", "Responsible 4 Level Email"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns",null,"",Replacer.ReplaceValue,{"Responsible 1 Level Email"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value",null,"",Replacer.ReplaceValue,{"Responsible 2 Level Email"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1",null,"",Replacer.ReplaceValue,{"Responsible 3 Level Email"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2",null,"",Replacer.ReplaceValue,{"Responsible 4 Level Email"}),
+				    #"Added Custom" = Table.AddColumn(#"Replaced Value3", "User Right Step 1", each if [Responsible 1 Level Email] <> [Responsible 2 Level Email] and [Responsible 2 Level Email] <> "" then [Responsible 1 Level Email] &"|"& [Responsible 2 Level Email] else [Responsible 1 Level Email]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "User Right Step 2", each if not (Text.Contains([User Right Step 1],[Responsible 3 Level Email])) and [Responsible 3 Level Email] <> "" then [User Right Step 1] & "|" & [Responsible 3 Level Email]   else [User Right Step 1]),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "User Right Step 3", each if not (Text.Contains([User Right Step 2],[Responsible 4 Level Email])) and [Responsible 4 Level Email] <> "" then [User Right Step 2] & "|" & [Responsible 4 Level Email]   else [User Right Step 2]),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Added Custom2",{"Cost Center", "User Right Step 3"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Other Columns1",{{"User Right Step 3", "User Rights"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

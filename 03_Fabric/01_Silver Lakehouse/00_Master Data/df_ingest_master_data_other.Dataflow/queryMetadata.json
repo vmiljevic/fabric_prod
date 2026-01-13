@@ -1,0 +1,333 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_ingest_master_data",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "dim_cost_element_current": {
+      "queryId": "a687342d-d8ab-4b96-8a97-fd13c7d3222c",
+      "queryName": "dim_cost_element_current",
+      "loadEnabled": false
+    },
+    "dim_cost_elements_current_DataDestination": {
+      "queryId": "44b91c03-fe1a-481e-9c81-06e7f432667a",
+      "queryName": "dim_cost_elements_current_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_company": {
+      "queryId": "826304f7-b944-4375-8798-42d71af0a970",
+      "queryName": "dim_company",
+      "loadEnabled": false
+    },
+    "dim_company_DataDestination": {
+      "queryId": "175a33f8-4fe8-4883-94cc-4c211777de0c",
+      "queryName": "dim_company_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "sec_user_right": {
+      "queryId": "c23aabb5-33be-402c-bbe1-0fccec92568c",
+      "queryName": "sec_user_right",
+      "loadEnabled": false
+    },
+    "sec_user_right_DataDestination": {
+      "queryId": "0f5759de-9dc2-47ed-a179-1ec6d8186c9c",
+      "queryName": "sec_user_right_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "_map_organizational_unit_last_month": {
+      "queryId": "e398de6b-fde8-46d3-a59c-699d5ea9a622",
+      "queryName": "_map_organizational_unit_last_month",
+      "loadEnabled": false
+    },
+    "_map_organizational_unit_monthly": {
+      "queryId": "4abe5bbe-c685-4cc5-9441-78a427032eeb",
+      "queryName": "_map_organizational_unit_monthly",
+      "loadEnabled": false
+    },
+    "_map_organizational_unit_monthly_at_april": {
+      "queryId": "7857018e-4396-4a38-8f1d-68850af8e244",
+      "queryName": "_map_organizational_unit_monthly_at_april",
+      "loadEnabled": false
+    },
+    "_map_organizational_unit_monthly_at_mar": {
+      "queryId": "9c146dd9-2efe-4cde-a5cb-40041fdbac76",
+      "queryName": "_map_organizational_unit_monthly_at_mar",
+      "loadEnabled": false
+    },
+    "_map_organizational_unit_monthly_at_feb": {
+      "queryId": "0f66d4d6-aba5-4c35-aa8a-6a72349e233b",
+      "queryName": "_map_organizational_unit_monthly_at_feb",
+      "loadEnabled": false
+    },
+    "_map_organizational_unit_monthly_at_jan": {
+      "queryId": "9412c4aa-b8ab-40b2-b5d3-a592c5f64c1b",
+      "queryName": "_map_organizational_unit_monthly_at_jan",
+      "loadEnabled": false
+    },
+    "_map_organizational_unit_parent_check": {
+      "queryId": "8e06e668-d661-4d36-80e2-4e0dd2b078e9",
+      "queryName": "_map_organizational_unit_parent_check",
+      "loadEnabled": false
+    },
+    "dim_organizational_unit": {
+      "queryId": "fcbe772d-d68a-462d-b809-b8e2f79248ed",
+      "queryName": "dim_organizational_unit",
+      "loadEnabled": false
+    },
+    "dim_organizational_unit_DataDestination": {
+      "queryId": "f347e5fa-97f0-4ce2-aae3-8f940b7028ad",
+      "queryName": "dim_organizational_unit_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_rate_charged": {
+      "queryId": "aa831a73-82b5-4185-abc4-ff52943c150e",
+      "queryName": "map_rate_charged",
+      "loadEnabled": false
+    },
+    "map_exchange_rates": {
+      "queryId": "29a0dda5-0a84-4364-ab55-cb2fa5c69457",
+      "queryName": "map_exchange_rates",
+      "loadEnabled": false
+    },
+    "map_planning_versions": {
+      "queryId": "87a78456-f940-4476-b865-faa5303c2081",
+      "queryName": "map_planning_versions",
+      "loadEnabled": false
+    },
+    "map_billing_run_calendar": {
+      "queryId": "c013ce64-ff60-4d2b-bf8b-c16d67f8ca41",
+      "queryName": "map_billing_run_calendar",
+      "loadEnabled": false
+    },
+    "map_grade_proficiency_level": {
+      "queryId": "7ff2347f-4a4e-4f7c-a4dc-8a1dc642ce54",
+      "queryName": "map_grade_proficiency_level",
+      "loadEnabled": false
+    },
+    "map_hr_capacity_parameters": {
+      "queryId": "a85a8446-d96a-46e1-8623-b40aae99ff7b",
+      "queryName": "map_hr_capacity_parameters",
+      "loadEnabled": false
+    },
+    "map_user_rights_country": {
+      "queryId": "5cc0ba3a-f91a-4276-896b-41f6e25e1b77",
+      "queryName": "map_user_rights_country",
+      "loadEnabled": false
+    },
+    "map_cost_centers_rate_cards": {
+      "queryId": "70a7a7a4-c888-4bb6-9242-3f75a1dd7f9e",
+      "queryName": "map_cost_centers_rate_cards",
+      "loadEnabled": false
+    },
+    "map_rate_charged_DataDestination": {
+      "queryId": "a307dfdf-4290-417d-a828-194114377ab5",
+      "queryName": "map_rate_charged_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_exchange_rates_DataDestination": {
+      "queryId": "8724a61c-922f-40a0-a3d7-a8c57c19f50d",
+      "queryName": "map_exchange_rates_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_planning_versions_DataDestination": {
+      "queryId": "521da74a-25ae-4075-b282-cf48f484616e",
+      "queryName": "map_planning_versions_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_billing_run_calendar_DataDestination": {
+      "queryId": "4bd1d2fb-c331-4f17-a739-b2688928b78a",
+      "queryName": "map_billing_run_calendar_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_grade_proficiency_level_DataDestination": {
+      "queryId": "a9e9dfe6-fe0f-4e7a-bbf4-e0354c2736b8",
+      "queryName": "map_grade_proficiency_level_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_hr_capacity_parameters_DataDestination": {
+      "queryId": "25f4ff1d-ee82-4636-94ef-b4fd6a5575ad",
+      "queryName": "map_hr_capacity_parameters_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_user_rights_country_DataDestination": {
+      "queryId": "8807f9b3-4978-4c79-a3fa-6c208b650002",
+      "queryName": "map_user_rights_country_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_cost_centers_rate_cards_DataDestination": {
+      "queryId": "69556702-2fb5-457d-adeb-349044da45b7",
+      "queryName": "map_cost_centers_rate_cards_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_rate_card_sap_translation": {
+      "queryId": "7d81812c-c8b1-4cb7-9305-89adb1f9cb8d",
+      "queryName": "map_rate_card_sap_translation",
+      "loadEnabled": false
+    },
+    "map_at45_grades": {
+      "queryId": "f7626fff-008a-4cf6-80ce-387552abc4a8",
+      "queryName": "map_at45_grades",
+      "loadEnabled": false
+    },
+    "map_at45_employees_master_data": {
+      "queryId": "1a206c5a-a1e6-4a99-acfc-b34489f6df82",
+      "queryName": "map_at45_employees_master_data",
+      "loadEnabled": false
+    },
+    "map_de44_employee_master_data": {
+      "queryId": "62b66ae1-af08-44ab-b0ea-eb6e1e963c52",
+      "queryName": "map_de44_employee_master_data",
+      "loadEnabled": false
+    },
+    "map_cost_element_fc": {
+      "queryId": "c83860e9-10cc-43d5-b557-15264715f305",
+      "queryName": "map_cost_element_fc",
+      "loadEnabled": false
+    },
+    "map_de44_employee_master_data_DataDestination": {
+      "queryId": "3aa8c416-807d-4e2d-8eec-3125094fa333",
+      "queryName": "map_de44_employee_master_data_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_at45_employees_master_data_DataDestination": {
+      "queryId": "8ab19cf0-4b7c-43ba-805b-01cfa4e0f726",
+      "queryName": "map_at45_employees_master_data_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_at45_grades_DataDestination": {
+      "queryId": "89075c8f-db70-46be-b682-f61d61146deb",
+      "queryName": "map_at45_grades_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_rate_card_sap_translation_DataDestination": {
+      "queryId": "ea302308-efd1-4ef5-abcb-de819b25f178",
+      "queryName": "map_rate_card_sap_translation_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_cost_element_fc_DataDestination": {
+      "queryId": "c9c33e07-81db-4610-b40a-44176c5d12c4",
+      "queryName": "map_cost_element_fc_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dim_asset_class": {
+      "queryId": "7dcf2e62-cf6f-498d-b10f-1e633a3e8d78",
+      "queryName": "dim_asset_class",
+      "loadEnabled": false
+    },
+    "dim_asset_class_DataDestination": {
+      "queryId": "b97d1594-e21d-4dec-af2e-dd602b5945c4",
+      "queryName": "dim_asset_class_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_service_mapping": {
+      "queryId": "a9590126-cc13-4459-a071-5180847fa8fe",
+      "queryName": "map_service_mapping",
+      "loadEnabled": false
+    },
+    "map_service_mapping_DataDestination": {
+      "queryId": "7d57fb32-b2ce-432b-a4df-bffdd6ae65fd",
+      "queryName": "map_service_mapping_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_document_type": {
+      "queryId": "88331168-e50e-42bd-ac6f-cbdb6cab7815",
+      "queryName": "map_document_type",
+      "loadEnabled": false
+    },
+    "map_gl_accounts": {
+      "queryId": "ebf07607-aba1-4579-ad67-feb0422d8fd6",
+      "queryName": "map_gl_accounts",
+      "loadEnabled": false
+    },
+    "map_document_type_DataDestination": {
+      "queryId": "ef103a54-f0a8-49ac-9f11-6c077e055257",
+      "queryName": "map_document_type_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_gl_accounts_DataDestination": {
+      "queryId": "0ac114e3-39a9-4789-a4e1-3595f309e634",
+      "queryName": "map_gl_accounts_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "map_tax_rates": {
+      "queryId": "b38d45e0-954a-4f14-8455-74ae410527cc",
+      "queryName": "map_tax_rates",
+      "loadEnabled": false
+    },
+    "map_tax_rates_DataDestination": {
+      "queryId": "64050778-18ab-4842-a69e-81df56b32ea5",
+      "queryName": "map_tax_rates_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data/Master%20Data/SAP%20BW/Master%20Data%20Reporting%20SAP_CC.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"59c3d509-86b6-4a7c-8be0-ac921ad1f949\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"33411680-e2e8-426c-9999-033d22c8201d\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"ddd60dd0-8aee-4de0-abf8-bc8307999ec6\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/DE1214-4322362",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"e530fbbb-c57b-4f4e-80df-750ef25df71c\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"d9abe6b3-b7f5-4134-a409-ae81c836adf9\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared%20Documents/01_Power%20BI/01_Data/Master%20Data/Local/Master%20Domain%20Data.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"6d08413c-1677-49f0-8c3d-2aa94f7c5abe\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared%20Documents/01_Power%20BI/01_Data/Master%20Data/Local/Local%20Master%20Data.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"0f80937f-2761-41a6-a5ab-90b405535aa4\"}"
+    },
+    {
+      "path": "https://allianzms.sharepoint.com/teams/DE1214-7332185",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"ec910b35-ed44-4637-88a1-dfd6aeea8e59\"}"
+    }
+  ]
+}

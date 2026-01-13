@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "IT Finance CE - Master Data Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d68a009d-89c3-9c67-4624-b81a7ff1ca87"
+  }
+}
