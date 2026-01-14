@@ -182,19 +182,13 @@ shared fact_employees_ce = let
   #"Removed columns 4" = Table.RemoveColumns(#"Renamed columns 2", {"HR Manager Email", "Functional Manager _email address_", "Functional Manager"}),
   #"Renamed columns 3" = Table.RenameColumns(#"Removed columns 4", {{"DisciplinaryOrgUnit ID", "DisciplinaryOrgUnit"}, {"FunctionalOrgUnit ID", "FunctionalOrgUnit"}}),
   #"Removed columns 5" = Table.RemoveColumns(#"Renamed columns 3", {"Rate Card Key", "Gender", "Date of Birth"}),
-  #"Renamed columns 4" = Table.RenameColumns(#"Removed columns 5", {{"Team Name", "Role Type"}, {"Invoicing Method New", "Invoicing Method"}, {"Cost Center", "Cost Center Number"}}),
   #"Added custom 4" = Table.AddColumn(#"Renamed columns 4", "HR ID Corrected", each if ([User ID] = "HWIZ96U") or ([User ID] = "ALMAP") then [HR ID] & "_1" else [HR ID]),
   #"Removed columns 6" = Table.RemoveColumns(#"Added custom 4", {"HR ID"}),
   #"Renamed columns 5" = Table.RenameColumns(#"Removed columns 6", {{"HR ID Corrected", "HR ID"}}),
-  #"Changed column type 1" = Table.TransformColumns(
-    #"Removed columns 5",
-    {
-        {"Start Date", each if _ = null or _ = "" then null else try Date.From(_) otherwise null, type date},
-        {"End Date", each if _ = null or _ = "" then null else try Date.From(_) otherwise null, type date}
-    }
-)
+  #"Changed column type 1" = Table.TransformColumns(#"Removed columns 5",{{"Start Date", each if _ = null or _ = "" then null else try Date.From(_) otherwise null, type date},{"End Date", each if _ = null or _ = "" then null else try Date.From(_) otherwise null, type date}}),
+    #"Renamed columns 4" = Table.RenameColumns(#"Removed columns 5", {{"Team Name", "Role Type"}, {"Invoicing Method New", "Invoicing Method"}, {"Cost Center", "Cost Center Number"}})
 in
-  #"Changed column type 1";
+  #"Renamed columns 4";
 shared fact_employees_de44 = let
   Source = Table.Combine({fact_employees_de44_current, fact_employees_de44_archive}),
   #"Renamed columns" = Table.RenameColumns(Source, {{"Local ID", "HR ID"}}),
