@@ -251,9 +251,10 @@ shared fact_employee_internal = let
   #"Changed column type 6" = Table.TransformColumnTypes(#"Expanded _map_capacity_parameters", {{"Annual Capacity in PDs", Int64.Type}}),
   #"Added custom 8" = Table.AddColumn(#"Changed column type 6", "Available HR PDs", each [FTE] * ([Annual Capacity in PDs]/12)),
   #"Removed columns 1" = Table.RemoveColumns(#"Added custom 8", {"Annual Capacity in PDs"}),
-  #"Changed column type 5" = Table.TransformColumnTypes(#"Removed columns 1", {{"Available HR PDs", Currency.Type}})
+  #"Changed column type 5" = Table.TransformColumnTypes(#"Removed columns 1", {{"Available HR PDs", Currency.Type}}),
+  #"Removed duplicates" = Table.Distinct(#"Changed column type 5", {"Employee Key"})
 in
-  #"Changed column type 5";
+  #"Removed duplicates";
 shared _map_rate_cards_sap = let
   Source = Lakehouse.Contents(null),
   #"Navigation 1" = Source{[workspaceId = Variable.ValueOrDefault("$(/**/vl_main/WorkspaceID)",  "c70edda0-25b6-4c4e-ad60-5a2466e1851f")]}[Data],
