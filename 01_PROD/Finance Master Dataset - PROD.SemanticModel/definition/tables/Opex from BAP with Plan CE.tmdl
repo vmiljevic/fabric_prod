@@ -864,7 +864,7 @@ table 'Opex from BAP with Plan CE'
 				in
 				    #"Renamed Columns8"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navigation
 

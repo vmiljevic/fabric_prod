@@ -83,7 +83,7 @@ table dim_date
 
 	column 'Month Date'
 		dataType: dateTime
-		formatString: General Date
+		formatString: dd/mm/yyyy
 		lineageTag: bda5a584-3452-497e-a41e-26a545ca05ca
 		sourceLineageTag: Month Date
 		summarizeBy: none
@@ -92,7 +92,11 @@ table dim_date
 
 		changedProperty = SortByColumn
 
+		changedProperty = FormatString
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column 'Is Current Month'
 		dataType: boolean

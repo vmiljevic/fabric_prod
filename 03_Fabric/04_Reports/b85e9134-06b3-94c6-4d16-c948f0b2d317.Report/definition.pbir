@@ -1,9 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
-  "version": "4.0",
-  "datasetReference": {
-    "byConnection": {
-      "connectionString": "Data Source=\"powerbi://api.powerbi.com/v1.0/myorg/PBI-IT-Finance PBI-DEV\";initial catalog=\"IT Finance CE - Semantic Model\";integrated security=ClaimsToken;semanticmodelid=12b6523c-6c56-40d3-b895-c3c0c5df6a46"
-    }
-  }
-}

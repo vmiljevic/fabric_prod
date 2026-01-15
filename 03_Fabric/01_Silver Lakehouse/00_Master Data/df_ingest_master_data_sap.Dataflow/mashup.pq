@@ -271,43 +271,47 @@ in
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "dim_rates_current_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared dim_rates_current = let
     Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/AT0090-10144432/", [ApiVersion = 15]),
-  #"Filtered rows" = Table.SelectRows(Source, each ([Folder Path] = "https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared Documents/01_Power BI/01_Data/Master Data/SAP BW/") and ([Name] = "Master Data Reporting SAP_Rates.xlsx")),
-    #"Removed Other Columns4" = Table.SelectColumns(#"Filtered rows",{"Content", "Name", "Date modified"}),
+  #"Filtered rows" = Table.SelectRows(Source, each (Text.Contains([Folder Path],"/01_Power BI/01_Data/Master Data/SAP BW/")) and (Text.Contains([Name],"SAP_Rates.xlsx"))),
+  #"Added custom 2" = Table.TransformColumnTypes(Table.AddColumn(#"Filtered rows", "Year", each try List.Reverse(Text.Split([Folder Path], "/")){1} otherwise null), {{"Year", type text}}),
+  #"Added custom 1" = Table.AddColumn(#"Added custom 2", "CurrentYear", each Date.Year(DateTime.LocalNow())),
+  #"Changed column type 2" = Table.TransformColumnTypes(#"Added custom 1", {{"Year", Int64.Type}, {"CurrentYear", Int64.Type}}),
+  #"Filtered rows 1" = Table.SelectRows(#"Changed column type 2", each [#"CurrentYear"] = [Year]),
+    #"Removed Other Columns4" = Table.SelectColumns(#"Filtered rows 1",{"Content", "Name", "Date modified","Year"}),
     #"Added Custom1" = Table.AddColumn(#"Removed Other Columns4", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Sheet1")),
     #"Expanded Extracted Data2" = Table.ExpandTableColumn(#"Added Custom1", "Extracted Data", {"Data"}, {"Data"}),
   #"Expanded Data" = Table.ExpandTableColumn(#"Expanded Extracted Data2", "Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23"}, {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23"}),
     #"Added Custom2" = Table.AddColumn(#"Expanded Data", "File Name", each if [Column4] = "Sales Organization" then "File Name" else [Name]),
     #"Added Custom4" = Table.AddColumn(#"Added Custom2", "Refresh Date", each if [Column4] = "Sales Organization" then "Refresh Date" else [Date modified]),
-  #"Removed columns" = Table.RemoveColumns(#"Added Custom4", {"Content", "Date modified", "Name"}),
+    #"Added Custom5" = Table.AddColumn(#"Added Custom4", "Year New", each if [Column4] = "Sales Organization" then "Year" else [Year]),
+  #"Removed columns 2" = Table.RemoveColumns(#"Added Custom5", {"Year"}),
+  #"Removed columns" = Table.RemoveColumns(#"Removed columns 2", {"Content", "Date modified", "Name"}),
     #"Promoted Headers" = Table.PromoteHeaders(#"Removed columns", [PromoteAllScalars=true]),
   #"Removed top rows" = Table.Skip(#"Promoted Headers", 1),
   #"Changed column type 1" = Table.TransformColumnTypes(#"Removed top rows", {{"Refresh Date", type datetime}}),
-  #"Added custom" = Table.AddColumn(#"Changed column type 1", "Year", each Date.Year([Refresh Date])),
-  #"Added custom 1" = Table.AddColumn(#"Added custom", "CurrentYear", each Date.Year(DateTime.LocalNow())),
-  #"Filtered rows 1" = Table.SelectRows(#"Added custom 1", each [#"CurrentYear"] = [Year]),
-  #"Removed columns 1" = Table.RemoveColumns(#"Filtered rows 1", {"CurrentYear"}),
-  #"Changed column type" = Table.TransformColumnTypes(#"Removed columns 1", {{"H_Application", type text}, {"H_Usage Cond. Tab.", type text}, {"H_Condition Type", type text}, {"Sales Organization", type text}, {"Sales Organization Name", type text}, {"Cost Center", type text}, {"Cost Center Name", type text}, {"Material", type text}, {"Material Name", type text}, {"H_Condition Table", type text}, {"H_Valid From", type text}, {"H_Valid To", type text}, {"C_Valid From", type text}, {"C_Valid To", type text}, {"H_Sales condition No", type text}, {"P_Condt. Seq. No.", type text}, {"Condition Unit", type text}, {"Rate Description", type text}, {"Currency", type text}, {"Currency Name", type text}, {"Rate", type text}, {"Condit. pricing unit", type text}, {"Number of Records", type text}, {"File Name", type text}, {"Refresh Date", type text}, {"Year", type text}})
+  #"Changed column type" = Table.TransformColumnTypes(#"Changed column type 1", {{"H_Application", type text}, {"H_Usage Cond. Tab.", type text}, {"H_Condition Type", type text}, {"Sales Organization", type text}, {"Sales Organization Name", type text}, {"Cost Center", type text}, {"Cost Center Name", type text}, {"Material", type text}, {"Material Name", type text}, {"H_Condition Table", type text}, {"H_Valid From", type text}, {"H_Valid To", type text}, {"C_Valid From", type text}, {"C_Valid To", type text}, {"H_Sales condition No", type text}, {"P_Condt. Seq. No.", type text}, {"Condition Unit", type text}, {"Rate Description", type text}, {"Currency", type text}, {"Currency Name", type text}, {"Rate", type text}, {"Condit. pricing unit", type text}, {"Number of Records", type text}, {"File Name", type text}, {"Refresh Date", type text}, {"Year", type text}})
 in
     #"Changed column type";
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "dim_rates_archive_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared dim_rates_archive = let
     Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/AT0090-10144432/", [ApiVersion = 15]),
-  #"Filtered rows" = Table.SelectRows(Source, each ([Folder Path] = "https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared Documents/01_Power BI/01_Data/Master Data/SAP BW/") and ([Name] = "Master Data Reporting SAP_Rates.xlsx")),
-    #"Removed Other Columns4" = Table.SelectColumns(#"Filtered rows",{"Content", "Name", "Date modified"}),
+  #"Filtered rows" = Table.SelectRows(Source, each (Text.Contains([Folder Path],"/01_Power BI/01_Data/Master Data/SAP BW/")) and (Text.Contains([Name],"SAP_Rates.xlsx"))),
+  #"Added custom 2" = Table.TransformColumnTypes(Table.AddColumn(#"Filtered rows", "Year", each try List.Reverse(Text.Split([Folder Path], "/")){1} otherwise null), {{"Year", type text}}),
+  #"Added custom 1" = Table.AddColumn(#"Added custom 2", "CurrentYear", each Date.Year(DateTime.LocalNow())),
+  #"Changed column type 2" = Table.TransformColumnTypes(#"Added custom 1", {{"Year", Int64.Type}, {"CurrentYear", Int64.Type}}),
+  #"Filtered rows 1" = Table.SelectRows(#"Changed column type 2", each [#"CurrentYear"] > [Year]),
+    #"Removed Other Columns4" = Table.SelectColumns(#"Filtered rows 1",{"Content", "Name", "Date modified","Year"}),
     #"Added Custom1" = Table.AddColumn(#"Removed Other Columns4", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Sheet1")),
     #"Expanded Extracted Data2" = Table.ExpandTableColumn(#"Added Custom1", "Extracted Data", {"Data"}, {"Data"}),
   #"Expanded Data" = Table.ExpandTableColumn(#"Expanded Extracted Data2", "Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23"}, {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23"}),
     #"Added Custom2" = Table.AddColumn(#"Expanded Data", "File Name", each if [Column4] = "Sales Organization" then "File Name" else [Name]),
     #"Added Custom4" = Table.AddColumn(#"Added Custom2", "Refresh Date", each if [Column4] = "Sales Organization" then "Refresh Date" else [Date modified]),
-  #"Removed columns" = Table.RemoveColumns(#"Added Custom4", {"Content", "Date modified", "Name"}),
+    #"Added Custom5" = Table.AddColumn(#"Added Custom4", "Year New", each if [Column4] = "Sales Organization" then "Year" else [Year]),
+  #"Removed columns 2" = Table.RemoveColumns(#"Added Custom5", {"Year"}),
+  #"Removed columns" = Table.RemoveColumns(#"Removed columns 2", {"Content", "Date modified", "Name"}),
     #"Promoted Headers" = Table.PromoteHeaders(#"Removed columns", [PromoteAllScalars=true]),
   #"Removed top rows" = Table.Skip(#"Promoted Headers", 1),
   #"Changed column type 1" = Table.TransformColumnTypes(#"Removed top rows", {{"Refresh Date", type datetime}}),
-  #"Added custom" = Table.AddColumn(#"Changed column type 1", "Year", each Date.Year([Refresh Date])),
-  #"Added custom 1" = Table.AddColumn(#"Added custom", "CurrentYear", each Date.Year(DateTime.LocalNow())),
-  #"Filtered rows 1" = Table.SelectRows(#"Added custom 1", each [#"CurrentYear"] > [Year]),
-  #"Removed columns 1" = Table.RemoveColumns(#"Filtered rows 1", {"CurrentYear"}),
-  #"Changed column type" = Table.TransformColumnTypes(#"Removed columns 1", {{"H_Application", type text}, {"H_Usage Cond. Tab.", type text}, {"H_Condition Type", type text}, {"Sales Organization", type text}, {"Sales Organization Name", type text}, {"Cost Center", type text}, {"Cost Center Name", type text}, {"Material", type text}, {"Material Name", type text}, {"H_Condition Table", type text}, {"H_Valid From", type text}, {"H_Valid To", type text}, {"C_Valid From", type text}, {"C_Valid To", type text}, {"H_Sales condition No", type text}, {"P_Condt. Seq. No.", type text}, {"Condition Unit", type text}, {"Rate Description", type text}, {"Currency", type text}, {"Currency Name", type text}, {"Rate", type text}, {"Condit. pricing unit", type text}, {"Number of Records", type text}, {"File Name", type text}, {"Refresh Date", type text}, {"Year", type text}})
+  #"Changed column type" = Table.TransformColumnTypes(#"Changed column type 1", {{"H_Application", type text}, {"H_Usage Cond. Tab.", type text}, {"H_Condition Type", type text}, {"Sales Organization", type text}, {"Sales Organization Name", type text}, {"Cost Center", type text}, {"Cost Center Name", type text}, {"Material", type text}, {"Material Name", type text}, {"H_Condition Table", type text}, {"H_Valid From", type text}, {"H_Valid To", type text}, {"C_Valid From", type text}, {"C_Valid To", type text}, {"H_Sales condition No", type text}, {"P_Condt. Seq. No.", type text}, {"Condition Unit", type text}, {"Rate Description", type text}, {"Currency", type text}, {"Currency Name", type text}, {"Rate", type text}, {"Condit. pricing unit", type text}, {"Number of Records", type text}, {"File Name", type text}, {"Refresh Date", type text}, {"Year", type text}})
 in
     #"Changed column type";
 shared dim_profit_center_current_DataDestination = let

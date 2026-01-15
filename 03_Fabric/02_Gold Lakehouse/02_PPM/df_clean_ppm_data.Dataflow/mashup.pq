@@ -415,16 +415,13 @@ shared fact_ppm_time_cards = let
 
     #"Renamed columns 4" = Table.RenameColumns(#"Changed column type 8", {{"Material Name", "Rate Card Name"}}),
     #"Changed column type 1" = Table.TransformColumnTypes(#"Renamed columns 4", {{"Material", type text}}),
+  #"Added custom 26" = Table.AddColumn(#"Changed column type 1", "Year", each Date.Year([Booking Date])),
+  #"Changed column type 18" = Table.TransformColumnTypes(#"Added custom 26", {{"Year", type text}}),
 
-    #"Added custom 5" = Table.AddColumn(
-        #"Changed column type 1",
-        "Rate Key",
-        each
-            if [u_company_booking_code_user] <> null and [u_company_booking_code_user] <> "" then
-                [u_company_booking_code_user] & "-" & [Material]
+    #"Added custom 5" = Table.AddColumn(#"Changed column type 18", "Rate Key", each if [u_company_booking_code_user] <> null and [u_company_booking_code_user] <> "" then
+                [Year]&"-"&[u_company_booking_code_user] & "-" & [Material]
             else
-                [ExportFor] & "-" & [Material]
-    ),
+                [Year]&"-"&[ExportFor] & "-" & [Material]),
 
     #"Changed column type 2" = Table.TransformColumnTypes(#"Added custom 5", {{"Rate Key", type text}}),
     #"Replaced value 2" = Table.ReplaceValue(#"Changed column type 2", "0044", "I044", Replacer.ReplaceText, {"Rate Key"}),

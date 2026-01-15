@@ -197,37 +197,37 @@ table _measures
 
 		changedProperty = IsHidden
 
-	measure 'Message User Logged Service Spend' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Service Spend] & ")"
+	measure 'Message User Logged Service Spend' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Service Spend] & "), Environment: " & [Environment]
 		displayFolder: User Login
 		lineageTag: 041d5752-4a02-4426-8db4-e07d18c9fdd1
 
 		changedProperty = IsHidden
 
-	measure 'Message User Logged PPM Time Bookings' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for PPM Time Bookings] & ")"
+	measure 'Message User Logged PPM Time Bookings' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for PPM Time Bookings] & "), Environment: " & [Environment]
 		displayFolder: User Login
 		lineageTag: 7f20b985-b507-4f46-b22d-9222ada590d3
 
 		changedProperty = IsHidden
 
-	measure 'Message User Logged Employee Lists' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Employee lists] & ")"
+	measure 'Message User Logged Employee Lists' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Employee lists] & "), Environment: " & [Environment]
 		displayFolder: User Login
 		lineageTag: e966b792-2359-424e-9047-533028f3553c
 
 		changedProperty = IsHidden
 
-	measure 'Message User Logged Cost & Revenue' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Cost & Revenue] & ")"
+	measure 'Message User Logged Cost & Revenue' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Cost & Revenue] & "), Environment: " & [Environment]
 		displayFolder: User Login
 		lineageTag: 822b536c-0508-4d56-9802-3cb6d171acb9
 
 		changedProperty = IsHidden
 
-	measure 'Message User Logged Budget Availability' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Budget Availability] & ")"
+	measure 'Message User Logged Budget Availability' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Budget Availability] & "), Environment: " & [Environment]
 		displayFolder: User Login
 		lineageTag: acae736d-cb6f-4970-abc9-0ba3c5100f77
 
 		changedProperty = IsHidden
 
-	measure 'Message User Logged Account Receivables' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Account Receivables] & ")"
+	measure 'Message User Logged Account Receivables' = "Logged user: " & [User] & " (Access to company codes: " & [User Rights for Account Receivables] & "), Environment: " & [Environment]
 		displayFolder: User Login
 		lineageTag: 1d7f7202-7eb4-4cbf-9c8d-8debbaf0b576
 
@@ -1093,6 +1093,110 @@ table _measures
 		changedProperty = DisplayFolder
 
 		changedProperty = IsHidden
+
+	measure Environment =
+			
+			CALCULATE (
+			   MAX ( dim_report_config[Config Value] ),
+			   dim_report_config[Config Key] = "Enviroment"
+			)
+		displayFolder: Report Config
+		lineageTag: 5adb9028-025f-41d8-b3a3-98aa39fb7f8e
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure ChargingUrl =
+			
+			CALCULATE (
+			   MAX ( dim_report_config[Config Value] ),
+			   dim_report_config[Config Key] = "ChargingLink"
+			)
+		displayFolder: Report Config
+		lineageTag: 5113681d-9389-4bd4-9e04-501c247e133f
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure CostRevenueUrl =
+			
+			CALCULATE (
+			   MAX ( dim_report_config[Config Value] ),
+			   dim_report_config[Config Key] = "CostRevenueLink"
+			)
+		displayFolder: Report Config
+		lineageTag: 286a0074-5372-423c-b3fd-a73784a9775c
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure HubUrl =
+			
+			CALCULATE (
+			   MAX ( dim_report_config[Config Value] ),
+			   dim_report_config[Config Key] = "HubLink"
+			)
+		displayFolder: Report Config
+		lineageTag: 36974b47-8fcd-4a48-ad46-6a30822e8b17
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure InternalEmployeesUrl =
+			
+			CALCULATE (
+			   MAX ( dim_report_config[Config Value] ),
+			   dim_report_config[Config Key] = "InternalEmployeesLink"
+			)
+		displayFolder: Report Config
+		lineageTag: d79736dc-9b6b-40f3-b540-37723ecb21dd
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure MasterDataUrl =
+			
+			CALCULATE (
+			   MAX ( dim_report_config[Config Value] ),
+			   dim_report_config[Config Key] = "MasterDataLink"
+			)
+		displayFolder: Report Config
+		lineageTag: b2ee31db-0b78-4f7b-b028-44377098046d
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure OtherUrl =
+			
+			CALCULATE (
+			   MAX ( dim_report_config[Config Value] ),
+			   dim_report_config[Config Key] = "OtherLink"
+			)
+		displayFolder: Report Config
+		lineageTag: ce6cf21b-ff1e-4688-b9be-821711ebc275
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure TimeBookingUrl =
+			
+			CALCULATE (
+			   MAX ( dim_report_config[Config Value] ),
+			   dim_report_config[Config Key] = "TimeBookingLink"
+			)
+		displayFolder: Report Config
+		lineageTag: ce5ff72f-c880-444c-8d4c-2c0beaadf4b0
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
 
 	column Placeholder
 		dataType: string

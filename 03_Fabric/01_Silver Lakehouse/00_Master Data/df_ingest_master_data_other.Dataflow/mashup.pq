@@ -383,10 +383,25 @@ in
     #"Changed column type";
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "map_at45_grades_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared map_at45_grades = let
-    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared%20Documents/01_Power%20BI/01_Data/Master%20Data/Local/Local%20Master%20Data.xlsx"), null, true),
-  Navigation = Source{[Item = "AT45 Grades", Kind = "Sheet"]}[Data],
-  #"Promoted headers" = Table.PromoteHeaders(Navigation, [PromoteAllScalars = true]),
-  #"Removed columns 1" = Table.RemoveColumns(#"Promoted headers", {"Position Cluster (Picklist Label)", "Führungskraft (Name)", "Mitarbeiterstatus (Picklist Label)"}),
+    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/AT0090-10144432/", [ApiVersion = 15]),
+  #"Filtered rows" = Table.SelectRows(Source, each (Text.Contains([Folder Path],"/01_Power BI/01_Data/HR/Other Data/")) and (Text.Contains([Name],"Grades Vienna.xlsx"))),
+  #"Added custom 2" = Table.TransformColumnTypes(Table.AddColumn(#"Filtered rows", "Year", each Text.Start([Name], 4)), {{"Year", type text}}),
+  #"Added custom 1" = Table.AddColumn(#"Added custom 2", "CurrentYear", each Date.Year(DateTime.LocalNow())),
+  #"Changed column type 2" = Table.TransformColumnTypes(#"Added custom 1", {{"Year", Int64.Type}, {"CurrentYear", Int64.Type}}),
+    #"Removed Other Columns4" = Table.SelectColumns(#"Changed column type 2",{"Content", "Name", "Date modified","Year"}),
+    #"Added Custom1" = Table.AddColumn(#"Removed Other Columns4", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "Tabelle1")),
+    #"Expanded Extracted Data2" = Table.ExpandTableColumn(#"Added Custom1", "Extracted Data", {"Data"}, {"Data"}),
+  #"Expanded Data" = Table.ExpandTableColumn(#"Expanded Extracted Data2", "Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9"}, {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9"}),
+    #"Added Custom2" = Table.AddColumn(#"Expanded Data", "File Name", each if [Column4] = "Nachname" then "File Name" else [Name]),
+    #"Added Custom4" = Table.AddColumn(#"Added Custom2", "Refresh Date", each if [Column4] = "Nachname" then "Refresh Date" else [Date modified]),
+    #"Added Custom5" = Table.AddColumn(#"Added Custom4", "Year New", each if [Column4] = "Nachname" then "Year" else [Year]),
+  #"Removed columns 2" = Table.RemoveColumns(#"Added Custom5", {"Year"}),
+  #"Removed columns" = Table.RemoveColumns(#"Removed columns 2", {"Content", "Date modified", "Name"}),
+    #"Promoted Headers" = Table.PromoteHeaders(#"Removed columns", [PromoteAllScalars=true]),
+  #"Removed top rows" = Table.Skip(#"Promoted Headers", 1),
+  #"Changed column type 1" = Table.TransformColumnTypes(#"Removed top rows", {{"Refresh Date", type datetime}}),
+  #"Filtered rows 1" = Table.SelectRows(#"Changed column type 1", each ([Vorname] <> "Vorname")),
+  #"Removed columns 1" = Table.RemoveColumns(#"Filtered rows 1", {"Position Cluster (Picklist Label)", "Führungskraft (Name)", "Mitarbeiterstatus (Picklist Label)", "File Name", "Refresh Date"}),
   #"Changed column type" = Table.TransformColumnTypes(#"Removed columns 1", {{"Lokale Personalnummer", type text}, {"Mitarbeiterkennung", type text}, {"Vorname", type text}, {"Nachname", type text}, {"Arbeitgebergesellschaft (Label)", type text}, {"Grades", type text}, {"Year", type text}})
 in
     #"Changed column type";
@@ -525,4 +540,3 @@ shared map_tax_rates_DataDestination = let
   TableNavigation = Navigation_2{[Id = "map_tax_rates", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;
-

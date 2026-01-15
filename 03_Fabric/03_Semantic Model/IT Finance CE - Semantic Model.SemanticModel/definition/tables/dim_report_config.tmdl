@@ -1,0 +1,29 @@
+table dim_report_config
+	lineageTag: ad727cac-9d7e-4b13-b794-c43483c2e908
+	sourceLineageTag: [dbo].[dim_report_config]
+
+	column 'Config Key'
+		dataType: string
+		lineageTag: 242ba8d8-c8a5-4921-b1cc-2a56b688b3f1
+		sourceLineageTag: Config Key
+		summarizeBy: none
+		sourceColumn: Config Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Config Value'
+		dataType: string
+		lineageTag: 14f346cb-1d34-4399-80eb-1bd1bc67d358
+		sourceLineageTag: Config Value
+		summarizeBy: none
+		sourceColumn: Config Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_report_config = entity
+		mode: directLake
+		source
+			entityName: dim_report_config
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

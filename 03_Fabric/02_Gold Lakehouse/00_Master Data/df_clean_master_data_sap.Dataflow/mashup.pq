@@ -150,12 +150,12 @@ in
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "dim_rate_card_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared dim_rate_card = let
   Source = Table.Combine({dim_rates_archive, dim_rates_current}),
-  #"Added custom" = Table.AddColumn(Source, "Rate Key Short", each [Sales Organization] & "-" & [Material]),
-  #"Added custom 1" = Table.AddColumn(#"Added custom", "Rate Key Long", each [Sales Organization] & "-" & [Material] & "-" & [Cost Center]),
+  #"Added custom" = Table.AddColumn(Source, "Rate Key Short", each [Year] & "-" & [Sales Organization] & "-" & [Material]),
+  #"Added custom 1" = Table.AddColumn(#"Added custom", "Rate Key Long", each [Year] & "-" & [Sales Organization] & "-" & [Material] & "-" & [Cost Center]),
   #"Changed column type" = Table.TransformColumnTypes(#"Added custom 1", {{"Refresh Date", type datetime}, {"Rate", Currency.Type}}),
   #"Added custom 2" = Table.AddColumn(#"Changed column type", "Rate per Day", each [Rate] * 8),
   #"Changed column type 1" = Table.TransformColumnTypes(#"Added custom 2", {{"Rate per Day", Currency.Type}, {"Rate Key Long", type text}, {"Rate Key Short", type text}}),
-  #"Removed duplicates" = Table.Distinct(#"Changed column type 1", {"Sales Organization", "Material"})
+  #"Removed duplicates" = Table.Distinct(#"Changed column type 1", {"Rate Key Short"})
 in
   #"Removed duplicates";
 shared dim_wbs_archive = let

@@ -45,6 +45,7 @@ ref table fact_outgoing_invoices
 ref table fact_budget_demand
 ref table fact_incoming_invoices
 ref table fact_o2i_pre_run
+ref table dim_report_config
 
 ref role User
 

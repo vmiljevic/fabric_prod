@@ -372,24 +372,6 @@ table fact_employee_internal
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Cost Center'
-		dataType: string
-		lineageTag: 945d8841-9d9b-4ac5-98bf-dfa813afc04f
-		sourceLineageTag: Cost Center
-		summarizeBy: none
-		sourceColumn: Cost Center
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Team Name'
-		dataType: string
-		lineageTag: 39ef1fb5-8538-40d0-8126-b4e1e1b97367
-		sourceLineageTag: Team Name
-		summarizeBy: none
-		sourceColumn: Team Name
-
-		annotation SummarizationSetBy = Automatic
-
 	partition fact_employee_internal = entity
 		mode: directLake
 		source

@@ -113,30 +113,6 @@ table 'Profit Center'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Service Landscape'
-		dataType: string
-		lineageTag: 663a72e2-547a-4790-9d98-75b31785ba69
-		summarizeBy: none
-		sourceColumn: Service Landscape
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Service Class'
-		dataType: string
-		lineageTag: cd19e3aa-c0c2-4194-8e95-32c91d48bce3
-		summarizeBy: none
-		sourceColumn: Service Class
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Service Package'
-		dataType: string
-		lineageTag: 55443ca4-797a-49c8-a860-5469bae3f003
-		summarizeBy: none
-		sourceColumn: Service Package
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'SAP Refresh Time'
 		dataType: string
 		lineageTag: 9bea4ebc-5e18-40cf-9f80-a475ff6a379a
@@ -190,6 +166,30 @@ table 'Profit Center'
 		lineageTag: a7c25ad4-31a5-4c12-8bb6-6cbe30d63540
 		summarizeBy: none
 		sourceColumn: Column24
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Landscape_old'
+		dataType: string
+		lineageTag: 8e24430a-1664-438a-959e-7f87d88afe5a
+		summarizeBy: none
+		sourceColumn: Service Landscape_old
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Class_old'
+		dataType: string
+		lineageTag: b9a7fa42-7b0f-4395-89ea-20d4d6be7727
+		summarizeBy: none
+		sourceColumn: Service Class_old
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Package_old'
+		dataType: string
+		lineageTag: ba5403e9-b186-490e-979b-b30d9e8c4c72
+		summarizeBy: none
+		sourceColumn: Service Package_old
 
 		annotation SummarizationSetBy = Automatic
 

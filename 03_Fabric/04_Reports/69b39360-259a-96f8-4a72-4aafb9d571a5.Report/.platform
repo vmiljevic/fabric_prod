@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Report",
-    "displayName": "IT Finance CE - Cost & Revenue Dashboard"
+    "displayName": "IT Finance CE - Master Data Dashboard"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "68e7bfb2-0508-87c6-4960-217bd823f6c0"
+    "logicalId": "69b39360-259a-96f8-4a72-4aafb9d571a5"
   }
 }

@@ -348,7 +348,7 @@ table fact_incoming_invoices
 
 	column 'Vendor Key'
 		dataType: string
-		lineageTag: 27317841-2a6c-4459-9bac-2115ae6ff494
+		lineageTag: 4ce43aa9-e8af-494b-9f72-3ad7cd949922
 		sourceLineageTag: Vendor Key
 		summarizeBy: none
 		sourceColumn: Vendor Key

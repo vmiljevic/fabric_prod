@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Report",
-    "displayName": "IT Finance CE - Charging Dashboard"
+    "displayName": "IT Finance CE - Dashboard Hub"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "5a8ca9d2-e451-96e2-40d5-59c8efd17b6c"
+    "logicalId": "d82f2586-a084-9335-471b-d1dc2428a2c1"
   }
 }

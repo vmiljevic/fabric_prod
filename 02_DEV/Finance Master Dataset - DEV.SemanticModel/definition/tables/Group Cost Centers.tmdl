@@ -31,7 +31,7 @@ table 'Group Cost Centers'
 		source =
 				let
 				    Source = SharePoint.Files("https://allianzms.sharepoint.com/teams/DE1214-6208581/", [ApiVersion = 15]),
-				    #"Filtered Rows" = Table.SelectRows(Source, each ([Extension] = ".xlsx" or [Extension] = ".XLSX") and ([Folder Path] = "https://allianzms.sharepoint.com/teams/DE1214-6208581/Shared Documents/PRICING/02_Price Lists/")),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Extension] = ".xlsx" or [Extension] = ".XLSX") and ([Folder Path] = "https://allianzms.sharepoint.com/teams/DE1214-6208581/Shared Documents/PRICING/02_Price Lists/2025 price lists/")),
 				    #"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each Text.Contains([Name], "price")),
 				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows2", let latest = List.Max(#"Filtered Rows2"[Date created]) in each [Date created] = latest),
 				    #"Added Custom" = Table.AddColumn(#"Filtered Rows1", "Extracted Data", each Table.SelectRows(Excel.Workbook([Content]), each [Item] = "CC list")),

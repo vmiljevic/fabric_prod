@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Report",
-    "displayName": "IT Finance CE - Time Booking Dashboard"
+    "displayName": "IT Finance CE - Internal Employees Dashboard"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "4ecb3f90-26c1-96e2-4765-33f7087f9f34"
+    "logicalId": "d91f8be3-4a87-ae6d-4c7b-f5843f7c0e2e"
   }
 }
