@@ -25,15 +25,16 @@ shared fact_ppm_time_cards = let
     Workspace = Source{[workspaceId = Variable.ValueOrDefault("$(/**/vl_main/WorkspaceID)",  "c70edda0-25b6-4c4e-ad60-5a2466e1851f")]}[Data],
     LH_Table = Workspace{[lakehouseId = Variable.ValueOrDefault("$(/**/vl_main/SilverLakehouseID)",  "d6534641-b8b1-49f6-b4c4-5902e79b3a2b")]}[Data],
   Navigation = LH_Table{[Id = "fact_ppm_time_cards_daily", ItemKind = "Table"]}[Data],
-  #"Added custom" = Table.TransformColumnTypes(Table.AddColumn(Navigation, "Max_RefreshDate", each List.Max(#"Navigation"[RefreshDate])), {{"Max_RefreshDate", type text}}),
+  #"Sorted rows" = Table.Sort(Navigation, {{"sys_updated_on", Order.Descending}}),
+  #"Appended query" = Table.Combine({#"Sorted rows", fact_ppm_time_cards_archive}),
+  #"Changed column type" = Table.TransformColumnTypes(#"Appended query", {{"RefreshDate", type datetime}}),
+  #"Added custom" = Table.TransformColumnTypes(Table.AddColumn(#"Changed column type", "Max_RefreshDate", each List.Max(#"Changed column type"[RefreshDate])), {{"Max_RefreshDate", type text}}),
   #"Renamed columns" = Table.RenameColumns(#"Added custom", {{"RefreshDate", "OriginalRefreshDate"}, {"Max_RefreshDate", "RefreshDate"}}),
-  #"Sorted rows" = Table.Sort(#"Renamed columns", {{"sys_updated_on", Order.Descending}}),
-  #"Removed duplicates" = Table.Distinct(#"Sorted rows", {"tc_sys_id", "ExportFor"}),
-  #"Appended query" = Table.Combine({#"Removed duplicates", fact_ppm_time_cards_archive}),
-  #"Removed duplicates 1" = Table.Distinct(#"Appended query", {"tc_sys_id", "ExportFor"}),
-  #"Filtered rows" = Table.SelectRows(#"Removed duplicates 1", each [tc_sys_id] <> null)
+  #"Removed duplicates" = Table.Distinct(#"Renamed columns", {"tc_sys_id", "ExportFor"}),
+  #"Filtered rows" = Table.SelectRows(#"Removed duplicates", each [tc_sys_id] <> null),
+  #"Changed column type 1" = Table.TransformColumnTypes(#"Filtered rows", {{"OriginalRefreshDate", type text}})
 in
-    #"Filtered rows";
+    #"Changed column type 1";
 shared fact_ppm_time_card_interface_archive = let
     // --- Navigate to Lakehouse ---
     Source = Lakehouse.Contents(null),
