@@ -474,6 +474,15 @@ table fact_ppm_time_cards
 
 		annotation SummarizationSetBy = Automatic
 
+	column Year
+		dataType: string
+		lineageTag: b81cabc0-250e-49cb-a1e1-84f0ee0c5f6e
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fact_ppm_time_cards = entity
 		mode: directLake
 		source
