@@ -4,6 +4,37 @@
   "name": "Compare new_old",
   "queryGroups": [],
   "documentLocale": "en-US",
-  "queriesMetadata": {},
-  "connections": []
+  "queriesMetadata": {
+    "lakehouse_finance_gold_dev": {
+      "queryId": "4f62b73f-61b7-4f56-96bc-b7c9b537934b",
+      "queryName": "lakehouse_finance_gold_dev"
+    },
+    "lakehouse_finance_gold_prod": {
+      "queryId": "3aa49c53-e514-438e-83e2-85f9af3cef77",
+      "queryName": "lakehouse_finance_gold_prod"
+    },
+    "lakehouse_finance_silver_prod": {
+      "queryId": "a79335c7-7949-452e-a8bf-4b2650afe97e",
+      "queryName": "lakehouse_finance_silver_prod"
+    },
+    "lakehouse_finance_silver_dev": {
+      "queryId": "91b9895e-1f7a-43b4-a5ee-68bdd8d6f64b",
+      "queryName": "lakehouse_finance_silver_dev"
+    },
+    "lakehouse_finance_silver_prod_merged": {
+      "queryId": "99dd2488-5bf7-4325-8ce7-e675d5e52c72",
+      "queryName": "lakehouse_finance_silver_prod_merged"
+    },
+    "lakehouse_finance_silver_dev_merged": {
+      "queryId": "b3e08cfa-6983-4efe-83cf-6386d95e6378",
+      "queryName": "lakehouse_finance_silver_dev_merged"
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
 }

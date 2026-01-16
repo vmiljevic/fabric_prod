@@ -91,7 +91,7 @@ shared dim_ppm_project = let
   #"Replaced value" = Table.ReplaceValue(#"Expanded dim_ppm_accounting_element_capex", null, "Not Capitalized", Replacer.ReplaceValue, {"Expense Type"}),
   #"Replaced value 1" = Table.ReplaceValue(#"Replaced value", "Capex", "Capitalized", Replacer.ReplaceText, {"Expense Type"}),
   #"Renamed columns 2" = Table.RenameColumns(#"Replaced value 1", {{"Expense Type", "Capitalization Indicator"}}),
-  #"Added custom 1" = Table.AddColumn(#"Renamed columns 2", "Custom", each if ([Bill Code] = "Billing to Customer ( T& M )" or [Bill Code] = "Multi Debtor") then
+  #"Added custom 1" = Table.AddColumn(#"Renamed columns 2", "Custom", each if ([Bill Code] = "Billing to Customer ( T& M )" or [Bill Code] = "Multi Debtor" or [Bill Code] = "Billing to Customer (T&M)") then
             "1 - Billing to Customer (T&M)"
         else if ([Capitalization Indicator] = "Capitalized" and [Project Category] = "Change / Strategic") then
             "5 - IT Assets"
@@ -102,7 +102,7 @@ shared dim_ppm_project = let
         else if ([Bill Code] <> "Billing to Customer ( T& M )" and [ExportFor] <> [Company Code]) then
             "2 - Internal Billing ICC (T&M)"
         else
-            "Other"),
+            "7 - Other"),
   #"Renamed columns 1" = Table.RenameColumns(#"Added custom 1", {{"Custom", "Project Group"}}),
   #"Added custom" = Table.AddColumn(#"Renamed columns 1", "Debtor", each if [Debtor Relationship] = "" and [Company Code] = "0044" then "1200000024 Allianz Technology SE" 
         else if [Debtor Relationship] = "" and [Company Code] = "AT45"  then "2000009339 Allianz Technology GmbH"

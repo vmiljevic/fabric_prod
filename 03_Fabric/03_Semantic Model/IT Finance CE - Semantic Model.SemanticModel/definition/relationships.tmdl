@@ -73,7 +73,6 @@ relationship 62119c70-ea16-610b-df86-810ea3369ab9
 	toColumn: dim_company.'Company Code'
 
 relationship 9a3d2323-307a-3fb5-fcc5-7ce1ceca27ce
-	crossFilteringBehavior: bothDirections
 	fromColumn: fact_ppm_time_cards.'Employee Key'
 	toColumn: fact_employee_all.'Employee Key'
 

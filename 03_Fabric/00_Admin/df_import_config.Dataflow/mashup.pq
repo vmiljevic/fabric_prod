@@ -3,7 +3,7 @@ section Section1;
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "dim_report_config_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared dim_report_config = let
     Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared%20Documents/01_Power%20BI/01_Data/Admin/FabricConfig.xlsx"), null, true),
-  Navigation = Source{[Item = "PROD", Kind = "Sheet"]}[Data],
+  Navigation = Source{[Item = "DEV", Kind = "Sheet"]}[Data],
   #"Promoted headers" = Table.PromoteHeaders(Navigation, [PromoteAllScalars = true]),
   #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Config Key", type text}, {"Config Value", type text}})
 in

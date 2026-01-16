@@ -191,11 +191,11 @@
           "z": 3000.00
         },
         {
-          "config": "{\"name\":\"13a9b3dd1071058ec6bb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1332.7548806941431,\"y\":491.45336225596526,\"z\":12000,\"width\":206.85466377440346,\"height\":148.5466377440347,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Cost & Revenue Dashboard\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#00908d\"}}],\"horizontalTextAlignment\":\"center\"},{\"textRuns\":[{\"value\":\"Information about costs and revenue including the detailed data about actuals, forecast and plans as well as capex bookings and Asset list\",\"textStyle\":{\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"13a9b3dd1071058ec6bb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1339.696312364425,\"y\":491.45336225596526,\"z\":12000,\"width\":206.85466377440346,\"height\":148.5466377440347,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Cost & Revenue Dashboard\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#00908d\"}}],\"horizontalTextAlignment\":\"center\"},{\"textRuns\":[{\"value\":\"Information about costs and revenue including the detailed data about actuals, forecast and plans as well as capex bookings and Asset list\",\"textStyle\":{\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
           "height": 148.55,
           "width": 206.85,
-          "x": 1332.75,
+          "x": 1339.70,
           "y": 491.45,
           "z": 12000.00
         },
@@ -236,7 +236,16 @@
           "z": 2000.00
         },
         {
-          "config": "{\"name\":\"3e1157e609b5a26aaaca\",\"layouts\":[{\"id\":0,\"position\":{\"x\":663.6008676789588,\"y\":491.45336225596526,\"z\":8000,\"width\":97.18004338394793,\"height\":113.83947939262472,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"image\":[{\"properties\":{\"sourceType\":{\"expr\":{\"Literal\":{\"Value\":\"'image'\"}}},\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'master_normal.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"master_normal31604787316707816.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}},\"fit\":{\"expr\":{\"Literal\":{\"Value\":\"'Fit'\"}}}}},{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'master_highlight.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"master_highlight7317766915524286.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}},\"selector\":{\"id\":\"hover\"}},{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'master_normal.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"master_normal21287368564016151.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}},\"selector\":{\"id\":\"default\"}},{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'master_highlight.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"master_highlight07075055937962316.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}},\"selector\":{\"id\":\"press\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"tooltip\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measures\"}},\"Property\":\"MasterDataUrl\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Literal\":{\"Value\":\"'https://app.powerbi.com/groups/bd777a6f-f8b4-4d15-bcad-2edf46657ec3/reports/7ff1ca87-b81a-4624-9c67-89c3d68a009d/15b2cdf213bcc5b01743?ctid=6e06e42d-6925-47c6-b9e7-9581c7ca302a&experience=power-bi'\"}}}}}]}}}",
+          "config": "{\"name\":\"3c142dde6cce9d3580e2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1346.637744034707,\"y\":487.2885032537961,\"z\":21000,\"width\":194.36008676789587,\"height\":127.72234273318871,\"tabOrder\":21000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'tabRoundCorner'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measures\"}},\"Property\":\"CostRevenueUrl\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Cost & Revenue Dashboard'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 127.72,
+          "width": 194.36,
+          "x": 1346.64,
+          "y": 487.29,
+          "z": 21000.00
+        },
+        {
+          "config": "{\"name\":\"3e1157e609b5a26aaaca\",\"layouts\":[{\"id\":0,\"position\":{\"x\":663.6008676789588,\"y\":491.45336225596526,\"z\":8000,\"width\":97.18004338394793,\"height\":113.83947939262472,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"image\":[{\"properties\":{\"sourceType\":{\"expr\":{\"Literal\":{\"Value\":\"'image'\"}}},\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'master_normal.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"master_normal31604787316707816.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}},\"fit\":{\"expr\":{\"Literal\":{\"Value\":\"'Fit'\"}}}}},{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'master_highlight.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"master_highlight7317766915524286.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}},\"selector\":{\"id\":\"hover\"}},{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'master_normal.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"master_normal21287368564016151.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}},\"selector\":{\"id\":\"default\"}},{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'master_highlight.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"master_highlight07075055937962316.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}},\"selector\":{\"id\":\"press\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Master Data Dashboard'\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measures\"}},\"Property\":\"MasterDataUrl\"}}}}}]}}}",
           "filters": "[]",
           "height": 113.84,
           "width": 97.18,
@@ -290,6 +299,15 @@
           "z": 9000.00
         },
         {
+          "config": "{\"name\":\"76b2a322d475dd783966\",\"layouts\":[{\"id\":0,\"position\":{\"x\":498.39479392624725,\"y\":698.3080260303688,\"z\":22002,\"width\":194.36008676789587,\"height\":127.72234273318871,\"tabOrder\":37003}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'tabRoundCorner'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measures\"}},\"Property\":\"OtherUrl\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Miscellaneous Dashboard'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 127.72,
+          "width": 194.36,
+          "x": 498.39,
+          "y": 698.31,
+          "z": 22002.00
+        },
+        {
           "config": "{\"name\":\"7fbe96087d97eb26230d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":314.70968929239643,\"y\":885.7099039965648,\"z\":1000,\"width\":1605.5847621384535,\"height\":162.06606753979696,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}},\"selector\":{\"id\":\"default\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Slicer Panel'\"}}}}}]}},\"parentGroupName\":\"11ad7405bd8f3398e029\",\"howCreated\":\"InsertVisualButton\"}",
           "filters": "[]",
           "height": 162.07,
@@ -315,6 +333,15 @@
           "x": 503.95,
           "y": 701.08,
           "z": 14000.00
+        },
+        {
+          "config": "{\"name\":\"971530b0ace30490386c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1228.6334056399132,\"y\":272.1041214750542,\"z\":20000,\"width\":194.36008676789587,\"height\":127.72234273318871,\"tabOrder\":20000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'tabRoundCorner'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measures\"}},\"Property\":\"TimeBookingUrl\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Time Booking Dashboard'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 127.72,
+          "width": 194.36,
+          "x": 1228.63,
+          "y": 272.10,
+          "z": 20000.00
         },
         {
           "config": "{\"name\":\"a0948b14cbb3ea17add0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1155.054229934924,\"y\":495.6182212581345,\"z\":6000,\"width\":94.40347071583514,\"height\":101.34490238611713,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"image\":[{\"properties\":{\"sourceType\":{\"expr\":{\"Literal\":{\"Value\":\"'image'\"}}},\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'pnl_normal.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"pnl_normal6966611088167974.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}},\"fit\":{\"expr\":{\"Literal\":{\"Value\":\"'Fit'\"}}}}},{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'pnl_highlight.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"pnl_highlight7047209790976767.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}},\"selector\":{\"id\":\"hover\"}},{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'pnl_normal.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"pnl_normal1336333980067288.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}},\"selector\":{\"id\":\"default\"}},{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'pnl_highlight.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"pnl_highlight5774168194685041.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}},\"selector\":{\"id\":\"press\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Cost & Revenue Dashboard'\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measures\"}},\"Property\":\"CostRevenueUrl\"}}}}}]}}}",
@@ -344,10 +371,19 @@
           "z": 2500.00
         },
         {
-          "config": "{\"name\":\"c202c3916e417d80ee26\",\"layouts\":[{\"id\":0,\"position\":{\"x\":366.50759219088934,\"y\":481.73535791757047,\"z\":15000,\"width\":194.36008676789587,\"height\":130.4989154013015,\"tabOrder\":15000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Master Data Dashboard\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#a6276f\"}}],\"horizontalTextAlignment\":\"center\"},{\"textRuns\":[{\"value\":\"Information about master data used in the dashboards including costs centers, profit centers, wbs, cost elements, materials and service structure, etc.\",\"textStyle\":{\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"c1d5e71591cbd2ea20cd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":494.22993492407807,\"y\":273.4924078091106,\"z\":19000,\"width\":190.19522776572668,\"height\":131.8872017353579,\"tabOrder\":19000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'tabRoundCorner'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measures\"}},\"Property\":\"InternalEmployeesUrl\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Internal Labor Dashborad'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
           "filters": "[]",
-          "height": 130.50,
-          "width": 194.36,
+          "height": 131.89,
+          "width": 190.20,
+          "x": 494.23,
+          "y": 273.49,
+          "z": 19000.00
+        },
+        {
+          "config": "{\"name\":\"c202c3916e417d80ee26\",\"layouts\":[{\"id\":0,\"position\":{\"x\":366.50759219088934,\"y\":481.73535791757047,\"z\":15000,\"width\":205.46637744034706,\"height\":137.44034707158352,\"tabOrder\":15000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Master Data Dashboard\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#a6276f\"}}],\"horizontalTextAlignment\":\"center\"},{\"textRuns\":[{\"value\":\"Information about master data used in the dashboards including costs centers, profit centers, wbs, cost elements, materials and service structure, etc.\",\"textStyle\":{\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 137.44,
+          "width": 205.47,
           "x": 366.51,
           "y": 481.74,
           "z": 15000.00
@@ -434,6 +470,15 @@
           "z": 18000.00
         },
         {
+          "config": "{\"name\":\"ea3ba1763031d0ad9d10\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1224.4685466377439,\"y\":708.0260303687635,\"z\":22001,\"width\":194.36008676789587,\"height\":127.72234273318871,\"tabOrder\":37002}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'tabRoundCorner'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measures\"}},\"Property\":\"ChargingUrl\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Charging Dashboard'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 127.72,
+          "width": 194.36,
+          "x": 1224.47,
+          "y": 708.03,
+          "z": 22001.00
+        },
+        {
           "config": "{\"name\":\"f0485e761ce5f0ac3280\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":1920.29445143085,\"height\":1083.5812655277123,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'blank'\"}}}},\"selector\":{\"id\":\"default\"}},{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"lockAspect\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"80D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Full Page Close'\"}}}}}],\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Bookmark'\"}}},\"bookmark\":{\"expr\":{\"Literal\":{\"Value\":\"'5aa703d4501a67c1f822'\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}},\"parentGroupName\":\"11ad7405bd8f3398e029\",\"howCreated\":\"InsertVisualButton\"}",
           "filters": "[]",
           "height": 1083.58,
@@ -443,13 +488,22 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"f3a78f70a25c2da47b08\",\"layouts\":[{\"id\":0,\"position\":{\"x\":492.8416485900217,\"y\":285.9869848156182,\"z\":10000,\"width\":202.68980477223425,\"height\":108.28633405639913,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Internal Labor Dashboard\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#13a0d3\"}}],\"horizontalTextAlignment\":\"center\"},{\"textRuns\":[{\"value\":\"Information about Internal resources, organizational data, rate cards, locations, AHC, FTE, etc.\",\"textStyle\":{\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"f3a78f70a25c2da47b08\",\"layouts\":[{\"id\":0,\"position\":{\"x\":494.22993492407807,\"y\":291.5401301518438,\"z\":10000,\"width\":202.68980477223425,\"height\":108.28633405639913,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Internal Labor Dashboard\",\"textStyle\":{\"fontWeight\":\"bold\",\"color\":\"#13a0d3\"}}],\"horizontalTextAlignment\":\"center\"},{\"textRuns\":[{\"value\":\"Information about Internal resources, organizational data, rate cards, locations, AHC, FTE, etc.\",\"textStyle\":{\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
           "height": 108.29,
           "width": 202.69,
-          "x": 492.84,
-          "y": 285.99,
+          "x": 494.23,
+          "y": 291.54,
           "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"fdbd84d79ad7c0007ca5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":372.06073752711495,\"y\":487.2885032537961,\"z\":22000,\"width\":194.36008676789587,\"height\":127.72234273318871,\"tabOrder\":22000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'tabRoundCorner'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measures\"}},\"Property\":\"MasterDataUrl\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Master Data Dashboard'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 127.72,
+          "width": 194.36,
+          "x": 372.06,
+          "y": 487.29,
+          "z": 22000.00
         }
       ],
       "width": 1920.00
