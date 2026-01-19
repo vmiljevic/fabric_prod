@@ -22,6 +22,10 @@
       "queryId": "6c964a70-c698-4c28-86a3-90330c9cac6b",
       "queryName": "fact_cost_revenue_forecast_current"
     },
+    "fact_cost_revenue_forecast_archive": {
+      "queryId": "cede626d-6f1b-470f-8ae9-20ade98f4736",
+      "queryName": "fact_cost_revenue_forecast_archive"
+    },
     "fact_cost_revenue_plan_archive": {
       "queryId": "687268cb-3cca-47ea-91e5-916c3a616d58",
       "queryName": "fact_cost_revenue_plan_archive"

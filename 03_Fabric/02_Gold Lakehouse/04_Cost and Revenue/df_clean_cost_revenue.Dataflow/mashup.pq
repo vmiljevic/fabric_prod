@@ -16,7 +16,7 @@ in
   #"Navigation 2";
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "fact_cost_revenue_actuals_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared fact_cost_revenue = let
-  Source = Table.Combine({fact_cost_revenue_actuals_current, fact_cost_revenue_actuals_archive, fact_cost_revenue_plan_current, fact_cost_revenue_plan_archive, fact_cost_revenue_plan_future, fact_cost_revenue_forecast_current}),
+  Source = Table.Combine({fact_cost_revenue_actuals_current, fact_cost_revenue_actuals_archive, fact_cost_revenue_plan_current, fact_cost_revenue_plan_archive, fact_cost_revenue_plan_future, fact_cost_revenue_forecast_current,fact_cost_revenue_forecast_archive}),
   #"Added custom" = Table.AddColumn(Source, "Month Date", each [Posting Period] & "/" & [Year]),
   #"Added custom 1" = Table.AddColumn(#"Added custom", "Offsetting Account and Name", each [Offsetting Account] & " - " & [Offsetting Account Name]),
   #"Added custom 2" = Table.AddColumn(#"Added custom 1", "Cost Center Number and Name", each [Cost Center] & " - " & [Cost Center Name]),
@@ -30,7 +30,9 @@ shared fact_cost_revenue = let
   #"Expanded dim_cost_element" = Table.ExpandTableColumn(#"Merged queries", "dim_cost_element", {"Type"}, {"Type"}),
   #"Renamed columns" = Table.RenameColumns(#"Expanded dim_cost_element", {{"Type", "Cost Element Type"}}),
   #"Added custom 9" = Table.AddColumn(#"Renamed columns", "Material Key", each if (([Material] <> "#") and ([Material] <> "")) then [Company Code] & "-" & [Material] else ""),
-  #"Changed column type" = Table.TransformColumnTypes(#"Added custom 9", {{"Month Date", type date}, {"Amount", Currency.Type}, {"Quantity", Currency.Type}, {"Company Code", type text}, {"CO Document Number", type text}, {"CO Doc Line Item Txt", type text}, {"Cost Element", type text}, {"Cost Element Name", type text}, {"PO Vendor", type text}, {"Material", type text}, {"Material Name", type text}, {"PO Item Text", type text}, {"Company ID", type text}, {"Doc.number", type text}, {"Customer Cost Center", type text}, {"Offsetting Account", type text}, {"Offsetting Account Name", type text}, {"Origin Object", type text}, {"Origin Object Name", type text}, {"Payer", type text}, {"Payer Name", type text}, {"Reversal ref. number", type text}, {"WBS Element", type text}, {"User Name", type text}, {"Currency", type text}, {"File Name", type text}, {"Refresh Date", type datetime}, {"Year", type text}, {"Row Type", type text}, {"Purchasing Document", type text}, {"Posting Period", type text}, {"Fiscal Year", type text}, {"Partner Company Code", type text}, {"Partner Object", type text}, {"Partner Object Name", type text}, {"Profit Center", type text}, {"Profit Center Name", type text}, {"Cost Center", type text}, {"Cost Center Name", type text}, {"Company Code Name", type text}, {"Person responsible", type text}, {"WBS Element Name", type text}, {"Customer Company Code", type text}, {"Customer Object", type text}, {"Version", type text}, {"Offsetting Account and Name", type text}, {"Cost Center Number and Name", type text}, {"Partner Object Number and Name", type text}, {"Profit Center Number and Name", type text}, {"Payer Number and Name", type text}, {"Cost Element Number and Name", type text}, {"Material Number and Name", type text}, {"Vendor Key", type text}, {"Material Key", type text}})
+  #"Filtered rows" = Table.SelectRows(#"Added custom 9", each ([Company Code] <> null)),
+  #"Filtered rows 1" = Table.SelectRows(#"Filtered rows", each Text.StartsWith([Cost Element], "7") or Text.StartsWith([Cost Element], "S7") or Text.StartsWith([Cost Element], "P")),
+  #"Changed column type" = Table.TransformColumnTypes(#"Filtered rows 1", {{"Month Date", type date}, {"Amount", Currency.Type}, {"Quantity", Currency.Type}, {"Company Code", type text}, {"CO Document Number", type text}, {"CO Doc Line Item Txt", type text}, {"Cost Element", type text}, {"Cost Element Name", type text}, {"PO Vendor", type text}, {"Material", type text}, {"Material Name", type text}, {"PO Item Text", type text}, {"Company ID", type text}, {"Doc.number", type text}, {"Customer Cost Center", type text}, {"Offsetting Account", type text}, {"Offsetting Account Name", type text}, {"Origin Object", type text}, {"Origin Object Name", type text}, {"Payer", type text}, {"Payer Name", type text}, {"Reversal ref. number", type text}, {"WBS Element", type text}, {"User Name", type text}, {"Currency", type text}, {"File Name", type text}, {"Refresh Date", type datetime}, {"Year", type text}, {"Row Type", type text}, {"Purchasing Document", type text}, {"Posting Period", type text}, {"Fiscal Year", type text}, {"Partner Company Code", type text}, {"Partner Object", type text}, {"Partner Object Name", type text}, {"Profit Center", type text}, {"Profit Center Name", type text}, {"Cost Center", type text}, {"Cost Center Name", type text}, {"Company Code Name", type text}, {"Person responsible", type text}, {"WBS Element Name", type text}, {"Customer Company Code", type text}, {"Customer Object", type text}, {"Version", type text}, {"Offsetting Account and Name", type text}, {"Cost Center Number and Name", type text}, {"Partner Object Number and Name", type text}, {"Profit Center Number and Name", type text}, {"Payer Number and Name", type text}, {"Cost Element Number and Name", type text}, {"Material Number and Name", type text}, {"Vendor Key", type text}, {"Material Key", type text}})
 in
   #"Changed column type";
 shared fact_cost_revenue_forecast_current = let
@@ -38,6 +40,13 @@ shared fact_cost_revenue_forecast_current = let
   Navigation = Source{[workspaceId = Variable.ValueOrDefault("$(/**/vl_main/WorkspaceID)",  "c70edda0-25b6-4c4e-ad60-5a2466e1851f")]}[Data],
   #"Navigation 1" = Navigation{[lakehouseId = Variable.ValueOrDefault("$(/**/vl_main/SilverLakehouseID)",  "d6534641-b8b1-49f6-b4c4-5902e79b3a2b")]}[Data],
   #"Navigation 2" = #"Navigation 1"{[Id = "fact_cost_revenue_forecast_current", ItemKind = "Table"]}[Data]
+in
+  #"Navigation 2";
+shared fact_cost_revenue_forecast_archive = let
+  Source = Lakehouse.Contents(null),
+  Navigation = Source{[workspaceId = Variable.ValueOrDefault("$(/**/vl_main/WorkspaceID)",  "c70edda0-25b6-4c4e-ad60-5a2466e1851f")]}[Data],
+  #"Navigation 1" = Navigation{[lakehouseId = Variable.ValueOrDefault("$(/**/vl_main/SilverLakehouseID)",  "d6534641-b8b1-49f6-b4c4-5902e79b3a2b")]}[Data],
+  #"Navigation 2" = #"Navigation 1"{[Id = "fact_cost_revenue_forecast_archive", ItemKind = "Table"]}[Data]
 in
   #"Navigation 2";
 shared fact_cost_revenue_plan_archive = let

@@ -1,0 +1,32 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_compare_old_new_ppm",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fact_ppm_time_card_interface_daily_dev": {
+      "queryId": "a569e73a-bb99-403a-aaaa-01d8aab39d0c",
+      "queryName": "fact_ppm_time_card_interface_daily_dev"
+    },
+    "fact_ppm_time_cards_daily_dev": {
+      "queryId": "fc6a1dc8-5077-4846-9bf1-4bd9889e4582",
+      "queryName": "fact_ppm_time_cards_daily_dev"
+    },
+    "fact_ppm_time_card_interface_daily_prod": {
+      "queryId": "312df15c-f45a-4a73-9f9c-4dd960f8694a",
+      "queryName": "fact_ppm_time_card_interface_daily_prod"
+    },
+    "fact_ppm_time_cards_daily_prod": {
+      "queryId": "9268638b-e4cc-47c6-bc8f-2dcdbe42ea64",
+      "queryName": "fact_ppm_time_cards_daily_prod"
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
+    }
+  ]
+}
