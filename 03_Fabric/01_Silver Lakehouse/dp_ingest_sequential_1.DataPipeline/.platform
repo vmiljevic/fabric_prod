@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "dp_ingest_sequential_1",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7523a2fb-b8da-9e67-492f-74b3dec88325"
+  }
+}

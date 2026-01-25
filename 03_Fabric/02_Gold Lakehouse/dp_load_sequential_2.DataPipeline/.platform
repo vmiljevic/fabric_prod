@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "DataPipeline",
-    "displayName": "dp_ingest_o2i_pre_run_1"
+    "displayName": "dp_load_sequential_2"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "11e57f4a-ccb2-8492-42ae-e2f7f841c84f"
+    "logicalId": "fcd329ba-5aa4-9012-4528-4bc5f8ea267d"
   }
 }

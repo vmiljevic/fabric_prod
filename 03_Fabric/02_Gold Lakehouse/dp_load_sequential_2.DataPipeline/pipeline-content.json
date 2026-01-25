@@ -7,7 +7,7 @@
           "parameters": {},
           "waitOnCompletion": true,
           "workspaceId": "00000000-0000-0000-0000-000000000000",
-          "pipelineId": "11e57f4a-ccb2-8492-42ae-e2f7f841c84f",
+          "pipelineId": "7523a2fb-b8da-9e67-492f-74b3dec88325",
           "operationType": "InvokeFabricPipeline"
         },
         "externalReferences": {
@@ -20,7 +20,7 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "dp_ingest_o2i_pre_run",
+        "name": "dp_ingest_sequential_1",
         "dependsOn": []
       },
       {
@@ -29,7 +29,7 @@
           "parameters": {},
           "waitOnCompletion": true,
           "workspaceId": "00000000-0000-0000-0000-000000000000",
-          "pipelineId": "e10e1c21-0716-82f5-47cb-cae755b9e3d5",
+          "pipelineId": "7e74287d-7796-9c4c-4d87-192f3b87fe50",
           "operationType": "InvokeFabricPipeline"
         },
         "externalReferences": {
@@ -42,10 +42,10 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "dp_clean_o2i_pre_run",
+        "name": "dp_clean_1",
         "dependsOn": [
           {
-            "activity": "dp_ingest_o2i_pre_run",
+            "activity": "dp_ingest_sequential_1",
             "dependencyConditions": [
               "Completed"
             ]

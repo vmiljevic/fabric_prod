@@ -31,7 +31,7 @@ shared fact_cost_revenue_plan_future = let
 in
     #"Changed column type";
 shared m_plannning_versions = let
-    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx"), null, true),
+    Source = Excel.Workbook(Web.Contents("https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared%20Documents/01_Power%20BI/01_Data/Master%20Data/Local/Local%20Master%20Data.xlsx"), null, true),
     PlanningVersions_Table = Source{[Item="PlanningVersions",Kind="Table"]}[Data]
 in
     PlanningVersions_Table;

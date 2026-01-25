@@ -102,11 +102,6 @@
       "path": "Lakehouse",
       "kind": "Lakehouse",
       "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"b119cf12-394d-439c-bedf-be1b70fcb3eb\"}"
-    },
-    {
-      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx",
-      "kind": "Web",
-      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"d9abe6b3-b7f5-4134-a409-ae81c836adf9\"}"
     }
   ],
   "fastCombine": true,

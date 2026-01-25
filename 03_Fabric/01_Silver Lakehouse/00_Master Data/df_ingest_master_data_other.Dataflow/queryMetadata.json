@@ -285,16 +285,6 @@
   },
   "connections": [
     {
-      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data/Master%20Data/SAP%20BW/Master%20Data%20Reporting%20SAP_CC.xlsx",
-      "kind": "Web",
-      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"59c3d509-86b6-4a7c-8be0-ac921ad1f949\"}"
-    },
-    {
-      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/",
-      "kind": "SharePoint",
-      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"33411680-e2e8-426c-9999-033d22c8201d\"}"
-    },
-    {
       "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432",
       "kind": "SharePoint",
       "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"ddd60dd0-8aee-4de0-abf8-bc8307999ec6\"}"
@@ -308,16 +298,6 @@
       "path": "https://allianzms.sharepoint.com/teams/DE1214-4322362",
       "kind": "SharePoint",
       "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"e530fbbb-c57b-4f4e-80df-750ef25df71c\"}"
-    },
-    {
-      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data%20Sources/00_Master%20Data/Master%20Domain%20Data.xlsx",
-      "kind": "Web",
-      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"d9abe6b3-b7f5-4134-a409-ae81c836adf9\"}"
-    },
-    {
-      "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared%20Documents/01_Power%20BI/01_Data/Master%20Data/Local/Master%20Domain%20Data.xlsx",
-      "kind": "Web",
-      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"6d08413c-1677-49f0-8c3d-2aa94f7c5abe\"}"
     },
     {
       "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432/Shared%20Documents/01_Power%20BI/01_Data/Master%20Data/Local/Local%20Master%20Data.xlsx",

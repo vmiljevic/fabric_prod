@@ -162,16 +162,6 @@
   },
   "connections": [
     {
-      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/pbi/Shared%20Documents/01_Power%20BI/Data/Master%20Data/SAP%20BW/Master%20Data%20Reporting%20SAP_CC.xlsx",
-      "kind": "Web",
-      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"59c3d509-86b6-4a7c-8be0-ac921ad1f949\"}"
-    },
-    {
-      "path": "https://allianzms.sharepoint.com/teams/AT0090-2759670/",
-      "kind": "SharePoint",
-      "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"33411680-e2e8-426c-9999-033d22c8201d\"}"
-    },
-    {
       "path": "https://allianzms.sharepoint.com/teams/AT0090-10144432",
       "kind": "SharePoint",
       "connectionId": "{\"ClusterId\":\"e3085755-1c3d-4627-9f38-cce3b8987262\",\"DatasourceId\":\"ddd60dd0-8aee-4de0-abf8-bc8307999ec6\"}"

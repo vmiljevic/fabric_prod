@@ -11,8 +11,8 @@
         },
         "policy": {
           "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
+          "retry": 1,
+          "retryIntervalInSeconds": 60,
           "secureInput": false,
           "secureOutput": false
         },
@@ -29,14 +29,15 @@
         },
         "policy": {
           "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
+          "retry": 1,
+          "retryIntervalInSeconds": 60,
           "secureInput": false,
           "secureOutput": false
         },
         "name": "dp_ingest_service_spend_current",
         "dependsOn": []
       }
-    ]
+    ],
+    "concurrency": 1
   }
 }

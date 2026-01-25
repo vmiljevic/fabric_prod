@@ -4,24 +4,6 @@
       {
         "type": "RefreshDataflow",
         "typeProperties": {
-          "dataflowId": "6ba7213b-6930-a2e1-4414-324fba1b2e8d",
-          "workspaceId": "00000000-0000-0000-0000-000000000000",
-          "notifyOption": "NoNotification",
-          "dataflowType": "DataflowFabric"
-        },
-        "policy": {
-          "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
-          "secureInput": false,
-          "secureOutput": false
-        },
-        "name": "df_ingest_o2i_pre_run_archive",
-        "dependsOn": []
-      },
-      {
-        "type": "RefreshDataflow",
-        "typeProperties": {
           "dataflowId": "df4afe9f-e351-9405-4388-330561eff518",
           "workspaceId": "00000000-0000-0000-0000-000000000000",
           "notifyOption": "NoNotification",
@@ -29,12 +11,30 @@
         },
         "policy": {
           "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
+          "retry": 1,
+          "retryIntervalInSeconds": 60,
           "secureInput": false,
           "secureOutput": false
         },
         "name": "df_ingest_o2i_pre_run_current",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "6ba7213b-6930-a2e1-4414-324fba1b2e8d",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 60,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "df_ingest_o2i_pre_run_archive",
         "dependsOn": []
       }
     ]
