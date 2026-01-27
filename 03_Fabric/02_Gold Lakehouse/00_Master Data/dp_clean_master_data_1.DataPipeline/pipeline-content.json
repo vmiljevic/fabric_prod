@@ -12,7 +12,7 @@
         "policy": {
           "timeout": "0.12:00:00",
           "retry": 1,
-          "retryIntervalInSeconds": 60,
+          "retryIntervalInSeconds": 300,
           "secureInput": false,
           "secureOutput": false
         },
@@ -30,7 +30,7 @@
         "policy": {
           "timeout": "0.12:00:00",
           "retry": 1,
-          "retryIntervalInSeconds": 60,
+          "retryIntervalInSeconds": 300,
           "secureInput": false,
           "secureOutput": false
         },
@@ -48,7 +48,7 @@
         "policy": {
           "timeout": "0.12:00:00",
           "retry": 1,
-          "retryIntervalInSeconds": 60,
+          "retryIntervalInSeconds": 300,
           "secureInput": false,
           "secureOutput": false
         },

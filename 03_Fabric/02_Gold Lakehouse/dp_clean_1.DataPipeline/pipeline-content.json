@@ -219,7 +219,7 @@
         "name": "dp_clean_invoices_1",
         "dependsOn": [
           {
-            "activity": "dp_clean_master_data_1",
+            "activity": "dp_clean_capex_1",
             "dependencyConditions": [
               "Completed"
             ]
@@ -248,7 +248,7 @@
         "name": "dp_clean_budget_demand_1",
         "dependsOn": [
           {
-            "activity": "dp_clean_master_data_1",
+            "activity": "dp_clean_invoices_1",
             "dependencyConditions": [
               "Completed"
             ]
