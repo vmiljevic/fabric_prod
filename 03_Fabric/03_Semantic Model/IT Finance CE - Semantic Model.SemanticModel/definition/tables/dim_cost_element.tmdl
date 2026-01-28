@@ -159,6 +159,16 @@ table dim_cost_element
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9190e2ea-c2b0-4ca5-a4f7-7a32f7a57dea
+		sourceLineageTag: Refresh Date
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_cost_element = entity
 		mode: directLake
 		source

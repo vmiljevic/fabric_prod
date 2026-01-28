@@ -483,6 +483,15 @@ table fact_ppm_time_cards
 
 		annotation SummarizationSetBy = Automatic
 
+	column OriginalRefreshDate
+		dataType: string
+		lineageTag: 25716410-8d7d-4cf7-a58d-76ff46c7c3e7
+		sourceLineageTag: OriginalRefreshDate
+		summarizeBy: none
+		sourceColumn: OriginalRefreshDate
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fact_ppm_time_cards = entity
 		mode: directLake
 		source

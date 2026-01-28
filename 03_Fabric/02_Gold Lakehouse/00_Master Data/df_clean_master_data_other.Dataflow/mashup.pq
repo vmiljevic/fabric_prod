@@ -9,7 +9,8 @@ shared dim_cost_element_current = let
   #"Added custom" = Table.AddColumn(#"Navigation 2", "L3 Code and Name", each [L3 Code] & " - " & [L3 Name]),
   #"Merged queries" = Table.NestedJoin(#"Added custom", {"Cost Element"}, dim_cost_element_fc_current, {"Cost Element"}, "dim_cost_element_fc_current", JoinKind.LeftOuter),
   #"Expanded dim_cost_element_fc_current" = Table.ExpandTableColumn(#"Merged queries", "dim_cost_element_fc_current", {"Forecast Cost Element Hierarchy", "Forecast Cluster"}, {"Forecast Cost Element Hierarchy", "Forecast Cluster"}),
-  #"Changed column type" = Table.TransformColumnTypes(#"Expanded dim_cost_element_fc_current", {{"L3 Code and Name", type text}})
+  #"Added custom 1" = Table.AddColumn(#"Expanded dim_cost_element_fc_current", "Refresh Date", each DateTime.LocalNow() + #duration(0,1,0,0)),
+  #"Changed column type" = Table.TransformColumnTypes(#"Added custom 1", {{"L3 Code and Name", type text}, {"Refresh Date", type datetime}})
 in
   #"Changed column type";
 shared dim_cost_element_fc_current = let
